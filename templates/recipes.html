@@ -2,11 +2,11 @@
 {% block content %}
 
     {% for recipe in recipes %}
-        {{ recipe.recipe_name }}
-        {{ recipe.recipe_img }}
-        {{ recipe.recipe_description }}
-        {{ recipe.recipe_ingredients }}
-        {{ recipe.recipe_method }}
+        {{ recipe.title }}
+        {{ recipe.image }}
+        {{ recipe.description }}
+        {{ recipe.ingredients }}
+        {{ recipe.method }}
     {% endfor %}
 
-{% endblock %}S
+{% endblock %}
