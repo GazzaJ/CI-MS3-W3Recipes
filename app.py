@@ -28,7 +28,7 @@ def get_recipes():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-    #Checking if the username or email already exists
+        # Checking if the username or email already exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -50,6 +50,29 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if request.method == "POST":
+        # Check if the username already exists in the DB
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # Ensure password matches the user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome to W3 Recipes, {}".format(
+                    request.form.get("username")))
+
+            else:
+                # Invalid password match
+                flash("Username and/or Password is incorrect, please try again!")
+                return redirect(url_for("login"))
+
+        else:
+            # User doesn't exist
+            flash("Username and/or Password is incorrect, please try again")
+            return redirect(url_for("login"))
+
     return render_template("login.html")
 
 
