@@ -1,27 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Recipes</h1>
-    {% for recipe in recipes %}
-        {{ recipe.title }}<br>
-        {{ recipe.image }}<br>
-        {{ recipe.description }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-    {% endfor %}
-
+    
 <div class="row">
     <div class="col s12 m6 l4">
+        {% for recipe in recipes %}
         <div class="card">
             <div class="card-image">
-                <img src="/static/img/kofta-kebab.jpg" alt="Kofta Kebab" class="small-image">
-                <span class="card-title"><strong>Card Title</strong></span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-plus"></i></a>
+                {{ recipe.image }}
+                <span class="card-title"><strong>{{ recipe.title }}</strong></span>
+                <a class="btn-floating btn tooltipped halfway-fab waves-effect waves-light red" data-position="bottom"
+                    data-tooltip="Click for full Recipe">
+                    <i class="fas fa-plus"></i></a>
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                    require little markup to use effectively.</p>
+                <p>{{ recipe.description }}</p>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
