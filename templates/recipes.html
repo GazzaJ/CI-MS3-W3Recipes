@@ -7,7 +7,7 @@
         {% for recipe in recipes %}
         <div class="card">
             <div class="card-image">
-                {{ recipe.image }}
+                <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
                 <span class="card-title"><strong>{{ recipe.title }}</strong></span>
                 <a class="btn-floating btn tooltipped halfway-fab waves-effect waves-light red" data-position="bottom"
                     data-tooltip="Click for full Recipe">
