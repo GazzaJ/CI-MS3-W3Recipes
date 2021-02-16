@@ -1,3 +1,21 @@
+/*---------- Fonts ----------*/
+
+
+
+/*---------- Colours ----------*/
+
+
+
+
 .flashes h4 {
     line-height: 2;
+}
+
+/*---------- Recipe Cards ----------*/
+.recipe-image {
+    max-height: 15rem;
+}
+
+.add-column {
+    background-color: aqua;
 }

@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Recipes</h1>
-    
-<div class="row">
-    <div class="col s12 m6 l4">
-        {% for recipe in recipes %}
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
-                <span class="card-title"><strong>{{ recipe.title }}</strong></span>
-                <a class="btn-floating btn tooltipped halfway-fab waves-effect waves-light red" data-position="bottom"
-                    data-tooltip="Click for full Recipe">
-                    <i class="fas fa-plus"></i></a>
-            </div>
+
+<div class="col s12 m7">
+    {% for recipe in recipes %}    
+    <div class="card horizontal">
+        <div class="card-image">
+            <img class="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        </div>
+        <div class="card-stacked">
             <div class="card-content">
+                <h4 class="header">{{ recipe.title }}</h4>
                 <p>{{ recipe.description }}</p>
             </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+            </div>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
