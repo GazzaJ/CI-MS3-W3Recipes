@@ -11,6 +11,16 @@
     line-height: 2;
 }
 
+/*---------- Base Template ----------*/
+
+
+/*---------- Home Page ----------*/
+#hero-image {
+    position: relative;    
+    z-index: -1;
+    padding: 0;
+}
+
 /*---------- Recipe Cards ----------*/
 .recipe-image {
     max-height: 15rem;
