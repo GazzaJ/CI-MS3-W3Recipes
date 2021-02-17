@@ -12,7 +12,9 @@
                         <i class="fas fa-globe prefix"></i>
                         <select>                            
                             <option value="" disabled selected>Choose Recipe Continent</option>
-                            <option value="1">Option 1</option>
+                            {% for continent in continents %}
+                                <option value="{{ continent.continent_name }}">{{ continent.continent_name }}</option>
+                            {% endfor %}
                         </select>
                         <label>Continent</label>
                     </div>
