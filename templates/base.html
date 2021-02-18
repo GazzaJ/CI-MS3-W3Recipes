@@ -22,7 +22,7 @@
 </head>
 <body>
     <header>
-        <!-- Main Navbar -->
+        <!-- Main Navbar from (https://materializecss.com/navbar.html) -->
         <nav class="nav-extended brown darken-1">
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">W3 Recipes</a>
@@ -43,7 +43,7 @@
                 </ul>
             </div>
         </nav>
-        <!-- Mobile Device Side Navbar -->
+        <!-- Mobile Device Side Navbar from (https://materializecss.com/navbar.html) -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>                    
                     {% if session.user %}
@@ -61,7 +61,7 @@
     </header>
 
     <section>
-        <!-- Flash Messages -->        
+        <!-- Flash Messages from (https://materializecss.com/footer.html) -->        
         {% with messages = get_flashed_messages() %}
             {% if messages %}                        
                 {% for message in messages %}
