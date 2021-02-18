@@ -10,34 +10,36 @@
                     <div class="input-field">
                         <!-- Continent Select -->
                         <i class="fas fa-globe prefix"></i>
-                        <select>                            
+                        <select id="continent_name" name="continent_name" class="validate" required>                            
                             <option value="" disabled selected>Choose Recipe Continent</option>
                             {% for continent in continents %}
                                 <option value="{{ continent.continent_name }}">{{ continent.continent_name }}</option>
                             {% endfor %}
                         </select>
-                        <label>Continent</label>
+                        <label for="continent_name"></label>
                     </div>
                     <div class="input-field">                        
                         <!-- Country Select -->
                         <i class="fas fa-globe-americas prefix"></i>
-                        <select>                            
-                            <option value="" disabled selected>Choose Recipe Country</option>                            
-                            <option value="1">Option 1</option>
+                        <select id="country" name="country" class="validate" required>                            
+                            <option value="" disabled selected>Choose Recipe Country</option>
+                            {% for country in countries %}                            
+                                <option value="{{ country.country_name }}">{{ country.country_name }}</option>
+                            {% endfor %}
                         </select>
-                        <label>Country</label>
+                        <label for="country"></label>
                     </div>
                     <div class="input-field">
                         <!-- Recipe Name Input -->
                         <i class="fas fa-pen prefix"></i>
                         <input placeholder="Recipe Name" id="recipe_name" type="text" class="validate">
-                        <label for="recipe_name">Recipe Name</label>
+                        <label for="recipe_name"></label>
                     </div>
                     <div class="input-field">
                         <!-- Image URL Input -->
                         <i class="fas fa-camera prefix"></i>
                         <input placeholder="Image URL" id="image_url" type="text" class="validate">
-                        <label for="image_url">Image URL</label>
+                        <label for="image_url"></label>
                     </div>
                     <div>
                         <!-- Image Check field -->
@@ -50,21 +52,21 @@
                     <div class="input-field">
                         <i class="fas fa-file-alt prefix"></i>
                         <textarea id="description" class="materialize-textarea" placeholder="Recipe Description"></textarea>
-                        <label for="description">Textarea</label>
+                        <label for="description"></label>
                     </div>
                     <!-- Recipe Ingredients Input -->
                     <div class="input-field">
                         <i class="fas fa-list-ul prefix"></i>
                         <textarea id="ingredients" class="materialize-textarea" placeholder="Recipe Ingredients"></textarea>
-                        <label for="ingredients">Textarea</label>
+                        <label for="ingredients"></label>
                     </div>
                 </div>
                 <div class="col s12 m12 l4">
                     <!-- Recipe Method Input -->
                     <div class="input-field">
                         <i class="fas fa-list-ol prefix"></i>
-                        <textarea id="method" class="materialize-textarea"></textarea>
-                        <label for="method">Textarea</label>
+                        <textarea id="method" class="materialize-textarea" placeholder="Preparation Steps"></textarea>
+                        <label for="method"></label>
                     </div>
                 </div>
             </div>

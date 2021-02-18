@@ -107,7 +107,9 @@ def logout():
 @app.route("/add_recipe")
 def add_recipe():
     continents = mongo.db.continents.find()
-    return render_template("add_recipe.html", continents=continents)
+    countries = mongo.db.countries.find()
+    return render_template(
+        "add_recipe.html", continents=continents, countries=countries)
 
 
 @app.route("/full_recipe/<recipe_id>")
