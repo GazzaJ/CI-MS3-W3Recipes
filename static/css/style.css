@@ -15,17 +15,20 @@
 
 
 /*---------- Home Page ----------*/
-#hero-image {
-    position: relative;    
-    z-index: -1;
-    padding: 0;
-}
+
+
 
 /*---------- Recipe Cards ----------*/
 .recipe-image {
     max-height: 15rem;
 }
 
-.add-column {
-    background-color: aqua;
+/*---------- Full Recipe Page ----------*/
+#recipe-image {
+    width: 100%;
+}
+
+#ingredients li {
+    list-style-type: disc;
+    margin-left: 3rem;
 }
