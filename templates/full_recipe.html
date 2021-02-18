@@ -3,13 +3,15 @@
 
 <h1 class="center-align">{{ recipe.title }}</h1>
 
-<div id="recipe" class="row">
+<!-- Recipe Image and Description -->
+<div id="recipe" class="row card-panel grey lighten-5">
     <div class="col s12 m12 l6 center-align">
         <img id="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">
         <h5 class="left-align">Description</h5>
         <p class="left-align">{{ recipe.description }}</p>
-    </div>
+    </div>    
     <div class="col s12 m12 l6 center-align">
+        <!-- Ingredient List -->
         <div class="row">
             <div class="col s12">
                 <h5>Ingredients</h5>
@@ -20,6 +22,7 @@
                 </ul>
             </div>
         </div>
+        <!-- Preparation Method -->
         <div class="row">
             <div class="col s12">
                 <h5>Preparation</h5>
@@ -30,6 +33,12 @@
                 </ol>
             </div>
         </div>
+    </div>
+</div>
+<!-- Button to return to Recipes -->
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn"><i class="fas fa-back"></i>Back to Recipes</a>
     </div>
 </div>
 
