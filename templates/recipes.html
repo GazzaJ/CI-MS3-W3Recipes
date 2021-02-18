@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Recipes</h1>
+    <h1 class="center-align">Recipes</h1>
 
 <div class="col s12 m7">
     {% for recipe in recipes %}    
@@ -14,14 +14,16 @@
                 <p>{{ recipe.description }}</p>
             </div>
             <div class="card-action">
-                <a href="#">This is a link</a>
+                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
+                class="waves-effect waves-light btn-small">
+                <i class="fas fa-book-open"></i> View the full Recipe</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
 <div class="row">
-    <div class="col s12">
+    <div class="col s12 right-align">
         <!-- Element Showed -->
         <a id="menu" class="waves-effect waves-light btn btn-floating"><i class="fas fa-star"></i></a>
         
