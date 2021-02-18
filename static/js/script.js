@@ -3,4 +3,5 @@ $(document).ready(function(){
     $('.tooltipped').tooltip(); 
     $('select').formSelect();
     $('.tap-target').tapTarget();
+    $('.parallax').parallax();
   });
