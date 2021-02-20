@@ -10,25 +10,15 @@
                     <div class="input-field">
                         <!-- Continent Select -->
                         <i class="fas fa-globe prefix"></i>
-                        <select id="continent_name" name="continent_name" class="validate" required>                            
-                            <option value="" disabled selected>Choose Recipe Continent</option>
-                            {% for continent in continents %}
-                                <option value="{{ continent.continent_name }}">{{ continent.continent_name }}</option>
-                            {% endfor %}
-                        </select>
-                        <label for="continent_name"></label>
-                    </div>
-                    <div class="input-field">                        
-                        <!-- Country Select -->
-                        <i class="fas fa-globe-americas prefix"></i>
-                        <select id="country" name="country" class="validate" required>                            
+                        <select id="country_name" name="country_name" class="validate" required>                            
                             <option value="" disabled selected>Choose Recipe Country</option>
-                            {% for country in countries %}                            
-                                <option value="{{ country.country_name }}">{{ country.country_name }}</option>
+                            {% for country in countries %}
+                                <option value="{{ country.country }}">{{ country.country }}</option>
                             {% endfor %}
                         </select>
-                        <label for="country"></label>
+                        <label for="country_name"></label>
                     </div>
+                    
                     <div class="input-field">
                         <!-- Recipe Name Input -->
                         <i class="fas fa-pen prefix"></i>

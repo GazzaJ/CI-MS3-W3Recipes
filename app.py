@@ -101,15 +101,14 @@ def logout():
     # Remove the user from the session cookies
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login")) # Change to Home later!!!
+    return redirect(url_for("home"))
 
 
 @app.route("/add_recipe")
-def add_recipe():
-    continents = mongo.db.continents.find()
+def add_recipe():    
     countries = mongo.db.countries.find()
     return render_template(
-        "add_recipe.html", continents=continents, countries=countries)
+        "add_recipe.html", countries=countries)
 
 
 @app.route("/full_recipe/<recipe_id>")
