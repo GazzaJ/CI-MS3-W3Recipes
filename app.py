@@ -110,7 +110,7 @@ def add_recipe():
         recipe = {
             "country_name": request.form.get("country_name"),
             "title": request.form.get("title"),
-            "image_url": request.form.get("image_url"),
+            "image": request.form.get("image_url"),
             "description": request.form.get("description"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
