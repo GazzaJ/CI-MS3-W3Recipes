@@ -12,8 +12,9 @@
             <div class="card-content">
                 <h4 class="header">{{ recipe.title }}</h4>
                 <p>{{ recipe.description }}</p>
+                <p><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>
             </div>
-            <div class="card-action">
+            <div class="card-action center-align">
                 <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
                 class="waves-effect waves-light btn-small">
                 <i class="fas fa-book-open"></i> View the full Recipe</a>
@@ -22,7 +23,7 @@
     </div>
     {% endfor %}
 </div>
-<div class="row">
+<div class="row"><!-- Remove if not used -->
     <div class="col s12 right-align">
         <!-- Element Showed -->
         <a id="menu" class="waves-effect waves-light btn btn-floating"><i class="fas fa-star"></i></a>
