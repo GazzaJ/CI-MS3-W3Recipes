@@ -1,11 +1,12 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.tooltipped').tooltip(); 
-    $('select').formSelect();
+    $('select').formSelect();    
     $('.tap-target').tapTarget();
     $('.parallax').parallax();
   });
 
+  //----- Create numbers for "Servings" dropdown list 
   var servings = document.getElementById("servings");
   var numbers;
 
