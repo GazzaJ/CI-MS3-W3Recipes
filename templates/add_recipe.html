@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col s12 l4">
                     <div class="input-field">
-                        <!-- Continent Select -->
+                        <!-- Country Select -->
                         <i class="fas fa-globe prefix"></i>
                         <select id="country_name" name="country_name" class="validate" required>                            
                             <option value="" disabled selected>Choose Recipe Country</option>
@@ -17,13 +17,19 @@
                             {% endfor %}
                         </select>
                         <label for="country_name">Recipe Origin</label>
-                    </div>
-                    
+                    </div>                    
                     <div class="input-field">
                         <!-- Recipe Name Input -->
                         <i class="fas fa-pen prefix"></i>
                         <input placeholder="Recipe Name" id="title" name="title" type="text" class="validate" required>
                         <label for="title">Recipe Name</label>
+                    </div>                    
+                    <div class="input-field">
+                        <!-- Servings Input Field -->
+                        <i class="fas fa-utensils prefix"></i>
+                        <select id="servings" name="servings" class="validate" required>                                                       
+                        </select>
+                        <label for="servings">Servings</label>
                     </div>
                     <div class="input-field">
                         <!-- Image URL Input -->

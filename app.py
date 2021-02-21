@@ -112,6 +112,7 @@ def add_recipe():
             "title": request.form.get("title"),
             "image": request.form.get("image_url"),
             "description": request.form.get("description"),
+            "servings": request.form.get("servings"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
             "uploaded_by": session["user"]
