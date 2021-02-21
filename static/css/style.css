@@ -13,6 +13,9 @@
 
 /*---------- Base Template ----------*/
 
+main {
+    min-height: 95vh;
+}
 
 /*---------- Home Page ----------*/
 

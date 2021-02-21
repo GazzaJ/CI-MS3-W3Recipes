@@ -23,12 +23,7 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
-
-
+# ---------- Registration Form ----------
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -53,6 +48,7 @@ def register():
     return render_template("register.html")
 
 
+# ---------- Login Page ----------
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -83,6 +79,7 @@ def login():
     return render_template("login.html")
 
 
+# ---------- Profile Page ----------
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Retrieve the session user's username from the DB
@@ -96,25 +93,29 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/logout")
-def logout():
-    # Remove the user from the session cookies
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("home"))
+# ---------- Recipe Display Page ----------
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = mongo.db.recipes.find()
+    return render_template("recipes.html", recipes=recipes)
 
 
+# ---------- Add a New Recipe ----------
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        ingredients = request.form.get("ingredients")
+        ingredients = ingredients.split('\n')
+        method = request.form.get("method")
+        method = method.split('\n')
         recipe = {
             "country_name": request.form.get("country_name"),
             "title": request.form.get("title"),
             "image": request.form.get("image_url"),
             "description": request.form.get("description"),
             "servings": request.form.get("servings"),
-            "ingredients": request.form.getlist("ingredients"),
-            "method": request.form.getlist("method"),
+            "ingredients": ingredients,
+            "method": method,
             "uploaded_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -126,10 +127,20 @@ def add_recipe():
         "add_recipe.html", countries=countries)
 
 
+# ---------- Display Full Recipe ----------
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})    
     return render_template("full_recipe.html", recipe=recipe)
+
+
+# ---------- Logout Page ----------
+@app.route("/logout")
+def logout():
+    # Remove the user from the session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
