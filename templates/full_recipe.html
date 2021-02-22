@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="center-align">{{ recipe.title }}</h1>
+<h1 class="center-align recipe-title">{{ recipe.title }}</h1>
 
 <!-- Recipe Image and Description -->
 <div id="recipe" class="row card-panel grey lighten-5">
@@ -9,7 +9,7 @@
         <img id="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">
         <h5 class="left-align">Description</h5>
         <p class="left-align">{{ recipe.description }}</p>
-        <p><em>Servings: </em>{{ recipe.servings }}</p>
+        <p><i class="fas fa-users"></i><em> Servings: </em>{{ recipe.servings }}</p>
         <div class="row">
             <div class="col s12">
                 <p><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>
