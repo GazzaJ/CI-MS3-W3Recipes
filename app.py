@@ -134,6 +134,20 @@ def full_recipe(recipe_id):
     return render_template("full_recipe.html", recipe=recipe)
 
 
+# ---------- Manage Recipes ----------
+# -- Allows user to edit and delete a recipe --
+@app.route("/manage_recipes")
+def manage_recipes():
+    return render_template("manage.html")
+
+
+# ---------- Edit a Recipe ----------
+@app.route("/edit_recipe/<recipe_id>")
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("edit_recipe.html", recipe=recipe)
+
+
 # ---------- Logout Page ----------
 @app.route("/logout")
 def logout():

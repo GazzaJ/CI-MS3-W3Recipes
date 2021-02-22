@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="center-align">Manage Your Recipes</h1>
+
+{% if session.user|lower == recipe.uploaded_by|lower or users.isAdmin %}    
+    <div class="col s12 m7">
+        {% for recipe in recipes %}    
+        <div class="card horizontal">
+            <div class="card-image">
+                <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h4 class="header recipe-title">{{ recipe.title }}</h4>
+                    <p>{{ recipe.description }}</p>
+                    <p><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>
+                </div>
+                <div class="card-action center-align">
+                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
+                    class="waves-effect waves-light btn-small">
+                    <i class="fas fa-book-open"></i> View the full Recipe</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock %}
