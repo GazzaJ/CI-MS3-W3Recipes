@@ -136,13 +136,14 @@ def full_recipe(recipe_id):
 
 # ---------- Manage Recipes ----------
 # -- Allows user to edit and delete a recipe --
-@app.route("/manage_recipes")
+@app.route("/manage_recipes", methods=["GET", "POST"])
 def manage_recipes():
-    return render_template("manage.html")
+    recipes = mongo.db.recipes.find()       
+    return render_template("manage.html", recipes=recipes,)
 
 
 # ---------- Edit a Recipe ----------
-@app.route("/edit_recipe/<recipe_id>")
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)

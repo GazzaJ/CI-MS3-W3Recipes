@@ -13,10 +13,11 @@
                         <select id="country_name" name="country_name" class="validate" required>                            
                             <option value="" disabled>Choose Recipe Country</option>
                             {% for country in countries %}
-                                {% if country.country_name == recipe.country_name %}
+                                {% if country.country == recipe.country %}
                                     <option value="{{ country.country }}" selected>{{ country.country }}</option>
                                 {% else %}
                                     <option value="{{ country.country }}">{{ country.country }}</option>
+                                {% endif %}
                             {% endfor %}
                         </select>
                         <label for="country_name">Recipe Origin</label>
