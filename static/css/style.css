@@ -81,3 +81,9 @@ main {
     list-style-type: disc;
     margin-left: 3rem;
 }
+
+/*---------- Edit Recipes ----------*/
+
+.edit-card {
+    height: 30rem;
+}
