@@ -144,9 +144,10 @@ def manage_recipes():
 
 # ---------- Edit a Recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
-def edit_recipe(recipe_id):
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe.html", recipe=recipe)
+def edit_recipe(recipe_id):    
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    countries = mongo.db.countries.find()
+    return render_template("edit_recipe.html", recipe=recipe, countries=countries)
 
 
 # ---------- Logout Page ----------

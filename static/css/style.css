@@ -87,3 +87,9 @@ main {
 .edit-card {
     height: 30rem;
 }
+
+.edit-img {
+    max-height: 20rem;
+    width: auto;
+    border: 0.25rem solid #000;
+}
