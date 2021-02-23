@@ -2,23 +2,22 @@
 {% block content %}
     <h1 class="center-align">Recipes</h1>
 
-<div class="col s12 m7">
-    {% for recipe in recipes %}    
-    <div class="card horizontal">
-        <div class="card-image">
-            <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">
-        </div>
-        <div class="card-stacked">
+<div class="row">
+    {% for recipe in recipes %}
+    <div class="col s12 m6 l4">            
+        <div class="card">
+            <div class="card-image">
+                <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
+                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
+                    class="btn-floating halfway-fab waves-effect waves-light red">
+                    <i class="fas fa-search-plus"></i>
+                </a>
+            </div>            
             <div class="card-content">
-                <h4 class="header recipe-title">{{ recipe.title }}</h4>
+                <h4 class="card-title recipe-title">{{ recipe.title }}</h4>                    
                 <p>{{ recipe.description }}</p>
                 <p><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>
-            </div>
-            <div class="card-action center-align">
-                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
-                class="waves-effect waves-light btn-small">
-                <i class="fas fa-book-open"></i> View the full Recipe</a>
-            </div>
+            </div>                
         </div>
     </div>
     {% endfor %}

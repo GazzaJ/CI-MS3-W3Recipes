@@ -1,3 +1,7 @@
+/* {
+    border: 1px solid red;
+}*/
+
 /*---------- Fonts ----------*/
 @import url('https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
@@ -34,6 +38,7 @@ p, li {
 
 
 
+/*----------  ----------*/
 
 .flashes h4 {
     line-height: 2;
@@ -50,8 +55,21 @@ main {
 
 
 /*---------- Recipe Cards ----------*/
+
+.card {
+    height: 28rem;
+}
+
 .recipe-image {
     max-height: 15rem;
+}
+
+.card-content {
+    padding-top: 1rem;
+}
+
+.recipe-title {
+    margin-top: 1rem;
 }
 
 /*---------- Full Recipe Page ----------*/
