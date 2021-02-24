@@ -112,6 +112,8 @@ def add_recipe():
             "country_name": request.form.get("country_name"),
             "title": request.form.get("title"),
             "image": request.form.get("image_url"),
+            "prep_time": request.form.get("prep_time"),
+            "cooking_time": request.form.get("cooking_time"),
             "description": request.form.get("description"),
             "servings": request.form.get("servings"),
             "ingredients": ingredients,
