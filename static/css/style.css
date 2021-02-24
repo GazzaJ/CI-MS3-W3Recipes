@@ -72,6 +72,10 @@ main {
     margin-top: 1rem;
 }
 
+.recipe-cards {
+    padding: 0.1rem;
+}
+
 /*---------- Full Recipe Page ----------*/
 #recipe-image {
     width: 100%;

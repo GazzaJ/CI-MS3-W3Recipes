@@ -11,6 +11,14 @@
         <p class="left-align">{{ recipe.description }}</p>
         <p><i class="fas fa-users"></i><em> Servings: </em>{{ recipe.servings }}</p>
         <div class="row">
+            <div class="col s12 m6 l6">
+                <p><i class="fas fa-stopwatch"></i><em> Prep time: </em>{{ recipe.prep_time }}</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <p><i class="fas fa-hourglass-half"></i><em> Cooking Time: </em>{{ recipe.cooking_time }}</p>
+            </div>
+        </div>
+        <div class="row">
             <div class="col s12">
                 <p><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>
             </div>
