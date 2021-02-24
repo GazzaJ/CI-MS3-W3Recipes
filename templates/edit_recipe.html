@@ -61,13 +61,15 @@
                     <!-- Preparation Time Input -->
                     <div class="input-field">
                         <i class="fas fa-stopwatch prefix"></i>
-                        <input value="{{ recipe.prep_time }}" id="prep_time" type="text" class="validate" required>
+                        <input value="{{ recipe.prep_time }}" id="prep_time" 
+                            name="prep_time" type="text" class="validate" required>
                         <label for="prep_time">Preparation Time</label>
                     </div>
                     <!-- Cooking Time Input Field -->
                     <div class="input-field">
                         <i class="fas fa-hourglass-half prefix"></i>
-                        <input value="{{ recipe.cooking_time }}" id="cooking_time" type="text" class="validate" required>
+                        <input value="{{ recipe.cooking_time }}" id="cooking_time" 
+                            name="cooking_time" type="text" class="validate" required>
                         <label for="cooking_time">Cooking Time</label>
                     </div>
                     <!-- Recipe Description Field -->                    
