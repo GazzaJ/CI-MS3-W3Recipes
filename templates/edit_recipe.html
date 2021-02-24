@@ -9,7 +9,7 @@
                 <div class="col s12 l4">
                     <div class="input-field">
                         <!-- Country Select -->
-                        <i class="fas fa-globe prefix"></i>
+                        <i class="fas fa-globe-americas prefix"></i>
                         <select id="country_name" name="country_name" class="validate" required>                            
                             <option value="" disabled>Choose Recipe Country</option>
                             {% for country in countries %}
@@ -31,7 +31,7 @@
                     </div>                    
                     <div class="input-field">
                         <!-- Servings Input Field -->
-                        <i class="fas fa-utensils prefix"></i>
+                        <i class="fas fa-users prefix"></i>
                         <select id="servings" name="servings" class="validate" required>
                             <option value="" disabled>Number of servings</option>
                             {% for i in range(1, 31) %}
@@ -41,7 +41,7 @@
                                     <option value="{{ i }}">{{ i }}</option>
                                 {% endif %}
                             {% endfor %}
-                        </select>>
+                        </select>
                         <label for="servings">Servings</label>
                     </div>
                     <div class="input-field">
@@ -58,6 +58,18 @@
                 </div>                    
                                 
                 <div class="col s12 m12 l4">
+                    <!-- Preparation Time Input -->
+                    <div class="input-field">
+                        <i class="fas fa-stopwatch prefix"></i>
+                        <input value="{{ recipe.prep_time }}" id="prep_time" type="text" class="validate" required>
+                        <label for="prep_time">Preparation Time</label>
+                    </div>
+                    <!-- Cooking Time Input Field -->
+                    <div class="input-field">
+                        <i class="fas fa-hourglass-half prefix"></i>
+                        <input value="{{ recipe.cooking_time }}" id="cooking_time" type="text" class="validate" required>
+                        <label for="cooking_time">Cooking Time</label>
+                    </div>
                     <!-- Recipe Description Field -->                    
                     <div class="input-field">
                         <i class="fas fa-file-alt prefix"></i>

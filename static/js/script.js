@@ -4,5 +4,6 @@ $(document).ready(function(){
     $('select').formSelect();    
     $('.tap-target').tapTarget();
     $('.parallax').parallax();
+    $('.fixed-action-btn').floatingActionButton();
   });
   

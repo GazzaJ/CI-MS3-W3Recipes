@@ -86,6 +86,30 @@ main {
     margin-left: 3rem;
 }
 
+
+/*---------- Manage Recipes ----------*/
+
+.edit-pic {
+    max-height: 15rem;
+}
+
+.card-action {
+    padding: 0rem;    
+}
+
+.fixed-action-btn {
+    position: relative; 
+    float: right; 
+    bottom: 4rem; 
+    right: 0.25rem
+}
+
+.edit-content {
+    position: relative;
+    padding-top: 0 !important;
+    top: 0;
+}
+
 /*---------- Edit Recipes ----------*/
 
 .edit-card {
@@ -93,7 +117,8 @@ main {
 }
 
 .edit-img {
-    max-height: 20rem;
+    max-height: 15rem;
     width: auto;
     border: 0.25rem solid #000;
 }
+
