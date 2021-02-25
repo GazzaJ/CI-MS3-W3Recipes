@@ -3,36 +3,38 @@
     <h1 class="center-align">Manage Your Recipes</h1>
 
         <div class="row">
-        {% for recipe in recipes %}    
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image">
-                        <img class="recipe-image edit-pic responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">
-                    </div>
-                    <div class="card-action">
-                        <div class="fixed-action-btn horizontal">
-                            <a class="btn-floating btn-large blue">
-                                <i class="fas fa-user-edit"></i>
-                            </a>
-                            <ul>
-                                <!-- Edit Recipe Link -->
-                                <li><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" 
-                                    class="btn-floating orange"><i class="fas fa-edit"></i></a></li>
-                                <!-- Delete Recipe Link -->
-                                <li><a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" 
-                                    class="btn-floating red modal-trigger"><i class="fas fa-trash-alt"></i></a></li>                                
-                            </ul>
+        {% for recipe in recipes %}
+            {% if session.user|lower == recipe.uploaded_by|lower%}    
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="recipe-image edit-pic responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                        </div>
+                        <div class="card-action">
+                            <div class="fixed-action-btn horizontal">
+                                <a class="btn-floating btn-large blue">
+                                    <i class="fas fa-user-edit"></i>
+                                </a>
+                                <ul>
+                                    <!-- Edit Recipe Link -->
+                                    <li><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" 
+                                        class="btn-floating orange"><i class="fas fa-edit"></i></a></li>
+                                    <!-- Delete Recipe Link -->
+                                    <li><a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" 
+                                        class="btn-floating red modal-trigger"><i class="fas fa-trash-alt"></i></a></li>                                
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-content edit-content">
+                            <h4 class="card-title recipe-title">{{ recipe.title }}</h4>
+                            <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
+                            <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
+                            <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
+                            <p class="recipe-cards"><i class="fas fa-upload"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>                        
                         </div>
                     </div>
-                    <div class="card-content edit-content">
-                        <h4 class="card-title recipe-title">{{ recipe.title }}</h4>
-                        <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
-                        <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
-                        <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
-                        <p class="recipe-cards"><i class="fas fa-upload"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>                        
-                    </div>
                 </div>
-            </div>
+            {% endif %}
         {% endfor %}
     </div>
 
