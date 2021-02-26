@@ -76,6 +76,12 @@ main {
     padding: 0.1rem;
 }
 
+/*---------- Search Card ----------*/
+
+#search-button {
+    margin-left: 1rem;
+}
+
 /*---------- Full Recipe Page ----------*/
 
 #recipe-image {

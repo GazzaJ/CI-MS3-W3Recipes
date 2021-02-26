@@ -98,16 +98,29 @@ def profile(username):
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    countries = mongo.db.countries.find().sort("country", 1)
+    return render_template(
+        "recipes.html", recipes=recipes, countries=countries)
 
 
-# ---------- Search Recipes ----------
+# ---------- Recipe Text Search ----------
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    text_search = request.form.get("text_search")
-    recipes = list(mongo.db.recipes.find(
+    text_search = request.form.get("text_search")    
+    recipes = list(mongo.db.recipes.find(        
         {"$text": {"$search": text_search}}))
-    return render_template("recipes.html", recipes=recipes)
+    return render_template(
+        "recipes.html", recipes=recipes,)
+
+
+# ---------- Recipe Filter by Country ----------
+@app.route("/filter", methods=["GET", "POST"])
+def filter():
+    country_filter = request.form.get("country_filter")
+    recipes = list(mongo.db.recipes.find(        
+        {"$text": {"$search": country_filter}}))
+    return render_template(
+        "recipes.html", recipes=recipes,)
 
 
 # ---------- Add a New Recipe ----------

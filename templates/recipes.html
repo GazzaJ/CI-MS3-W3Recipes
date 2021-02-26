@@ -2,18 +2,38 @@
 {% block content %}
     <h1 class="center-align">Recipes</h1>
 
-    <div class="row card-panel">
-        <form class="col s12" action="{{ url_for('search') }}" method="post">
-            <div class="valign-wrapper center-align">
-                <div class="input-field col s12">
-                    <i class="fas fa-search prefix"></i>
-                    <input type="text" name="text_search" id="text_search" class="validate" minlength="3">
-                    <label for="text_search"></label>
+    <div class="row">
+        <form class="col s12 m6 card-panel" action="{{ url_for('filter') }}" method="post">            
+            <div class="input-field col s12">                                     
+                <i class="fas fa-globe-americas prefix"></i>
+                <select id="country_filter" name="country_filter" class="validate">                            
+                    <option value="" disabled selected>Filter by Country</option>
+                    {% for country in countries %}
+                        <option value="{{ country.country }}">{{ country.country }}</option>
+                    {% endfor %}
+                </select>
+                <label for="country_filter"></label>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
+                    <button id="search-button" class="btn waves-effect waves-light green" type="submit">Search
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-                <div class="col s12">
-                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset</a>
-                    <button class="btn waves-effect waves-light green" type="submit">Search
-                        <i class="fas fa-search prefix"></i>
+            </div>            
+        </form>    
+        <form class="col s12 m6 card-panel" action="{{ url_for('search') }}" method="post">
+            <div class="input-field col s12">
+                <i class="fas fa-search prefix"></i>
+                <input type="text" name="text_search" id="text_search" placeholder="Enter search text" class="validate" minlength="3">
+                <label for="text_search"></label>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
+                    <button id="search-button" class="btn waves-effect waves-light green" type="submit">Search
+                        <i class="fas fa-search"></i>
                     </button>                    
                 </div>
             </div>
