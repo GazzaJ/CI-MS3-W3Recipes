@@ -2,41 +2,59 @@
 {% block content %}
     <h1 class="center-align">Recipes</h1>
 
-<div class="row">
-    {% for recipe in recipes %}
-    <div class="col s12 m6 l4">            
-        <div class="card">
-            <div class="card-image">
-                <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
-                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
-                    class="btn-floating halfway-fab waves-effect waves-light red">
-                    <i class="fas fa-search-plus"></i>
-                </a>
-            </div>            
-            <div class="card-content">
-                <h4 class="card-title recipe-title">{{ recipe.title }}</h4>                    
-                <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
-                <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
-                <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
-                <p class="recipe-cards"><i class="fas fa-upload"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>
-            </div>                
-        </div>
+    <div class="row card-panel">
+        <form class="col s12" action="{{ url_for('search') }}" method="post">
+            <div class="valign-wrapper center-align">
+                <div class="input-field col s12">
+                    <i class="fas fa-search prefix"></i>
+                    <input type="text" name="text_search" id="text_search" class="validate" minlength="3">
+                    <label for="text_search"></label>
+                </div>
+                <div class="col s12">
+                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset</a>
+                    <button class="btn waves-effect waves-light green" type="submit">Search
+                        <i class="fas fa-search prefix"></i>
+                    </button>                    
+                </div>
+            </div>
+        </form>
     </div>
-    {% endfor %}
-</div>
-<div class="row"><!-- Remove if not used -->
-    <div class="col s12 right-align">
-        <!-- Element Showed -->
-        <a id="menu" class="waves-effect waves-light btn btn-floating"><i class="fas fa-star"></i></a>
-        
-        <!-- Tap Target Structure -->
-        <div class="tap-target" data-target="menu">
-            <div class="tap-target-content">
-                <h5>Title</h5>
-                <p>A bunch of text</p>
+
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col s12 m6 l4">            
+            <div class="card">
+                <div class="card-image">
+                    <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
+                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
+                        class="btn-floating halfway-fab waves-effect waves-light red">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>            
+                <div class="card-content">
+                    <h4 class="card-title recipe-title">{{ recipe.title }}</h4>                    
+                    <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
+                    <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
+                    <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
+                    <p class="recipe-cards"><i class="fas fa-upload"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>
+                </div>                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row"><!-- Remove if not used -->
+        <div class="col s12 right-align">
+            <!-- Element Showed -->
+            <a id="menu" class="waves-effect waves-light btn btn-floating"><i class="fas fa-star"></i></a>
+            
+            <!-- Tap Target Structure -->
+            <div class="tap-target" data-target="menu">
+                <div class="tap-target-content">
+                    <h5>Title</h5>
+                    <p>A bunch of text</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

@@ -101,6 +101,15 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+# ---------- Search Recipes ----------
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    text_search = request.form.get("text_search")
+    recipes = list(mongo.db.recipes.find(
+        {"$text": {"$search": text_search}}))
+    return render_template("recipes.html", recipes=recipes)
+
+
 # ---------- Add a New Recipe ----------
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
@@ -133,7 +142,7 @@ def add_recipe():
 # ---------- Display Full Recipe ----------
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})    
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("full_recipe.html", recipe=recipe)
 
 
@@ -142,8 +151,8 @@ def full_recipe(recipe_id):
 @app.route("/manage_recipes", methods=["GET", "POST"])
 def manage_recipes():
     admin = mongo.db.users.find_one(
-        {"username": session["user"]})["is_admin"]    
-    recipes = mongo.db.recipes.find()          
+        {"username": session["user"]})["is_admin"]
+    recipes = mongo.db.recipes.find()
     return render_template("manage.html", recipes=recipes, admin=admin)
 
 
@@ -173,7 +182,8 @@ def edit_recipe(recipe_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     countries = mongo.db.countries.find().sort("country", 1)
-    return render_template("edit_recipe.html", recipe=recipe, countries=countries)
+    return render_template(
+        "edit_recipe.html", recipe=recipe, countries=countries)
 
 
 # ---------- Delete a Recipe ----------
