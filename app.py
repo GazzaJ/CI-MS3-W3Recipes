@@ -117,7 +117,7 @@ def search():
 @app.route("/filter", methods=["GET", "POST"])
 def filter():
     country_filter = request.form.get("country_filter")
-    recipes = list(mongo.db.recipes.find(        
+    recipes = list(mongo.db.recipes.find(
         {"$text": {"$search": country_filter}}))
     return render_template(
         "recipes.html", recipes=recipes,)
