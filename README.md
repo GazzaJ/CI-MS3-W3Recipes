@@ -3,22 +3,18 @@
 # [**W3 Recipes**](https://gazzaj.github.io/CI-MS2-Discover-Kefalonia/)
 
 
-As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus I 
-thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better 
-way to do this than to get the site users to post their tried and tested favourite recipes.
+As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus I thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better way to do this than to get the site users to post their tried and tested favourite recipes.
 
-The primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enble those users to upload 
-their own recipes to share with other site users. The secondary purpose of the site is to provide the site owner with a means to promote a particular product.
+Thus the primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enble those users to upload their own recipes to share with other site users. The secondary purpose of the site is to provide the site owner with a means to promote a particular product.
 
-The objective is to achieved the above with a visually appealing, interactive yet intuitiveUX, which provides simple consistent navigation and interaction irrespective of the device. 
-Ultimately, I would like this site to be fun, and encourage people:
+The objective is to achieved the above with a visually appealing, interactive yet intuitive UX, which provides simple consistent navigation and interaction irrespective of the device. Ultimately, I would like this site to be fun, and encourage people:
  - to upload their favourite recipes
  - share the site and encourage their friends to also upload recipes
  - keep track of how popular their recipes are
  - keep track of our progress "filling the map"
 
 
-[The live website can be viewed here!]()
+[The live website can be viewed here!](https://ci-ms3-w3recipes.herokuapp.com/)
 
 ![Am I responsive images](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/am-i-responsive.png "Am I Responsive")
 
@@ -44,41 +40,56 @@ Ultimately, I would like this site to be fun, and encourage people:
 ______
 
 ## **User Experience (UX)** <a name="user-experience"></a>
-
+In W3 Recipes I have attempted to produce a simple clean and intuitive site which is easy to navigate and simple to use. Despite being spread over many pages, each page has a single purpose related to C.R.U.D functionality. Navigation is achieved with a typical navbar with mobile responsive behaviour. The imageray and typography are also key to 
 
 
 ### **User Stories** <a name="stories"></a>
+The following user stories were developed during the planning stages for this site.
+1. _As a_ **first time visitor**, _I need to_ **understand the purpose of the site**, _in order to_ **consider exploring the site further**.
 
-1. **_As a_** first time visitor, **_I need to_** understand the purpose of the site, **_in order to_** consider exploring the site any further.
+2. _As a_ ** first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**.
 
-2. **_As a_** first time visitor, **_I need to_** quickly and easily register on the site,  **_in order to_** fully interact with the site.
+3. _As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**.
 
-3. **_As a_** user, **_Ineed to_** quickly and easily access the recipe collection **_in order to_** view the ingredients and method to be able to make the recipe
+4. _As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**.
 
-4. **_As a_** user, **_I need to_** have the ability to create a new recipe, **_in order to_** upload and share my favourite recipes with other site users
+5. _As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**.
 
-5. **_As a_** returning user, **_I need to_** have the ability to edit or delete a recipe I have uploaded **_in order to_** make changes to, or remove an out of date or incorrect data.
+6. _As a _ **site owner**, _I need to_ **ensure security of information**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**.
 
-6. **_As a _** site owner, **_I need to_** ensure security of information, **_in order to_** prevent unauthorised editting or deletion of user uploaded data.
-
-7.  **_As a _** site owner, **_I need to_** promote a product, **_in order to_** prevent unauthorised editting or deletion user uploaded data.
+7.  _As a _ **site owner**, _I need to_ **promote a product, _in order to_ **promote a preferred product on the site**.
 
 
 ### **The 5 Planes of UX** <a name="planes"></a>
 The five planes provide a framework for discussing user experience.
 
 #### **Strategy**  
-
+The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching, uploading and editting their favourite recipes. The aim is to try and upload  as many recipes from as many different countries as possible to provide a wide array of recipes, and as a bit of fun to track progress in this respect.
 
 #### **Scope**  
+Functionality is strictly limited until each user decides to register on the website, however once logged in users are able to:
+ - **Create** or upload a recipe into the database which can then be viewed by all other registered users
+ - **Read**, or view all of the recipes stored in the database.
+    - The list of recipes can be filtered by country of origin
+    - Search functionality enables the user to search the title and ingredient fields for keywords of their choice.
+ - **Update** any of their own recipes, to change any of the previously stored content, or add additional information (within the limits of the input form)
+ - **Delete** recipes they themselves have uploaded. This functionality is NOT extended to other users recipes.
 
+Users will also be able to track which countries recipes have been uploaded for using the Dashboard page; and upvote recipes they like or have tried.
 
 ##### Functional Requirements
+Simple and intuitive navbar with a clear mobile responsive equivalent.
+Navbar selections which increases once a user registers or logs into the website
+One page each to c
 
+>A key consideration from early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
 
 ##### Content Requirements
+I am a keen cook, and having an image of a recipe is just as important as the ingredient list and preparation steps, as it provides an enticing view of the endpoint and helps to whet the users appetite. Thus including images with each recipe is a key component.
+The typography selected for this site was also important, and needed to be fun yet functional. I have selected more cursive fonts to try and emulate a recipe notebook style.
+I deliberately stuck with a cleand and simple structured layout to make it easy to view the content.
 
-
+A consistent design is provided through Flask template inheritance
 
 
 
@@ -94,7 +105,21 @@ The five planes provide a framework for discussing user experience.
 
 
 #### **Skeleton** 
+The W3 Recipes website comprises three main pages:
+ - Landing Page
+ - Registration Page for first time visitors to gain access to the content
+ - Log-in Page for returning visitors
 
+Assuming the user elects to register they are provided access to the remaining pages
+ - Recipes page displays 9 recipe cards on each page
+   - Filter and search options provided to reduce the number of recipes displayed
+ - Individual Recipe pages providing the full recipe detail
+ - A Page to add a new recipe
+ - A page for the users to manage (Update or Delete) their recipes
+   - Echoes the functionality provided by the Recipes and Add Recipe pages
+ - A dashboard to track where recipes are uploaded for
+
+All of these options are provided on a fairly typical and intuitive navbar. 
 
 ##### Interface Design
 
@@ -117,8 +142,7 @@ The bulk of the website is incorporated on the main Explore/Discover page which 
 ![Landing Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/landing-page.png "Landing Page Wireframe")
 
 ##### Main Recipe Page
-The Map page is the focal point for the website, combining interactive elements with Google map functionality. Clicking category buttons will drop Google Map markers on the Map;
- when each marker is clicked, information displays on the left-hand pane. This will include specific location image and information.
+The Map page is the focal point for the website, combining interactive elements with Google map functionality. Clicking category buttons will drop Google Map markers on the Map; when each marker is clicked, information displays on the left-hand pane. This will include specific location image and information.
 
 ![Map Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/map-page.png "Map Page Wireframe")
 
@@ -155,6 +179,16 @@ The Map page is the focal point for the website, combining interactive elements 
 
 
 ##### **Typography**  
+Selecting the correct typography for this site is just as important as the other design aspects. I want the fonts to reflect a more relaxed style, welcoming the user into the site.
+ - Readable
+ - Relaxed
+
+I researched different styles which could be used for food related content:
+ - https://www.creativebloq.com/inspiration/10-mouth-watering-restaurant-menu-fonts
+ - https://line25.com/fonts/best-fonts-for-food-industry-design
+
+I loaded various fonts into my CSS file and experimented with different combinations to find ones which compolemented each other and provided an asthetically pleasing look to the site.
+
 
 
 ##### **Imagery** 
@@ -242,8 +276,7 @@ The following testing has been carried out to validate how the website addresses
 ![Contact Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-form.jpg "Contact Page view")
 
 ### **Functionality Testing** <a name="functionality-testing"></a>
-The following table captures the functional testing performed on the website to ensure it works as desired. I have tested on the listed browsers only using Windows version 
-1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.
+The following table captures the functional testing performed on the website to ensure it works as desired. I have tested on the listed browsers only using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.
 
 |   Test       |Purpose          | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 83.0 (64-bit) |
 |:------------:|-----------------|----------------|---------------|:------:|:-------:|
@@ -271,8 +304,7 @@ The following table captures the functional testing performed on the website to 
 | 022          |   | |  |  |  |
 |023           |   | |  |  |  |
 
-The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, 
-for first pass testing.
+The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
 
 ### **Code Quality and Validation** <a name="code-validation"></a> 
 |Test|Process|Result| Comment |
@@ -300,8 +332,7 @@ This helped me make some changes to maintain responsiveness.
 
 
 ### **Usability Testing** <a name="usability-testing"></a>"
-I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I 
-received in return:
+I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
 
 
 ### **Responsiveness Testing** <a name="responsiveness-testing"></a>
@@ -332,38 +363,24 @@ The website has been performance testing using the following tools:
 ______
 
 ## **Bugs and Issues** <a name="bugs"></a>
-- The contact form not connecting with EmailJS.
+|  Issue #   |  Bug or Issue  |  Description  |  Solution  |
+|:----------:|:--------------:|---------------|------------|
+| 001 |Flash Messages displayed in a modal|While conducting continuous testing I noticed the website was experienceing a sporadic issue with the page width increasing beyond the viewport width. Initially thought to affect all pages and caused by the moibile responsive navbar | While troubleshooting the issue I realised the problem was confined to my Recipes.html page, and thus couldn't be caused by the navber which is a consistent element on all pages. The only other interactive element on this page was an unused Materialize CSS "FeatureDiscovery" element. After deletion the Page width issue didn't reoccur
+| 002 |Delete Confirmation in a modal|When a user selects delete on the "Manage Recipes" page I wanted a confirmation email to display before the recipe could be removed from the website and database. Initial attemps resulted in recipes being deleted one by one in a sequence since the modal was not linked to the specific recipe
 
-This has been an on / off occurrence ever since I have completed the Contact form. The Devtools Console didn't appear to be displaying any errors; however, on closer inspection an error did flash up but was immediately cleared. I had to video the Console while clicking submit to catch the error.
-Research on Stackoverflow confirmed this was likely linked to:
-   - The form clearing itself on "Submit"
-I subsequently traced this to: 
-   - My Javascript code for EmailJS
-![EmailJS Error](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/emailjs-error.jpg "EmailJS Error")
+ 
 
-I was originally using the code provided in the EmailJS documentation, but this resulted in similar errors. I subsequently adapted the CI Code, from the EMail JS walk through, combined with the Email JS code to try and solve the error.
-The solution was to use the Email JS code, but to add **onsubmit = "return false;"** to the Form Tag.
-![Console Success](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/emailjs-success.jpg "Console Success")
+ - Page Width Issue
 
-![Email JS Status 200](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/emailjs-status200.png "Email JS Status 200")
-
-![Gmail Confirmation](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/emailjs-confirm.png "Gmail Confirmation")
-
--  Devtools Scrolling from information section onto the map is disjointed.
-When inspecting the website on Google Devtools it takes a second or two for the page to transition/scroll between the Information pane and the map.
-I believe this to be the result of the overflow: auto style I have applied to the poi-text div for mobile devices and is confined to Devtools functionality. This delay DOES NOT occur on actual mobile devices. There is a stop as the text finishes scrolling and the map scrolls as you continue to scroll. The double scroll bars are visible on actual devices, but can be seen on this Responsiveness test.
-
-![Scroll](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/devtools-scroll.png "Scroll")
-
+ I conducted some troubleshooting to investigate the problem.
+>.
 ______
 
 ## **Deployment** <a name="deployment"></a>
-All of the files necessary to run this website have been stored in a GitHub repository. If you would like to work on your own version of this site or use it as a template for 
-your own work, you have the option to either fork, or make a clone of the original repo.
+All of the files necessary to run this website have been stored in a GitHub repository. If you would like to work on your own version of this site or use it as a template for your own work, you have the option to either fork, or make a clone of the original repo.
 
 ### **Forking the GitHub Repository**
-By forking the GitHub Repository you can make a copy of the original repository on your GitHub account, which enables you to view and/or make your own changes without affecting 
-the original repository. This can be achieved using the following steps...
+By forking the GitHub Repository you can make a copy of the original repository on your GitHub account, which enables you to view and/or make your own changes without affecting the original repository. This can be achieved using the following steps...
 
 - Log in to GitHub and locate the GitHub Repository
 - At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
