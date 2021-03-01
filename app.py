@@ -64,8 +64,7 @@ def login():
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome to W3 Recipes, {}".format(
                     request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+                return redirect(url_for("get_recipes"))
 
             else:
                 # Invalid password match
