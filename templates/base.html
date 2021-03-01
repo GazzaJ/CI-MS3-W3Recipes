@@ -27,7 +27,7 @@
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">W3 Recipes</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down navlinks">
                     <li><a href="{{ url_for('home') }}">Home</a></li>                    
                     {% if session.user %}
                         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
