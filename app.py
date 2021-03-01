@@ -164,7 +164,8 @@ def full_recipe(recipe_id):
 def manage_recipes():
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find() 
+
     return render_template("manage.html", recipes=recipes, admin=admin)
 
 
