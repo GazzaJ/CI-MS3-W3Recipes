@@ -207,6 +207,12 @@ def delete_recipe(recipe_id):
     return redirect(url_for("manage_recipes"))
 
 
+# ---------- Recipe Dashboard Page ----------
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+
 # ---------- Logout Page ----------
 @app.route("/logout")
 def logout():
