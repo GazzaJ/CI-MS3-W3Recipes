@@ -164,9 +164,13 @@ def full_recipe(recipe_id):
 def manage_recipes():
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
-    recipes = mongo.db.recipes.find() 
-
-    return render_template("manage.html", recipes=recipes, admin=admin)
+    recipes = mongo.db.recipes.find()
+    uploaded = mongo.db.recipes.count(
+        {"uploaded_by": session["user"]})
+    if uploaded == 0:
+        flash("You have not uploaded any recipes yet!")
+    return render_template("manage.html", recipes=recipes,
+        admin=admin, uploaded=uploaded)
 
 
 # ---------- Edit a Recipe ----------

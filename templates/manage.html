@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h1 class="center-align">Manage Your Recipes</h1>
-
+    <p class="center-align">You have uploaded {{ uploaded }} recipes</p>
         <div class="row">
         {% for recipe in recipes %}
             {% if session.user|lower == recipe.uploaded_by|lower or admin == true %}    
@@ -32,8 +32,7 @@
                             <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>                                                    
                         </div>
                     </div>
-                </div>
-                
+                </div>            
             {% endif %}            
             <!-- Delete Recipe - Check Message -->
             <div id="{{ recipe._id }}" class="modal">
@@ -46,8 +45,7 @@
                     <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
                         class="modal-close waves-effect waves-green btn red">Agree</a>
                 </div>
-            </div>
-            
+            </div>            
         {% endfor %}
-
+        
 {% endblock %}
