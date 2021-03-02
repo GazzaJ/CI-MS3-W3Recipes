@@ -7,10 +7,21 @@ $(document).ready(function(){
     $('.modal').modal();
   });
   
-  /*---------- FAB for Recipe Edit & Delete ----------*/
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
-      direction: 'left'
-    });
-  });
+/*---------- FAB for Recipe Edit & Delete ----------*/
+document.addEventListener('DOMContentLoaded', function() {
+var elems = document.querySelectorAll('.fixed-action-btn');
+var instances = M.FloatingActionButton.init(elems, {
+    direction: 'left'
+});
+});
+
+/*---------- Recipe Like Counter ----------*/
+var clicks = 1;
+
+document.getElementById("likes").innerHTML = clicks;
+
+$('#thumbs-up').click(function() {
+  clicks += 1;
+  document.getElementById("likes").innerHTML = clicks;
+  /*$('.like-counter').addClass("liked");*/
+});
