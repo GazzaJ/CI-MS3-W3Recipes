@@ -2,7 +2,7 @@
 {% block content %}
     <h1 class="center-align">Manage Your Recipes</h1>
     <p class="center-align">You have uploaded {{ uploaded }} recipes</p>
-        <div class="row">
+        <div class="row container">
         {% for recipe in recipes %}
             {% if session.user|lower == recipe.uploaded_by|lower or admin == true %}    
                 <div class="col s12 m6 l4">

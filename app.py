@@ -32,7 +32,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("This username already exists!")
+            flash("This username already exists!", "one")
             return redirect(url_for("register"))
 
         register = {
@@ -44,7 +44,7 @@ def register():
 
         # Place the new user into the session cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful")
+        flash("Registration Successful", "two")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
@@ -63,17 +63,17 @@ def login():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome to W3 Recipes, {}".format(
-                    request.form.get("username")))
+                    request.form.get("username")), "three")
                 return redirect(url_for("get_recipes"))
 
             else:
                 # Invalid password match
-                flash("Username / Password incorrect, please try again!")
+                flash("Username / Password incorrect, please try again!", "four")
                 return redirect(url_for("login"))
 
         else:
             # User doesn't exist
-            flash("Username / Password incorrect, please try again")
+            flash("Username / Password incorrect, please try again", "four")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -143,7 +143,7 @@ def add_recipe():
             "uploaded_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
-        flash("Recipe Successfully Added!")
+        flash("Recipe Successfully Added!", "five")
         return redirect(url_for("get_recipes"))
 
     countries = mongo.db.countries.find().sort("country", 1)
@@ -168,7 +168,7 @@ def manage_recipes():
     uploaded = mongo.db.recipes.count(
         {"uploaded_by": session["user"]})
     if uploaded == 0:
-        flash("You have not uploaded any recipes yet!")
+        flash("You have not uploaded any recipes yet!", "six")
     return render_template("manage.html", recipes=recipes,
         admin=admin, uploaded=uploaded)
 
@@ -194,7 +194,7 @@ def edit_recipe(recipe_id):
             "uploaded_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update)
-        flash("Recipe Successfully Edited!")
+        flash("Recipe Successfully Edited!", "seven")
         return redirect(url_for("manage_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -221,7 +221,7 @@ def dashboard():
 @app.route("/logout")
 def logout():
     # Remove the user from the session cookies
-    flash("You have been logged out")
+    flash("You have been logged out", "eight")
     session.pop("user")
     return redirect(url_for("home"))
 

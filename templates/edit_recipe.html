@@ -3,123 +3,127 @@
 
     <h1 class="center-align">Edit Your Recipe</h1>    
     
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-            <div class="row">
-                <div class="col s12 l4">
-                    <div class="input-field">
-                        <!-- Country Select -->
-                        <i class="fas fa-globe-americas prefix"></i>
-                        <select id="country_name" name="country_name" class="validate" required>                            
-                            <option value="" disabled>Choose Recipe Country</option>
-                            {% for country in countries %}
-                                {% if country.country == recipe.country_name %}
-                                    <option value="{{ country.country }}" selected>{{ country.country }}</option>
-                                {% else %}
-                                    <option value="{{ country.country }}">{{ country.country }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                        <label for="country_name">Recipe Origin</label>
-                    </div>                    
-                    <div class="input-field">
-                        <!-- Recipe Name Input -->
-                        <i class="fas fa-pen prefix"></i>
-                        <input value="{{ recipe.title }}" id="title" name="title" type="text" 
-                            class="validate" required>
-                        <label for="title">Recipe Name</label>
-                    </div>                    
-                    <div class="input-field">
-                        <!-- Servings Input Field -->
-                        <i class="fas fa-users prefix"></i>
-                        <select id="servings" name="servings" class="validate" required>
-                            <option value="" disabled>Number of servings</option>
-                            {% for i in range(1, 31) %}
-                                {% if i == recipe.servings %}
-                                    <option value="{{ recipe.servings }}" selected>{{ recipe.servings }}</option>
-                                {% else %}
-                                    <option value="{{ i }}">{{ i }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                        <label for="servings">Servings</label>
+    <div id="edit-add" class="row">
+        <div class="col s12">
+            <div class="row card-panel grey lighten-5">
+                <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+                    <div class="row">
+                        <div class="col s12 l4">
+                            <div class="input-field">
+                                <!-- Country Select -->
+                                <i class="fas fa-globe-americas prefix"></i>
+                                <select id="country_name" name="country_name" class="validate" required>                            
+                                    <option value="" disabled>Choose Recipe Country</option>
+                                    {% for country in countries %}
+                                        {% if country.country == recipe.country_name %}
+                                            <option value="{{ country.country }}" selected>{{ country.country }}</option>
+                                        {% else %}
+                                            <option value="{{ country.country }}">{{ country.country }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <label for="country_name">Recipe Origin</label>
+                            </div>                    
+                            <div class="input-field">
+                                <!-- Recipe Name Input -->
+                                <i class="fas fa-pen prefix"></i>
+                                <input value="{{ recipe.title }}" id="title" name="title" type="text" 
+                                    class="validate" required>
+                                <label for="title">Recipe Name</label>
+                            </div>                    
+                            <div class="input-field">
+                                <!-- Servings Input Field -->
+                                <i class="fas fa-users prefix"></i>
+                                <select id="servings" name="servings" class="validate" required>
+                                    <option value="" disabled>Number of servings</option>
+                                    {% for i in range(1, 31) %}
+                                        {% if i == recipe.servings %}
+                                            <option value="{{ recipe.servings }}" selected>{{ recipe.servings }}</option>
+                                        {% else %}
+                                            <option value="{{ i }}">{{ i }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <label for="servings">Servings</label>
+                            </div>
+                            <div class="input-field">
+                                <!-- Image URL Input -->
+                                <i class="fas fa-camera prefix"></i>
+                                <input value="{{ recipe.image }}" id="image_url" name="image_url" 
+                                    type="text" class="validate">
+                                <label for="image_url">Recipe Image</label>
+                            </div>
+                            <div>
+                                <!-- Image Display/Checking field -->
+                                <img src="{{ recipe.image }}" class="edit-img" alt="{{ recipe.title }}">
+                            </div>
+                        </div>                    
+                                        
+                        <div class="col s12 m12 l4">
+                            <!-- Preparation Time Input -->
+                            <div class="input-field">
+                                <i class="fas fa-stopwatch prefix"></i>
+                                <input value="{{ recipe.prep_time }}" id="prep_time" 
+                                    name="prep_time" type="text" class="validate" required>
+                                <label for="prep_time">Preparation Time</label>
+                            </div>
+                            <!-- Cooking Time Input Field -->
+                            <div class="input-field">
+                                <i class="fas fa-hourglass-half prefix"></i>
+                                <input value="{{ recipe.cooking_time }}" id="cooking_time" 
+                                    name="cooking_time" type="text" class="validate" required>
+                                <label for="cooking_time">Cooking Time</label>
+                            </div>
+                            <!-- Recipe Description Field -->                    
+                            <div class="input-field">
+                                <i class="fas fa-file-alt prefix"></i>
+                                <textarea id="description" name="description" 
+                                    class="materialize-textarea validate" required>
+                                    {{- recipe.description -}}
+                                </textarea>
+                                <label for="description">Recipe Description</label>
+                            </div>
+                            <!-- Recipe Ingredients Input -->
+                            <div class="input-field">
+                                <i class="fas fa-list-ul prefix"></i>
+                                <textarea id="ingredients" name="ingredients" 
+                                    class="materialize-textarea validate" required>
+                                    {%- for item in recipe.ingredients -%}
+                                        {{- item -}}{{ '\n' }}                                   
+                                    {%- endfor -%}
+                                </textarea>
+                                <label for="ingredients">Recipe Ingredients</label>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <!-- Recipe Method Input -->
+                            <div class="input-field">
+                                <i class="fas fa-list-ol prefix"></i>
+                                <textarea id="method" name="method" 
+                                    class="materialize-textarea validate" required>
+                                    {%- for step in recipe.method -%}
+                                        {{- step -}}{{ '\n' }}
+                                    {%- endfor -%}
+                                </textarea>
+                                <label for="method">Recipe Method</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <!-- Image URL Input -->
-                        <i class="fas fa-camera prefix"></i>
-                        <input value="{{ recipe.image }}" id="image_url" name="image_url" 
-                            type="text" class="validate">
-                        <label for="image_url">Recipe Image</label>
-                    </div>
-                    <div>
-                        <!-- Image Display/Checking field -->
-                        <img src="{{ recipe.image }}" class="edit-img" alt="{{ recipe.title }}">
-                    </div>
-                </div>                    
-                                
-                <div class="col s12 m12 l4">
-                    <!-- Preparation Time Input -->
-                    <div class="input-field">
-                        <i class="fas fa-stopwatch prefix"></i>
-                        <input value="{{ recipe.prep_time }}" id="prep_time" 
-                            name="prep_time" type="text" class="validate" required>
-                        <label for="prep_time">Preparation Time</label>
-                    </div>
-                    <!-- Cooking Time Input Field -->
-                    <div class="input-field">
-                        <i class="fas fa-hourglass-half prefix"></i>
-                        <input value="{{ recipe.cooking_time }}" id="cooking_time" 
-                            name="cooking_time" type="text" class="validate" required>
-                        <label for="cooking_time">Cooking Time</label>
-                    </div>
-                    <!-- Recipe Description Field -->                    
-                    <div class="input-field">
-                        <i class="fas fa-file-alt prefix"></i>
-                        <textarea id="description" name="description" 
-                            class="materialize-textarea validate" required>
-                            {{- recipe.description -}}
-                        </textarea>
-                        <label for="description">Recipe Description</label>
-                    </div>
-                    <!-- Recipe Ingredients Input -->
-                    <div class="input-field">
-                        <i class="fas fa-list-ul prefix"></i>
-                        <textarea id="ingredients" name="ingredients" 
-                            class="materialize-textarea validate" required>
-                            {%- for item in recipe.ingredients -%}
-                                 {{- item -}}{{ '\n' }}                                   
-                            {%- endfor -%}
-                        </textarea>
-                        <label for="ingredients">Recipe Ingredients</label>
-                    </div>
-                </div>
-                <div class="col s12 m12 l4">
-                    <!-- Recipe Method Input -->
-                    <div class="input-field">
-                        <i class="fas fa-list-ol prefix"></i>
-                        <textarea id="method" name="method" 
-                            class="materialize-textarea validate" required>
-                            {%- for step in recipe.method -%}
-                                {{- step -}}{{ '\n' }}
-                            {%- endfor -%}
-                        </textarea>
-                        <label for="method">Recipe Method</label>
-                    </div>
-                </div>
+                    <!-- Recipe Submit Button -->
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <!-- Cancel Edits -->
+                            <a href="{{ url_for('manage_recipes') }}" class="btn red">
+                                Cancel <i class="fas fa-times-circle right"></i>
+                            </a>
+                            <button type="submit" href="" class="btn waves-effect waves-light green accent-4 center-align">Edit Recipe
+                                <i class="fas fa-check-circle"></i>
+                            </button>
+                        </div>
+                    </div>            
+                </form>
             </div>
-            <!-- Recipe Submit Button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <!-- Cancel Edits -->
-                    <a href="{{ url_for('manage_recipes') }}" class="btn red">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
-                    <button type="submit" href="" class="btn waves-effect waves-light green accent-4 center-align">Edit Recipe
-                        <i class="fas fa-check-circle"></i>
-                    </button>
-                </div>
-            </div>            
-        </form>
+        </div>
     </div>
     
 {% endblock %}

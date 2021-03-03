@@ -60,20 +60,20 @@
         </ul>
     </header>
 
-    <section>
-        {%  with messages = get_flashed_messages() %}
+    <section>     
+        {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                {% for message in messages %}                    
-                    <div class="row flashes">
-                        <h4 class="center-align">{{ message }}</h4>
-                    </div>                    
+                {% for category, message in messages %}
+                        <div class="row flashes">
+                            <h4 class="center-align {{ category }}">{{ category }} - {{ message }}</h4>                            
+                        </div>                                                               
                 {% endfor %}
             {% endif %}
-        {% endwith %}
+        {% endwith %}            
     </section>
     
 
-    <main class="container">
+    <main>
         {% block content %}
         {% endblock %}
     </main>

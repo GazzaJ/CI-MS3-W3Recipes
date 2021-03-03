@@ -3,96 +3,100 @@
 
     <h1 class="center-align">Add Your Recipe Here</h1>    
     
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-            <div class="row">
-                <div class="col s12 l4">
-                    <div class="input-field">
-                        <!-- Country Select -->
-                        <i class="fas fa-globe-americas prefix"></i>
-                        <select id="country_name" name="country_name" class="validate" required>                            
-                            <option value="" disabled selected>Choose Recipe Country</option>
-                            {% for country in countries %}
-                                <option value="{{ country.country }}">{{ country.country }}</option>
-                            {% endfor %}
-                        </select>
-                        <label for="country_name">Recipe Origin</label>
-                    </div>                    
-                    <div class="input-field">
-                        <!-- Recipe Name Input -->
-                        <i class="fas fa-pen prefix"></i>
-                        <input placeholder="Recipe Name" id="title" name="title" type="text" class="validate" required>
-                        <label for="title">Recipe Name</label>
-                    </div>                    
-                    <div class="input-field">
-                        <!-- Servings Input Field -->
-                        <i class="fas fa-users prefix"></i>
-                        <select id="servings" name="servings" class="validate" required>
-                            <option value="" disabled selected>Number of servings</option>
-                            {% for i in range(1, 31) %}
-                                <option value="{{ i }}">{{ i }}</option>
-                            {% endfor %}
-                        </select>
-                        <label for="servings">Servings</label>
+    <div id="edit-add" class="row">
+        <div class="col s12">
+            <div class="row card-panel grey lighten-5">
+                <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+                    <div class="row">
+                        <div class="col s12 l4">
+                            <div class="input-field">
+                                <!-- Country Select -->
+                                <i class="fas fa-globe-americas prefix"></i>
+                                <select id="country_name" name="country_name" class="validate" required>                            
+                                    <option value="" disabled selected>Choose Recipe Country</option>
+                                    {% for country in countries %}
+                                        <option value="{{ country.country }}">{{ country.country }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="country_name">Recipe Origin</label>
+                            </div>                    
+                            <div class="input-field">
+                                <!-- Recipe Name Input -->
+                                <i class="fas fa-pen prefix"></i>
+                                <input placeholder="Recipe Name" id="title" name="title" type="text" class="validate" required>
+                                <label for="title">Recipe Name</label>
+                            </div>                    
+                            <div class="input-field">
+                                <!-- Servings Input Field -->
+                                <i class="fas fa-users prefix"></i>
+                                <select id="servings" name="servings" class="validate" required>
+                                    <option value="" disabled selected>Number of servings</option>
+                                    {% for i in range(1, 31) %}
+                                        <option value="{{ i }}">{{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="servings">Servings</label>
+                            </div>
+                            <div class="input-field">
+                                <!-- Image URL Input -->
+                                <i class="fas fa-camera prefix"></i>
+                                <input placeholder="Image URL" id="image_url" name="image_url" type="text" class="validate">
+                                <label for="image_url">Recipe Image</label>
+                            </div>
+                            <div>
+                                <!-- Image Display/Checking field -->
+                                <img src="" alt="">
+                            </div>
+                        </div>                    
+                                        
+                        <div class="col s12 m12 l4">
+                            <!-- Preparation Time Input -->
+                            <div class="input-field">
+                                <i class="fas fa-stopwatch prefix"></i>
+                                <input placeholder="Prep' Time (mins)" id="prep_time" 
+                                    name="prep_time" type="text" class="validate" required>
+                                <label for="prep_time">Preparation Time</label>
+                            </div>
+                            <!-- Cooking Time Input Field -->
+                            <div class="input-field">
+                                <i class="fas fa-hourglass-half prefix"></i>
+                                <input placeholder="Cooking Time (mins)" id="cooking_time" name="cooking_time" type="text" class="validate" required>
+                                <label for="cooking_time">Cooking Time</label>
+                            </div>
+                            <!-- Recipe Description Field -->                    
+                            <div class="input-field">
+                                <i class="fas fa-file-alt prefix"></i>
+                                <textarea id="description" name="description" class="materialize-textarea validate" placeholder="Recipe Description" required></textarea>
+                                <label for="description">Recipe Description</label>
+                            </div>
+                            <!-- Recipe Ingredients Input -->
+                            <div class="input-field">
+                                <i class="fas fa-list-ul prefix"></i>
+                                <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" placeholder="Recipe Ingredients" required></textarea>
+                                <label for="ingredients">Recipe Ingredients</label>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <!-- Recipe Method Input -->
+                            <div class="input-field">
+                                <i class="fas fa-list-ol prefix"></i>
+                                <textarea id="method" name="method" class="materialize-textarea validate" placeholder="Preparation Steps" required></textarea>
+                                <label for="method">Recipe Method</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <!-- Image URL Input -->
-                        <i class="fas fa-camera prefix"></i>
-                        <input placeholder="Image URL" id="image_url" name="image_url" type="text" class="validate">
-                        <label for="image_url">Recipe Image</label>
+                    <!-- Recipe Submit Button -->
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button type="submit" data-target="added" class="btn modal-trigger waves-effect waves-light green center-align" >Add Recipe
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div>
-                        <!-- Image Display/Checking field -->
-                        <img src="" alt="">
-                    </div>
-                </div>                    
-                                
-                <div class="col s12 m12 l4">
-                    <!-- Preparation Time Input -->
-                    <div class="input-field">
-                        <i class="fas fa-stopwatch prefix"></i>
-                        <input placeholder="Prep' Time (mins)" id="prep_time" 
-                            name="prep_time" type="text" class="validate" required>
-                        <label for="prep_time">Preparation Time</label>
-                    </div>
-                    <!-- Cooking Time Input Field -->
-                    <div class="input-field">
-                        <i class="fas fa-hourglass-half prefix"></i>
-                        <input placeholder="Cooking Time (mins)" id="cooking_time" name="cooking_time" type="text" class="validate" required>
-                        <label for="cooking_time">Cooking Time</label>
-                    </div>
-                    <!-- Recipe Description Field -->                    
-                    <div class="input-field">
-                        <i class="fas fa-file-alt prefix"></i>
-                        <textarea id="description" name="description" class="materialize-textarea validate" placeholder="Recipe Description" required></textarea>
-                        <label for="description">Recipe Description</label>
-                    </div>
-                    <!-- Recipe Ingredients Input -->
-                    <div class="input-field">
-                        <i class="fas fa-list-ul prefix"></i>
-                        <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" placeholder="Recipe Ingredients" required></textarea>
-                        <label for="ingredients">Recipe Ingredients</label>
-                    </div>
-                </div>
-                <div class="col s12 m12 l4">
-                    <!-- Recipe Method Input -->
-                    <div class="input-field">
-                        <i class="fas fa-list-ol prefix"></i>
-                        <textarea id="method" name="method" class="materialize-textarea validate" placeholder="Preparation Steps" required></textarea>
-                        <label for="method">Recipe Method</label>
-                    </div>
-                </div>
+                    
+                </form>
             </div>
-            <!-- Recipe Submit Button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn waves-effect waves-light green center-align" >Add Recipe
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-            </div>
-            
-        </form>
+        </div>
     </div>        
 
     

@@ -2,7 +2,7 @@
 {% block content %}
     <h1 class="center-align">Recipes</h1>
 
-    <div class="row">
+    <div class="row container">
         <form class="col s12 m6 card-panel" action="{{ url_for('filter') }}" method="post">            
             <div class="input-field col s12">                                     
                 <i class="fas fa-globe-americas prefix"></i>
@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
-                    <button id="search-button" class="btn waves-effect waves-light green" type="submit">Filter
+                    <button id="filter-button" class="btn waves-effect waves-light green" type="submit">Filter
                         <i class="fas fa-filter"></i>
                     </button>
                 </div>
@@ -40,7 +40,7 @@
         </form>
     </div>
 
-    <div class="row">
+    <div class="row container">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">            
             <div class="card">

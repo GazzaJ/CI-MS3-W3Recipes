@@ -34,6 +34,10 @@ p {
     line-height: 2;
 }
 
+.three {
+    color: green;
+}
+
 /*---------- Base Template ----------*/
 
 main {
@@ -92,6 +96,11 @@ main {
     margin-left: 3rem;
 }
 
+/*---------- Add Recipe ----------*/
+
+#edit-add {
+    margin: 0 4rem;
+}
 
 /*---------- Manage Recipes ----------*/
 
