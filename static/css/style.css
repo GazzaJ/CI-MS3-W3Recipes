@@ -38,6 +38,10 @@ p {
     color: green;
 }
 
+.flashes {
+    background-color: burlywood;
+}
+
 /*---------- Base Template ----------*/
 
 main {
@@ -47,6 +51,11 @@ main {
 .navlinks {
     font-family: "Lobster", sans-serif;
     letter-spacing: 2px;
+}
+
+.social-links {
+    font-size: 2rem;
+    padding-left: 1rem;
 }
 
 /*---------- Home Page ----------*/
@@ -98,7 +107,7 @@ main {
 
 /*---------- Add Recipe ----------*/
 
-#edit-add {
+.add-edit {
     margin: 0 4rem;
 }
 

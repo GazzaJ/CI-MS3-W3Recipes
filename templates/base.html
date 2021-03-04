@@ -60,29 +60,30 @@
         </ul>
     </header>
 
-    <section>     
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                        <div class="row flashes">
-                            <h4 class="center-align {{ category }}">{{ category }} - {{ message }}</h4>                            
-                        </div>                                                               
-                {% endfor %}
-            {% endif %}
-        {% endwith %}            
+    <section class="container center-align">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flashes col s8 center-align">
+                    <h4>{{ message }}</h4>                                                    
+                </div>                   
+            {% endfor %}
+        {% endif %}
+        {% endwith %}                                                    
     </section>
     
 
     <main>
         {% block content %}
         {% endblock %}
-    </main>
+    </main>    
 
     <footer class="page-footer">        
         <div class="footer-copyright">
-            <div class="container">
-                © 2021 Copyright Gareth John
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <div class="container valign-wrapper">
+                <span> © 2021 Copyright Gareth John</span>
+                <a class="grey-text text-lighten-4 right-align social-links" href="https://github.com/GazzaJ/" target="_blank"><i class="fab fa-github"></i></a>
+                <a class="grey-text text-lighten-4 right-align social-links" href="https://www.linkedin.com/in/gareth-john-chelt/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
