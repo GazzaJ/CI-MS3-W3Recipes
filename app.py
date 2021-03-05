@@ -193,15 +193,16 @@ def manage_recipes():
     offset = (current_page - 1) * n_per_page
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
-    recipes = recipe_collection.find().sort('_id', -1).skip(
+    recipes = recipe_collection.find().sort('_id', 1).skip(
         offset).limit(n_per_page)
     uploaded = mongo.db.recipes.count(
-        {"uploaded_by": session["user"]})    
-    pages = range(1, int(round(uploaded / n_per_page)) + 1)
+        {"uploaded_by": session["user"]})
+    total = recipes.count()
+    pages = range(1, int(round(total / n_per_page)) + 1)
     if uploaded == 0:
         flash("You have not uploaded any recipes yet!", "six")
     return render_template("manage.html", recipes=recipes, 
-        current_page=current_page, pages=pages,
+        current_page=current_page, pages=pages,total=total,
         n_per_page=n_per_page, admin=admin, uploaded=uploaded)
 
 

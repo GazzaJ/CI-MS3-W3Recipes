@@ -50,7 +50,7 @@
             </div>
         {% endfor %}
     </div>
-    {% if uploaded > n_per_page %}
+    {% if total > n_per_page %}
         <ul class="pagination center-align">
             <li class="waves-effect"><a href="#!"><i class="fas fa-caret-square-left"></i></a></li>
             {% for page in pages %}
