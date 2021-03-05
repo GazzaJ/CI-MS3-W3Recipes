@@ -103,7 +103,7 @@ def get_recipes():
     n_per_page = 6
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * n_per_page
-    recipes = recipe_collection.find().skip(
+    recipes = recipe_collection.find().sort('_id', -1).skip(
         offset).limit(n_per_page)
     total = recipes.count()
     pages = range(1, int(round(total / n_per_page)) + 1)
@@ -117,21 +117,35 @@ def get_recipes():
 # ---------- Recipe Text Search ----------
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    n_per_page = 6
+    current_page = request.args.get('current_page', type=int, default=1)
+    offset = (current_page - 1) * n_per_page
     text_search = request.form.get("text_search")
-    recipes = list(mongo.db.recipes.find(
-        {"$text": {"$search": text_search}}))
-    return render_template(
-        "recipes.html", recipes=recipes,)
+    recipes = mongo.db.recipes.find(
+        {"$text": {"$search": text_search}}).skip(
+        offset).limit(n_per_page)
+    total = recipes.count()
+    pages = range(1, int(round(total / n_per_page)) + 1)
+    return render_template("recipes.html",
+        recipes=recipes, current_page=current_page, pages=pages,
+        total=total, n_per_page=n_per_page)
 
 
 # ---------- Recipe Filter by Country ----------
 @app.route("/filter", methods=["GET", "POST"])
 def filter():
+    n_per_page = 6
+    current_page = request.args.get('current_page', type=int, default=1)
+    offset = (current_page - 1) * n_per_page
     country_filter = request.form.get("country_filter")
-    recipes = list(mongo.db.recipes.find(
-        {"$text": {"$search": country_filter}}))
-    return render_template(
-        "recipes.html", recipes=recipes,)
+    recipes = mongo.db.recipes.find(
+        {"$text": {"$search": country_filter}}).skip(
+        offset).limit(n_per_page)
+    total = recipes.count()
+    pages = range(1, int(round(total / n_per_page)) + 1)
+    return render_template("recipes.html",
+        recipes=recipes, current_page=current_page, pages=pages,
+        total=total, n_per_page=n_per_page)
 
 
 # ---------- Add a New Recipe ----------
