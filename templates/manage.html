@@ -50,5 +50,18 @@
             </div>
         {% endfor %}
     </div>
+    {% if uploaded > n_per_page %}
+        <ul class="pagination center-align">
+            <li class="waves-effect"><a href="#!"><i class="fas fa-caret-square-left"></i></a></li>
+            {% for page in pages %}
+                {% if page == current_page %}                    
+                    <li class="active"><a href="#">{{ page }}</a></li>
+                {% else %}
+                    <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=page) }}">{{ page }}</a></li>
+                {% endif %}
+            {% endfor %}
+            <li class="waves-effect"><a href="#!"><i class="fas fa-caret-square-right"></i></a></li>
+        </ul>        
+    {% endif %}
         
 {% endblock %}

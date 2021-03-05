@@ -188,15 +188,21 @@ def full_recipe(recipe_id):
 # -- Allows user to edit and delete a recipe --
 @app.route("/manage_recipes", methods=["GET", "POST"])
 def manage_recipes():
+    n_per_page = 6
+    current_page = request.args.get('current_page', type=int, default=1)
+    offset = (current_page - 1) * n_per_page
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
-    recipes = mongo.db.recipes.find()
+    recipes = recipe_collection.find().sort('_id', -1).skip(
+        offset).limit(n_per_page)
     uploaded = mongo.db.recipes.count(
-        {"uploaded_by": session["user"]})
+        {"uploaded_by": session["user"]})    
+    pages = range(1, int(round(uploaded / n_per_page)) + 1)
     if uploaded == 0:
         flash("You have not uploaded any recipes yet!", "six")
-    return render_template("manage.html", recipes=recipes,
-        admin=admin, uploaded=uploaded)
+    return render_template("manage.html", recipes=recipes, 
+        current_page=current_page, pages=pages,
+        n_per_page=n_per_page, admin=admin, uploaded=uploaded)
 
 
 # ---------- Edit a Recipe ----------
