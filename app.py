@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination,get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -93,13 +94,24 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+recipe_collection = mongo.db.recipes
+
+
 # ---------- Recipe Display Page ----------
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    n_per_page = 6
+    current_page = request.args.get('current_page', type=int, default=1)
+    offset = (current_page - 1) * n_per_page
+    recipes = recipe_collection.find().skip(
+        offset).limit(n_per_page)
+    total = recipes.count()
+    pages = range(1, int(round(total / n_per_page)) + 1)
     countries = mongo.db.countries.find().sort("country", 1)
-    return render_template(
-        "recipes.html", recipes=recipes, countries=countries)
+    return render_template("recipes.html",
+        recipes=recipes, countries=countries,
+        current_page=current_page, pages=pages,
+        total=total, n_per_page=n_per_page)
 
 
 # ---------- Recipe Text Search ----------
