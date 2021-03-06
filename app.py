@@ -94,7 +94,9 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-recipe_collection = mongo.db.recipes
+# ---------- MongoDB Collections ----------
+recipe_coll = mongo.db.recipes
+country_coll = mongo.db.countries
 
 
 # ---------- Recipe Display Page ----------
@@ -103,11 +105,11 @@ def get_recipes():
     n_per_page = 6
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * n_per_page
-    recipes = recipe_collection.find().sort('_id', -1).skip(
+    recipes = recipe_coll.find().sort('_id', -1).skip(
         offset).limit(n_per_page)
     total = recipes.count()
     pages = range(1, int(round(total / n_per_page)) + 1)
-    countries = mongo.db.countries.find().sort("country", 1)
+    countries = country_coll.find().sort("country", 1)
     return render_template("recipes.html",
         recipes=recipes, countries=countries,
         current_page=current_page, pages=pages,
@@ -121,7 +123,7 @@ def search():
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * n_per_page
     text_search = request.form.get("text_search")
-    recipes = mongo.db.recipes.find(
+    recipes = recipe_coll.find(
         {"$text": {"$search": text_search}}).skip(
         offset).limit(n_per_page)
     total = recipes.count()
@@ -138,7 +140,7 @@ def filter():
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * n_per_page
     country_filter = request.form.get("country_filter")
-    recipes = mongo.db.recipes.find(
+    recipes = recipe_coll.find(
         {"$text": {"$search": country_filter}}).skip(
         offset).limit(n_per_page)
     total = recipes.count()
@@ -168,11 +170,11 @@ def add_recipe():
             "method": method,
             "uploaded_by": session["user"]
         }
-        mongo.db.recipes.insert_one(recipe)
+        recipe_coll.insert_one(recipe)
         flash("Recipe Successfully Added!", "five")
         return redirect(url_for("get_recipes"))
 
-    countries = mongo.db.countries.find().sort("country", 1)
+    countries = country_coll.find().sort("country", 1)
     return render_template(
         "add_recipe.html", countries=countries)
 
@@ -180,7 +182,7 @@ def add_recipe():
 # ---------- Display Full Recipe ----------
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
     return render_template("full_recipe.html", recipe=recipe)
 
 
@@ -193,9 +195,9 @@ def manage_recipes():
     offset = (current_page - 1) * n_per_page
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
-    recipes = recipe_collection.find().sort('_id', 1).skip(
+    recipes = recipe_coll.find().sort('_id', 1).skip(
         offset).limit(n_per_page)
-    uploaded = mongo.db.recipes.count(
+    uploaded = recipe_coll.count(
         {"uploaded_by": session["user"]})
     total = recipes.count()
     pages = range(1, int(round(total / n_per_page)) + 1)
@@ -226,12 +228,12 @@ def edit_recipe(recipe_id):
             "method": method,
             "uploaded_by": session["user"]
         }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update)
+        recipe_coll.update({"_id": ObjectId(recipe_id)}, update)
         flash("Recipe Successfully Edited!", "seven")
         return redirect(url_for("manage_recipes"))
 
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    countries = mongo.db.countries.find().sort("country", 1)
+    recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
+    countries = country_coll.find().sort("country", 1)
     return render_template(
         "edit_recipe.html", recipe=recipe, countries=countries)
 
@@ -239,7 +241,7 @@ def edit_recipe(recipe_id):
 # ---------- Delete a Recipe ----------
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    recipe_coll.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted Succesfully!")
     return redirect(url_for("manage_recipes"))
 
