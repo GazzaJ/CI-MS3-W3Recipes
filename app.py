@@ -154,6 +154,7 @@ def filter():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        # Get and format Recipe ingredients and steps
         ingredients = request.form.get("ingredients")
         ingredients = ingredients.split('\n')
         method = request.form.get("method")
@@ -190,20 +191,23 @@ def full_recipe(recipe_id):
 # -- Allows user to edit and delete a recipe --
 @app.route("/manage_recipes", methods=["GET", "POST"])
 def manage_recipes():
+    # Check if the user is Admin
+    admin = mongo.db.users.find_one(
+        {"username": session["user"]})["is_admin"]
+    # Recipe search and pagination
     n_per_page = 6
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * n_per_page
-    admin = mongo.db.users.find_one(
-        {"username": session["user"]})["is_admin"]
     recipes = recipe_coll.find().sort('_id', 1).skip(
         offset).limit(n_per_page)
-    uploaded = recipe_coll.count(
-        {"uploaded_by": session["user"]})
     total = recipes.count()
     pages = range(1, int(round(total / n_per_page)) + 1)
+    # Check how many recipes the user has uploaded
+    uploaded = recipe_coll.count(
+        {"uploaded_by": session["user"]})
     if uploaded == 0:
         flash("You have not uploaded any recipes yet!", "six")
-    return render_template("manage.html", recipes=recipes, 
+    return render_template("manage.html", recipes=recipes,
         current_page=current_page, pages=pages,total=total,
         n_per_page=n_per_page, admin=admin, uploaded=uploaded)
 
@@ -212,6 +216,7 @@ def manage_recipes():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
+        # Get and format Recipe ingredients and steps
         ingredients = request.form.get("ingredients")
         ingredients = ingredients.split('\n')
         method = request.form.get("method")
