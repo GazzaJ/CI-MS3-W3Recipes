@@ -108,17 +108,20 @@ def get_recipes():
     recipes = recipe_coll.find().sort('_id', -1).skip(
         offset).limit(per_page)
     total = recipes.count()
-    pages = range(1, int(round(total / per_page)) + 1)
+    pages = range(1, int(round(total / per_page + 1)))
+    prev_page = current_page - 1
+    next_page = current_page + 1
     countries = country_coll.find().sort("country", 1)
     return render_template("recipes.html",
         recipes=recipes, countries=countries,
         current_page=current_page, pages=pages,
-        total=total, per_page=per_page)
+        total=total, per_page=per_page, prev_page=prev_page,
+        next_page=next_page)
 
 
 # ---------- Recipe Text Search ----------
 @app.route("/search", methods=["GET", "POST"])
-def search():    
+def search():
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * per_page
     text_search = request.form.get("text_search")
@@ -127,14 +130,17 @@ def search():
         offset).limit(per_page)
     total = recipes.count()
     pages = range(1, int(round(total / per_page)) + 1)
+    prev_page = current_page - 1
+    next_page = current_page + 1
     return render_template("recipes.html",
         recipes=recipes, current_page=current_page, pages=pages,
-        total=total, per_page=per_page)
+        total=total, per_page=per_page, prev_page=prev_page,
+        next_page=next_page)
 
 
 # ---------- Recipe Filter by Country ----------
 @app.route("/filter", methods=["GET", "POST"])
-def filter():    
+def filter():
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * per_page
     country_filter = request.form.get("country_filter")
@@ -143,9 +149,12 @@ def filter():
         offset).limit(per_page)
     total = recipes.count()
     pages = range(1, int(round(total / per_page)) + 1)
+    prev_page = current_page - 1
+    next_page = current_page + 1
     return render_template("recipes.html",
         recipes=recipes, current_page=current_page, pages=pages,
-        total=total, per_page=per_page)
+        total=total, per_page=per_page, prev_page=prev_page,
+        next_page=next_page)
 
 
 # ---------- Add a New Recipe ----------
@@ -199,6 +208,8 @@ def manage_recipes():
         offset).limit(per_page)
     total = recipes.count()
     pages = range(1, int(round(total / per_page)) + 1)
+    prev_page = current_page - 1
+    next_page = current_page + 1
     # Check how many recipes the user has uploaded
     uploaded = recipe_coll.count(
         {"uploaded_by": session["user"]})
@@ -206,7 +217,8 @@ def manage_recipes():
         flash("You have not uploaded any recipes yet!", "six")
     return render_template("manage.html", recipes=recipes,
         current_page=current_page, pages=pages,total=total,
-        per_page=per_page, admin=admin, uploaded=uploaded)
+        per_page=per_page, admin=admin, uploaded=uploaded,
+        prev_page=prev_page, next_page=next_page)
 
 
 # ---------- Edit a Recipe ----------

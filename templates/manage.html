@@ -50,17 +50,17 @@
             </div>
         {% endfor %}
     </div>
-    {% if total > n_per_page %}
+    {% if total > per_page %}
         <ul class="pagination center-align">
-            <li class="waves-effect"><a href="#!"><i class="fas fa-caret-square-left"></i></a></li>
+            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left"></i></a></li>
             {% for page in pages %}
                 {% if page == current_page %}                    
                     <li class="active"><a href="#">{{ page }}</a></li>
                 {% else %}
-                    <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=page) }}">{{ page }}</a></li>
+                    <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=current_page) }}">{{ page }}</a></li>
                 {% endif %}
             {% endfor %}
-            <li class="waves-effect"><a href="#!"><i class="fas fa-caret-square-right"></i></a></li>
+            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right"></i></a></li>
         </ul>        
     {% endif %}
         
