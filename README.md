@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/GazzaJ/CI-MS3-W3Recipes)
+
 ![W3 Recipes](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/document-title.jpg "Discover Kefalonia")
 
 # [**W3 Recipes**](https://gazzaj.github.io/CI-MS2-Discover-Kefalonia/)

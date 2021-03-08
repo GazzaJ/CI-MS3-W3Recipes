@@ -18,6 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -39,7 +40,12 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "is_admin": "false"
+            "city": "",
+            "user_image": "https://cdn.pixabay.com/photo/2015/10/05/22/37/" +
+            "blank-profile-picture-973460_960_720.png",
+            "subscribed": False,
+            "email": "",
+            "is_admin": False
         }
         mongo.db.users.insert_one(register)
 
@@ -69,12 +75,12 @@ def login():
 
             else:
                 # Invalid password match
-                flash("Username / Password incorrect, please try again!", "four")
+                flash("Username / Password incorrect!")
                 return redirect(url_for("login"))
 
         else:
             # User doesn't exist
-            flash("Username / Password incorrect, please try again", "four")
+            flash("Username / Password incorrect!")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -86,10 +92,15 @@ def profile(username):
     # Retrieve the session user's username from the DB
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
-
+    city = mongo.db.users.find_one(
+        {"username": session["user"]})["city"]
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+    image = mongo.db.users.find_one(
+        {"username": session["user"]})["user_image"]
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html",
+        username=username, city=city, email=email)
 
     return redirect(url_for("login"))
 
@@ -98,6 +109,7 @@ def profile(username):
 recipe_coll = mongo.db.recipes
 country_coll = mongo.db.countries
 per_page = 6
+
 
 # ---------- Recipe Display Page ----------
 @app.route("/get_recipes")
