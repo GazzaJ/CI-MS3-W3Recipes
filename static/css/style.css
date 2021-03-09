@@ -153,5 +153,19 @@ main {
     width: auto;
 }
 
+#profile-card {
+    padding-bottom: 5rem;
+}
+
+/*---------- Edit Profile Page ----------*/
+
+#edit-switch {
+    margin: 1rem 0;
+}
+
+#profile-edit {
+    margin-bottom: 2rem;
+}
+
 /*---------- Media Queries ----------*/
 
