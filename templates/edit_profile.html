@@ -12,32 +12,38 @@
             <img class="user-img" src="{{ image }}" alt="{{ username }} profile photo">
         </div>
         <div class="input-field col s12 m6 offset-m3 center-align">
+            <i class="far fa-image prefix"></i>
             <input value="{{ image }}" placeholder="Image URL" id="image" name="image" type="text" class="validate">
             <label for="image">Profile Image or Avatar</label>
         </div>
         <!-- User Profile Details -->            
         <!-- City Input Field -->
         <div class="input-field col s12 m6 offset-m3 center-align">
-            <input value="{{ city }}" placeholder="Placeholder" id="city" type="text" class="validate" required>
-            <label for="first_name">Town/City</label>
+            <i class="fas fa-map-marker-alt prefix"></i>
+            <input value="{{ city }}" placeholder="Placeholder" id="city" name="city" type="text" class="validate" required>
+            <label for="City">Town/City</label>
         </div>                
         <!-- Subscription Status Switch -->
         <div class="switch col s12 m6 offset-m3 center-align">
-            <label>
-                Off
-                <input type="checkbox">
-                <span class="lever"></span>
-                On
+            <span>Subscription Status: </span>
+            <label for="subscribed">
+                {% if subscribed == "on" %}
+                    <input type="checkbox" id="subscribed" name="subscribed" checked>
+                {% else %}
+                    <input type="checkbox" id="subscribed" name="subscribed">
+                {% endif %}
+                    <span id="edit-switch" class="lever"></span>
             </label>
         </div>
         <!-- Email Input Field -->
         <div class="input-field col s12 m6 offset-m3 center-align">
-            <input value="email" placeholder="Placeholder" id="email" name="email" disabled
+            <i class="fas fa-envelope prefix"></i>
+            <input value="{{ email }}" placeholder="Placeholder" id="email" name="email" disabled
                 type="text" class="validate" required>
             <label for="email">Email Address</label>
         </div>
         <!-- Submit Button -->
-        <div class="col s12 m6 offset-m3 center-align">
+        <div id="profile-edit" class="col s12 m6 offset-m3 center-align">
             <button class="btn waves-effect waves-light" type="submit" name="action">
                 Submit
             </button>

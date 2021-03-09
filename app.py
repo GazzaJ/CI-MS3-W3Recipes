@@ -3,7 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
-from flask_paginate import Pagination,get_page_parameter
+from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -109,8 +109,22 @@ def profile(username):
 
 
 # ---------- Edit Profile ----------
-@app.route("/edit_profile/", methods=["GET", "POST"])
+@app.route("/edit_profile", methods=["GET", "POST"])
 def edit_profile():
+    if request.method == "POST":
+        mongo.db.users.update({"username": session["user"]},
+        {"$set":
+            {
+                "user_image": request.form.get("user_image"),
+                "city": request.form.get("city"),
+                "subscribed": request.form.get("subscribed"),
+                "email": request.form.get("email")
+            }
+        }
+        )
+        flash("Profile Successfully Edited!")
+        return redirect(url_for("profile"))
+
     # Retrieve the session user's details from the DB
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
