@@ -109,8 +109,8 @@ def profile(username):
 
 
 # ---------- Edit Profile ----------
-@app.route("/edit_profile/<username>", methods=["GET", "POST"])
-def edit_profile(username):
+@app.route("/edit_profile/", methods=["GET", "POST"])
+def edit_profile():
     # Retrieve the session user's details from the DB
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -126,6 +126,8 @@ def edit_profile(username):
         return render_template("edit_profile.html",
         username=username, city=city, email=email,
         image=image, subscribed=subscribed)
+
+    return redirect(url_for("profile"))
 
 
 # ---------- MongoDB Collections ----------
