@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Edit User Profile Form -->
+<div class="row">
+    <form class="card-panel col s12 m6 offset-m3" method="POST" action="{{ url_for('edit_profile') }}">        
+        <h3 class="center-align">
+            Edit {{ username }}'s Profile
+        </h3>
+        <!-- User Profile Image -->
+        <div class="col s12 m6 offset-m3 center-align">
+            <img class="user-img" src="{{ image }}" alt="{{ username }} profile photo">
+        </div>
+        <div class="input-field col s12 m6 offset-m3 center-align">
+            <input value="{{ image }}" placeholder="Image URL" id="image" name="image" type="text" class="validate">
+            <label for="image">Profile Image or Avatar</label>
+        </div>
+        <!-- User Profile Details -->            
+        <!-- City Input Field -->
+        <div class="input-field col s12 m6 offset-m3 center-align">
+            <input value="{{ city }}" placeholder="Placeholder" id="city" type="text" class="validate" required>
+            <label for="first_name">Town/City</label>
+        </div>                
+        <!-- Subscription Status Switch -->
+        <div class="switch col s12 m6 offset-m3 center-align">
+            <label>
+                Off
+                <input type="checkbox">
+                <span class="lever"></span>
+                On
+            </label>
+        </div>
+        <!-- Email Input Field -->
+        <div class="input-field col s12 m6 offset-m3 center-align">
+            <input value="email" placeholder="Placeholder" id="email" name="email" disabled
+                type="text" class="validate" required>
+            <label for="email">Email Address</label>
+        </div>
+        <!-- Submit Button -->
+        <div class="col s12 m6 offset-m3 center-align">
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+                Submit
+            </button>
+        </div>
+    </form>    
+</div>
+
+
+{% endblock %}

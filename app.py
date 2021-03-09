@@ -89,7 +89,7 @@ def login():
 # ---------- Profile Page ----------
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # Retrieve the session user's username from the DB
+    # Retrieve the session user's details from the DB
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     city = mongo.db.users.find_one(
@@ -98,11 +98,34 @@ def profile(username):
         {"username": session["user"]})["email"]
     image = mongo.db.users.find_one(
         {"username": session["user"]})["user_image"]
+    subscribed = mongo.db.users.find_one(
+        {"username": session["user"]})["subscribed"]
     if session["user"]:
         return render_template("profile.html",
-        username=username, city=city, email=email)
+        username=username, city=city, email=email,
+        image=image, subscribed=subscribed)
 
     return redirect(url_for("login"))
+
+
+# ---------- Edit Profile ----------
+@app.route("/edit_profile/<username>", methods=["GET", "POST"])
+def edit_profile(username):
+    # Retrieve the session user's details from the DB
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    city = mongo.db.users.find_one(
+        {"username": session["user"]})["city"]
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+    image = mongo.db.users.find_one(
+        {"username": session["user"]})["user_image"]
+    subscribed = mongo.db.users.find_one(
+        {"username": session["user"]})["subscribed"]
+    if session["user"]:
+        return render_template("edit_profile.html",
+        username=username, city=city, email=email,
+        image=image, subscribed=subscribed)
 
 
 # ---------- MongoDB Collections ----------
