@@ -8,30 +8,28 @@
             <h3 class="center-align">
                 {{ username }}'s Profile
             </h3>
-            <div class="col s12 m6 offset-m3">
-                <img class="user-img" src="{{ user_image }}" alt="User Image">
+            <div class="col s12 m6 offset-m3 center-align">
+                <img class="user-img" src="{{ image }}" alt="User Image">
             </div>
             <div class="row">
-                <div class="col s12 m6 offset-m3">
+                <div class="col s12 m6 offset-m3 center-align">
                     <p>Town / City: {{ city }}</p>
                     <p>Email Address: {{ email }}</p>
+                    {% if subscribed == "on" %}
+                        <p>Subscription Status: Subscribed</p>
+                    {% else %}
+                        <p>Subscription Status: Not Subscribed</p>
+                    {% endif %}
                 </div>
-            </div>
-            
-            <!-- Subscribe Selector -->
-            <div class="switch col s12 m6 offset-m3">
-                <span>Subscribed to website?</span>
-                <label>
-                    Off
-                    <input type="checkbox">
-                    <span class="lever"></span>
-                    On
-                </label>                
+            </div>            
+            <!-- Edit Profile -->
+            <div class="col s12 m6 offset-m3 center-align">
+                <a href="{{url_for('edit_profile')}}" class="waves-effect waves-light btn">Edit Profile</a>
             </div>
         </div>
     </div>    
 </div>
-
+<!-- Link to Manage Recipes page -->
 <div class="row">
     <div class="col s12 center-align">
         <h5>
