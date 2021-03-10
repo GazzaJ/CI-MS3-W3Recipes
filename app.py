@@ -112,10 +112,11 @@ def profile(username):
 @app.route("/edit_profile", methods=["GET", "POST"])
 def edit_profile():
     if request.method == "POST":
+        # ----- Update specific DB fields only -----
         mongo.db.users.update({"username": session["user"]},
         {"$set":
             {
-                "user_image": request.form.get("user_image"),
+                "user_image": request.form.get("image"),
                 "city": request.form.get("city"),
                 "subscribed": request.form.get("subscribed"),
                 "email": request.form.get("email")
@@ -123,7 +124,8 @@ def edit_profile():
         }
         )
         flash("Profile Successfully Edited!")
-        return redirect(url_for("profile"))
+        return redirect(url_for(
+            "profile", username = session["user"]))
 
     # Retrieve the session user's details from the DB
     username = mongo.db.users.find_one(
@@ -140,8 +142,6 @@ def edit_profile():
         return render_template("edit_profile.html",
         username=username, city=city, email=email,
         image=image, subscribed=subscribed)
-
-    return redirect(url_for("profile"))
 
 
 # ---------- MongoDB Collections ----------
