@@ -275,6 +275,18 @@ def manage_recipes():
 # ---------- Edit a Recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    uploaded_by = mongo.db.recipes.uploaded_by.find_one()
+    recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
+    countries = country_coll.find().sort("country", 1)
+
+    if uploaded_by != session["user"]:
+        flash("You do not have the access rights to edit that Recipe")
+        return redirect(url_for('manage_recipes'))
+        
+    return render_template(
+        "edit_recipe.html", recipe=recipe, countries=countries)
+
+
     if request.method == "POST":
         # Get and format Recipe ingredients and steps
         ingredients = request.form.get("ingredients")
@@ -296,11 +308,6 @@ def edit_recipe(recipe_id):
         recipe_coll.update({"_id": ObjectId(recipe_id)}, update)
         flash("Recipe Successfully Edited!", "seven")
         return redirect(url_for("manage_recipes"))
-
-    recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
-    countries = country_coll.find().sort("country", 1)
-    return render_template(
-        "edit_recipe.html", recipe=recipe, countries=countries)
 
 
 # ---------- Delete a Recipe ----------
