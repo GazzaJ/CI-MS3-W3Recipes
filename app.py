@@ -43,7 +43,7 @@ def register():
             "city": "",
             "user_image": "https://cdn.pixabay.com/photo/2015/10/05/22/37/" +
             "blank-profile-picture-973460_960_720.png",
-            "subscribed": False,
+            "subscribed": "",
             "email": "",
             "is_admin": False
         }
@@ -275,17 +275,18 @@ def manage_recipes():
 # ---------- Edit a Recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    uploaded_by = mongo.db.recipes.uploaded_by.find_one()
+    uploaded_by = recipe_coll.uploaded_by.find_one()
+    admin = mongo.db.users.find_one(
+        {"username": session["user"]})["is_admin"]
     recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
     countries = country_coll.find().sort("country", 1)
 
-    if uploaded_by != session["user"]:
-        flash("You do not have the access rights to edit that Recipe")
+    if admin is False:
+        flash("You do not have the access rights to edit that Recipe!")
         return redirect(url_for('manage_recipes'))
-        
-    return render_template(
-        "edit_recipe.html", recipe=recipe, countries=countries)
 
+    return render_template("edit_recipe.html",
+        recipe=recipe, countries=countries)
 
     if request.method == "POST":
         # Get and format Recipe ingredients and steps
