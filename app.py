@@ -110,16 +110,20 @@ def profile(username):
 
 # ---------- Edit Profile ----------
 @app.route("/edit_profile", methods=["GET", "POST"])
-def edit_profile():
+def edit_profile():    
     if request.method == "POST":
         # ----- Update specific DB fields only -----
+        subscribed = request.form.get('subscribed')
+        email = request.form.get('email')
+        if subscribed != "on":
+            email = ""
         mongo.db.users.update({"username": session["user"]},
         {"$set":
             {
                 "user_image": request.form.get("image"),
                 "city": request.form.get("city"),
-                "subscribed": request.form.get("subscribed"),
-                "email": request.form.get("email")
+                "subscribed": subscribed,
+                "email": email
             }
         }
         )
