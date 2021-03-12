@@ -282,8 +282,12 @@ def edit_recipe(recipe_id):
     recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
     countries = country_coll.find().sort("country", 1)
     uploaded_by = recipe["uploaded_by"]
+    user = mongo.db.users.find_one({"username": session["user"]})
+    admin = user["is_admin"]
 
-    if uploaded_by != session["user"]:
+    if admin is True:
+        flash("")
+    elif uploaded_by != session["user"]:
         flash("You don't have the authority to edit this recipe!")
         return redirect(url_for('manage_recipes'))
 
