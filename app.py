@@ -284,16 +284,17 @@ def edit_recipe(recipe_id):
     uploaded_by = recipe["uploaded_by"]
     user = mongo.db.users.find_one({"username": session["user"]})
     admin = user["is_admin"]
-
+    # ---------- Check if user "is_admin" ----------
     if admin is True:
         flash("")
+    # ----- Chech if session user uploaded the recipe -----
     elif uploaded_by != session["user"]:
         flash("You don't have the authority to edit this recipe!")
         return redirect(url_for('manage_recipes'))
 
     return render_template("edit_recipe.html",
         recipe=recipe, countries=countries, uploaded_by=uploaded_by)
-
+    # ---------- POST the Edits to the DB ----------
     if request.method == "POST":
         # Get and format Recipe ingredients and steps
         ingredients = request.form.get("ingredients")
