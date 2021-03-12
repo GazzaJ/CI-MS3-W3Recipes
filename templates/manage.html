@@ -34,7 +34,7 @@
                             <p class="recipe-cards"><i class="fas fa-upload"></i> Uploaded by: {{ recipe.uploaded_by }}</p>
                         </div>
                     </div>
-                </div>
+                </div>                
             {% endif %}
             <!-- Delete Recipe - Check Message -->
             <div id="{{ recipe._id }}" class="modal">
@@ -50,6 +50,7 @@
             </div>
         {% endfor %}
     </div>
+    <!-- Pagination -->
     {% if total > per_page %}
         <ul class="pagination center-align">
             <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left"></i></a></li>

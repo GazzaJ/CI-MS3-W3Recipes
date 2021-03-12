@@ -253,6 +253,11 @@ def full_recipe(recipe_id):
 # -- Allows user to edit and delete a recipe --
 @app.route("/manage_recipes", methods=["GET", "POST"])
 def manage_recipes():
+    # Check how many recipes the user has uploaded
+    uploaded = recipe_coll.count(
+        {"uploaded_by": session["user"]})
+    if uploaded == 0:
+        flash("You have not uploaded any recipes yet!", "six")
     # Check if the user is Admin
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
@@ -265,11 +270,6 @@ def manage_recipes():
     pages = range(1, int(round(total / per_page)) + 1)
     prev_page = current_page - 1
     next_page = current_page + 1
-    # Check how many recipes the user has uploaded
-    uploaded = recipe_coll.count(
-        {"uploaded_by": session["user"]})
-    if uploaded == 0:
-        flash("You have not uploaded any recipes yet!", "six")
     return render_template("manage.html", recipes=recipes,
         current_page=current_page, pages=pages,total=total,
         per_page=per_page, admin=admin, uploaded=uploaded,
@@ -278,19 +278,17 @@ def manage_recipes():
 
 # ---------- Edit a Recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
-def edit_recipe(recipe_id):
-    uploaded_by = recipe_coll.uploaded_by.find_one()
-    admin = mongo.db.users.find_one(
-        {"username": session["user"]})["is_admin"]
+def edit_recipe(recipe_id):    
     recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
     countries = country_coll.find().sort("country", 1)
+    uploaded_by = recipe["uploaded_by"]
 
-    if admin is False:
-        flash("You do not have the access rights to edit that Recipe!")
+    if uploaded_by != session["user"]:
+        flash("You don't have the authority to edit this recipe!")
         return redirect(url_for('manage_recipes'))
 
     return render_template("edit_recipe.html",
-        recipe=recipe, countries=countries)
+        recipe=recipe, countries=countries, uploaded_by=uploaded_by)
 
     if request.method == "POST":
         # Get and format Recipe ingredients and steps
