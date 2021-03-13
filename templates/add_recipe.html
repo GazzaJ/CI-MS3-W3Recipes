@@ -40,12 +40,12 @@
                             <div class="input-field">
                                 <!-- Image URL Input -->
                                 <i class="fas fa-camera prefix"></i>
-                                <input placeholder="Image URL" id="image_url" name="image_url" type="text" class="validate">
+                                <input placeholder="Image URL" id="image_url" name="image_url" type="text" onchange="addImage();" class="validate">
                                 <label for="image_url">Recipe Image</label>
                             </div>
-                            <div>
-                                <!-- Image Display/Checking field -->
-                                <img src="" alt="">
+                            <!-- Image Display/Checking field -->
+                            <div id="image-container">
+                                
                             </div>
                         </div>                    
                                         

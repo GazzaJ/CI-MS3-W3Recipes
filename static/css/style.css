@@ -58,6 +58,10 @@ main {
     padding-left: 1rem;
 }
 
+body {
+    background-image: url('/static/img/main-background_1900.jpg');  
+}
+
 /*---------- Home Page ----------*/
 
 
@@ -111,6 +115,13 @@ main {
     margin: 0 4rem;
 }
 
+#image-container img {
+    max-height: 15rem;
+    width: auto;
+    border: 0.25rem solid #000;
+    margin-left: 3rem;
+}
+
 /*---------- Manage Recipes ----------*/
 
 .edit-pic {
@@ -141,9 +152,10 @@ main {
 }
 
 .edit-img {
-    max-height: 13rem;
+    max-height: 15rem;
     width: auto;
     border: 0.25rem solid #000;
+    margin-left: 3rem;
 }
 
 /*---------- Profile Page ----------*/
