@@ -1,5 +1,5 @@
 /*---------- Fonts ----------*/
-@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Lobster&family=Molle:ital@1&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Galada&family=Molle:ital@1&family=Shrikhand&display=swap');
 
 .main-title{
     font-family: "Shrikhand", sans-serif;
@@ -8,7 +8,7 @@
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: "Lobster", sans-serif;
+    font-family: "Galada", sans-serif;    
 }
 
 .recipe-title {
@@ -30,10 +30,6 @@ p {
     line-height: 2;
 }
 
-.three {
-    color: green;
-}
-
 .flashes {
     background-color: burlywood;
 }
@@ -44,9 +40,31 @@ main {
     min-height: 95vh;
 }
 
+/*-- Header --*/
+
+.brand-logo img {
+    height: 100px;
+    width: auto;    
+}
+
 .navlinks {
-    font-family: "Lobster", sans-serif;
+    font-family: "Galada", sans-serif;
     letter-spacing: 2px;
+}
+
+/*-- Footer --*/
+
+footer li {
+    display: inline;
+    margin: 0.5rem;
+}
+
+.footer-text {
+    font-family: "Happy Monkey", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 0.5rem;
 }
 
 .social-links {
@@ -55,12 +73,52 @@ main {
 }
 
 body {
-    background-image: url('/static/img/main-background_1900.jpg');     
+    background-image: url('/static/img/main-background_1900.jpg');    
+    background-position: center;         
+}
+
+h1 {
+    color: #4e342e;
 }
 
 /*---------- Home Page ----------*/
 
+.cta {
+    font-family: "Galada", sans-serif;    
+    font-size: 2rem;
+}
 
+/*-- Arrow Animation copied from 
+https://codepen.io/alianmorales/pen/GyrgjO --*/
+.cta-arrow {
+    font-size: 3rem;
+    color: red;
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+}
+
+@keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
+.register {
+    font-family: "Happy Monkey", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: bold;    
+}
+
+.sign-up {
+    text-decoration: underline;    
+    margin-left: 2rem;
+}
 
 /*---------- Recipe Cards ----------*/
 
@@ -177,3 +235,6 @@ body {
 
 /*---------- Media Queries ----------*/
 
+@media (max-width: 43rem) {
+
+}

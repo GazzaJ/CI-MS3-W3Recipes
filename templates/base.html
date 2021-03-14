@@ -23,9 +23,9 @@
 <body>    
     <header>
         <!-- Main Navbar from (https://materializecss.com/navbar.html) -->
-        <nav class="nav-extended brown darken-1">
+        <nav class="nav-extended light-green darken-4">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">W3 Recipes</a>
+                <a href="#!" class="brand-logo"><img src="/static/img/w3r-logo.png" alt="Website logo"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down navlinks">
                     <li><a href="{{ url_for('home') }}">Home</a></li>                    
@@ -37,7 +37,7 @@
                         <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
                     {% else %}
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('register') }}">Sign Up</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
                 </ul>
@@ -54,7 +54,7 @@
                         <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
                     {% else %}
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('register') }}">Sign Up</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
         </ul>
@@ -78,18 +78,14 @@
         {% endblock %}
     </main>    
 
-    <footer class="page-footer">        
-        <div class="footer-copyright">            
-            <div class="row container">
-                <div class="col s6 left-align valign">
-                    <span> © 2021 Copyright Gareth John</span><br>
-                    <a href="mailto:johnge71@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email Us</a>
-                </div>
-                <div class="col s6 right-align valign">
-                    <a class="grey-text text-lighten-4 right-align social-links" href="https://github.com/GazzaJ/" target="_blank"><i class="fab fa-github"></i></a>
-                    <a class="grey-text text-lighten-4 right-align social-links" href="https://www.linkedin.com/in/gareth-john-chelt/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>            
+    <footer class="page-footer light-green darken-4">        
+        <div class="footer-copyright">
+            <ul class="container center-align">
+                <li class="footer-text"><i class="far fa-copyright" aria-hidden="true"></i> 2021 Copyright Gareth John</li>
+                <li class="footer-text"><a href="mailto:johnge71@gmail.com" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i> Email Us</a></li>
+                <li><a class="social-links" href="https://github.com/GazzaJ/" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>                    
+                <li><a class="social-links" href="https://www.linkedin.com/in/gareth-john-chelt/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li></li>
+            </ul>             
         </div>
     </footer>
     
