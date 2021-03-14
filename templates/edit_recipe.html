@@ -27,8 +27,8 @@
                             <div class="input-field">
                                 <!-- Recipe Name Input -->
                                 <i class="fas fa-pen prefix"></i>
-                                <input value="{{ recipe.title }}" id="title" name="title" type="text" 
-                                    class="validate" required>
+                                <input value="{{ recipe.title }}" id="title" name="title" type="text" class="validate"
+                                    minlength="10" maxlength="50" required>
                                 <label for="title">Recipe Name</label>
                             </div>                    
                             <div class="input-field">
@@ -78,7 +78,7 @@
                             <div class="input-field">
                                 <i class="fas fa-file-alt prefix"></i>
                                 <textarea id="description" name="description" 
-                                    class="materialize-textarea validate" required>
+                                    class="materialize-textarea validate" minlength="10" maxlength="200" required>
                                     {{- recipe.description -}}
                                 </textarea>
                                 <label for="description">Recipe Description</label>
@@ -87,7 +87,7 @@
                             <div class="input-field">
                                 <i class="fas fa-list-ul prefix"></i>
                                 <textarea id="ingredients" name="ingredients" 
-                                    class="materialize-textarea validate" required>
+                                    class="materialize-textarea validate" minlength="4" required>
                                     {%- for item in recipe.ingredients -%}
                                         {{- item -}}{{ '\n' }}                                   
                                     {%- endfor -%}
@@ -100,7 +100,7 @@
                             <div class="input-field">
                                 <i class="fas fa-list-ol prefix"></i>
                                 <textarea id="method" name="method" 
-                                    class="materialize-textarea validate" required>
+                                    class="materialize-textarea validate" minlength="10" required>
                                     {%- for step in recipe.method -%}
                                         {{- step -}}{{ '\n' }}
                                     {%- endfor -%}
