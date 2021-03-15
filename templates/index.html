@@ -17,26 +17,51 @@
             ... an old family favourite, or simply want to try something new?</h2> 
     </div>
 </div>
-<div class="row">
-    <div class="col s12 m12 l4 offset-m1">
-        <div class="row valign-wrapper">
-            <div class="col s10">
-                <p class="cta">Search, and upload your favourite recipes from around the world</p>
-                <p class="cta">Lets see how many countries we can upload recipes for!</p>
-                <p class="cta">Don't see a country represented here?</p>
-                <p class="cta">Sign-up and add a recipe to fill in that country</p>
+<div class="row green lighten-5 container">
+    <div class="col s12 m6">
+        <div class="row">
+            <div class="col s12 center-align">
+                <p class="cta-1">Search, and upload your favourite recipes from around the world</p>
+                <p class="cta-2">Lets see how many countries we can upload recipes for!</p>
             </div>
-            <div class="col s2 valign center-align">
-                <i class="fas fa-angle-double-right cta-arrow" aria-hidden="true"></i><br>
-                <i class="fas fa-angle-double-right cta-arrow" aria-hidden="true"></i><br>
-                <i class="fas fa-angle-double-right cta-arrow" aria-hidden="true"></i>
+            <div class="row">
+                <div class="col s10 offset-s1 m8 offset-m2 card-panel">
+                    <div class="card-image center-align">
+                        <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                    </div>            
+                    <div class="card-content">
+                        <h4 class="card-title recipe-title">{{ recipe.title }}</h4>                    
+                        <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
+                        <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
+                        <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
+                        <p class="recipe-cards"><i class="fas fa-upload"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>
+                    </div>
+                </div>                
+            </div>    
+        </div>
+    </div>    
+    <div class="col s12 m6">   
+        <div class="row">        
+            <div class="col s12">
+                <div class="row card-panel yellow">
+                    <div class="col s12 center-align">
+                        <p class="cta-3">Don't see a country represented here?</p>
+                        <p class="cta-3">Sign-up and add a recipe to fill in that country</p>
+                    </div>
+                </div>
+                <div class="row center-aling">
+                    <div class="col s12 center-align arrows">
+                        <i class="fas fa-angle-double-down cta-arrow" aria-hidden="true"></i>
+                        <i class="fas fa-angle-double-down cta-arrow" aria-hidden="true"></i>
+                        <i class="fas fa-angle-double-down cta-arrow" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" 
+                    width="100%" height="500" 
+                    src="https://charts.mongodb.com/charts-ms3-w3-recipes-cluix/embed/charts?id=a3e36574-0cfb-4c58-a390-56325baf4630&theme=light">
+                </iframe>
             </div>
         </div>
-    </div>
-    <div class="col s12 m12 l6">
-        <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" 
-            width="100%" height="500" 
-            src="https://charts.mongodb.com/charts-ms3-w3-recipes-cluix/embed/charts?id=a3e36574-0cfb-4c58-a390-56325baf4630&theme=light"></iframe>
     </div>
 </div>
 <div class="parallax-container">

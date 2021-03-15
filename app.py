@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
+from PIL import Image
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -22,7 +23,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("index.html")
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId('603799093d30368acbfdfdd0')})
+    return render_template("index.html", recipe=recipe)
 
 
 # ---------- Registration Form ----------
@@ -110,7 +112,7 @@ def profile(username):
 
 # ---------- Edit Profile ----------
 @app.route("/edit_profile", methods=["GET", "POST"])
-def edit_profile():    
+def edit_profile():
     if request.method == "POST":
         # ----- Update specific DB fields only -----
         subscribed = request.form.get('subscribed')
@@ -129,7 +131,10 @@ def edit_profile():
         )
         flash("Profile Successfully Edited!")
         return redirect(url_for(
-            "profile", username = session["user"]))
+            "profile", username=session["user"]))
+
+    img = Image.open('')
+    img.format
 
     # Retrieve the session user's details from the DB
     username = mongo.db.users.find_one(
@@ -215,6 +220,7 @@ def filter():
 # ---------- Add a New Recipe ----------
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    rec_img = "https://pixy.org/src/13/thumbs350/135044.jpg"
     if request.method == "POST":
         # Get and format Recipe ingredients and steps
         ingredients = request.form.get("ingredients")
@@ -233,13 +239,15 @@ def add_recipe():
             "method": method,
             "uploaded_by": session["user"]
         }
+        if recipe['image'] == '':
+            recipe['image'] == rec_img
         recipe_coll.insert_one(recipe)
         flash("Recipe Successfully Added!", "five")
         return redirect(url_for("get_recipes"))
 
     countries = country_coll.find().sort("country", 1)
     return render_template(
-        "add_recipe.html", countries=countries)
+        "add_recipe.html", countries=countries, rec_img=rec_img)
 
 
 # ---------- Display Full Recipe ----------
@@ -278,7 +286,7 @@ def manage_recipes():
 
 # ---------- Edit a Recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
-def edit_recipe(recipe_id):    
+def edit_recipe(recipe_id):
     recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
     countries = country_coll.find().sort("country", 1)
     uploaded_by = recipe["uploaded_by"]

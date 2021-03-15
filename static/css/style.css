@@ -73,8 +73,7 @@ footer li {
 }
 
 body {
-    background-image: url('/static/img/main-background_1900.jpg');    
-    background-position: center;         
+    background-image: url('/static/img/main-background_1900.jpg');             
 }
 
 h1 {
@@ -83,28 +82,42 @@ h1 {
 
 /*---------- Home Page ----------*/
 
-.cta {
+.cta-1, .cta-2 {
+    font-family: "Shrikhand", sans-serif;    
+    font-size: 2rem;
+}
+
+.cta-2 {
+    margin-top: 5rem;
+}
+
+.cta-3 {
     font-family: "Galada", sans-serif;    
     font-size: 2rem;
 }
 
-/*-- Arrow Animation copied from 
+/*-- Arrow Animation adapted from 
 https://codepen.io/alianmorales/pen/GyrgjO --*/
+.arrows {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .cta-arrow {
     font-size: 3rem;
     color: red;
     animation: slide1 1s ease-in-out infinite;
-    margin-left: 9px;
+    display: inline-block;    
 }
 
 @keyframes slide1 {
   0%,
   100% {
-    transform: translate(0, 0);
+    transform: translate(10px, 0);
   }
 
   50% {
-    transform: translate(10px, 0);
+    transform: translate(10px, 10px);
   }
 }
 
