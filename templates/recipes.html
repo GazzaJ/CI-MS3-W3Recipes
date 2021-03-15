@@ -3,7 +3,9 @@
     <h1 class="center-align">Recipes</h1>
 
     <div class="row container">
-        <form class="col s12 m6 card-panel" action="{{ url_for('filter') }}" method="post">            
+        <!-- Recipe Filter -->
+        <form class="col s12 m6 card-panel" action="{{ url_for('filter') }}" method="post">
+            <!-- Filter Recipes by Country -->            
             <div class="input-field col s12">                                     
                 <i class="fas fa-globe-americas prefix"></i>
                 <select id="country_filter" name="country_filter" class="validate" required>                            
@@ -14,6 +16,7 @@
                 </select>
                 <label for="country_filter"></label>
             </div>
+            <!-- Recipe Filter Buttons -->
             <div class="row">
                 <div class="col s12 center-align">
                     <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
@@ -22,13 +25,15 @@
                     </button>
                 </div>
             </div>            
-        </form>    
+        </form>
+        <!-- Recipe Search -->    
         <form class="col s12 m6 card-panel" action="{{ url_for('search') }}" method="post">
             <div class="input-field col s12">
                 <i class="fas fa-search prefix"></i>
                 <input type="text" name="text_search" id="text_search" placeholder="Enter search text" class="validate" minlength="3" required>
                 <label for="text_search"></label>
             </div>
+            <!-- Recipe Search Buttons -->
             <div class="row">
                 <div class="col s12 center-align">
                     <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
@@ -48,7 +53,7 @@
                 <div class="card-image">
                     <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
                     <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
-                        class="btn-floating halfway-fab waves-effect waves-light red">
+                        class="btn-floating halfway-fab waves-effect waves-light blue">
                         <i class="fas fa-search-plus"></i>
                     </a>
                 </div>            
