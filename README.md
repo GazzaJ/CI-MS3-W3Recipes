@@ -57,7 +57,7 @@ The following user stories were developed during the planning stages for this si
 
 5. _As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**.
 
-6. _As a _ **site owner**, _I need to_ **ensure security of information**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**.
+6. _As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**.
 
 7.  _As a _ **site owner**, _I need to_ **promote a product, _in order to_ **promote a preferred product on the site**.
 
@@ -173,6 +173,12 @@ The Map page is the focal point for the website, combining interactive elements 
 
 ![Recipe Delete](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-page.png "Contact Page Wireframe")
 
+#### Profile PAge
+
+#### Edit Profile Page
+Enables the user to add a photo or avatar to their profile, provide their location and subscribe to the website.
+I chose not to place the subscribe option on the landing page because until you log in you wouldn't necessarily know whether you wanted to subscribe to the website.
+Thus it made sense to me to add this to a profile page
 
 #### **Surface**
 
@@ -181,17 +187,35 @@ The Map page is the focal point for the website, combining interactive elements 
 
 
 ##### **Typography**  
-Selecting the correct typography for this site is just as important as the other design aspects. I want the fonts to reflect a more relaxed style, welcoming the user into the site.
- - Readable
- - Relaxed
+Selecting the correct typography for this site is just as important as the other design aspects. My aim was to find fonts to reflect a more relaxed style, welcoming the user into the site. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
+ - Readability
+ - Relaxed Style
+ - Weight
 
-I researched different styles which could be used for food related content:
+I had researched different styles which could be used for food related content:
  - https://www.creativebloq.com/inspiration/10-mouth-watering-restaurant-menu-fonts
- - https://line25.com/fonts/best-fonts-for-food-industry-design
+ - https://line25.com/fonts/best-fonts-for-food-industry-design  
 
-I loaded various fonts into my CSS file and experimented with different combinations to find ones which compolemented each other and provided an asthetically pleasing look to the site.
+With these criteria and ideas in mind, I started loading various fonts into my CSS file and experimented with different combinations to find the ones which complemented each other and provided an asthetically pleasing look to the site.
+I have used Google fonts for each of my builds to date as it has an extensive library of fonts and is simple and reliable to use.  
+![Google Fonts](https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom "Google Fonts")
+ After some experimentation I settled on the following font styles:
+ - Main Website Title and occasional text  
+It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact.  
 
+![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg "HTML5") - Shrikhand  
 
+ - Page headings  
+For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.
+![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg "HTML5") - Galada  
+
+ - Recipe Titles  
+I just had to use this font style! Something about it elicited a positive reaction with me and just seemed to work for the Recipe cards.
+![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg "HTML5") - Molle  
+
+ - Recipe Detail  
+Given the recipe notebook style I was trying to achieve I wanted a font which lokked more natural and 'written' than the typical online typography.
+![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg "HTML5") - Happy Monkey
 
 ##### **Imagery** 
 
@@ -222,7 +246,14 @@ This website has been built using the following core technologies:
 - ![Font Awesome](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/fontawesome-logo.png "Font Awesome") - Font Awesome was the source of all icons.
 - ![Google Fonts](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/googlefonts-logo.png "Google Fonts") - Fonts used on the website courtesy of Google Fonts
 - ![JQuery](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/jquery.png "JQuery") - The project uses JQuery to simplify DOM manipulation.
+- Flask
+- Jinja
+- PyMongo
 
+#### Database Management System
+- MongoDB Altas
+- MondgoDB Compass
+- MongoDB Charts
 
 ##### Version Control, storage and hosting
 
@@ -365,17 +396,14 @@ The website has been performance testing using the following tools:
 ______
 
 ## **Bugs and Issues** <a name="bugs"></a>
+The following table explains the bugs and issues encountered while building this website.
 |  Issue #   |  Bug or Issue  |  Description  |  Solution  |
 |:----------:|:--------------:|---------------|------------|
-| 001 |Flash Messages displayed in a modal|While conducting continuous testing I noticed the website was experienceing a sporadic issue with the page width increasing beyond the viewport width. Initially thought to affect all pages and caused by the moibile responsive navbar | While troubleshooting the issue I realised the problem was confined to my Recipes.html page, and thus couldn't be caused by the navber which is a consistent element on all pages. The only other interactive element on this page was an unused Materialize CSS "FeatureDiscovery" element. After deletion the Page width issue didn't reoccur
-| 002 |Delete Confirmation in a modal|When a user selects delete on the "Manage Recipes" page I wanted a confirmation email to display before the recipe could be removed from the website and database. Initial attemps resulted in recipes being deleted one by one in a sequence since the modal was not linked to the specific recipe
+| 001 |Page width exceeding viewport width|While conducting continuous testing I noticed the website was experienceing a sporadic issue with the page width increasing beyond the viewport width. Initially thought to affect all pages and caused by the moibile responsive navbar | While troubleshooting the issue I realised the problem was confined to my Recipes.html page, and thus couldn't be caused by the navber which is a consistent element on all pages. The only other interactive element on this page was an unused Materialize CSS "FeatureDiscovery" element. After deletion the Page width issue didn't reoccur
+| 002 |Delete Confirmation in a modal|When a user selects delete on the "Manage Recipes" page I wanted a confirmation email to display before the recipe could be removed from the website and database. Initial attemps resulted in recipes being deleted one by one in a sequence since the modal was not linked to the specific recipe. This was verified using the {{ recipe title }} and by taking the chance and deleting one of the records | 
+| 003 |Displaying Flash messages in a modal|  |  |
+| 004 | Favicon 404 on some pages | My chosen Fav icon was not displaying on all pages which inherit from the base,html. The error code was "GET /full_recipe/static/img/favicon.ico HTTP/1.1" 404".| Adding a forward slash to the beginning of the directory address fixed the issue.
 
- 
-
- - Page Width Issue
-
- I conducted some troubleshooting to investigate the problem.
->.
 ______
 
 ## **Deployment** <a name="deployment"></a>
@@ -469,7 +497,7 @@ ______
 ## **Credits** <a name="credits"></a>
 
 ### **Content**
-The content of this website was created by Gareth John. Snippets of code have been taken from official documentation and sources creditted below and in the respective code files. All text was written  by the developer having researched the island. Image credits are provided in the following section.
+The content of this website was created by Gareth John. Snippets of code have been taken from official documentation and sources creditted below and in the respective code files. All text was written 
 
 ### **Media**
 
@@ -479,12 +507,15 @@ The photos used in this site were obtained from the folloing sources:
 - All other images came from my own personal image library
 
 ### **Code Snippets**
-The code I use to deploy and clear the Google maps markers has been adapted from the Google Maps API Developer documentation 
+Much of the structure of this site follows what was taught during the Backend Development - Task Manager walkthrough project provided by Code Institute, but has been heavily modified to suit a recipe database site with additional functionality not provided in the walkthrough.
+
+ | Feature | Description | Source |
+ |:-------:|-------------|:------:|
+ |Animated Arrows| Animated arrows in the Landing Page call to action.| https://freefrontend.com/css-arrows/#animated-arrows |
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
-
-- Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Javascript, Jasmine and RESTful API's.
+- Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelsons Walkthrough projects were particularly enjoyable.
 
 ______
 ### **Technical Support** <a name="technical"></a>
