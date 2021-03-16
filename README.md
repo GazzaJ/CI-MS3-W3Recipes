@@ -156,40 +156,53 @@ All of these options are provided on a fairly typical and intuitive navbar.
 #### Wireframes <a name="wireframes"></a>
 Wireframes for the original design concepts were created using Balsamiq.
 ##### Home Page
-The landing page has no function other than to look enticing and to direct users to explore further.
-The bulk of the website is incorporated on the main Explore/Discover page which houses the Google Map
-
+The landing page explains the purpose of the site to new and returning users. Functionalioty is limited from this page. Users are only able to Sign-up with a new account or Log-In to an existing account.
+A Mini version of the Dachboard is shown to hopefully encourage users to find an empty country and to sign-up in order to provide a recipe for it.
 ![Landing Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/home-page.png "Landing Page Wireframe")
 
-##### Main Recipe Page
-The Map page is the focal point for the website, combining interactive elements with Google map functionality. Clicking category buttons will drop Google Map markers on the Map; when each marker is clicked, information displays on the left-hand pane. This will include specific location image and information.
+##### Sign-Up Page
+Simple Sign-Up page enables the user to create unique log-in credentials based on an alphanumeric Username and alphanumeric Password. Back-end logic tests for duplicate entries. Redirects the user to the Recipes Page on successfully signing up.  
+![Sign-Up](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/Sign-up.png "Sign-Up Page Wireframe")
 
-![Map Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/map-page.png "Map Page Wireframe")
+#### Login Page
+For returning users there is a separate Log-In page to enable access to the full functionality of the site.  
+![Login](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/login-page.png "Log-In Page Wireframe")
+
+##### Main Recipe Page
+The Recipe page could be considered one of the key pages on the site. Uses READ functionality to display Recipes and provides the ability to filter Recipes by country or search by keywords. This page has pagination controls which are set to display a specific number of recipes to limit scrolling.
+Users can select any recipe and see the full details of that recipe in order to make it.
+![Recipes Display](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes-page.png "Recipes Page Wireframe")
 
 >**_The main change here was to incorporate what could have comprised separate pages (About, Map and Gallery) into a single page._**
 
 ###### Individual Recipe Page
+Provides users with the full recipe detail so thay can check the ingredients and follow the steps to make it.
+![Full Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full-recipe.png "Full Recipe Wireframe")
 
-##### Dashbord Page
+#### Add Recipe Page
+If the logged in user chooses to upload a recipe they can select "ADD RECIPE" from the navbar, which redirect the user to a page with various input fields where they can populate:
+ - Recipe Name
+ - An image representative of the recipe
+ - Recipe Country
+ - Recipe Description
+ - Servings
+ - Preparation and Cooking Time
+ - Ingredients
+ - Method
 
+Once complete the recipe is uploaded to the MongoDB Atlas Recipes collection.  
+![Add Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Add Recipe Wireframe") 
 
-![Dashboard Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-page.png "Contact Page Wireframe")
+##### Manage Recipes Page
+This page is a copy of the Recipes Page, however rather than providing search functionality it displays only the recipes the user has uploaded, and enables the user to **UPDATE** or **DELETE** those recipes.
+Edit redirects the user to a page similar to the Full Recipe page but with editting functionality.
+Selecting Delete will produce a check modal to double check the deleting request before removing the recipe.  
+![Manage](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Manage Recipes Wireframe")  
 
-##### Registration Page
+#### Edit Recipe Page
+If the user selects EDIT on the Manage Recipes page they are redirected to a page displaying the full recipe with their previous inputs pre-filling the various input fields. The user can change as few or as many field s as necessary or if they change their mind there is a option to Cancel the edit.  
+![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Edit Recipe Wireframe")
 
-![Dashboard Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-page.png "Contact Page Wireframe")
-
-#### Login Page
-
-![Dashboard Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-page.png "Contact Page Wireframe")
-
-#### Recipe Edit Page
-
-![Recipe Edit](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-page.png "Contact Page Wireframe")
-
-#### Recipe Delete Page
-
-![Recipe Delete](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-page.png "Contact Page Wireframe")
 
 #### Profile Page
 
