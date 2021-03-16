@@ -1,8 +1,8 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/GazzaJ/CI-MS3-W3Recipes)
 
-![W3 Recipes](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/document-title.jpg "Discover Kefalonia")
+![W3 Recipes](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/readme-header_1.jpg "W3Recipes")
 
-# [**W3 Recipes**](https://gazzaj.github.io/CI-MS2-Discover-Kefalonia/)
+# [**W3 Recipes**](https://ci-ms3-w3recipes.herokuapp.com/)
 
 
 As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus I thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better way to do this than to get the site users to post their tried and tested favourite recipes.
@@ -66,10 +66,31 @@ The following user stories were developed during the planning stages for this si
 The five planes provide a framework for discussing user experience.
 
 #### **Strategy**  
-The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching, uploading and editting their favourite recipes. The aim is to try and upload  as many recipes from as many different countries as possible to provide a wide array of recipes, and as a bit of fun to track progress in this respect.
+The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching, uploading and editting their favourite recipes. The aim is to try and add a fun spin on the typical recipe website by encoraging the users to upload as many recipes from as many different countries as possible to provide a wide array of recipes, and as a bit of fun to track progress in this respect using the dashboard.
+ - As the site owner and a keen cook I get to share a recipe database with like minded users
+ - Users get to upload and share their rewcipes with other users and in return get a global recipe database.
 
 #### **Scope**  
-Functionality is strictly limited until each user decides to register on the website, however once logged in users are able to:
+The scope for W3Recipes revolves around the ability of users to:
+ - Sign-up  
+The full functionality of the site is provided to users who chose to sign-up to the site.
+ - Edit their Profile  
+Once signed-up users have the ability to edit their profile; providing:
+   - A Profile image
+   - Their location - nearest Town or City  
+  
+  They can also choose to subscribe by providing their email address.
+Once signed up useres have the ability to 
+ - Search any recipe in the website filtered by
+    - Country
+    - Or using keyword searches
+ - Upload their own Recipes
+ - Edit their Recipes  
+ The site ensures users are ONLY able to edit their own recipes
+ - Delete Recipes  
+ The site ensures users are ONLY able to delete recipes they themselves uploaded
+Users can track 
+
  - **Create** or upload a recipe into the database which can then be viewed by all other registered users
  - **Read**, or view all of the recipes stored in the database.
     - The list of recipes can be filtered by country of origin
@@ -77,11 +98,11 @@ Functionality is strictly limited until each user decides to register on the web
  - **Update** any of their own recipes, to change any of the previously stored content, or add additional information (within the limits of the input form)
  - **Delete** recipes they themselves have uploaded. This functionality is NOT extended to other users recipes.
 
-Users will also be able to track which countries recipes have been uploaded for using the Dashboard page; and upvote recipes they like or have tried.
+
 
 ##### Functional Requirements
-Simple and intuitive navbar with a clear mobile responsive equivalent.
-Navbar selections which increases once a user registers or logs into the website
+Simple navigation through an intuitive, mobile responsive navbar
+Navbar menu items which increases once a user registers or logs into the website
 One page each to c
 
 >A key consideration from early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
@@ -93,11 +114,8 @@ I deliberately stuck with a cleand and simple structured layout to make it easy 
 
 A consistent design is provided through Flask template inheritance
 
-
-
-
 #### **Structure**  
-
+W3Recipes is constructed from 11 distinct pages which were created using jinja template inheritance, which simplified the basic structure of the site and reduced the need for repetition. Each page has a single purpose, yet the structure and design of some pages has been re-used to create a familiar and intuitive format for the user.
 
 ##### Interaction Design
 
@@ -141,7 +159,7 @@ Wireframes for the original design concepts were created using Balsamiq.
 The landing page has no function other than to look enticing and to direct users to explore further.
 The bulk of the website is incorporated on the main Explore/Discover page which houses the Google Map
 
-![Landing Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/landing-page.png "Landing Page Wireframe")
+![Landing Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/home-page.png "Landing Page Wireframe")
 
 ##### Main Recipe Page
 The Map page is the focal point for the website, combining interactive elements with Google map functionality. Clicking category buttons will drop Google Map markers on the Map; when each marker is clicked, information displays on the left-hand pane. This will include specific location image and information.
@@ -173,7 +191,7 @@ The Map page is the focal point for the website, combining interactive elements 
 
 ![Recipe Delete](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-page.png "Contact Page Wireframe")
 
-#### Profile PAge
+#### Profile Page
 
 #### Edit Profile Page
 Enables the user to add a photo or avatar to their profile, provide their location and subscribe to the website.
@@ -198,24 +216,27 @@ I had researched different styles which could be used for food related content:
 
 With these criteria and ideas in mind, I started loading various fonts into my CSS file and experimented with different combinations to find the ones which complemented each other and provided an asthetically pleasing look to the site.
 I have used Google fonts for each of my builds to date as it has an extensive library of fonts and is simple and reliable to use.  
-![Google Fonts](https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom "Google Fonts")
+![Google Fonts]https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom "Google Fonts"
  After some experimentation I settled on the following font styles:
  - Main Website Title and occasional text  
 It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact.  
 
-![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg "HTML5") - Shrikhand  
+![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg "Shrikhand" 
 
  - Page headings  
-For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.
-![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg "HTML5") - Galada  
+For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.  
+
+![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg "Galada" 
 
  - Recipe Titles  
-I just had to use this font style! Something about it elicited a positive reaction with me and just seemed to work for the Recipe cards.
-![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg "HTML5") - Molle  
+I just had to use this font style! Something about it elicited a positive reaction with me and just seemed to work for the Recipe cards.  
+
+![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg "Molle" 
 
  - Recipe Detail  
-Given the recipe notebook style I was trying to achieve I wanted a font which lokked more natural and 'written' than the typical online typography.
-![Shrikhand](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg "HTML5") - Happy Monkey
+Given the recipe notebook style I was trying to achieve I wanted a font which lokked more natural and 'written' than the typical online typography.  
+
+![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg "Happy Monkey"
 
 ##### **Imagery** 
 
@@ -268,143 +289,15 @@ This website has been built using the following core technologies:
 ______
 
 ## **Testing** <a name="testing"></a>
-
-### **User Story Testing** <a name="user-story-testing"></a>
-The following testing has been carried out to validate how the website addresses each of the user stories:
-|User Story|Desctiption|Testing|
-|:--------:|-----------|-------|
-|1|As a , I need to , in order to . ||
-
-![Landing Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/landing-page.jpg "Landing Page View")
-![Map Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/map-page.jpg "Map Page View")
-
-
-|User Story|Desctiption|Testing|
-|:--------:|-----------|-------|
-|2|As a , I need to , in order to .||
-
-![Weather Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/weather-info.jpg "Weather Info View")
-![Beach Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/poi-info.jpg "Beach Info View")
-![User Feedback](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/ecuser-comment.jpg "Weather User Feedback")
-
-
-|User Story|Desctiption|Testing|
-|:--------:|-----------|-------|
-|3|As a user, , in order to ||
-
-![Town Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/town-info.jpg "Town Info View")
-![User Feedback](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/ftuser-comment.png "POI User Feedback")
-
-|User Story|Desctiption|Testing|
-|:--------:|-----------|-------|
-|4|As a , I need to , in order to ||
-
-![Activity Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/activity-info.jpg "Activity Info View")
-![User Feedback](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/kmuser-comment.jpg "Activity user feedback")
-
-|User Story|Desctiption|Testing|
-|:--------:|-----------|-------|
-|5|As a , , in order to ||
-
-![Contact Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-form.jpg "Contact Page view")
-
-### **Functionality Testing** <a name="functionality-testing"></a>
-The following table captures the functional testing performed on the website to ensure it works as desired. I have tested on the listed browsers only using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.
-
-|   Test       |Purpose          | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 83.0 (64-bit) |
-|:------------:|-----------------|----------------|---------------|:------:|:-------:|
-|   001        | Test Navigation | |  |  |  |
-|   002        | Test Navigation | |  |  |  |
-|   003        | Test Navigation | |  |  |  |
-|   004        | Test Navigation | |  |  |  |
-|   005        | Test Navigation | |  |  |  |
-|   006        |   | |  |  |  |
-|   007        |   | |  |  |  |
-|   008        |   | |  |  |  |
-|   009        |   | |  |  |  |
-|   010        |   | |  |  |  |
-|   011        |   | |  |  |  |
-|   012        |   | |  |  |  |
-|   013        |   | |  |  |  |
-|   014        |   | |  |  |  |
-|   015        |   | |  |  |  |
-|   016        |   | |  |  |  |
-|   017        |   | |  |  |  |
-| 018          |   | |  |  |  |
-| 019          |   | |  |  |  |
-|020           |   | |  |  |  |
-| 021          |   | |  |  |  |
-| 022          |   | |  |  |  |
-|023           |   | |  |  |  |
-
-The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
-
-### **Code Quality and Validation** <a name="code-validation"></a> 
-|Test|Process|Result| Comment |
-|----|-------|:----:|---------|
-|HTML Validation| Copy Index.html code into W3C validator|PASS||
-|HTML Validation| Copy Map.html code into W3C validator|PASS||
-|HTML Validation| Copy Contact.html code into W3C validator|WARNING|The "type" is unnecessary for Javascript results from 3rd party Script tags|
-|HTML Validation| Copy 404.html code into W3C validator|PASS||
-|Javascript Validation| Copy index.js code into JSHint|CHECKED||
-|Javascript Validation| Copy map.js code into JSHint|CHECKED||
-|Javascript Validation| Copy cndex.js code into JSHint|CHECKED||
-|CSS Validation| Copy CSS code into WC3 validator| ERROR |Errors raised for webkit compatibility. Chosen to ignore| 
-|Python Validation|Copy Python code into |||
-
-- This project has been deployed using Heroku and the website has been reviewed on several real devices:
-  - Samsung Galaxy S9
-  - Samsung Tab A
-  - HP Laptop with attached monitor
-This helped me make some changes to maintain responsiveness. 
-
-- Spelling Checked using [Typosaurus](https://typosaur.us/)
-- [CSS Auto Prefixer](https://autoprefixer.github.io/) - CSS file checked 
-- Mobile Friendly Test - [PASS](https://search.google.com/test/mobile-friendly?id=8jZoJWUliCuw3Bdmly-IwA)
-- README.md file spelling checked by copying and pasting the text into word.
-
-
-### **Usability Testing** <a name="usability-testing"></a>"
-I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
-
-
-### **Responsiveness Testing** <a name="responsiveness-testing"></a>
-I have conducted continuous responsiveness testing, right up to the final submission, to ensure the website functions on different devices and in both portrait and landscape orientation, using:
- - Google Devtools
-![Responsiveness](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/poi-info.jpg "Website Responsiveness") 
-![Responsiveness](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-form.jpg "Website Responsiveness")
- - Am I Responsive
-![Am I responsive images](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/am-i-responsive.png "Am I Responsive")
- - Responsinator.com
- ![Responsinator image](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/responsinator.png "Responsinator image")
-
-### **Performance Testing** <a name="performance-testing"></a>
-The website has been performance testing using the following tools:
- - Google Lighthouse (Desktop)
-  
- 
-![Google Lighthouse](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/google-lighthouse.png "Google Lighthouse Testing")
-
-
-
- - Google Lighthouse (Mobile)
-  
- 
-![Google Lighthouse](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/google-lighthouse-mobile.png "Google Lighthouse Testing")
-
+All of the testing conducted on this app', and the bugs identified are documented in the following document:-
+# [TESTING.md](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING.md) 
 
 ______
-
-## **Bugs and Issues** <a name="bugs"></a>
-The following table explains the bugs and issues encountered while building this website.
-|  Issue #   |  Bug or Issue  |  Description  |  Solution  |
-|:----------:|:--------------:|---------------|------------|
-| 001 |Page width exceeding viewport width|While conducting continuous testing I noticed the website was experienceing a sporadic issue with the page width increasing beyond the viewport width. Initially thought to affect all pages and caused by the moibile responsive navbar | While troubleshooting the issue I realised the problem was confined to my Recipes.html page, and thus couldn't be caused by the navber which is a consistent element on all pages. The only other interactive element on this page was an unused Materialize CSS "FeatureDiscovery" element. After deletion the Page width issue didn't reoccur
-| 002 |Delete Confirmation in a modal|When a user selects delete on the "Manage Recipes" page I wanted a confirmation email to display before the recipe could be removed from the website and database. Initial attemps resulted in recipes being deleted one by one in a sequence since the modal was not linked to the specific recipe. This was verified using the {{ recipe title }} and by taking the chance and deleting one of the records | 
-| 003 |Displaying Flash messages in a modal|  |  |
-| 004 | Favicon 404 on some pages | My chosen Fav icon was not displaying on all pages which inherit from the base,html. The error code was "GET /full_recipe/static/img/favicon.ico HTTP/1.1" 404".| Adding a forward slash to the beginning of the directory address fixed the issue.
-
-______
+## **Database Creation** <a name="database"></a>
+This app is connected to the MongoDB Atlas 
+The following ste ps were used to create the data base and connect the 
+ - Log in to MongoDB Atlas
+ - Start a new Project
 
 ## **Deployment** <a name="deployment"></a>
 All of the files necessary to run this website have been stored in a GitHub repository. If you would like to work on your own version of this site or use it as a template for your own work, you have the option to either fork, or make a clone of the original repo.
@@ -427,15 +320,21 @@ By forking the GitHub Repository you can make a copy of the original repository 
 As this is a full-stack website it has been deployed to Heroku.com using the following procedure:
 - Log in to Heroku.com
 - From the Dashboard, select the "New" button on the Top-Right of the screen
-  - Select "Create new app" 
+  - Select "Create new app"  
+ ![Heroku]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-app.jpg  
+
 - Insert your app name
   - Heroku will let you know whether your chosen name is available
 - Select the most appropriate region for your location
 - Click the "Create app" button
 
 ### **Heroku Deployment**
-The above steps will automatically bring you to the "Deploy" tab of your new app
+The above steps will automatically bring you to the "Deploy" tab of your new app.  
+![Deployment]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-github.jpg
+
  1. In the "Deployment Method" section select Github
+![Deployment]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-app-menu.jpg  
+
  Once selected a Connect to GitHub section will display below
  2. Ensure your profile is displayed
     - If not type in your GitHub username
@@ -443,8 +342,9 @@ The above steps will automatically bring you to the "Deploy" tab of your new app
  4. Click "Connect"
 
 This app uses connec and Heroku requires these in order for the website to function as desired. To do this you need to set the Config Vars
- - Under the "Settings" tab, in the Config Vars section select the "Reveal Config Vars" button
-This will reveal a form for inputting the key and value pairs necessary to connect to the app. The
+ - Under the "Settings" tab, in the Config Vars section select the "Reveal Config Vars" button.
+![Config Vars]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-config-vars.jpg
+This will reveal a form for inputting the key and value pairs necessary to connect to the app.
 
 |  KEY  |  VALUE  |
 |:-----:|:-------:|
