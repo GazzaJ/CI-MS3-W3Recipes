@@ -175,6 +175,7 @@ Users can select any recipe and see the full details of that recipe in order to 
 
 >**_The main change here was to incorporate what could have comprised separate pages (About, Map and Gallery) into a single page._**
 
+
 ###### Individual Recipe Page
 Provides users with the full recipe detail so thay can check the ingredients and follow the steps to make it.
 ![Full Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full-recipe.png "Full Recipe Wireframe")
@@ -234,22 +235,22 @@ I have used Google fonts for each of my builds to date as it has an extensive li
  - Main Website Title and occasional text  
 It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact.  
 
-![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg "Shrikhand" 
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg) "Shrikhand" 
 
  - Page headings  
 For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.  
 
-![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg "Galada" 
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg) "Galada" 
 
  - Recipe Titles  
 I just had to use this font style! Something about it elicited a positive reaction with me and just seemed to work for the Recipe cards.  
 
-![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg "Molle" 
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg) "Molle" 
 
  - Recipe Detail  
 Given the recipe notebook style I was trying to achieve I wanted a font which lokked more natural and 'written' than the typical online typography.  
 
-![Font]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg "Happy Monkey"
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg) "Happy Monkey"
 
 ##### **Imagery** 
 
@@ -272,29 +273,29 @@ This website has been built using the following core technologies:
 - ![HTML 5](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/html-5-logo.png "HTML5") - HTML5
 - ![CSS3](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/css3-logo.png "CSS3") - CSS3
 - ![Javascript](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/javascript.png "Javascript") - Javascript
-- ![Python](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/javascript.png "Javascript") - Python
+- ![Python](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/Python.png "Python") - Python
 
 ##### Integrations
 
-- ![Bootstrap 4](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/bootstrap-logo.png "Bootstrap 4") - Bootstrap 4
+- ![Materialize CSS](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/materialize-css.png "Bootstrap 4") - Materialize CSS
 - ![Font Awesome](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/fontawesome-logo.png "Font Awesome") - Font Awesome was the source of all icons.
 - ![Google Fonts](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/googlefonts-logo.png "Google Fonts") - Fonts used on the website courtesy of Google Fonts
 - ![JQuery](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/jquery.png "JQuery") - The project uses JQuery to simplify DOM manipulation.
-- Flask
-- Jinja
+- ![Flask](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/flask.png "Flask") - The project uses the Flask micro-framework and links with jinja to create the webpages
+- ![Jinja](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/jinja.png "Jinja") - The project uses the Jinja templating engine
 - PyMongo
 
 #### Database Management System
-- MongoDB Altas
-- MondgoDB Compass
-- MongoDB Charts
+- ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Altas
+-![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster
+- ![MongoDB Charts](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Charts") - MongoDB Charts was used to create the website's dashboard
 
 ##### Version Control, storage and hosting
 
 - ![Gitpod](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/gitpod-logo.png "Gitpod logo") - All of the website's code was written in the Gitpod IDE.
 - ![Git](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/git-logo.png "git logo") - used for maintaining version control of the saved files.
 - ![GitHub](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Github logo") - used as the primary repository for storying the files and documentation.
-- - ![Heroku](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Heroku logo") - Deployment site
+- ![Heroku](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Heroku logo") - Deployment site
 
 ##### Other
 
