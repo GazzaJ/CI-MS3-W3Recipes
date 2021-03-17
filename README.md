@@ -63,34 +63,15 @@ The following user stories were developed during the planning stages for this si
 
 
 ### **The 5 Planes of UX** <a name="planes"></a>
-The five planes provide a framework for discussing user experience.
+The five planes provide a framework to discuss the design and development of this app.
 
 #### **Strategy**  
-The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching, uploading and editting their favourite recipes. The aim is to try and add a fun spin on the typical recipe website by encoraging the users to upload as many recipes from as many different countries as possible to provide a wide array of recipes, and as a bit of fun to track progress in this respect using the dashboard.
- - As the site owner and a keen cook I get to share a recipe database with like minded users
- - Users get to upload and share their rewcipes with other users and in return get a global recipe database.
+The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching and sharing (uploading and editting) their favourite recipes. The aim is to try and add a fun spin on the typical recipe website by encoraging the users to upload their favourite recipes from as many different countries from around the World as possible to provide a wide array of recipes, and as a bit of fun to enable them to track progress in this respect using the dashboard.
+ - As the site owner and a keen cook I get to share a recipe database with like minded users, and in exchange for the development get some new recipes to try.
+ - Users also get access to all of those recipes and get to upload and share their recipes with a community of like minded keen cooks.
 
 #### **Scope**  
-The scope for W3Recipes revolves around the ability of users to:
- - Sign-up  
-The full functionality of the site is provided to users who chose to sign-up to the site.
- - Edit their Profile  
-Once signed-up users have the ability to edit their profile; providing:
-   - A Profile image
-   - Their location - nearest Town or City  
-  
-  They can also choose to subscribe by providing their email address.
-Once signed up useres have the ability to 
- - Search any recipe in the website filtered by
-    - Country
-    - Or using keyword searches
- - Upload their own Recipes
- - Edit their Recipes  
- The site ensures users are ONLY able to edit their own recipes
- - Delete Recipes  
- The site ensures users are ONLY able to delete recipes they themselves uploaded
-Users can track 
-
+The key features required to enable this app to function as designed are centered around CRUD interactions with a MongoDB Atlas cloud database management system.:
  - **Create** or upload a recipe into the database which can then be viewed by all other registered users
  - **Read**, or view all of the recipes stored in the database.
     - The list of recipes can be filtered by country of origin
@@ -98,28 +79,43 @@ Users can track
  - **Update** any of their own recipes, to change any of the previously stored content, or add additional information (within the limits of the input form)
  - **Delete** recipes they themselves have uploaded. This functionality is NOT extended to other users recipes.
 
-
+In order to prevent unwanted editting or deletions of users recipes, the website has been designed with a basic level of security. Thus, to access the full functionality users are required to Sign-up to the App, which provides access to the CRUD functionality.
+ - User interactions are tracked and managed through the use of a *"Session Cookie"*
+ - Uploads are unlimited, by users can only edit and delete their own previously uploaded recipes
+ - Users can elect to provide additional basic informataion about themselves and to subscribe or not
 
 ##### Functional Requirements
-Simple navigation through an intuitive, mobile responsive navbar
-Navbar menu items which increases once a user registers or logs into the website
+App functionality is provided through simple navigation using an intuitive, and mobile responsive navbar. The navbarr menu options increases once a user registers or logs into the website, increasing pootential functionality.
 One page each to c
 
->A key consideration from early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
-
 ##### Content Requirements
+Much of the content on this site will be provided by users.
+Outside of this I have tried to use images of food or food related themes.
 I am a keen cook, and having an image of a recipe is just as important as the ingredient list and preparation steps, as it provides an enticing view of the endpoint and helps to whet the users appetite. Thus including images with each recipe is a key component.
 The typography selected for this site was also important, and needed to be fun yet functional. I have selected more cursive fonts to try and emulate a recipe notebook style.
-I deliberately stuck with a cleand and simple structured layout to make it easy to view the content.
+I deliberately stuck with a clean and simple, structured layout to make it easy to view  and also edit the content.
 
-A consistent design is provided through Flask template inheritance
+A consistent design is provided through Flask/Jinja templating inheritance.
 
 #### **Structure**  
-W3Recipes is constructed from 11 distinct pages which were created using jinja template inheritance, which simplified the basic structure of the site and reduced the need for repetition. Each page has a single purpose, yet the structure and design of some pages has been re-used to create a familiar and intuitive format for the user.
+W3Recipes is constructed from 11 distinct pages which were created using jinja template inheritance. This simplified the basic structure of the site and reduced the need for repetition. It may have been possible to build this with scrollable sections, however as each page tends to have a distinct purpose, it made sense to build individual pages.
+Adding and Editing data are very similar and thus the structure and design of some pages have been re-used to create a familiar and intuitive format for the user.
 
 ##### Interaction Design
+I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.
+Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
+ - Green ![Green Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/green-button.jpg)
+ Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
+
+ - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-red-fabs.jpg)
+ Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.  
+
+ - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)
+ Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.
 
 
+
+>A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
 ##### Information Design
 
 
@@ -232,24 +228,20 @@ With these criteria and ideas in mind, I started loading various fonts into my C
 I have used Google fonts for each of my builds to date as it has an extensive library of fonts and is simple and reliable to use.  
 ![Google Fonts]https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom "Google Fonts"
  After some experimentation I settled on the following font styles:
- - Main Website Title and occasional text  
-It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact.  
-
+ - Main Website Title and occasional text (Shrikhand)  
+It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact. 
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg) "Shrikhand" 
 
- - Page headings  
+ - Page headings (Galada)  
 For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.  
-
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg) "Galada" 
 
- - Recipe Titles  
+ - Recipe Titles (Molle)  
 I just had to use this font style! Something about it elicited a positive reaction with me and just seemed to work for the Recipe cards.  
-
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg) "Molle" 
 
- - Recipe Detail  
+ - Recipe Detail (Happy Monkey)  
 Given the recipe notebook style I was trying to achieve I wanted a font which lokked more natural and 'written' than the typical online typography.  
-
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg) "Happy Monkey"
 
 ##### **Imagery** 
@@ -261,6 +253,7 @@ ______
 
 ### **Existing Features**
 
+### **Security Reatures**
 
 ______
 
@@ -272,8 +265,9 @@ This website has been built using the following core technologies:
 
 - ![HTML 5](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/html-5-logo.png "HTML5") - HTML5
 - ![CSS3](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/css3-logo.png "CSS3") - CSS3
-- ![Javascript](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/javascript.png "Javascript") - Javascript
 - ![Python](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/Python.png "Python") - Python
+- ![Javascript](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/javascript.png "Javascript") - Javascript
+
 
 ##### Integrations
 
@@ -286,8 +280,8 @@ This website has been built using the following core technologies:
 - PyMongo
 
 #### Database Management System
-- ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Altas
--![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster
+- ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Altas  
+-![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster  
 - ![MongoDB Charts](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Charts") - MongoDB Charts was used to create the website's dashboard
 
 ##### Version Control, storage and hosting
@@ -295,7 +289,7 @@ This website has been built using the following core technologies:
 - ![Gitpod](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/gitpod-logo.png "Gitpod logo") - All of the website's code was written in the Gitpod IDE.
 - ![Git](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/git-logo.png "git logo") - used for maintaining version control of the saved files.
 - ![GitHub](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Github logo") - used as the primary repository for storying the files and documentation.
-- ![Heroku](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/github-logo.png "Heroku logo") - Deployment site
+- ![Heroku](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-logo.png "Heroku logo") - Deployment site
 
 ##### Other
 
@@ -346,10 +340,11 @@ As this is a full-stack website it has been deployed to Heroku.com using the fol
 The above steps will automatically bring you to the "Deploy" tab of your new app.  
 ![Deployment]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-github.jpg
 
- 1. In the "Deployment Method" section select Github
+ 1. In the "Deployment Method" section select Github  
+ Once selected a Connect to GitHub section will display below
+
 ![Deployment]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-app-menu.jpg  
 
- Once selected a Connect to GitHub section will display below
  2. Ensure your profile is displayed
     - If not type in your GitHub username
  3. Search for, and select the Repo corresponding to the Heroku app
@@ -430,7 +425,8 @@ Much of the structure of this site follows what was taught during the Backend De
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
 - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelsons Walkthrough projects were particularly enjoyable.
-
+ - Thanks to Ed Bradley for hosting a very helpfull MS3 Planning Call.
+ - Thanks also to Can Sucullu for opening my eyes to potential vunerabilitis and potential back doors 
 ______
 ### **Technical Support** <a name="technical"></a>
 If you encounter any issues with this website, or require any support please email the developer [johnge71@gmail.com](mailto:johnge71@gmail.com)
