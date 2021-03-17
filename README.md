@@ -102,21 +102,32 @@ W3Recipes is constructed from 11 distinct pages which were created using jinja t
 Adding and Editing data are very similar and thus the structure and design of some pages have been re-used to create a familiar and intuitive format for the user.
 
 ##### Interaction Design
-I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.
-Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
- - Green ![Green Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/green-button.jpg)
+User interactions on the W£Recipes app can be subdivided into three categories:
+ - **Navigation**  
+ I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.  
+  ![Navbar](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/navbar.jpg)
+Navigating through the Recipes is achieved through familiar pagination controls.  
+![Pagination](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/pagination.jpg)
+
+ - **Manipulation**  
+ Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
+   - Green ![Green Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/green-button.jpg)  
  Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
 
- - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-red-fabs.jpg)
+   - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-red-fabs.jpg)  
  Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.  
 
- - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)
- Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.
+   - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
+ Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.  
 
-
+ - **Data Input**
+ The primary User inputs are achieved 
 
 >A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
+
 ##### Information Design
+Information is provided to users on four key pages; Recipes, Manage Recipes, Profile and Dashboard.
+Despite rendering slightly different information the structure of the Recipe and Manage Recipe Pages are deliberately similar.
 
 
 
