@@ -4,10 +4,10 @@
 
     <div class="row container">
         <!-- Recipe Filter -->
-        <form class="col s12 m6 card-panel" action="{{ url_for('filter') }}" method="post">
+        <form class="col s12 m4 offset-m1 card-panel" action="{{ url_for('filter') }}" method="post">
             <!-- Filter Recipes by Country -->            
             <div class="input-field col s12">                                     
-                <i class="fas fa-globe-americas prefix"></i>
+            <i class="fas fa-globe-americas prefix"></i>
                 <select id="country_filter" name="country_filter" class="validate" required>                            
                     <option value="" disabled selected>Filter by Country</option>
                     {% for country in countries %}
@@ -16,18 +16,18 @@
                 </select>
                 <label for="country_filter"></label>
             </div>
-            <!-- Recipe Filter Buttons -->
+            <!-- Recipe Filter and Reset Buttons -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
                     <button id="filter-button" class="btn waves-effect waves-light green" type="submit">Filter
                         <i class="fas fa-filter"></i>
                     </button>
+                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
                 </div>
             </div>            
         </form>
         <!-- Recipe Search -->    
-        <form class="col s12 m6 card-panel" action="{{ url_for('search') }}" method="post">
+        <form class="col s12 m4 offset-m1 card-panel" action="{{ url_for('search') }}" method="post">
             <div class="input-field col s12">
                 <i class="fas fa-search prefix"></i>
                 <input type="text" name="text_search" id="text_search" placeholder="Enter search text" class="validate" minlength="3" required>
@@ -36,10 +36,10 @@
             <!-- Recipe Search Buttons -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
                     <button id="search-button" class="btn waves-effect waves-light green" type="submit">Search
                         <i class="fas fa-search"></i>
                     </button>                    
+                    <a href="{{ url_for('get_recipes') }}" class="btn red">Reset <i class="fas fa-sync-alt"></i></a>
                 </div>
             </div>
         </form>

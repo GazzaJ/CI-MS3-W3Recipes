@@ -43,7 +43,8 @@ main {
 /*-- Header --*/
 
 .brand-logo img {
-    height: 100px;
+    height: 65px;
+    margin-left: 2rem;
     width: auto;    
 }
 
@@ -157,8 +158,8 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 /*---------- Search Card ----------*/
 
-#search-button {
-    margin-left: 1rem;
+#search-button, #filter-button {
+    margin-right: 1rem;
 }
 
 /*---------- Full Recipe Page ----------*/
