@@ -105,9 +105,11 @@ Adding and Editing data are very similar and thus the structure and design of so
 User interactions on the W£Recipes app can be subdivided into three categories:
  - **Navigation**  
  I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.  
-  ![Navbar](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/navbar.jpg)
+  ![Navbar](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/navbar.jpg)  
+
 Navigating through the Recipes is achieved through familiar pagination controls.  
 ![Pagination](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/pagination.jpg)
+
 
  - **Manipulation**  
  Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
@@ -117,15 +119,18 @@ Navigating through the Recipes is achieved through familiar pagination controls.
    - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-red-fabs.jpg)  
  Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.  
 
+
    - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
  Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.  
+
 
  - **Data Input**
  The primary User inputs are achieved 
 
 >A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
 
-##### Information Design
+
+##### **Information Design**
 Information is provided to users on four key pages; Recipes, Manage Recipes, Profile and Dashboard.
 Despite rendering slightly different information the structure of the Recipe and Manage Recipe Pages are deliberately similar.
 
@@ -148,15 +153,15 @@ Assuming the user elects to register they are provided access to the remaining p
 
 All of these options are provided on a fairly typical and intuitive navbar. 
 
-##### Interface Design
+##### **Interface Design**
 
 
-##### Navigation Design
+##### **Navigation Design**
 
 
+There should be no requirement for the user to have to resort to the Browser BACK button. 
 
-
-##### Information Design
+##### **Information Design**
 
 
 
@@ -282,17 +287,17 @@ This website has been built using the following core technologies:
 
 ##### Integrations
 
+- ![Flask](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/flask.png "Flask") - The project uses the Flask micro-framework and links with jinja to create the webpages
+- ![Jinja](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/jinja.png "Jinja") - The project uses the Jinja templating engine
 - ![Materialize CSS](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/materialize-css.png "Bootstrap 4") - Materialize CSS
 - ![Font Awesome](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/fontawesome-logo.png "Font Awesome") - Font Awesome was the source of all icons.
 - ![Google Fonts](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/googlefonts-logo.png "Google Fonts") - Fonts used on the website courtesy of Google Fonts
 - ![JQuery](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/jquery.png "JQuery") - The project uses JQuery to simplify DOM manipulation.
-- ![Flask](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/flask.png "Flask") - The project uses the Flask micro-framework and links with jinja to create the webpages
-- ![Jinja](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/jinja.png "Jinja") - The project uses the Jinja templating engine
 - PyMongo
 
 #### Database Management System
 - ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Altas  
--![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster  
+- ![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster  
 - ![MongoDB Charts](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Charts") - MongoDB Charts was used to create the website's dashboard
 
 ##### Version Control, storage and hosting
@@ -304,7 +309,7 @@ This website has been built using the following core technologies:
 
 ##### Other
 
-- Dillinger was once again used to edit the markdown required for the README file.
+- Dillinger was once again used to edit the markdown required for the README.md and TESTING.md files.
 ______
 
 ## **Testing** <a name="testing"></a>
@@ -313,10 +318,33 @@ All of the testing conducted on this app', and the bugs identified are documente
 
 ______
 ## **Database Creation** <a name="database"></a>
-This app is connected to the MongoDB Atlas 
-The following ste ps were used to create the data base and connect the 
- - Log in to MongoDB Atlas
- - Start a new Project
+This app is connected to a MongoDB Atlas Cluster
+The following steps were used to create the MongoDB Project Database, and subsequent Collections
+ 1. Log in to MongoDB Atlas
+ 2. Start a new Project  
+ ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-project.jpg)
+ 3. Create a new Cluster  
+   a. Shared Cluster (Free) option selected 
+ 4. Select a Cloud provider
+   a. AWS in Ireland Selected
+ 5. Select Data tier
+  a. Basic M0 tier selected for the purposes of this project 
+ 6. Add a Cluster Name
+ 7. Click Create Cluster  
+ ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-clusters.jpg)
+ 8. Database Access (Left hand Menu under the Security Heading)
+ 9. Add a Database user
+ 10. Set Network Access (Left hand Menu under the Security Heading)  
+ ![Network Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-network.jpg)  
+ 11. Add IP Address
+   a. Allow Access from Anywhere
+ 13. Confirm
+ 14. Select Clusters under Data Storage  
+ The buttons will become active once the Cluster has been provisioned
+ 15. Click Collections to add a database and start adding documents to your database collections
+  a. Provide a Database Name
+  b. Add a Name for your first collection of documents
+ 16. Click "Create"
 
 ## **Deployment** <a name="deployment"></a>
 All of the files necessary to run this website have been stored in a GitHub repository. If you would like to work on your own version of this site or use it as a template for your own work, you have the option to either fork, or make a clone of the original repo.
@@ -349,21 +377,22 @@ As this is a full-stack website it has been deployed to Heroku.com using the fol
 
 ### **Heroku Deployment**
 The above steps will automatically bring you to the "Deploy" tab of your new app.  
-![Deployment]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-github.jpg
+![Deployment](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-github.jpg)
 
  1. In the "Deployment Method" section select Github  
  Once selected a Connect to GitHub section will display below
 
-![Deployment]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-app-menu.jpg  
+![Deployment](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-app-menu.jpg)  
 
  2. Ensure your profile is displayed
     - If not type in your GitHub username
+![Heroku + Github Repo](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-repo.jpg)
  3. Search for, and select the Repo corresponding to the Heroku app
  4. Click "Connect"
 
 This app uses connec and Heroku requires these in order for the website to function as desired. To do this you need to set the Config Vars
  - Under the "Settings" tab, in the Config Vars section select the "Reveal Config Vars" button.
-![Config Vars]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-config-vars.jpg
+![Config Vars](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-config-vars.jpg)
 This will reveal a form for inputting the key and value pairs necessary to connect to the app.
 
 |  KEY  |  VALUE  |
@@ -386,7 +415,7 @@ The above Mongo_URI variable can be found in the appropriate Mongo DB Project un
  - Select the Heroku "Deploy" tab
  - In the "Automatic deploys" section select the branch you wish to use
  
-There is no difference between the developed version and that deployed on Heroku
+**There is no difference between the developed version of W3Recipes and that deployed on Heroku**
 ______
 
 ## **Resources** <a name="resources"></a>
