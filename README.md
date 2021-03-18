@@ -218,16 +218,16 @@ If the user selects EDIT on the Manage Recipes page they are redirected to a pag
 
 
 #### Profile Page
-![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile-page.png)
+![Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile-page.png)
 #### Edit Profile Page
 Enables the user to add a photo or avatar to their profile, provide their location and subscribe to the website.
 I chose not to place the subscribe option on the landing page because until you log in you wouldn't necessarily know whether you wanted to subscribe to the website.
 Thus it made sense to me to add this to a profile page  
 
-![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-profile.png)  
+![Edit Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-profile.png)  
 
 #### Dashboard Page  
-![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dashboard.png)
+![Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipe-dashboard.png)
 
 #### **Surface**
 
