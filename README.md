@@ -218,12 +218,13 @@ If the user selects EDIT on the Manage Recipes page they are redirected to a pag
 
 
 #### Profile Page
-
+![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile-page.png)
 #### Edit Profile Page
 Enables the user to add a photo or avatar to their profile, provide their location and subscribe to the website.
 I chose not to place the subscribe option on the landing page because until you log in you wouldn't necessarily know whether you wanted to subscribe to the website.
-Thus it made sense to me to add this to a profile page
+Thus it made sense to me to add this to a profile page  
 
+![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-profile.png)
 #### **Surface**
 
 
@@ -245,20 +246,24 @@ I have used Google fonts for each of my builds to date as it has an extensive li
 ![Google Fonts]https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom "Google Fonts"
  After some experimentation I settled on the following font styles:
  - Main Website Title and occasional text (Shrikhand)  
-It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact. 
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg) "Shrikhand" 
+It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact.  
+
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg)  
 
  - Page headings (Galada)  
 For these I was looking for a more relaxed, fun font with a slightly cursive style and a bit of weight.  
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg) "Galada" 
+
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/galada.jpg)  
 
  - Recipe Titles (Molle)  
 I just had to use this font style! Something about it elicited a positive reaction with me and just seemed to work for the Recipe cards.  
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg) "Molle" 
+
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg)  
 
  - Recipe Detail (Happy Monkey)  
 Given the recipe notebook style I was trying to achieve I wanted a font which lokked more natural and 'written' than the typical online typography.  
-![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg) "Happy Monkey"
+
+![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg) 
 
 ##### **Imagery** 
 
@@ -320,9 +325,11 @@ ______
 ## **Database Creation** <a name="database"></a>
 This app is connected to a MongoDB Atlas Cluster
 The following steps were used to create the MongoDB Project Database, and subsequent Collections
- 1. Log in to MongoDB Atlas
+ 1. Log in to [MongoDB Atlas](https://mongodb.com)
  2. Start a new Project  
- ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-project.jpg)
+
+ ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-project.jpg)  
+ 
  3. Create a new Cluster  
    a. Shared Cluster (Free) option selected 
  4. Select a Cloud provider
@@ -331,13 +338,20 @@ The following steps were used to create the MongoDB Project Database, and subseq
   a. Basic M0 tier selected for the purposes of this project 
  6. Add a Cluster Name
  7. Click Create Cluster  
- ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-clusters.jpg)
- 8. Database Access (Left hand Menu under the Security Heading)
+
+ ![Cluster Creation](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-clusters.jpg)  
+ 
+ 8. Database Access (Left hand Menu under the Security Heading)  
+
+ ![Network Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-dbaccess.jpg)  
+
  9. Add a Database user
  10. Set Network Access (Left hand Menu under the Security Heading)  
+
  ![Network Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongo-network.jpg)  
- 11. Add IP Address
-   a. Allow Access from Anywhere
+ 
+ 11. Add IP Address  
+   a. Allow Access from Anywhere **(Not recommended for full production apps)**
  13. Confirm
  14. Select Clusters under Data Storage  
  The buttons will become active once the Cluster has been provisioned
@@ -368,7 +382,8 @@ As this is a full-stack website it has been deployed to Heroku.com using the fol
 - Log in to Heroku.com
 - From the Dashboard, select the "New" button on the Top-Right of the screen
   - Select "Create new app"  
- ![Heroku]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-app.jpg  
+
+![Heroku]https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-app.jpg  
 
 - Insert your app name
   - Heroku will let you know whether your chosen name is available
@@ -386,13 +401,17 @@ The above steps will automatically bring you to the "Deploy" tab of your new app
 
  2. Ensure your profile is displayed
     - If not type in your GitHub username
-![Heroku + Github Repo](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-repo.jpg)
+
+![Heroku + Github Repo](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-repo.jpg)  
+
  3. Search for, and select the Repo corresponding to the Heroku app
  4. Click "Connect"
 
 This app uses connec and Heroku requires these in order for the website to function as desired. To do this you need to set the Config Vars
- - Under the "Settings" tab, in the Config Vars section select the "Reveal Config Vars" button.
-![Config Vars](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-config-vars.jpg)
+ - Under the "Settings" tab, in the Config Vars section select the "Reveal Config Vars" button.  
+
+![Config Vars](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-config-vars.jpg)  
+
 This will reveal a form for inputting the key and value pairs necessary to connect to the app.
 
 |  KEY  |  VALUE  |
@@ -408,7 +427,7 @@ The above Mongo_URI variable can be found in the appropriate Mongo DB Project un
  2. Select "Connect"
  3. Select "Connect your application"
  4. Choose your Driver and Version
-   - Remembering to substitute in your own DBNAME and Password
+   - **Remember to substitute in your own DBNAME and Password**
  5. Copy your connection string
 
 ### **Enabling Automatic Deployment**
