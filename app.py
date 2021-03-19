@@ -1,11 +1,13 @@
 import os
+import magic
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from PIL import Image
+from urllib.request import urlopen
 from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
-from PIL import Image
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -23,7 +25,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId('603799093d30368acbfdfdd0')})
+    recipe = mongo.db.recipes.find_one(
+        {"_id": ObjectId('603799093d30368acbfdfdd0')})
     return render_template("index.html", recipe=recipe)
 
 
@@ -102,6 +105,7 @@ def profile(username):
         {"username": session["user"]})["user_image"]
     subscribed = mongo.db.users.find_one(
         {"username": session["user"]})["subscribed"]
+
     if session["user"]:
         return render_template("profile.html",
         username=username, city=city, email=email,
@@ -129,12 +133,22 @@ def edit_profile():
             }
         }
         )
+        # ----- Check Image URL Type -----
+        image_formats = ("image/jpg", "image/jpeg", "image/png", "image/gif")
+        url = request.form.get("image")
+        site = urlopen(url)
+        meta = site.info()
+        print(meta)
+        if meta["content-type"] in image_formats:
+            flash("this is a valid image")
+        else:
+            flash('This is not a valid image')
+
         flash("Profile Successfully Edited!")
         return redirect(url_for(
-            "profile", username=session["user"]))
+            "profile", username=session["user"], meta=meta))
 
-    img = Image.open('')
-    img.format
+
 
     # Retrieve the session user's details from the DB
     username = mongo.db.users.find_one(
