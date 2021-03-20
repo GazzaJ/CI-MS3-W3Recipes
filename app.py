@@ -1,7 +1,7 @@
 import os
 import magic
 from flask import (
-    Flask, flash, render_template,
+    Flask, abort, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from PIL import Image
@@ -123,7 +123,7 @@ def edit_profile():
         email = request.form.get('email')
         if subscribed != "on":
             email = ""
-        mongo.db.users.update({"username": session["user"]},
+        mongo.db.users.update_one({"username": session["user"]},
         {"$set":
             {
                 "user_image": request.form.get("image"),
@@ -133,22 +133,12 @@ def edit_profile():
             }
         }
         )
-        # ----- Check Image URL Type -----
-        image_formats = ("image/jpg", "image/jpeg", "image/png", "image/gif")
-        url = request.form.get("image")
-        site = urlopen(url)
-        meta = site.info()
-        print(meta)
-        if meta["content-type"] in image_formats:
-            flash("this is a valid image")
-        else:
-            flash('This is not a valid image')
-
         flash("Profile Successfully Edited!")
         return redirect(url_for(
-            "profile", username=session["user"], meta=meta))
+            "profile", username=session["user"]))
 
-
+    url = request.form.get("image")
+    print(url)
 
     # Retrieve the session user's details from the DB
     username = mongo.db.users.find_one(
@@ -185,7 +175,8 @@ def get_recipes():
     pages = range(1, int(round(total / per_page + 1)))
     prev_page = current_page - 1
     next_page = current_page + 1
-    countries = country_coll.find().sort("country", 1)
+    countries = country_coll.find().sort("name", 1)
+
     return render_template("recipes.html",
         recipes=recipes, countries=countries,
         current_page=current_page, pages=pages,
@@ -259,7 +250,7 @@ def add_recipe():
         flash("Recipe Successfully Added!", "five")
         return redirect(url_for("get_recipes"))
 
-    countries = country_coll.find().sort("country", 1)
+    countries = country_coll.find().sort("name", 1)
     return render_template(
         "add_recipe.html", countries=countries, rec_img=rec_img)
 
@@ -268,7 +259,9 @@ def add_recipe():
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
     recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("full_recipe.html", recipe=recipe)
+    origin = country_coll.find_one({"name": recipe["country_name"]})
+    flag = origin["alpha2"]
+    return render_template("full_recipe.html", recipe=recipe, flag=flag)
 
 
 # ---------- Manage Recipes ----------
@@ -279,7 +272,7 @@ def manage_recipes():
     uploaded = recipe_coll.count(
         {"uploaded_by": session["user"]})
     if uploaded == 0:
-        flash("You have not uploaded any recipes yet!", "six")
+        flash("You have not uploaded any recipes yet!",)
     # Check if the user is Admin
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
@@ -302,7 +295,7 @@ def manage_recipes():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = recipe_coll.find_one({"_id": ObjectId(recipe_id)})
-    countries = country_coll.find().sort("country", 1)
+    countries = country_coll.find().sort("name", 1)
     uploaded_by = recipe["uploaded_by"]
     user = mongo.db.users.find_one({"username": session["user"]})
     admin = user["is_admin"]
