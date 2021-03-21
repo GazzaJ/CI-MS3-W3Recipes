@@ -50,7 +50,7 @@
                                 <!-- Image URL Input -->
                                 <i class="fas fa-camera prefix"></i>
                                 <input value="{{ recipe.image }}" id="image_url" name="image_url" 
-                                    type="text" class="validate">
+                                    type="url" pattern="https://.*" class="validate">
                                 <label for="image_url">Recipe Image</label>
                             </div>
                             <div>

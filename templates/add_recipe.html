@@ -41,7 +41,8 @@
                             <div class="input-field">
                                 <!-- Image URL Input -->
                                 <i class="fas fa-camera prefix"></i>
-                                <input placeholder="Image URL" id="image_url" name="image_url" type="text" onchange="addImage();" class="validate">
+                                <input placeholder="Image URL" id="image_url" name="image_url" type="url" 
+                                    onchange="addImage();" pattern="https://.*" class="validate">
                                 <label for="image_url">Recipe Image</label>
                             </div>
                             <!-- Image Display/Checking field -->
