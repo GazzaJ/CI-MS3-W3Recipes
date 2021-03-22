@@ -150,9 +150,15 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     max-height: 15rem;
 }
 
-.card-content {
-    padding-top: 1rem;
+.recipe-title {
+    margin-bottom: 0;
 }
+
+.card-content {
+    padding-top: 1rem;    
+}
+
+/
 
 .recipe-title {
     margin-top: 1rem;

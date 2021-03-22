@@ -4,14 +4,14 @@
 
     <div class="row container">
         <!-- Recipe Filter -->
-        <form class="col s12 m4 offset-m1 card-panel" action="{{ url_for('filter') }}" method="post">
+        <form class="col s12 m5 card-panel" action="{{ url_for('filter') }}" method="post">
             <!-- Filter Recipes by Country -->            
             <div class="input-field col s12">                                     
             <i class="fas fa-globe-americas prefix"></i>
                 <select id="country_filter" name="country_filter" class="validate" required>                            
                     <option value="" disabled selected>Filter by Country</option>
                     {% for country in countries %}
-                        <option value="{{ country.country }}">{{ country.country }}</option>
+                        <option value="{{ country.name }}">{{ country.name }}</option>
                     {% endfor %}
                 </select>
                 <label for="country_filter"></label>
@@ -27,7 +27,7 @@
             </div>            
         </form>
         <!-- Recipe Search -->    
-        <form class="col s12 m4 offset-m1 card-panel" action="{{ url_for('search') }}" method="post">
+        <form class="col s12 m5 offset-m2 card-panel" action="{{ url_for('search') }}" method="post">
             <div class="input-field col s12">
                 <i class="fas fa-search prefix"></i>
                 <input type="text" name="text_search" id="text_search" placeholder="Enter search text" class="validate" minlength="3" required>
@@ -47,26 +47,36 @@
 
     <div class="row container">
         <!-- Recipe Cards -->
-        {% for recipe in recipes %}
-        <div class="col s12 m6 l4">            
-            <div class="card">
-                <div class="card-image">
-                    <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
-                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
-                        class="btn-floating halfway-fab waves-effect waves-light blue">
-                        <i class="fas fa-search-plus"></i>
-                    </a>
-                </div>            
-                <div class="card-content">
-                    <h4 class="card-title recipe-title">{{ recipe.title }}</h4>                    
-                    <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
-                    <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
-                    <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
-                    <p class="recipe-cards"><i class="fas fa-upload"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>
-                </div>                
-            </div>
-        </div>
-        {% endfor %}        
+        {% for recipe in recipes %}            
+            <div class="col s12 m6">            
+                <div class="card">
+                    <div class="card-image">
+                        <img class="recipe-image responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
+                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
+                            class="btn-floating halfway-fab waves-effect waves-light blue">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>                          
+                    <div class="card-content">                    
+                        <h4 class="card-title recipe-title">{{ recipe.title }}</h4>
+                        <div class="row">
+                            <div class="col s8">
+                                <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
+                                <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
+                                <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
+                                <p class="recipe-cards"><i class="fas fa-upload"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>                                
+                            </div>
+                            <div class="col s4 center-align">                                                            
+                                <p>{{ recipe.country_name }}</p>
+                                <p>{{ origin }}</p>                            
+                                <img src="https://flagcdn.com/48x36/{{ origin }}.png" alt="">                                                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                            
+        {% endfor %}
+                  
     </div>
     <!-- Pagination Controls -->
     {% if total > per_page %}
