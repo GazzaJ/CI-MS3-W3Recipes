@@ -12,9 +12,9 @@
                 <img class="user-img circle" src="{{ image }}" alt="{{ username }}'s' profile photo">
             </div>
             <div class="row">
-                <div class="col s12 m6 offset-m3 center-align">
-                    <p>Town / City: {{ city }}</p>
-                    <p>Email Address: {{ email }}</p>
+                <div class="col s12 m6 offset-m3 center-align">                    
+                    <p><i class="fas fa-map-marker-alt prefix" aria-hidden="true"></i> Town / City: {{ city }}</p>
+                    <p><i class="fas fa-envelope prefix" aria-hidden="true"></i> Email Address: {{ email }}</p>
                     {% if subscribed == "on" %}
                         <p>Subscription Status: Subscribed</p>
                     {% else %}
