@@ -15,7 +15,7 @@
                                 <select id="country_name" name="country_name" class="validate" required>                            
                                     <option value="" disabled selected>Choose Recipe Country</option>
                                     {% for country in countries %}
-                                        <option value="{{ country.country }}">{{ country.country }}</option>
+                                        <option value="{{ country.name }}">{{ country.name }}</option>
                                     {% endfor %}
                                 </select>
                                 <label for="country_name">Recipe Origin</label>

@@ -4,8 +4,8 @@ from flask import (
     Flask, abort, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
-from flask_paginate import Pagination, get_page_parameter, get_page_args
 from PIL import Image
+from flask_paginate import Pagination, get_page_args
 from urllib.request import urlopen
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -160,14 +160,9 @@ recipe_coll = mongo.db.recipes
 country_coll = mongo.db.countries
 per_page = 6
 
-# ---------- Recipe Display Page ----------
-@app.route("/get_recipes")
-def get_recipes():
-    """
-    MongoDB Aggregation required to access flag code
-    and display with Recipe data
-    """
-    recipes = recipe_coll.aggregate([
+# ----- MongoDB Aggregation required to access flag code
+# ----- and display with Recipe data
+recipes = recipe_coll.aggregate([
         {
         '$lookup': {
             'from': 'countries',
@@ -195,27 +190,31 @@ def get_recipes():
                 '_id': 1
             }
         }, {
-            '$skip': 1
+            '$skip': 0
         }, {
-            '$limit': 6
+            '$limit': 15
         }
     ])
+
+# ---------- Recipe Display Page ----------
+@app.route("/get_recipes")
+def get_recipes():
     # ----- Pagination adapted from https://pythonhosted.org/Flask-paginate/
-    countries = country_coll.find().sort("name", 1)
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * per_page
-
-    total = mongo.db.recipes.count()
+    recipes = recipe_coll.find().sort('_id', -1).skip(
+        offset).limit(per_page)
+    total = recipes.count()
     pages = range(1, int(round(total / per_page + 1)))
     prev_page = current_page - 1
-    next_page = current_page + 1
+    next_page = current_page + 1    
+    countries = country_coll.find().sort("name", 1)
 
     return render_template("recipes.html",
         recipes=recipes, countries=countries,
         current_page=current_page, pages=pages,
         total=total, per_page=per_page, prev_page=prev_page,
-        next_page=next_page,)
-
+        next_page=next_page)
 
 # ---------- Recipe Text Search ----------
 @app.route("/search", methods=["GET", "POST"])
@@ -260,13 +259,16 @@ def filter():
 def add_recipe():
     rec_img = "https://pixy.org/src/13/thumbs350/135044.jpg"
     if request.method == "POST":
+        country = request.form.get("country_name")
+        origin = country_coll.find_one({"name": country})['alpha2']
         # Get and format Recipe ingredients and steps
         ingredients = request.form.get("ingredients")
         ingredients = ingredients.split('\n')
         method = request.form.get("method")
         method = method.split('\n')
         recipe = {
-            "country_name": request.form.get("country_name"),
+            "country_name": country,
+            "origin": origin,
             "title": request.form.get("title"),
             "image": request.form.get("image_url"),
             "prep_time": request.form.get("prep_time"),

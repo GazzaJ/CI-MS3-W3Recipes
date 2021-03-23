@@ -68,25 +68,23 @@
                             </div>
                             <div class="col s4 center-align">                                                            
                                 <p>{{ recipe.country_name }}</p>                                                            
-                                <img src="https://flagcdn.com/48x36/{{ recipe.country_data.0.alpha2 }}.png" alt="">                                                                                                
+                                <img src="https://flagcdn.com/48x36/{{ recipe.origin }}.png" alt="">                                                                                                                               
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-                                      
-        {% endfor %}
-                  
+            </div>                                      
+        {% endfor %}                  
     </div>
-    <!-- Pagination Controls -->
+    <!-- Pagination Controls -->    
     {% if total > per_page %}
         <ul class="pagination center-align">
-            <li class="waves-effect" aria-hidden="true"><a href="{{ url_for('get_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left" aria-hidden="true"></i></a></li>
+            <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left" aria-hidden="true"></i></a></li>
             {% for page in pages %}
                 {% if page == current_page %}                    
                     <li class="active"><a href="#">{{ page }}</a></li>
                 {% else %}
-                    <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=page) }}">{{ page }}</a></li>
+                    <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=current_page) }}">{{ page }}</a></li>
                 {% endif %}
             {% endfor %}
             <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right" aria-hidden="true"></i></a></li>
