@@ -9,7 +9,7 @@
         </h3>
         <!-- User Profile Image -->
         <div class="col s12 m6 offset-m3 center-align">
-            <img class="user-img" src="{{ image }}" alt="{{ username }}'s' profile photo">
+            <img class="user-img circle" src="{{ image }}" alt="{{ username }}'s' profile photo">
         </div>
         <div class="input-field col s12 m6 offset-m3 center-align">
             <i class="far fa-image prefix" aria-hidden="true"></i>
@@ -48,6 +48,9 @@
         </div>
         <!-- Submit Button -->
         <div id="profile-edit" class="col s12 m6 offset-m3 center-align">
+            <a id="pro-edit-cancel" href="{{ url_for('profile', username=session['user']) }}" class="btn red">
+                Cancel <i class="fas fa-times-circle right"></i>
+            </a>
             <button class="btn waves-effect waves-light green" type="submit" name="action">
                 Save Changes
             </button>

@@ -274,6 +274,10 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     margin-bottom: 2rem;
 }
 
+#pro-edit-cancel {
+    margin-right: 1rem;
+}
+
 /*---------- Media Queries ----------*/
 
 @media (max-width: 43rem) {
