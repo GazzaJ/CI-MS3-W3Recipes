@@ -14,7 +14,7 @@
                         <div class="card-action">
                             <div class="fixed-action-btn horizontal">
                                 <a class="btn-floating btn-large blue">
-                                    <i class="fas fa-user-edit"></i>
+                                    <i class="fas fa-user-edit" aria-hidden="true"></i>
                                 </a>
                                 <ul>
                                     <!-- Edit Recipe Link -->
@@ -28,10 +28,10 @@
                         </div>
                         <div class="card-content edit-content">
                             <h4 class="card-title recipe-title">{{ recipe.title }}</h4>
-                            <p class="recipe-cards"><i class="fas fa-users"></i> Servings: {{ recipe.servings }}</p>
-                            <p class="recipe-cards"><i class="fas fa-stopwatch"></i> Prep time: {{ recipe.prep_time }}</p>
-                            <p class="recipe-cards"><i class="fas fa-hourglass-half"></i> Cooking time: {{ recipe.cooking_time }}</p>
-                            <p class="recipe-cards"><i class="fas fa-upload"></i> Uploaded by: {{ recipe.uploaded_by }}</p>
+                            <p class="recipe-cards"><i class="fas fa-users" aria-hidden="true"></i> Servings: {{ recipe.servings }}</p>
+                            <p class="recipe-cards"><i class="fas fa-stopwatch" aria-hidden="true"></i> Prep time: {{ recipe.prep_time }}</p>
+                            <p class="recipe-cards"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Cooking time: {{ recipe.cooking_time }}</p>
+                            <p class="recipe-cards"><i class="fas fa-upload" aria-hidden="true"></i> Uploaded by: {{ recipe.uploaded_by }}</p>
                         </div>
                     </div>
                 </div>                
@@ -53,7 +53,7 @@
     <!-- Pagination -->
     {% if total > per_page %}
         <ul class="pagination center-align">
-            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left"></i></a></li>
+            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left" aria-hidden="true"></i></a></li>
             {% for page in pages %}
                 {% if page == current_page %}                    
                     <li class="active"><a href="#">{{ page }}</a></li>
@@ -61,7 +61,7 @@
                     <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=current_page) }}">{{ page }}</a></li>
                 {% endif %}
             {% endfor %}
-            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right"></i></a></li>
+            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right" aria-hidden="true"></i></a></li>
         </ul>        
     {% endif %}
         

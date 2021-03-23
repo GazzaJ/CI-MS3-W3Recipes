@@ -12,14 +12,14 @@
                 <p class="left-align recipe-text">{{ recipe.description }}</p>
                 <div class="row left-align">
                     <div class="col s12 m6 recipe-text">
-                        <p class="recipe-text"><i class="fas fa-users"></i><em> Servings: </em>{{ recipe.servings }}</p>
-                        <p id="full-prep"><i class="fas fa-stopwatch"></i><em> Prep time: </em>{{ recipe.prep_time }}</p>
-                        <p id="full-cook"><i class="fas fa-hourglass-half"></i><em> Cooking Time: </em>{{ recipe.cooking_time }}</p>
+                        <p class="recipe-text"><i class="fas fa-users" aria-hidden="true"></i><em> Servings: </em>{{ recipe.servings }}</p>
+                        <p id="full-prep"><i class="fas fa-stopwatch" aria-hidden="true"></i><em> Prep time: </em>{{ recipe.prep_time }}</p>
+                        <p id="full-cook"><i class="fas fa-hourglass-half" aria-hidden="true"></i><em> Cooking Time: </em>{{ recipe.cooking_time }}</p>
                     </div>
                     <div class="col s12 m6 recipe-text">
-                        <p class="recipe-text"><i class="fas fa-globe-americas"></i><em>Contry of Origin: </em>{{ recipe.country_name }}</p>
+                        <p class="recipe-text"><i class="fas fa-globe-americas" aria-hidden="true"></i><em>Contry of Origin: </em>{{ recipe.country_name }}</p>
                         <img id="full-flag" src="https://flagcdn.com/64x48/{{flag}}.png" alt="{{ recipe.country }}'s Flag'">
-                        <p><i class="fas fa-upload"></i><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>                        
+                        <p><i class="fas fa-upload" aria-hidden="true"></i><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>                        
                     </div>
                 </div>  
             </div>    
@@ -52,7 +52,7 @@
     <!-- Button to return to Recipes -->
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn green"><i class="fas fa-back"></i>Back to Recipes</a>
+            <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn green"><i class="fas fa-back" aria-hidden="true"></i>Back to Recipes</a>
         </div>
     </div>
 

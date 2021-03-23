@@ -12,7 +12,7 @@
             <img class="user-img" src="{{ image }}" alt="{{ username }} profile photo">
         </div>
         <div class="input-field col s12 m6 offset-m3 center-align">
-            <i class="far fa-image prefix"></i>
+            <i class="far fa-image prefix" aria-hidden="true"></i>
             <input value="{{ image }}" placeholder="Image URL" id="image" name="image" 
                 type="url" pattern="https://.*" class="validate">
             <label for="image">Profile Image or Avatar</label>
@@ -20,7 +20,7 @@
         <!-- User Profile Details -->            
         <!-- City Input Field -->
         <div class="input-field col s12 m6 offset-m3 center-align">
-            <i class="fas fa-map-marker-alt prefix"></i>
+            <i class="fas fa-map-marker-alt prefix" aria-hidden="true"></i>
             <input value="{{ city }}" placeholder="Town/City where you live" id="city" 
                 name="city" type="text" class="validate" required>
             <label for="City">Town/City</label>
@@ -41,14 +41,14 @@
         </div>
         <!-- Email Input Field -->
         <div id="subs-email" class="input-field col s12 m6 offset-m3 center-align">
-            <i class="fas fa-envelope prefix"></i>            
+            <i class="fas fa-envelope prefix" aria-hidden="true"></i>            
             <input value="{{ email }}" placeholder="john.smith@email.com" id="email" name="email"            
                 type="text" class="validate" required>            
             <label for="email">Email Address</label>
         </div>
         <!-- Submit Button -->
         <div id="profile-edit" class="col s12 m6 offset-m3 center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">
+            <button class="btn waves-effect waves-light green" type="submit" name="action">
                 Save Changes
             </button>
         </div>

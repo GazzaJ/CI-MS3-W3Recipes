@@ -11,7 +11,7 @@
                         <div class="col s12 l4">
                             <div class="input-field">
                                 <!-- Country Select -->
-                                <i class="fas fa-globe-americas prefix"></i>
+                                <i class="fas fa-globe-americas prefix" aria-hidden="true"></i>
                                 <select id="country_name" name="country_name" class="validate" required>                            
                                     <option value="" disabled>Choose Recipe Country</option>
                                     {% for country in countries %}
@@ -26,14 +26,14 @@
                             </div>                    
                             <div class="input-field">
                                 <!-- Recipe Name Input -->
-                                <i class="fas fa-pen prefix"></i>
+                                <i class="fas fa-pen prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.title }}" id="title" name="title" type="text" class="validate"
                                     minlength="10" maxlength="50" required>
                                 <label for="title">Recipe Name</label>
                             </div>                    
                             <div class="input-field">
                                 <!-- Servings Input Field -->
-                                <i class="fas fa-users prefix"></i>
+                                <i class="fas fa-users prefix" aria-hidden="true"></i>
                                 <select id="servings" name="servings" class="validate" required>
                                     <option value="" disabled>Number of servings</option>
                                     {% for i in range(1, 31) %}
@@ -48,7 +48,7 @@
                             </div>
                             <div class="input-field">
                                 <!-- Image URL Input -->
-                                <i class="fas fa-camera prefix"></i>
+                                <i class="fas fa-camera prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.image }}" id="image_url" name="image_url" 
                                     type="url" pattern="https://.*" class="validate">
                                 <label for="image_url">Recipe Image</label>
@@ -62,21 +62,21 @@
                         <div class="col s12 m12 l4">
                             <!-- Preparation Time Input -->
                             <div class="input-field">
-                                <i class="fas fa-stopwatch prefix"></i>
+                                <i class="fas fa-stopwatch prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.prep_time }}" id="prep_time" 
                                     name="prep_time" type="text" class="validate" required>
                                 <label for="prep_time">Preparation Time</label>
                             </div>
                             <!-- Cooking Time Input Field -->
                             <div class="input-field">
-                                <i class="fas fa-hourglass-half prefix"></i>
+                                <i class="fas fa-hourglass-half prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.cooking_time }}" id="cooking_time" 
                                     name="cooking_time" type="text" class="validate" required>
                                 <label for="cooking_time">Cooking Time</label>
                             </div>
                             <!-- Recipe Description Field -->                    
                             <div class="input-field">
-                                <i class="fas fa-file-alt prefix"></i>
+                                <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
                                 <textarea id="description" name="description" 
                                     class="materialize-textarea validate" minlength="10" maxlength="200" required>
                                     {{- recipe.description -}}
@@ -85,7 +85,7 @@
                             </div>
                             <!-- Recipe Ingredients Input -->
                             <div class="input-field">
-                                <i class="fas fa-list-ul prefix"></i>
+                                <i class="fas fa-list-ul prefix" aria-hidden="true"></i>
                                 <textarea id="ingredients" name="ingredients" 
                                     class="materialize-textarea validate" minlength="4" required>
                                     {%- for item in recipe.ingredients -%}
@@ -98,7 +98,7 @@
                         <div class="col s12 m12 l4">
                             <!-- Recipe Method Input -->
                             <div class="input-field">
-                                <i class="fas fa-list-ol prefix"></i>
+                                <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" 
                                     class="materialize-textarea validate" minlength="10" required>
                                     {%- for step in recipe.method -%}
@@ -117,7 +117,7 @@
                                 Cancel <i class="fas fa-times-circle right"></i>
                             </a>
                             <button type="submit" href="" class="btn waves-effect waves-light green accent-4 center-align">Edit Recipe
-                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>            
