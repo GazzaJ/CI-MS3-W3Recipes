@@ -75,16 +75,19 @@
                             <!-- Recipe Ingredients Input -->
                             <div class="input-field">
                                 <i class="fas fa-list-ul prefix"></i>
-                                <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" placeholder="Recipe Ingredients"
+                                <textarea id="ingredients" name="ingredients" class="materialize-textarea validate tooltipped"
+                                    data-position="bottom" data-tooltip="Please add each ingredient on a new line!" placeholder="Recipe Ingredients"
                                     minlength ="4" required></textarea>
                                 <label for="ingredients">Recipe Ingredients</label>
+                                <a class="" ></a>
                             </div>
                         </div>
                         <div class="col s12 m12 l4">
                             <!-- Recipe Method Input -->
                             <div class="input-field">
                                 <i class="fas fa-list-ol prefix"></i>
-                                <textarea id="method" name="method" class="materialize-textarea validate" placeholder="Preparation Steps"
+                                <textarea id="method" name="method" class="materialize-textarea validate tooltipped"
+                                    data-position="bottom" data-tooltip="Please add each preparation step on a new line!" placeholder="Preparation Steps"
                                     minlength="10" required></textarea>
                                 <label for="method">Recipe Method</label>
                             </div>
