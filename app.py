@@ -4,9 +4,9 @@ from flask import (
     Flask, abort, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_parameter, get_page_args
 from PIL import Image
 from urllib.request import urlopen
-from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -20,7 +20,6 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
 
 @app.route("/")
 @app.route("/home")
@@ -39,7 +38,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("This username already exists!", "one")
+            flash("This username already exists!")
             return redirect(url_for("register"))
 
         register = {
@@ -104,8 +103,7 @@ def profile(username):
     image = mongo.db.users.find_one(
         {"username": session["user"]})["user_image"]
     subscribed = mongo.db.users.find_one(
-        {"username": session["user"]})["subscribed"]
-
+        {"username": session["user"]})["subscribed"]    
     if session["user"]:
         return render_template("profile.html",
         username=username, city=city, email=email,
@@ -162,26 +160,61 @@ recipe_coll = mongo.db.recipes
 country_coll = mongo.db.countries
 per_page = 6
 
-
 # ---------- Recipe Display Page ----------
 @app.route("/get_recipes")
 def get_recipes():
+    """
+    MongoDB Aggregation required to access flag code
+    and display with Recipe data
+    """
+    recipes = recipe_coll.aggregate([
+        {
+        '$lookup': {
+            'from': 'countries',
+            'localField': 'country_name',
+            'foreignField': 'name',
+            'as': 'country_data'
+        }
+        }, {
+            '$project': {
+                '_id': 1,
+                'image': 1,
+                'title': 1,
+                'servings': 1,
+                'prep_time': 1,
+                'cooking_time': 1,
+                'uploaded_by': 1,
+                'country_name': 1,
+                'country_data.alpha2': 1,
+                'description': 1,
+                'ingredients': 1,
+                'method': 1
+            }
+        }, {
+            '$sort': {
+                '_id': 1
+            }
+        }, {
+            '$skip': 1
+        }, {
+            '$limit': 6
+        }
+    ])
     # ----- Pagination adapted from https://pythonhosted.org/Flask-paginate/
+    countries = country_coll.find().sort("name", 1)
     current_page = request.args.get('current_page', type=int, default=1)
     offset = (current_page - 1) * per_page
-    recipes = recipe_coll.find().sort('_id', -1).skip(
-        offset).limit(per_page)
-    total = recipes.count()
+
+    total = mongo.db.recipes.count()
     pages = range(1, int(round(total / per_page + 1)))
     prev_page = current_page - 1
     next_page = current_page + 1
-    countries = country_coll.find().sort("name", 1)
 
     return render_template("recipes.html",
         recipes=recipes, countries=countries,
         current_page=current_page, pages=pages,
         total=total, per_page=per_page, prev_page=prev_page,
-        next_page=next_page)
+        next_page=next_page,)
 
 
 # ---------- Recipe Text Search ----------

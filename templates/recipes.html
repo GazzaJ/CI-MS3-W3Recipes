@@ -67,14 +67,14 @@
                                 <p class="recipe-cards"><i class="fas fa-upload" aria-hidden="true"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>                                
                             </div>
                             <div class="col s4 center-align">                                                            
-                                <p>{{ recipe.country_name }}</p>
-                                <p>{{ origin }}</p>                            
-                                <img src="https://flagcdn.com/48x36/{{ origin }}.png" alt="">                                                                                                
+                                <p>{{ recipe.country_name }}</p>                                                            
+                                <img src="https://flagcdn.com/48x36/{{ recipe.country_data.0.alpha2 }}.png" alt="">                                                                                                
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>                            
+            </div>
+                                      
         {% endfor %}
                   
     </div>
