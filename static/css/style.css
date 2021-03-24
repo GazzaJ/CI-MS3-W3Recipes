@@ -43,7 +43,7 @@ main {
 /*-- Header --*/
 
 .brand-logo img {
-    height: 65px;
+    height: 4rem;
     margin-left: 2rem;
     width: auto;    
 }
@@ -158,8 +158,6 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     padding-top: 1rem;    
 }
 
-/
-
 .recipe-title {
     margin-top: 1rem;
 }
@@ -244,9 +242,13 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 .edit-img {
     max-height: 15rem;
-    width: auto;
+    width: 80%;
     border: 0.25rem solid #000;
     margin-left: 3rem;
+}
+
+#recipe-edit {
+    margin-left: 1rem;
 }
 
 /*---------- Profile Page ----------*/
@@ -261,6 +263,8 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 }
 
 #manage-link {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
     background-color: blanchedalmond;
 }
 
@@ -278,8 +282,25 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     margin-right: 1rem;
 }
 
+/*---------- Dashboard ----------*/
+
+
+
 /*---------- Media Queries ----------*/
 
 @media (max-width: 43rem) {
+    .brand-logo {
+        height: 3.5rem;
+        width: auto;
+    }
 
+    #manage-link {
+        padding: 1.2rem;
+    }
+    
+    .edit-img {
+        margin-left: 0;
+        width: 100%;
+        margin-bottom: 1rem !important;
+    }
 }

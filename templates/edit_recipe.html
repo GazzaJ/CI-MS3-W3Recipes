@@ -15,14 +15,14 @@
                                 <select id="country_name" name="country_name" class="validate" required>                            
                                     <option value="" disabled>Choose Recipe Country</option>
                                     {% for country in countries %}
-                                        {% if country.country == recipe.country_name %}
-                                            <option value="{{ country.country }}" selected>{{ country.country }}</option>
+                                        {% if country.name == recipe.country_name %}
+                                            <option value="{{ country.name }}" selected>{{ country.name }}</option>
                                         {% else %}
-                                            <option value="{{ country.country }}">{{ country.country }}</option>
+                                            <option value="{{ country.name }}">{{ country.name }}</option>
                                         {% endif %}
                                     {% endfor %}
                                 </select>
-                                <label for="country_name">Recipe Origin</label>
+                                <label for="country_name">Recipe Country of Origin</label>
                             </div>                    
                             <div class="input-field">
                                 <!-- Recipe Name Input -->
@@ -114,10 +114,10 @@
                         <div class="col s12 center-align">
                             <!-- Cancel Edits -->
                             <a href="{{ url_for('manage_recipes') }}" class="btn red">
-                                Cancel <i class="fas fa-times-circle right"></i>
+                                Cancel <i class="fas fa-times-circle right" aria-hidden="true"></i>
                             </a>
-                            <button type="submit" href="" class="btn waves-effect waves-light green accent-4 center-align">Edit Recipe
-                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <button id="recipe-edit" type="submit" href="" class="btn waves-effect waves-light green accent-4 center-align">
+                                Save Edits <i class="fas fa-check-circle right" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>            
