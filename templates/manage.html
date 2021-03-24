@@ -4,8 +4,7 @@
     <p class="center-align">You have uploaded {{ uploaded }} recipes</p>
 
     <div class="row container">
-        {% for recipe in recipes %}
-            {% if session.user|lower == recipe.uploaded_by|lower or admin == true %}
+        {% for recipe in recipes %}            
                 <div class="col s12 m6 l4">
                     <div class="card">
                         <div class="card-image">
@@ -43,7 +42,7 @@
                         </div>
                     </div>
                 </div>                
-            {% endif %}
+            
             <!-- Delete Recipe - Check Message -->
             <div id="{{ recipe._id }}" class="modal">
                 <div class="modal-content">
@@ -59,18 +58,6 @@
         {% endfor %}
     </div>
     <!-- Pagination -->
-    {% if total > per_page %}
-        <ul class="pagination center-align">
-            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left" aria-hidden="true"></i></a></li>
-            {% for page in pages %}
-                {% if page == current_page %}                    
-                    <li class="active"><a href="#">{{ page }}</a></li>
-                {% else %}
-                    <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=current_page) }}">{{ page }}</a></li>
-                {% endif %}
-            {% endfor %}
-            <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right" aria-hidden="true"></i></a></li>
-        </ul>        
-    {% endif %}
+    
         
 {% endblock %}

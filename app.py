@@ -54,7 +54,7 @@ def register():
 
         # Place the new user into the session cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful", "two")
+        flash("Registration Successful")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
@@ -73,7 +73,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome to W3 Recipes, {}".format(
-                    request.form.get("username")), "three")
+                    request.form.get("username")))
                 return redirect(url_for("get_recipes"))
 
             else:
@@ -157,100 +157,59 @@ def edit_profile():
 # ---------- MongoDB Collections ----------
 recipe_coll = mongo.db.recipes
 country_coll = mongo.db.countries
+# ---------- Items per Page ----------
 per_page = 6
-
-# ----- MongoDB Aggregation required to access flag code
-# ----- and display with Recipe data
-recipes = recipe_coll.aggregate([
-        {
-        '$lookup': {
-            'from': 'countries',
-            'localField': 'country_name',
-            'foreignField': 'name',
-            'as': 'country_data'
-        }
-        }, {
-            '$project': {
-                '_id': 1,
-                'image': 1,
-                'title': 1,
-                'servings': 1,
-                'prep_time': 1,
-                'cooking_time': 1,
-                'uploaded_by': 1,
-                'country_name': 1,
-                'country_data.alpha2': 1,
-                'description': 1,
-                'ingredients': 1,
-                'method': 1
-            }
-        }, {
-            '$sort': {
-                '_id': 1
-            }
-        }, {
-            '$skip': 0
-        }, {
-            '$limit': 15
-        }
-    ])
 
 # ---------- Recipe Display Page ----------
 @app.route("/get_recipes")
 def get_recipes():
-    # ----- Pagination adapted from https://pythonhosted.org/Flask-paginate/
-    current_page = request.args.get('current_page', type=int, default=1)
-    offset = (current_page - 1) * per_page
-    recipes = recipe_coll.find().sort('_id', -1).skip(
-        offset).limit(per_page)
-    total = recipes.count()
-    pages = range(1, int(round(total / per_page + 1)))
-    prev_page = current_page - 1
-    next_page = current_page + 1    
     countries = country_coll.find().sort("name", 1)
-
+    page = request.args.get('page', type=int, default=1)
+    recipes = recipe_coll.find().sort('_id', -1).skip(
+        per_page * (page - 1)).limit(per_page)
+    total = recipe_coll.count()
+    pages = range(1, int(round(total / per_page + 1)))
+    prev_page = page - 1
+    next_page = page + 1
     return render_template("recipes.html",
-        recipes=recipes, countries=countries,
-        current_page=current_page, pages=pages,
-        total=total, per_page=per_page, prev_page=prev_page,
-        next_page=next_page)
+        countries=countries, recipes=recipes,
+        page=page, per_page=per_page, total=total,
+        pages=pages, prev_page=prev_page, next_page=next_page)
 
 # ---------- Recipe Text Search ----------
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    current_page = request.args.get('current_page', type=int, default=1)
-    offset = (current_page - 1) * per_page
+    # ----- Text Search -----
     text_search = request.form.get("text_search")
     recipes = recipe_coll.find(
-        {"$text": {"$search": text_search}}).skip(
-        offset).limit(per_page)
-    total = recipes.count()
-    pages = range(1, int(round(total / per_page)) + 1)
-    prev_page = current_page - 1
-    next_page = current_page + 1
-    return render_template("recipes.html",
-        recipes=recipes, current_page=current_page, pages=pages,
-        total=total, per_page=per_page, prev_page=prev_page,
-        next_page=next_page)
+        {"$text": {"$search": text_search}})
+    page = request.args.get('page', type=int, default=1)
+    total = recipe_coll.count()
+    pages = range(1, int(round(total / per_page + 1)))
+    prev_page = page - 1
+    next_page = page + 1
+
+    return render_template("recipes.html", recipes=recipes,
+        page=page, per_page=per_page, total=total,
+        pages=pages, prev_page=prev_page, next_page=next_page)
 
 
 # ---------- Recipe Filter by Country ----------
 @app.route("/filter", methods=["GET", "POST"])
 def filter():
-    current_page = request.args.get('current_page', type=int, default=1)
-    offset = (current_page - 1) * per_page
+    # ----- Country Dropdown Filter -----
     country_filter = request.form.get("country_filter")
     recipes = recipe_coll.find(
-        {"$text": {"$search": country_filter}}).skip(
-        offset).limit(per_page)
-    total = recipes.count()
-    pages = range(1, int(round(total / per_page)) + 1)
-    prev_page = current_page - 1
-    next_page = current_page + 1
-    return render_template("recipes.html",
-        recipes=recipes, current_page=current_page, pages=pages,
-        total=total, per_page=per_page, prev_page=prev_page,
-        next_page=next_page)
+        {"$text": {"$search": country_filter}})
+    page = request.args.get('page', type=int, default=1)
+    total = recipe_coll.count()
+    pages = range(1, int(round(total / per_page + 1)))
+    prev_page = page - 1
+    next_page = page + 1
+
+    return render_template("recipes.html", recipes=recipes,
+        page=page, per_page=per_page, total=total,
+        pages=pages, prev_page=prev_page, next_page=next_page)
 
 
 # ---------- Add a New Recipe ----------
@@ -258,6 +217,7 @@ def filter():
 def add_recipe():
     rec_img = "https://pixy.org/src/13/thumbs350/135044.jpg"
     if request.method == "POST":
+        # Find Country and retrieve flag code
         country = request.form.get("country_name")
         origin = country_coll.find_one({"name": country})['alpha2']
         # Get and format Recipe ingredients and steps
@@ -281,7 +241,7 @@ def add_recipe():
         if recipe['image'] == '':
             recipe['image'] == rec_img
         recipe_coll.insert_one(recipe)
-        flash("Recipe Successfully Added!", "five")
+        flash("Recipe Successfully Added!")
         return redirect(url_for("get_recipes"))
 
     countries = country_coll.find().sort("name", 1)
@@ -302,28 +262,30 @@ def full_recipe(recipe_id):
 # -- Allows user to edit and delete a recipe --
 @app.route("/manage_recipes", methods=["GET", "POST"])
 def manage_recipes():
-    # Check how many recipes the user has uploaded
-    uploaded = recipe_coll.count(
-        {"uploaded_by": session["user"]})
-    if uploaded == 0:
-        flash("You have not uploaded any recipes yet!",)
     # Check if the user is Admin
     admin = mongo.db.users.find_one(
         {"username": session["user"]})["is_admin"]
-    # Recipe search and pagination
-    current_page = request.args.get('current_page', type=int, default=1)
-    offset = (current_page - 1) * per_page
-    recipes = recipe_coll.find().sort('_id', 1).skip(
-        offset).limit(per_page)
-    total = recipes.count()
-    pages = range(1, int(round(total / per_page)) + 1)
-    prev_page = current_page - 1
-    next_page = current_page + 1
-    return render_template("manage.html", recipes=recipes,
-        current_page=current_page, pages=pages,total=total,
-        per_page=per_page, admin=admin, uploaded=uploaded,
-        prev_page=prev_page, next_page=next_page)
-
+    if admin is False:
+        # Check how many recipes the user has uploaded
+        recipes = recipe_coll.find({"uploaded_by": session["user"]})
+        uploaded = recipes.count()
+        if uploaded == 0:
+            flash("You have not uploaded any recipes yet!")
+        if uploaded < per_page:
+            return render_template("manage.html", recipes=recipes,
+            uploaded=uploaded)
+    else:
+        page = request.args.get('page', type=int, default=1)
+        recipes = recipe_coll.find().sort('_id', -1).skip(
+        per_page * (page - 1)).limit(per_page)
+        total = recipe_coll.count()
+        pages = range(1, int(round(total / per_page + 1)))
+        prev_page = page - 1
+        next_page = page + 1
+        return render_template("recipes.html",
+            recipes=recipes, page=page, per_page=per_page,
+            total=total, pages=pages, prev_page=prev_page,
+            next_page=next_page)
 
 # ---------- Edit a Recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -343,6 +305,7 @@ def edit_recipe(recipe_id):
 
     return render_template("edit_recipe.html",
         recipe=recipe, countries=countries, uploaded_by=uploaded_by)
+
     # ---------- POST the Edits to the DB ----------
     if request.method == "POST":
         # Get and format Recipe ingredients and steps
@@ -363,7 +326,7 @@ def edit_recipe(recipe_id):
             "uploaded_by": session["user"]
         }
         recipe_coll.update({"_id": ObjectId(recipe_id)}, update)
-        flash("Recipe Successfully Edited!", "seven")
+        flash("Recipe Successfully Edited!")
         return redirect(url_for("manage_recipes"))
 
 
@@ -385,7 +348,7 @@ def dashboard():
 @app.route("/logout")
 def logout():
     # Remove the user from the session cookies
-    flash("You have been logged out", "eight")
+    flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("home"))
 
