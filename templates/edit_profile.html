@@ -49,10 +49,10 @@
         <!-- Submit Button -->
         <div id="profile-edit" class="col s12 m6 offset-m3 center-align">
             <a id="pro-edit-cancel" href="{{ url_for('profile', username=session['user']) }}" class="btn red">
-                Cancel <i class="fas fa-times-circle right"></i>
+                Cancel <i class="fas fa-times-circle right" aria-hidden="true"></i>
             </a>
             <button class="btn waves-effect waves-light green" type="submit" name="action">
-                Save Changes
+                Save Edits <i class="fas fa-lock right" aria-hidden="true"></i>
             </button>
         </div>
     </form>    
