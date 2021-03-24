@@ -5,7 +5,6 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from PIL import Image
-from flask_paginate import Pagination, get_page_args
 from urllib.request import urlopen
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
