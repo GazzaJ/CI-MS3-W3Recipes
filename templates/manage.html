@@ -18,11 +18,11 @@
                                 </a>
                                 <ul>
                                     <!-- Edit Recipe Link -->
-                                    <li><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-floating orange"><i
-                                                class="fas fa-edit"></i></a></li>
+                                    <li><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-floating orange tooltipped"
+                                        data-position="top" data-tooltip="Edit Recipe"><i class="fas fa-edit"></i></a></li>
                                     <!-- Delete Recipe Link -->
-                                    <li><a href="#{{ recipe._id }}" class="btn-floating red modal-trigger"><i
-                                                class="fas fa-trash-alt"></i></a></li>
+                                    <li><a href="#{{ recipe._id }}" class="btn-floating red modal-trigger tooltipped"
+                                        data-position="bottom" data-tooltip="Delete Recipe"><i class="fas fa-trash-alt"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,13 +47,13 @@
             <!-- Delete Recipe - Check Message -->
             <div id="{{ recipe._id }}" class="modal">
                 <div class="modal-content">
-                    <h4>Delete Recipe</h4>
-                    <p>Are you absolutely sure you would like to delete the recipe for {{ recipe.title }}</p>
+                    <h4>You have chosen to delete the {{ recipe.title }} recipe</h4>
+                    <p id="delete-check">Are you absolutely sure you would like to delete this recipe?</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ url_for('manage_recipes') }}" class="modal-close waves-effect waves-green btn">CANCEL</a>
+                    <a href="{{ url_for('manage_recipes') }}" class="modal-close waves-effect green btn">Go Back</a>
                     <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                        class="modal-close waves-effect waves-green btn red">Agree</a>
+                        class="modal-close waves-effect btn red">DELETE!</a>
                 </div>
             </div>
         {% endfor %}
