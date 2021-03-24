@@ -28,10 +28,18 @@
                         </div>
                         <div class="card-content edit-content">
                             <h4 class="card-title recipe-title">{{ recipe.title }}</h4>
-                            <p class="recipe-cards"><i class="fas fa-users" aria-hidden="true"></i> Servings: {{ recipe.servings }}</p>
-                            <p class="recipe-cards"><i class="fas fa-stopwatch" aria-hidden="true"></i> Prep time: {{ recipe.prep_time }}</p>
-                            <p class="recipe-cards"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Cooking time: {{ recipe.cooking_time }}</p>
-                            <p class="recipe-cards"><i class="fas fa-upload" aria-hidden="true"></i> Uploaded by: {{ recipe.uploaded_by }}</p>
+                            <div class="row">
+                                <div class="col s8">
+                                    <p class="recipe-cards"><i class="fas fa-users" aria-hidden="true"></i> Servings: {{ recipe.servings }}</p>
+                                    <p class="recipe-cards"><i class="fas fa-stopwatch" aria-hidden="true"></i> Prep time: {{ recipe.prep_time }}</p>
+                                    <p class="recipe-cards"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Cooking time: {{ recipe.cooking_time }}</p>
+                                    <p class="recipe-cards"><i class="fas fa-upload" aria-hidden="true"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>                                
+                                </div>
+                                <div class="col s4 center-align">                                                            
+                                    <p>{{ recipe.country_name }}</p>                                                            
+                                    <img src="https://flagcdn.com/48x36/{{ recipe.origin }}.png" alt="">                                                                                                                               
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>                
