@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/home")
-def home():
+def home():    
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId('603799093d30368acbfdfdd0')})
     return render_template("index.html", recipe=recipe)
@@ -276,6 +276,8 @@ def manage_recipes():
             uploaded=uploaded)
     else:
         current_page = request.args.get('current_page', type=int, default=1)
+        recs = recipe_coll.find({"uploaded_by": session["user"]})
+        uploaded = recs.count()
         recipes = recipe_coll.find().sort('_id', -1).skip(
         per_page * (current_page - 1)).limit(per_page)
         total = recipe_coll.count()
@@ -284,7 +286,7 @@ def manage_recipes():
         next_page = current_page + 1
         return render_template("manage.html",
             recipes=recipes, current_page=current_page, per_page=per_page,
-            total=total, pages=pages, prev_page=prev_page,
+            total=total, pages=pages, prev_page=prev_page, uploaded=uploaded,
             next_page=next_page)
 
 # ---------- Edit a Recipe ----------
@@ -349,7 +351,7 @@ def dashboard():
 def logout():
     # Remove the user from the session cookies
     flash("You have been logged out")
-    session.pop("user")
+    session.pop('user')
     return redirect(url_for("home"))
 
 

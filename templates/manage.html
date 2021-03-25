@@ -63,8 +63,7 @@
                         <a class="recipe-link" class="hoverable" href="{{url_for('add_recipe')}}">Why not add another recipe</a>
                     </h5>
                 </div>
-            </div>
-            {% if admin %}
+            </div>            
             <!-- Pagination -->
             <ul class="pagination center-align">
                 <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}">
@@ -78,7 +77,6 @@
                 {% endfor %}
                 <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=next_page) }}">
                     <i class="fas fa-caret-square-right" aria-hidden="true"></i></a></li>
-            </ul>
-            {% endif %}
+            </ul>            
 
             {% endblock %}
