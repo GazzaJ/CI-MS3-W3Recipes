@@ -148,6 +148,9 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     text-decoration: underline;    
     margin-left: 2rem;
 }
+/*---------- Pagination ----------*/
+
+
 
 /*---------- Recipe Cards ----------*/
 
@@ -220,6 +223,10 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     margin-left: 3rem;
 }
 
+#cancel-add {
+    margin-right: 1rem;
+}
+
 /*---------- Manage Recipes ----------*/
 
 .edit-pic {
@@ -279,6 +286,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 #profile-card {
     padding-bottom: 5rem;
+}
 
 /*---------- Edit Profile Page ----------*/
 
