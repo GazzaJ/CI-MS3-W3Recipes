@@ -51,7 +51,8 @@ def register():
             'password': generate_password_hash(
                 request.form.get('password')),
             'city': '',
-            'user_image': 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
+            'user_image': 'https://cdn.pixabay.com/photo/2015/10/05/22/37/'
+                          'blank-profile-picture-973460_960_720.png',
             'subscribed': '',
             'email': '',
             'is_admin': False,
@@ -158,9 +159,6 @@ def edit_profile():
 
         flash('Profile Successfully Edited!')
         return redirect(url_for('profile', username=session['user']))
-
-    url = request.form.get('image')
-    print url
 
     # Retrieve the session user's details from the DB
 
@@ -478,5 +476,7 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
-            )), debug=True)
+    app.run(
+        host=os.environ.get('IP'),
+        port=int(os.environ.get('PORT')),
+        debug=True)
