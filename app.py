@@ -354,6 +354,27 @@ def logout():
     session.pop('user')
     return redirect(url_for("home"))
 
+# ----- Adapted from (https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
+@app.errorhandler("/400")
+def bad request(e):
+    return render_template("400.html"), 400
+
+@app.route("/401")
+def four_zero_one(e):
+    return render_template("401.html"), 401
+
+@app.route("/404")
+def four_zero_four(e):
+    return render_template("404.html"), 404
+
+@app.route("/405")
+def four_zero_five(e):
+    return render_template("405.html"), 405
+
+@app.route("/500")
+def five_zero_zero(e):
+    return render_template("500.html"), 500
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
