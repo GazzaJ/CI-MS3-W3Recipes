@@ -96,6 +96,9 @@
                     <!-- Recipe Submit Button -->
                     <div class="row">
                         <div class="col s12 center-align">
+                            <a id="cancel-add" href="{{ url_for('get_recipes') }}" class="btn red tooltipped" data-position="bottom" data-tooltip="This will take you back to the recipes page">
+                                Cancel <i class="fas fa-times-circle right" aria-hidden="true"></i>
+                            </a>
                             <button type="submit" data-target="added" class="btn modal-trigger waves-effect waves-light green center-align" >Add Recipe
                                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             </button>
