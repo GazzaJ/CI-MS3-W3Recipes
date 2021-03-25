@@ -282,7 +282,7 @@ def manage_recipes():
         pages = range(1, int(round(total / per_page + 1)))
         prev_page = current_page - 1
         next_page = current_page + 1
-        return render_template("recipes.html",
+        return render_template("manage.html",
             recipes=recipes, current_page=current_page, per_page=per_page,
             total=total, pages=pages, prev_page=prev_page,
             next_page=next_page)
