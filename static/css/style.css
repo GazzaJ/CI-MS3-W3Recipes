@@ -34,6 +34,15 @@ p {
     background-color: burlywood;
 }
 
+/*---------- Anchor Links ----------*/
+
+#manage-link,
+.recipe-link {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: blanchedalmond;
+}
+
 /*---------- Base Template ----------*/
 
 main {
@@ -270,13 +279,6 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 #profile-card {
     padding-bottom: 5rem;
-}
-
-#manage-link {
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    background-color: blanchedalmond;
-}
 
 /*---------- Edit Profile Page ----------*/
 
