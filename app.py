@@ -289,6 +289,7 @@ def manage_recipes():
             total=total, pages=pages, prev_page=prev_page, uploaded=uploaded,
             next_page=next_page)
 
+
 # ---------- Edit a Recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
@@ -354,25 +355,31 @@ def logout():
     session.pop('user')
     return redirect(url_for("home"))
 
-# ----- Adapted from (https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
-@app.errorhandler("/400")
-def bad request(e):
+
+# ----- Error Handling Adapted from
+# (https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
+@app.errorhandler(400)
+def bad_request(e):
     return render_template("400.html"), 400
 
-@app.route("/401")
-def four_zero_one(e):
+
+@app.errorhandler(401)
+def unauthorised(e):
     return render_template("401.html"), 401
 
-@app.route("/404")
-def four_zero_four(e):
+
+@app.errorhandler(404)
+def not_found(e):
     return render_template("404.html"), 404
 
-@app.route("/405")
-def four_zero_five(e):
+
+@app.errorhandler(405)
+def method_not_allowed(e):
     return render_template("405.html"), 405
 
-@app.route("/500")
-def five_zero_zero(e):
+
+@app.errorhandler(500)
+def server_error(e):
     return render_template("500.html"), 500
 
 
