@@ -2,7 +2,6 @@ import os
 import magic
 from flask import Flask, abort, flash, render_template, redirect, \
     request, session, url_for
-
 from flask_pymongo import PyMongo
 from PIL import Image
 from urllib.request import urlopen
@@ -479,4 +478,4 @@ if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=True)
+        debug=False)
