@@ -22,7 +22,9 @@ p {
 
 /*---------- Colours ----------*/
 
-
+h1 {
+    color: #4e342e;
+}
 
 /*---------- Flash Messages ----------*/
 
@@ -41,6 +43,12 @@ p {
     padding: 1.5rem;
     border-radius: 1.5rem;
     background-color: blanchedalmond;
+}
+
+/*---------- General Layout ----------*/
+
+.container {
+    margin-top: 4rem;
 }
 
 /*---------- Base Template ----------*/
@@ -62,7 +70,15 @@ main {
     letter-spacing: 2px;
 }
 
-/*-- Footer --*/
+body {
+    background-image: url('/static/img/main-background_1900.jpg');             
+}
+
+/*----- Footer -----*/
+
+footer .container {
+    margin-top: 0;
+}
 
 .footer-list {
     display: flex;
@@ -80,7 +96,12 @@ footer li {
     font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 2px;
-    padding-top: 0.5rem;
+    padding-top: 0.5rem;    
+}
+
+.footer-text,
+.social-links {
+    color: #f5f5f5;
 }
 
 .social-links {
@@ -88,13 +109,31 @@ footer li {
     padding-left: 1rem;
 }
 
-body {
-    background-image: url('/static/img/main-background_1900.jpg');             
+.email-link,
+.social-links {
+    background-color: #ff4617;
 }
 
-h1 {
-    color: #4e342e;
+.switch {
+    background-color: #f5f5f5;
+    color: #ff4617;
 }
+
+#email-me {
+    padding-top: 0.5rem;
+}
+
+.email-link {    
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+}
+
+.social-links {
+    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+    border-radius: 1rem;
+}
+
+
 
 /*---------- Home Page ----------*/
 
@@ -302,9 +341,11 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     margin-right: 1rem;
 }
 
-/*---------- Dashboard ----------*/
+/*---------- Error Pages ----------*/
 
-
+h2, h3 {
+    padding-top: 1.5rem;
+}
 
 /*---------- Media Queries ----------*/
 

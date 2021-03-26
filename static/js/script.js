@@ -1,3 +1,4 @@
+/*----- Materialize CSS Jquery Helpers -----*/
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.tooltipped').tooltip(); 
@@ -7,7 +8,8 @@ $(document).ready(function(){
     $('.modal').modal();
 });
 
-/*---------- Display image when URL provided----------*/
+/*----- Display image when URL provided ----- 
+----- on Add and Edit Recipe Pages----------*/
 function addImage()
 {
   var url = document.getElementById("image_url").value;
@@ -24,7 +26,8 @@ var instances = M.FloatingActionButton.init(elems, {
 });
 });
 
-/*----- Check Status of "Subscribed" checkbox -----*/
+/*----- Check Status of "Subscribed" checkbox ----- 
+---------- on the Edit Profile Page -----*/
 $(document).ready(function(){
     if ($('#subscribed').is(':checked')) {
         $('#subs-email').show();
@@ -44,3 +47,11 @@ $(document).ready(function(){
         }
     })
 });
+
+/*----- Change anchor link colour on Hover -----*/
+$(document).ready(function(){
+    $(".hover").hover(function(){
+        $(this).toggleClass("switch")
+    })
+})
+
