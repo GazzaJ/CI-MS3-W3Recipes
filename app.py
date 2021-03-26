@@ -3,6 +3,7 @@ import magic
 from flask import Flask, abort, flash, render_template, redirect, \
     request, session, url_for
 from flask_pymongo import PyMongo
+from better_profanity import profanity
 from PIL import Image
 from urllib.request import urlopen
 from bson.objectid import ObjectId
@@ -34,6 +35,11 @@ def home():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+        # ----- Profanity Check -----
+        # ----- Provided by better-profanity 0.7.0
+
+        text = request.form.get('username').lower()
+        clean_username = profanity.censor(text)
 
         # Checking if the username or email already exists
 
@@ -46,7 +52,7 @@ def register():
             return redirect(url_for('register'))
 
         register = {
-            'username': request.form.get('username').lower(),
+            'username': clean_username,
             'password': generate_password_hash(
                 request.form.get('password')),
             'city': '',
@@ -121,6 +127,7 @@ def profile(username):
         {'username': session['user']})['user_image']
     subscribed = mongo.db.users.find_one(
         {'username': session['user']})['subscribed']
+
     if session['user']:
         return render_template(
             'profile.html',
@@ -139,6 +146,11 @@ def profile(username):
 @app.route('/edit_profile', methods=['GET', 'POST'])
 def edit_profile():
     if request.method == 'POST':
+        # ----- Profanity Check -----
+        # ----- Provided by better-profanity 0.7.0
+
+        clean_city = profanity.censor(request.form.get('city'))
+        clean_email = profanity.censor(request.form.get('email'))
 
         # ----- Update specific DB fields only -----
 
@@ -149,11 +161,10 @@ def edit_profile():
         mongo.db.users.update_one({'username': session['user']},
                                   {'$set': {
                                           'user_image': request.form.get(
-                                              'image'),
-                                          'city': request.form.get(
-                                              'city'),
+                                              'user_image'),
+                                          'city': clean_city,
                                           'subscribed': subscribed,
-                                          'email': email,
+                                          'email': clean_email,
                                   }})
 
         flash('Profile Successfully Edited!')
@@ -181,8 +192,23 @@ def edit_profile():
             subscribed=subscribed,
             )
 
-# ---------- MongoDB Collections ----------
 
+# ---------- Check URL ----------
+@app.route('/check_url/')
+def check_url():
+    # ----- Check Image URL Type -----
+    image_formats = ("image/jpg", "image/jpeg", "image/png", "image/gif")
+    url = request.form.get("user_image")
+    site = urlopen(url)
+    meta = site.info()
+    print(meta)
+    if meta["content-type"] in image_formats:
+        flash("this is a valid image")
+    else:
+        flash('This is not a valid image')
+
+
+# ---------- MongoDB Collections ----------
 
 recipe_coll = mongo.db.recipes
 country_coll = mongo.db.countries
@@ -196,6 +222,8 @@ per_page = 6
 
 @app.route('/get_recipes')
 def get_recipes():
+    # ----- Pagination adapted from -----
+    # https://www.hacksparrow.com/databases/mongodb/pagination.html
     countries = country_coll.find().sort('name', 1)
     current_page = request.args.get('current_page', type=int, default=1)
     recipes = recipe_coll.find().sort('_id', -1).skip(
@@ -277,6 +305,15 @@ def filter():
 def add_recipe():
     rec_img = 'https://pixy.org/src/13/thumbs350/135044.jpg'
     if request.method == 'POST':
+        # ----- Profanity Check -----
+        # ----- Provided by better-profanity 0.7.0
+
+        clean_ingredients = profanity.censor(request.form.get('ingredients'))
+        clean_method = profanity.censor(request.form.get('method'))
+        clean_title = profanity.censor(request.form.get('title'))
+        clean_prep = profanity.censor(request.form.get('prep_time'))
+        clean_cook = profanity.censor(request.form.get('cooking_time'))
+        clean_desc = profanity.censor(request.form.get('description'))
 
         # Find Country and retrieve flag code
 
@@ -285,18 +322,16 @@ def add_recipe():
 
         # Get and format Recipe ingredients and steps
 
-        ingredients = request.form.get('ingredients')
-        ingredients = ingredients.split('\n')
-        method = request.form.get('method')
-        method = method.split('\n')
+        ingredients = clean_ingredients.split('\n')
+        method = clean_method.split('\n')
         recipe = {
             'country_name': country,
             'origin': origin,
-            'title': request.form.get('title'),
+            'title': clean_title,
             'image': request.form.get('image_url'),
-            'prep_time': request.form.get('prep_time'),
-            'cooking_time': request.form.get('cooking_time'),
-            'description': request.form.get('description'),
+            'prep_time': clean_prep,
+            'cooking_time': clean_cook,
+            'description': clean_desc,
             'servings': request.form.get('servings'),
             'ingredients': ingredients,
             'method': method,
@@ -395,19 +430,27 @@ def edit_recipe(recipe_id):
 
     if request.method == 'POST':
 
+        # ----- Profanity Check -----
+        # ----- Provided by better-profanity 0.7.0
+
+        clean_ingredients = profanity.censor(request.form.get('ingredients'))
+        clean_method = profanity.censor(request.form.get('method'))
+        clean_title = profanity.censor(request.form.get('title'))
+        clean_prep = profanity.censor(request.form.get('prep_time'))
+        clean_cook = profanity.censor(request.form.get('cooking_time'))
+        clean_desc = profanity.censor(request.form.get('description'))
+
         # Get and format Recipe ingredients and steps
 
-        ingredients = request.form.get('ingredients')
-        ingredients = ingredients.split('\n')
-        method = request.form.get('method')
-        method = method.split('\n')
+        ingredients = clean_ingredients.split('\n')
+        method = clean_method.split('\n')
         update = {
             'country_name': request.form.get('country_name'),
-            'title': request.form.get('title'),
+            'title': clean_title,
             'image': request.form.get('image_url'),
-            'prep_time': request.form.get('prep_time'),
-            'cooking_time': request.form.get('cooking_time'),
-            'description': request.form.get('description'),
+            'prep_time': clean_prep,
+            'cooking_time': clean_cook,
+            'description': clean_desc,
             'servings': request.form.get('servings'),
             'ingredients': ingredients,
             'method': method,
@@ -478,4 +521,5 @@ if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=False)
+        debug=True)
+    profanity.load_censor_words()
