@@ -1,6 +1,6 @@
 import os
 import magic
-from flask import Flask, abort, flash, render_template, redirect, \
+from flask import Flask, flash, render_template, redirect, \
     request, session, url_for
 from flask_pymongo import PyMongo
 from better_profanity import profanity
@@ -308,7 +308,7 @@ def add_recipe():
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
-        clean_ingredients = profanity.censor(request.form.get('ingredients'))
+        clean_ingred = profanity.censor(request.form.get('ingredients'))
         clean_method = profanity.censor(request.form.get('method'))
         clean_title = profanity.censor(request.form.get('title'))
         clean_prep = profanity.censor(request.form.get('prep_time'))
@@ -320,10 +320,20 @@ def add_recipe():
         country = request.form.get('country_name')
         origin = country_coll.find_one({'name': country})['alpha2']
 
-        # Get and format Recipe ingredients and steps
+        # Format Recipe ingredients
+        # https://stackoverflow.com/questions/1140958/
+        # whats-a-quick-one-liner-to-remove-empty-lines-from-a-python-string
+        text = "".join([s for s in clean_ingred.splitlines(
+            True) if s.strip("\r\n")])
+        ingred = text.rstrip()
+        ingredients = ingred.split('\n')
 
-        ingredients = clean_ingredients.split('\n')
-        method = clean_method.split('\n')
+        # Format Recipe steps
+        text = "".join([s for s in clean_method.splitlines(
+            True) if s.strip("\r\n")])
+        meth = text.rstrip()
+        method = meth.split('\n')
+
         recipe = {
             'country_name': country,
             'origin': origin,
