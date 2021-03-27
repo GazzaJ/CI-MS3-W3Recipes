@@ -115,18 +115,7 @@ body {
 /*----- Footer -----*/
 
 footer .container {
-    margin-top: 0;
-}
-
-.footer-list {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: stretch;
-}
-
-footer li {
-    display: inline;
-    margin: 0.5rem;
+    margin-top: 1rem;
 }
 
 .footer-text {
