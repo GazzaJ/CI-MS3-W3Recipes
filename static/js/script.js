@@ -51,7 +51,7 @@ $(document).ready(function(){
 /*----- Change anchor link colour on Hover -----*/
 $(document).ready(function(){
     $(".hover").hover(function(){
-        $(this).toggleClass("switch")
+        $(this).toggleClass("toggle")
     })
 })
 
