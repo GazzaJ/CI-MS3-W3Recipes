@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col s12">
-        <h1 class="center-align main-title">A World Wide Web of Recipes</h1>        
+        <h1 id="main-title" class="center-align">A World Wide Web of Recipes</h1>        
     </div>
 </div>
 <!-- Parallax feature adapted from (https://materializecss.com/parallax.html) -->
@@ -13,7 +13,7 @@
 </div>
 <div class="section white">
     <div class="row container center-align">
-        <h2>Do you ever get to the end of the week and crave something different to eat? Something that reminds you of that holiday abroad ...<br>
+        <h2 id="landing-text">Do you ever get to the end of the week and crave something different to eat? Something that reminds you of that holiday abroad ...<br>
             ... an old family favourite, or simply want to try something new?</h2> 
     </div>
 </div>
@@ -43,12 +43,10 @@
     <div class="col s12 m6">   
         <div class="row">        
             <div class="col s12">
-                <div id="country-cta" class="row card-panel yellow">
-                    <div class="col s12 center-align">
-                        <p class="cta-3">Don't see a country represented here?</p>
-                        <p class="cta-3"><a class="sign-up" href="{{url_for('register')}}">Sign Up here</a> and add a recipe to fill in that country</p>
-                    </div>
-                </div>
+                <div class="col s12 center-align">
+                    <p class="cta-3">Don't see a country represented here?</p>
+                    <p class="cta-3"><a class="sign-up light-grey" href="{{url_for('register')}}">Sign Up here</a> and add a recipe to fill in that country</p>
+                </div>  
                 <div class="row center-aling">
                     <div class="col s12 center-align arrows">
                         <i class="fas fa-angle-double-down cta-arrow" aria-hidden="true"></i>

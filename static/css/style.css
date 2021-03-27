@@ -1,7 +1,7 @@
 /*---------- Fonts ----------*/
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Galada&family=Molle:ital@1&family=Shrikhand&display=swap');
 
-.main-title{
+#main-title{
     font-family: "Shrikhand", sans-serif;
     font-weight: bold;
     letter-spacing: 4px;
@@ -157,6 +157,10 @@ footer li {
     color: #a8293c;
 }
 
+.toggle2 {    
+    color: #f8b735;
+}
+
 #email-me {
     padding-top: 0.5rem;
 }
@@ -222,6 +226,9 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 .sign-up {
     text-decoration: underline;    
     margin-left: 2rem;
+    background-color: #4e342e;
+    padding: 0.8rem 1rem;
+    border-radius: 2.2rem;
 }
 /*---------- Pagination ----------*/
 
@@ -394,6 +401,17 @@ h2, h3 {
         height: 3.5rem;
         width: auto;
     }
+
+    #main-title{
+    font-family: "Shrikhand", sans-serif !important;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+}
+
+#landing-text {
+    font-size: 2.2rem;
+}
 
     #manage-link {
         padding: 1.2rem;

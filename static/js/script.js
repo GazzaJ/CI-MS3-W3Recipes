@@ -48,10 +48,16 @@ $(document).ready(function(){
     })
 });
 
-/*----- Change anchor link colour on Hover -----*/
+/*----- Change footer link colour on Hover -----*/
 $(document).ready(function(){
     $(".hover").hover(function(){
         $(this).toggleClass("toggle")
     })
 })
 
+/*----- Change signup link colour on Hover -----*/
+$(document).ready(function(){
+    $(".sign-up").hover(function(){
+        $(this).toggleClass("toggle2")
+    })
+})
