@@ -422,7 +422,7 @@ def edit_recipe(recipe_id):
     user = mongo.db.users.find_one({'username': session['user']})
     admin = user['is_admin']
 
-# ---------- Check if user "is_admin" ----------
+    # ---------- Check if user "is_admin" ----------
 
     if admin is True:
         flash('')
@@ -443,17 +443,27 @@ def edit_recipe(recipe_id):
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
-        clean_ingredients = profanity.censor(request.form.get('ingredients'))
+        clean_ingred = profanity.censor(request.form.get('ingredients'))
         clean_method = profanity.censor(request.form.get('method'))
         clean_title = profanity.censor(request.form.get('title'))
         clean_prep = profanity.censor(request.form.get('prep_time'))
         clean_cook = profanity.censor(request.form.get('cooking_time'))
         clean_desc = profanity.censor(request.form.get('description'))
 
-        # Get and format Recipe ingredients and steps
+        # Format Recipe ingredients
+        # https://stackoverflow.com/questions/1140958/
+        # whats-a-quick-one-liner-to-remove-empty-lines-from-a-python-string
+        text = "".join([s for s in clean_ingred.splitlines(
+            True) if s.strip("\r\n")])
+        ingred = text.rstrip()
+        ingredients = ingred.split('\n')
 
-        ingredients = clean_ingredients.split('\n')
-        method = clean_method.split('\n')
+        # Format Recipe steps
+        text = "".join([s for s in clean_method.splitlines(
+            True) if s.strip("\r\n")])
+        meth = text.rstrip()
+        method = meth.split('\n')
+
         update = {
             'country_name': request.form.get('country_name'),
             'title': clean_title,
