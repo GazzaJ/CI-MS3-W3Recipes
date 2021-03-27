@@ -26,6 +26,10 @@ h1 {
     color: #4e342e;
 }
 
+h2 {
+    color: #582e44;
+}
+
 .olive {
     color: #582e44;
 }
@@ -38,7 +42,7 @@ h1 {
     color: #f88e28;
 }
 
-.yellow {
+.my-yellow {
     color: #f8b735;
 }
 
@@ -67,7 +71,8 @@ h1 {
 /*---------- Anchor Links ----------*/
 
 #manage-link,
-.recipe-link {
+.recipe-link,
+.signup-link {
     padding: 1.5rem;
     border-radius: 1.5rem;
     background-color: #994a26;
