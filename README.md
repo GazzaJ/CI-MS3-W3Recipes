@@ -233,7 +233,8 @@ Thus it made sense to me to add this to a profile page
 
 
 ##### **Colour Scheme**
-
+I typically find great inspiration for colour schemes on pinterest. In this case I used the following website ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg - Colour Scheme). From this site I have selected three of the palettes which match the browns, greens, oranges and reds in hero image. 
+![Colour Scheme](https://mariahalthoff.com/blog/food-themed-color-palettes - Colour Palette) ![Colour Scheme](https://mariahalthoff.com/blog/food-themed-color-palettes - Colour Palette) ![Colour Scheme](https://mariahalthoff.com/blog/food-themed-color-palettes - Colour Palette)
 
 ##### **Typography**  
 Selecting the correct typography for this site is just as important as the other design aspects. My aim was to find fonts to reflect a more relaxed style, welcoming the user into the site. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
@@ -483,7 +484,7 @@ Much of the structure of this site follows what was taught during the Backend De
 
  | Feature | Description | Source |
  |:-------:|-------------|:------:|
- |Animated Arrows| Animated arrows in the Landing Page call to action.| https://freefrontend.com/css-arrows/#animated-arrows |
+ |Animated Arrows| Animated arrows in the Landing Page call to action.| https://freefrontend.com/css-arrows/#animated-arrows |Remove blank lines and spaces from text inputs | I wanted to ensure that if users entered blank lines into the ingredients and methods they could be removed to maintain a neat list | https://www.kite.com/python/answers/how-to-remove-empty-lines-from-a-string-in-python |
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
