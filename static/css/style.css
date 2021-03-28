@@ -115,7 +115,12 @@ body {
 /*----- Footer -----*/
 
 footer .container {
-    margin-top: 1rem;
+    margin-top: 0;
+    
+}
+
+#footer-row {        
+    margin-bottom: 0;
 }
 
 .footer-text {
@@ -133,35 +138,35 @@ footer .container {
 
 .social-links {
     font-size: 2rem;
-    padding-left: 1rem;
+    padding: 0.25rem 0.75rem 0.3rem 0.75rem;    
 }
 
 .email-link,
 .social-links {
-    background-color: #a8293c;
+    background-color: #336520;
+    border-radius: 1rem;
+    margin: 2rem;
+    border: solid 0.2rem #e1e6e2;    
 }
 
 .toggle {
     background-color: #e1e6e2;
-    color: #a8293c;
+    color: #336520;
 }
 
 .toggle2 {    
     color: #f8b735;
 }
 
-#email-me {
-    padding-top: 0.5rem;
-}
-
-.email-link {    
+#email-me {    
     padding: 1rem 1rem;
     border-radius: 1rem;
+    margin-top: 2rem;         
 }
 
-.social-links {
-    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
-    border-radius: 1rem;
+#box-1,
+#box-3 {
+    padding-top: 0.75rem;
 }
 
 /*---------- Home Page ----------*/
