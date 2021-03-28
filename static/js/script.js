@@ -68,3 +68,10 @@ $(document).ready(function(){
         $(this).toggleClass("toggle2")
     })
 })
+
+/*----- Highlight navbar links on Hover -----*/
+$(document).ready(function(){
+    $(".signup-2").hover(function(){
+        $(this).toggleClass("toggle3")
+    })
+})
