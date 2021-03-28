@@ -69,9 +69,16 @@ $(document).ready(function(){
     })
 })
 
-/*----- Highlight navbar links on Hover -----*/
+/*----- Toggle sign-up link on Hover -----*/
 $(document).ready(function(){
     $(".signup-2").hover(function(){
         $(this).toggleClass("toggle3")
+    })
+})
+
+/*----- Toggle img-url link on Hover -----*/
+$(document).ready(function(){
+    $(".img-link").hover(function(){
+        $(this).toggleClass("toggle4")
     })
 })

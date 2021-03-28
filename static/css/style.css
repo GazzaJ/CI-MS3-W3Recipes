@@ -30,6 +30,10 @@ h2 {
     color: #582e44;
 }
 
+.my-green {
+    color: #336520;
+}
+
 .olive {
     color: #582e44;
 }
@@ -330,6 +334,31 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     width: auto;
     border: 0.25rem solid #000;
     margin-left: 3rem;
+}
+
+#img-sources {
+    padding: 0.2rem 1.5rem;    
+}
+
+#url-msg {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.img-link {
+    font-size: 1.2rem;
+    font-family: 'Happy Monkey', sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    border-radius: 1rem;
+    padding: 0.4rem;    
+    color: #f88e28;    
+}
+
+.toggle4 {
+    background-color: #f88e28;
+    color: #fff;
+    text-decoration: none;
 }
 
 #cancel-add {
