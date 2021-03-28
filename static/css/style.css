@@ -106,6 +106,7 @@ main {
 .navlinks {
     font-family: "Galada", sans-serif;
     letter-spacing: 2px;
+    font-size: 2rem !important;
 }
 
 body {
