@@ -1,7 +1,7 @@
 import os
 import magic
 from flask import Flask, flash, render_template, redirect, \
-    request, session, url_for
+    request, session, url_for, Response
 from flask_pymongo import PyMongo
 from better_profanity import profanity
 from PIL import Image
@@ -19,6 +19,12 @@ app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
+
+response = Response()
+response.headers['Strict-Transport-Security'] = \
+    'max-age=31536000; includeSubDomains'
+response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+response.headers['Cache-Control'] = 'public, max-age=0'
 
 
 @app.route('/')
@@ -506,6 +512,7 @@ def logout():
 
     flash('You have been logged out')
     session.pop('user')
+    session.clear()
     return redirect(url_for('home'))
 
 
@@ -541,5 +548,5 @@ if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=True)
+        debug=False)
     profanity.load_censor_words()
