@@ -14,7 +14,6 @@ if os.path.exists('env.py'):
     import env
 
 app = Flask(__name__)
-sslify = SSLify(app, subdomains=True)
 
 app.config['MONGO_DBNAME'] = os.environ.get('MONGO_DBNAME')
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
@@ -22,8 +21,9 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
+
 # ----https://stackoverflow.com/questions/13768007/browser-caching-issues-in-flask
-@app.after_request
+@app.after_request('/')
 def add_header(response):
     response = Response()
     response.headers['Strict-Transport-Security'] = \
