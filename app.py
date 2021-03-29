@@ -22,15 +22,11 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
-
-# ----https://stackoverflow.com/questions/13768007/browser-caching-issues-in-flask
-@app.after_request('f')
-def add_header(response):
-    response = Response()
-    response.headers['Strict-Transport-Security'] = \
-        'max-age=31536000; includeSubDomains'
-    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
-    response.headers['Cache-Control'] = 'no-cache, no-store, public, max-age=0'
+response = Response()
+response.headers['Strict-Transport-Security'] = \
+    'max-age=31536000; includeSubDomains'
+response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+response.headers['Cache-Control'] = 'no-cache, no-store, public, max-age=0'
 
 
 @app.route('/')
