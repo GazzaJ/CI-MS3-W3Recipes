@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 
 
 # ----https://stackoverflow.com/questions/13768007/browser-caching-issues-in-flask
-@app.after_request()
+@app.after_request('f')
 def add_header(response):
     response = Response()
     response.headers['Strict-Transport-Security'] = \
