@@ -4,6 +4,7 @@ from flask import Flask, flash, render_template, redirect, \
     request, session, url_for, Response
 from flask_pymongo import PyMongo
 from better_profanity import profanity
+from flask_sslify import SSLify
 from PIL import Image
 from urllib.request import urlopen
 from bson.objectid import ObjectId
@@ -13,6 +14,7 @@ if os.path.exists('env.py'):
     import env
 
 app = Flask(__name__)
+sslify = SSLify(app, subdomains=True)
 
 app.config['MONGO_DBNAME'] = os.environ.get('MONGO_DBNAME')
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
@@ -20,11 +22,14 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
-response = Response()
-response.headers['Strict-Transport-Security'] = \
-    'max-age=31536000; includeSubDomains'
-response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
-response.headers['Cache-Control'] = 'public, max-age=0'
+# ----https://stackoverflow.com/questions/13768007/browser-caching-issues-in-flask
+@app.after_request
+def add_header(response):
+    response = Response()
+    response.headers['Strict-Transport-Security'] = \
+        'max-age=31536000; includeSubDomains'
+    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+    response.headers['Cache-Control'] = 'no-cache, no-store, public, max-age=0'
 
 
 @app.route('/')
