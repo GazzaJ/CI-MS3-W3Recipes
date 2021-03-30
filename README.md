@@ -7,12 +7,12 @@
 
 As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus I thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better way to do this than to get the site users to post their tried and tested favourite recipes.
 
-Thus the primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enble those users to upload their own recipes to share with other site users. The secondary purpose of the site is to provide the site owner with a means to promote a particular product.
+Thus the primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enble those users to upload their own recipes to share with other site users.
 
-The objective is to achieved the above with a visually appealing, interactive yet intuitive UX, which provides simple consistent navigation and interaction irrespective of the device. Ultimately, I would like this site to be fun, and encourage people:
- - to upload their favourite recipes
+The objective is to achieved the above with a visually appealing, interactive yet intuitive UX, which provides simple consistent navigation and interaction irrespective of the device. Ultimately, I would like this site to be fun, and encourage users to:
+ - upload their favourite recipes
  - share the site and encourage their friends to also upload recipes
- - keep track of how popular their recipes are
+ - keep track of where they stand in terms of number of recipes uploaded, compared to ther users
  - keep track of our progress "filling the map"
 
 
@@ -28,11 +28,6 @@ The objective is to achieved the above with a visually appealing, interactive ye
 2. [Features](#features)
 3. [Technologies Used](#technologies)
 4. [Testing](#testing)
-   - [User Story Testing](#user-story-testing)
-   - [Functionality Testing](#functionality-testing)
-   - [Code Validation](#code-validation)
-   - [Usability Testing](#usability-testing)
-   - [Responsiveness Testing](#responsiveness-testing)
 5. [Bugs & Issues](#bugs)
 6. [Deployment](#deployment)
 7. [Resources](#resources)
@@ -60,7 +55,7 @@ The following user stories were developed during the planning stages for this si
 6. _As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**.
 
 7.  _As a _ **site owner**, _I need to_ **promote a product, _in order to_ **promote a preferred product on the site**.
-
+___
 
 ### **The 5 Planes of UX** <a name="planes"></a>
 The five planes provide a framework to discuss the design and development of this app.
@@ -68,10 +63,10 @@ The five planes provide a framework to discuss the design and development of thi
 #### **Strategy**  
 The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching and sharing (uploading and editting) their favourite recipes. The aim is to try and add a fun spin on the typical recipe website by encoraging the users to upload their favourite recipes from as many different countries from around the World as possible to provide a wide array of recipes, and as a bit of fun to enable them to track progress in this respect using the dashboard.
  - As the site owner and a keen cook I get to share a recipe database with like minded users, and in exchange for the development get some new recipes to try.
- - Users also get access to all of those recipes and get to upload and share their recipes with a community of like minded keen cooks.
+ - Users get access to all of those recipes and get to upload and share their recipes with a community of like minded keen cooks.
 
 #### **Scope**  
-The key features required to enable this app to function as designed are centered around CRUD interactions with a MongoDB Atlas cloud database management system.:
+The key features required for this app to function as designed are centered around CRUD interactions with a MongoDB Atlas cloud database management system.:
  - **Create** or upload a recipe into the database which can then be viewed by all other registered users
  - **Read**, or view all of the recipes stored in the database.
     - The list of recipes can be filtered by country of origin
@@ -81,12 +76,12 @@ The key features required to enable this app to function as designed are centere
 
 In order to prevent unwanted editting or deletions of users recipes, the website has been designed with a basic level of security. Thus, to access the full functionality users are required to Sign-up to the App, which provides access to the CRUD functionality.
  - User interactions are tracked and managed through the use of a *"Session Cookie"*
- - Uploads are unlimited, by users can only edit and delete their own previously uploaded recipes
+ - Uploads are unlimited, however users can only edit and delete their own previously uploaded recipes
  - Users can elect to provide additional basic informataion about themselves and to subscribe or not
 
 ##### Functional Requirements
-App functionality is provided through simple navigation using an intuitive, and mobile responsive navbar. The navbarr menu options increases once a user registers or logs into the website, increasing pootential functionality.
-One page each to c
+App functionality is provided through a simple and intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing pootential functionality.
+Additional interactive anchor linkls are provided to assist users in navigating to strategic pages.
 
 ##### Content Requirements
 Much of the content on this site will be provided by users.
@@ -95,11 +90,15 @@ I am a keen cook, and having an image of a recipe is just as important as the in
 The typography selected for this site was also important, and needed to be fun yet functional. I have selected more cursive fonts to try and emulate a recipe notebook style.
 I deliberately stuck with a clean and simple, structured layout to make it easy to view  and also edit the content.
 
-A consistent design is provided through Flask/Jinja templating inheritance.
+A consistent design is provided through Flask/Jinja template inheritance.
+Recipe pages have a similat design, and the individual Recipe cards are consistent between the Recipes page and Manage Resipes page.
+___
 
 #### **Structure**  
-W3Recipes is constructed from 11 distinct pages which were created using jinja template inheritance. This simplified the basic structure of the site and reduced the need for repetition. It may have been possible to build this with scrollable sections, however as each page tends to have a distinct purpose, it made sense to build individual pages.
-Adding and Editing data are very similar and thus the structure and design of some pages have been re-used to create a familiar and intuitive format for the user.
+W3Recipes is constructed from 11 distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only three oprions: Home | Sign-up | Log-in
+Once through this initial authentication stage users are presented with the a further six options, from which they are able to interact fully with the site: Recipes | Add Recipes | Manage Recipes | Profile | Dashboard | Sign-out
+![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
+A further three subdomains enable the user to Add, Edit or Delete recipes.  
 
 ##### Interaction Design
 User interactions on the W3Recipes app can be subdivided into three categories:
@@ -110,17 +109,20 @@ User interactions on the W3Recipes app can be subdivided into three categories:
 Navigating through the Recipes is achieved through familiar pagination controls.  
 ![Pagination](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/pagination.jpg)
 
-I have provided links on several pages to alao assist user interaction; these are quick links to:
+I have provided links on several pages to also assist user navigation; these are quick links to :
  - Sign-in
  - Add a Recipe
  - Manage Recipes
+   
+
+These buttons provide user feedback by either changing or reversing colours when hovered.
 
  - **Manipulation**  
  Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
    - Green ![Green Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/green-button.jpg)  
  Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
 
-   - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-red-fabs.jpg)  
+   - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-button.png)  
  Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.
 
    - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
@@ -137,7 +139,7 @@ Users are able to add and change their data (Recipes or User Profile) using a se
 Information is provided to users on four key pages; Recipes, Manage Recipes, Profile and Dashboard.
 Despite rendering slightly different information the structure of the Recipe and Manage Recipe Pages are deliberately similar.
 
-
+___
 
 #### **Skeleton** 
 The W3 Recipes website comprises three main pages:
@@ -157,12 +159,29 @@ Assuming the user elects to register they are provided access to the remaining p
 All of these options are provided on a fairly typical and intuitive navbar. 
 
 ##### **Interface Design**
-
+The intention was to maintain a clean and consistent interface design, re-using the background image and page styles wherever possible.
+I have attempted, wherever possible to keep as much of the page elements within the viewport. However this wasn't always possible and some scrolling is required. That said I have selected limits on how much is displayed on each page to minimize scrolling.
+Buttons colours are chosen to reflect their purpose, and anchor links have some interactive response when hovered.
 
 ##### **Navigation Design**
+I have used a standard Materialize, mobile responsive navbar for W3Recipes.
+The menu items change depending on the users status.
+ - New users only see: Home, Sign-up and Log-in
+ - Once signed-up users are able to see the full menu list which enables thenm to interact with the whole app.
 
+Additional anchor links have been provided in strategic locations to assist user navigation and provide easy access to certain pages.
+ - Landing Page
+ Contains two anchor links prompting the user to sign-up.
 
-There should be no requirement for the user to have to resort to the Browser BACK button. 
+ - Recipes page and Manage Recipes page
+ Both have a link to the Manage Recipes page where the user can view, edit or delete the recipes they have uploaded.
+
+ - Profile Page
+ Contains a link to prompt the user 
+
+There should be no requirement for the user to ever have to resort to the Browser BACK button.
+ - Error Pages
+Each error page uses the template inheritance to provide the users the navbar seen throughout the site. should a user  encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
 
 ##### **Information Design**
 
@@ -240,8 +259,8 @@ ___
 The aesthetics of W3Recipes was just as important to me as the functionality. Despite not using a lot of imagery for the app, what I have selected needs to be impactful, yet relaxed and fun to match the overall objective.
 
 ##### **Colour Scheme**
-I typically find great inspiration for colour schemes on pinterest. In this case I used the following website ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg - Colour Scheme). From this site I have selected three of the palettes which match the browns, greens, oranges and reds in hero image. 
-![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg - Colour Palette) ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_2.jpg - Colour Palette) ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg - Colour Palette)
+I typically find great inspiration for colour schemes on pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image. 
+![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
 
 ##### **Typography**  
 Selecting the correct typography for this site is just as important as the other design aspects. My aim was to find fonts to reflect a more relaxed style, welcoming the user into the site. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
@@ -287,10 +306,11 @@ Last but certainly not the least was my desire to have a subtle food related bac
 ______
 
 ## **Features** <a name="features"></a>
-|-----|-----|-----|
+
 
 ### **Existing Features**
-
+|Feature|Description|
+|:-----:|-----|-----|
 ### **Security Features**
 Despite not being explicitly required for this build I have chosen to implement certain security features to 
 |  Feature  |  Description  |    |
@@ -500,21 +520,39 @@ The content of this website was created by Gareth John. Snippets of code have be
 ### **Media**
 
 The photos used in this site were obtained from the folloing sources:
-
+| Photo | Description | Source | Attribution |
+|-------|-------------|--------|-------------|
+| 001   |Hero image on landing page| iStock |  |
+| 002   | Lower hero image |   |  |
+| 003   | Background images| freepik |  |
+| 004   | Recipe Image     |         |  |
+| 005   | Recipe Image     |         |  |
+| 006   | Recipe Image     |         |  |
+| 007   | Recipe Image     |         |  |
+| 008   | Recipe Image     |         |  |
+| 009   | Recipe Image     |         |  |
+| 010   | Recipe Image     |         |  |
+| 011   | Recipe Image     |         |  |
+| 012   | Recipe Image     |         |  |
+| 013   | Recipe Image     |         |  |
+| 014   | Recipe Image     |         |  |
+| 015   | Recipe Image     |         |  |
 
 - All other images came from my own personal image library
 
 ### **Code Snippets**
 Much of the structure of this site follows what was taught during the Backend Development - Task Manager walkthrough project provided by Code Institute, but has been heavily modified to suit a recipe database site with additional functionality not provided in the walkthrough.
 
- | Feature | Description | Source |
+ | Code Snippet | Description | Source |
  |:-------:|-------------|:------:|
- |Animated Arrows| Animated arrows in the Landing Page call to action.| https://freefrontend.com/css-arrows/#animated-arrows |Remove blank lines and spaces from text inputs | I wanted to ensure that if users entered blank lines into the ingredients and methods they could be removed to maintain a neat list | https://www.kite.com/python/answers/how-to-remove-empty-lines-from-a-string-in-python |
+ |Animated Arrows| Animated arrows in the Landing Page call to action | https://freefrontend.com/css-arrows/#animated-arrows|
+ |Remove blank lines and spaces from text inputs | Ensure that if users entered blank lines into the ingredients and methods they could be removed to maintain a neat list | https://www.kite.com/python/answers/how-to-remove-empty-lines-from-a-string-in-python |
+ |  |  |  |
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
-- Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelsons Walkthrough projects were particularly enjoyable.
- - Thanks to Ed Bradley for hosting a very helpfull MS3 Planning Call.
+- Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
+ - Thanks to Ed Bradley for hosting a very helpfull MS3 Planning Call and for providing some much needed support along the way.
  - Thanks also to Can Sucullu for opening my eyes to potential vunerabilitis and potential back doors 
 ______
 ### **Technical Support** <a name="technical"></a>
