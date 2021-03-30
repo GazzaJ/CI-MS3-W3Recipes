@@ -18,7 +18,7 @@ The objective is to achieved the above with a visually appealing, interactive ye
 
 [The live website can be viewed here!](https://ci-ms3-w3recipes.herokuapp.com/)
 
-![Am I responsive images](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/am-i-responsive.png "Am I Responsive")
+![Am I responsive images](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/am_i_responsive.jpg "Am I Responsive")
 
 ## Table of contents
 1. [User Experience](#user-experience)
@@ -102,7 +102,7 @@ W3Recipes is constructed from 11 distinct pages which were created using jinja t
 Adding and Editing data are very similar and thus the structure and design of some pages have been re-used to create a familiar and intuitive format for the user.
 
 ##### Interaction Design
-User interactions on the W£Recipes app can be subdivided into three categories:
+User interactions on the W3Recipes app can be subdivided into three categories:
  - **Navigation**  
  I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.  
   ![Navbar](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/navbar.jpg)  
@@ -110,6 +110,10 @@ User interactions on the W£Recipes app can be subdivided into three categories:
 Navigating through the Recipes is achieved through familiar pagination controls.  
 ![Pagination](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/pagination.jpg)
 
+I have provided links on several pages to alao assist user interaction; these are quick links to:
+ - Sign-in
+ - Add a Recipe
+ - Manage Recipes
 
  - **Manipulation**  
  Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
@@ -117,16 +121,15 @@ Navigating through the Recipes is achieved through familiar pagination controls.
  Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
 
    - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-red-fabs.jpg)  
- Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.  
-
+ Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.
 
    - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
  Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.  
 
 
  - **Data Input**
- The primary User inputs are achieved 
-
+The primary User inputs are achieved 
+Users are able to add and change their data (Recipes or User Profile) using a series of forms
 >A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
 
 
@@ -176,7 +179,7 @@ A Mini version of the Dachboard is shown to hopefully encourage users to find an
 Simple Sign-Up page enables the user to create unique log-in credentials based on an alphanumeric Username and alphanumeric Password. Back-end logic tests for duplicate entries. Redirects the user to the Recipes Page on successfully signing up.  
 ![Sign-Up](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/Sign-up.png "Sign-Up Page Wireframe")
 
-#### Login Page
+##### Login Page
 For returning users there is a separate Log-In page to enable access to the full functionality of the site.  
 ![Login](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/login-page.png "Log-In Page Wireframe")
 
@@ -188,11 +191,11 @@ Users can select any recipe and see the full details of that recipe in order to 
 >**_The main change here was to incorporate what could have comprised separate pages (About, Map and Gallery) into a single page._**
 
 
-###### Individual Recipe Page
+##### Individual Recipe Page
 Provides users with the full recipe detail so thay can check the ingredients and follow the steps to make it.
 ![Full Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full-recipe.png "Full Recipe Wireframe")
 
-#### Add Recipe Page
+##### Add Recipe Page
 If the logged in user chooses to upload a recipe they can select "ADD RECIPE" from the navbar, which redirect the user to a page with various input fields where they can populate:
  - Recipe Name
  - An image representative of the recipe
@@ -206,35 +209,39 @@ If the logged in user chooses to upload a recipe they can select "ADD RECIPE" fr
 Once complete the recipe is uploaded to the MongoDB Atlas Recipes collection.  
 ![Add Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Add Recipe Wireframe") 
 
-##### Manage Recipes Page
+###### Manage Recipes Page
 This page is a copy of the Recipes Page, however rather than providing search functionality it displays only the recipes the user has uploaded, and enables the user to **UPDATE** or **DELETE** those recipes.
 Edit redirects the user to a page similar to the Full Recipe page but with editting functionality.
 Selecting Delete will produce a check modal to double check the deleting request before removing the recipe.  
 ![Manage](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Manage Recipes Wireframe")  
 
-#### Edit Recipe Page
+##### Edit Recipe Page
 If the user selects EDIT on the Manage Recipes page they are redirected to a page displaying the full recipe with their previous inputs pre-filling the various input fields. The user can change as few or as many field s as necessary or if they change their mind there is a option to Cancel the edit.  
 ![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Edit Recipe Wireframe")
 
 
-#### Profile Page
-![Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile-page.png)
-#### Edit Profile Page
+##### Profile Page
+The profile page initially renders the basic profile information added on Sign-up. There is a button at the bottom of the profile card to enable the users to access the 'Edit Profile' page where they can customise their profile image and select whether or not to subscribe and provide an email adresss.  
+![Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile-page.png)  
+
+
+##### Edit Profile Page
 Enables the user to add a photo or avatar to their profile, provide their location and subscribe to the website.
 I chose not to place the subscribe option on the landing page because until you log in you wouldn't necessarily know whether you wanted to subscribe to the website.
 Thus it made sense to me to add this to a profile page  
 
 ![Edit Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-profile.png)  
 
-#### Dashboard Page  
+##### Dashboard Page  
+The dashboard page enables the users to track how many countries the site has recipes for and also see how they compare to other users in terms of total recipes uploaded.
 ![Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipe-dashboard.png)
-
+___
 #### **Surface**
-
+The aesthetics of W3Recipes was just as important to me as the functionality. Despite not using a lot of imagery for the app, what I have selected needs to be impactful, yet relaxed and fun to match the overall objective.
 
 ##### **Colour Scheme**
 I typically find great inspiration for colour schemes on pinterest. In this case I used the following website ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg - Colour Scheme). From this site I have selected three of the palettes which match the browns, greens, oranges and reds in hero image. 
-![Colour Scheme](https://mariahalthoff.com/blog/food-themed-color-palettes - Colour Palette) ![Colour Scheme](https://mariahalthoff.com/blog/food-themed-color-palettes - Colour Palette) ![Colour Scheme](https://mariahalthoff.com/blog/food-themed-color-palettes - Colour Palette)
+![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg - Colour Palette) ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_2.jpg - Colour Palette) ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg - Colour Palette)
 
 ##### **Typography**  
 Selecting the correct typography for this site is just as important as the other design aspects. My aim was to find fonts to reflect a more relaxed style, welcoming the user into the site. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
@@ -271,15 +278,33 @@ Given the recipe notebook style I was trying to achieve I wanted a font which lo
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg) 
 
 ##### **Imagery** 
+I was originally planning on using world map as the primary landing page image but decided against as this would have been confusing. I opted to go with a food montage which was an image I purchased from iStock
 
+The second image 
+
+Last but certainly not the least was my desire to have a subtle food related background behind the interactive elements. I found a really cool version designed and distributed by freepik. The original version would have been too distracting so I opted to adjust the contrast and colours to fade the image. I also added my logo into the circular gap in the center.
+>**_I selected this particular image because it had a range of food types; each one is a decent size and they are not too densely packed._**
 ______
 
 ## **Features** <a name="features"></a>
-
+|-----|-----|-----|
 
 ### **Existing Features**
 
-### **Security Reatures**
+### **Security Features**
+Despite not being explicitly required for this build I have chosen to implement certain security features to 
+|  Feature  |  Description  |    |
+|----|----|----|
+| 001 | User Login |  |  |
+| 002 | Session Cookie |    |    |
+| 003 |
+
+### **Features Left to implement**
+I have attempted to provide as much functionality in this app' as I can in the time available. Despite this there are features I 
+|   Feature     |     Description      |
+|---------------|----------------------|
+| Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's|
+| Image Validation |                      |
 
 ______
 
