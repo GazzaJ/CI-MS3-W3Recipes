@@ -449,6 +449,11 @@ def edit_recipe(recipe_id):
         clean_cook = profanity.censor(request.form.get('cooking_time'))
         clean_desc = profanity.censor(request.form.get('description'))
 
+        # Find Country and retrieve flag code
+
+        country = request.form.get('country_name')
+        origin = country_coll.find_one({'name': country})['alpha2']
+
         # Format Recipe ingredients
         # https://stackoverflow.com/questions/1140958/
         # whats-a-quick-one-liner-to-remove-empty-lines-from-a-python-string
@@ -466,6 +471,7 @@ def edit_recipe(recipe_id):
         update = {
             'country_name': request.form.get('country_name'),
             'title': clean_title,
+            'origin': origin,
             'recipe_type': request.form.get('recipe_category'),
             'image': request.form.get('image_url'),
             'prep_time': clean_prep,
