@@ -31,7 +31,7 @@ response.headers['Cache-Control'] = 'no-cache, no-store, public, max-age=0'
 
 @app.route('/')
 @app.route('/home')
-def home():
+def home():    
     recipe = \
         mongo.db.recipes.find_one(
             {'_id': ObjectId('603799093d30368acbfdfdd0')})
@@ -220,6 +220,7 @@ def check_url():
 
 recipe_coll = mongo.db.recipes
 country_coll = mongo.db.countries
+category_coll = mongo.db.recipe_category
 
 # ---------- Items per Page ----------
 
@@ -233,6 +234,7 @@ def get_recipes():
     # ----- Pagination adapted from -----
     # https://www.hacksparrow.com/databases/mongodb/pagination.html
     countries = country_coll.find().sort('name', 1)
+    categories = category_coll.find()
     current_page = request.args.get('current_page', type=int, default=1)
     recipes = recipe_coll.find().sort('_id', -1).skip(
         per_page * (current_page - 1)).limit(per_page)
@@ -243,6 +245,7 @@ def get_recipes():
     return render_template(
         'recipes.html',
         countries=countries,
+        categories=categories,
         recipes=recipes,
         current_page=current_page,
         per_page=per_page,
@@ -346,6 +349,7 @@ def add_recipe():
             'country_name': country,
             'origin': origin,
             'title': clean_title,
+            'recipe_type': request.form.get('recipe_category'),
             'image': request.form.get('image_url'),
             'prep_time': clean_prep,
             'cooking_time': clean_cook,
@@ -362,7 +366,9 @@ def add_recipe():
         return redirect(url_for('get_recipes'))
 
     countries = country_coll.find().sort('name', 1)
+    categories = category_coll.find()
     return render_template('add_recipe.html', countries=countries,
+                           categories=categories,
                            rec_img=rec_img)
 
 

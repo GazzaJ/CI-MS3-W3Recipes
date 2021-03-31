@@ -26,6 +26,17 @@
                                 <input placeholder="Recipe Name" id="title" name="title" type="text" class="validate"
                                     minlength="5" maxlength="50" required>
                                 <label for="title">Recipe Name</label>
+                            </div>
+                            <div class="input-field">
+                                <!-- Recipe Category Select -->
+                                <i class="fas fa-drumstick-bite prefix" aria-hidden="true"></i>
+                                <select id="recipe_category" name="recipe_category" class="validate" required>                            
+                                    <option value="" disabled selected>Choose Recipe Category</option>
+                                    {% for category in categories %}
+                                        <option value="{{ category.recipe_type }}">{{ category.recipe_type }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="recipe_category">Recipe Category</label>
                             </div>                    
                             <div class="input-field">
                                 <!-- Servings Input Field -->
