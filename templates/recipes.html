@@ -52,12 +52,12 @@
                 <div class="card hoverable">
                     <div class="card-image">
                         <img class="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
-                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
+                    </div>                          
+                    <div class="card-content">                    
+                        <a id="recipe-fab" href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
                             class="btn-floating halfway-fab waves-effect waves-light blue">
                             <i class="fas fa-search-plus" aria-label="Open Recipe"></i>
                         </a>
-                    </div>                          
-                    <div class="card-content">                    
                         <h4 class="card-title recipe-title">{{ recipe.title }}</h4>
                         <div class="row">
                             <div class="col s8">
