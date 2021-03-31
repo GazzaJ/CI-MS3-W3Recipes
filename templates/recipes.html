@@ -54,7 +54,7 @@
                         <img class="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
                         <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" 
                             class="btn-floating halfway-fab waves-effect waves-light blue">
-                            <i class="fas fa-search-plus" aria-hidden="true"></i>
+                            <i class="fas fa-search-plus" aria-label="Open Recipe"></i>
                         </a>
                     </div>                          
                     <div class="card-content">                    
@@ -86,7 +86,7 @@
     </div>
     <!-- Pagination Controls -->        
     <ul class="pagination center-align">
-        <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left" aria-hidden="true"></i></a></li>
+        <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left" aria-label="Previous Page"></i></a></li>
         {% for page in pages %}
             {% if current_page == page %}                    
                 <li class="active"><a href="#">{{ page }}</a></li>
@@ -94,7 +94,7 @@
                 <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=current_page) }}">{{ page }}</a></li>
             {% endif %}
         {% endfor %}
-        <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right" aria-hidden="true"></i></a></li>
+        <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right" aria-label="Next Page"></i></a></li>
     </ul>
         
 {% endblock %}
