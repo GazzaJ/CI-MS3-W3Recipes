@@ -25,7 +25,8 @@ The objective is to achieved the above with a visually appealing, interactive ye
    - [User Stories](#stories)
    - [The 5 Planes](#planes)
    - [Wireframes](#wireframes)
-2. [Features](#features)
+2. [Database Schema](#dbschema)
+3. [Features](#features)
 3. [Technologies Used](#technologies)
 4. [Testing](#testing)
 5. [Bugs & Issues](#bugs)
@@ -156,11 +157,16 @@ Assuming the user elects to register they are provided access to the remaining p
    - Echoes the functionality provided by the Recipes and Add Recipe pages
  - A dashboard to track where recipes are uploaded for
 
-All of these options are provided on a fairly typical and intuitive navbar. 
+Navigation between pages is provided by a standard and intuitive navbar. 
 
 ##### **Interface Design**
-The intention was to maintain a clean and consistent interface design, re-using the background image and page styles wherever possible.
-I have attempted, wherever possible to keep as much of the page elements within the viewport. However this wasn't always possible and some scrolling is required. That said I have selected limits on how much is displayed on each page to minimize scrolling.
+The intention was to maintain a clean and consistent interface design, re-using elements and page styles wherever possible.
+ - The Recipes page and Manage Recipes page are virtually identical aside from the search and filter elements being removed for managing recipes.
+ - Recipe cards have a consistent layout between the Recipes and Manage recipes pages. Each has a Floating Action Button which when clicked takes the user to the next level.
+ - The Add Recipes and Edit recipes pages are also identical in their appearance and structure.
+
+Flashed messages are displayed at the top of the screen below the navbar
+
 Buttons colours are chosen to reflect their purpose, and anchor links have some interactive response when hovered.
 
 ##### **Navigation Design**
@@ -169,23 +175,22 @@ The menu items change depending on the users status.
  - New users only see: Home, Sign-up and Log-in
  - Once signed-up users are able to see the full menu list which enables thenm to interact with the whole app.
 
-Additional anchor links have been provided in strategic locations to assist user navigation and provide easy access to certain pages.
+Additional anchor links have been provided in strategic locations to assist user navigation and provide easy access to certain pages. These are consistently located at the bottom of the content above the footer.
  - Landing Page
- Contains two anchor links prompting the user to sign-up.
+ Contains two anchor links prompting the user to sign-up. One located within text of a call to action section in the middle of the page. The second is located at the bottom of the page above the footer
 
  - Recipes page and Manage Recipes page
- Both have a link to the Manage Recipes page where the user can view, edit or delete the recipes they have uploaded.
+ Both have a link to the Add Recipes page, where the user is able to upload a new recipe
 
  - Profile Page
- Contains a link to prompt the user 
+ Contains a link to the Manage Recipes page where they are able to Edit and Delete the recipes they have previously uploaded.
 
 There should be no requirement for the user to ever have to resort to the Browser BACK button.
  - Error Pages
 Each error page uses the template inheritance to provide the users the navbar seen throughout the site. should a user  encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
 
 ##### **Information Design**
-
-
+The basic concept fopr the information design for W3Recipes is laid out in the following wireframes.
 
 #### Wireframes <a name="wireframes"></a>
 Wireframes for the original design concepts were created using Balsamiq.
@@ -260,7 +265,7 @@ The aesthetics of W3Recipes was just as important to me as the functionality. De
 
 ##### **Colour Scheme**
 I typically find great inspiration for colour schemes on pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image. 
-![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
+![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour-palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
 
 ##### **Typography**  
 Selecting the correct typography for this site is just as important as the other design aspects. My aim was to find fonts to reflect a more relaxed style, welcoming the user into the site. I also wanted variety to help demarcate different sections of the site. The primary criteria which I used to select the fonts for this app' were:
@@ -305,12 +310,50 @@ Last but certainly not the least was my desire to have a subtle food related bac
 >**_I selected this particular image because it had a range of food types; each one is a decent size and they are not too densely packed._**
 ______
 
-## **Features** <a name="features"></a>
+## **Database Schema** <a name="dbschema"></a>  
+W3Recipes uses Mongo DB Atlas a non-relational database to store and retrieve all of the user input data.
+The schema for W3 Recipes is relatively simple and is illustrated below:
+![DB Schema](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/db-schema.png "DB Schema")
 
+The schema contains four collections, with each collection containing multiple documents 
+ - **Users**
+ Stores user data. Initialy populated with username and password and a default profile image. Once logged in users can upload their own image url, specify their town or city. If the user elects to subscribe to the site, they are then able to provide their email address.
+> **_I chose to do it this way so users are only required to provide some basic information and can decide how much more they want to input at any subsequent point. I believe this simplifies the registration process_**
+
+ - **Countries**
+ This collection was populated from JSON file of 254 countries using the MongoDB Compass app, which simplified the transfer of the data into individual documents within the collection. The JSON data was copied from (https://flagpedia.net/download/api) and used the CDN link provided to display the flags on the recipe cards and pages. The individual UK countries were subsequently added into the collection as they did not appear in the original JSON file.
+ Each document contains two id fields; the Atlas provided id and that provided in the JSOn data. It also contains the country name, an alpha2 field which is the ISO two letter country code and an alpha3 field which is the ISO three letter country code.  
+ The alpha2 code is used to provide the appropriate countey flag.  
+
+ - **Recipe Category**
+ The recipe_category collection contains short documents each describing the type of meal category each recipe might be identified by; such as Breakfast, Brunch, Lunch, Dinner, Desserts, Snacks, Appetisers and Sides
+> **_There are many different ways to categorise recipes, but the one selected seems the most appropriate for my application_**
+ 
+ - **Recipes**
+ The recipes collection is the largest in the database as it combines all of the user supplied input with fields from the other collections. I have selected what I view as essential fields for a basic recipe app, though clearly many more can be added.  
+
+___
+## **Features** <a name="features"></a>
+The following table liste the primary features provided by the W3Recipes app.
 
 ### **Existing Features**
 |Feature|Description|
-|:-----:|-----|-----|
+|:-----:|-----|
+| 001   | Simple registration form for user creation |
+| 002   | Log-in screen for registered users |
+| 003   | Paginated "Recipes Page" where all recipes are displayed |
+| 004   | Recipe Filter function, filters recipes by country of origin |
+| 005   | Recipes text search function enables text based search on Title, country, description, ingredients |
+| 006   | Full Recipe Page provides full recipe details |
+| 007   | Add Recipe Form |
+| 008   | Manage Recipes Page, from where users have the ability to Edit or Delete their recipes |
+| 009   | Edit Recipe Form, where any detail of the recipe can be modified |
+| 010   | Profile page contains user details and subscription preference |
+| 011   | Ability to Edit profile details and change subscription status |
+| 012   | Dashboard page displaying number of recipes by country, by user, meal type |
+
+> **_The UK map is provided because the standard Atlas Charts world map only recognises the UK as a country and not the individual countries. Showing the individual countries is only possible by selecting the UK Countries map_**
+
 ### **Security Features**
 Despite not being explicitly required for this build I have chosen to implement certain security features to 
 |  Feature  |  Description  |    |
@@ -320,12 +363,11 @@ Despite not being explicitly required for this build I have chosen to implement 
 | 003 |
 
 ### **Features Left to implement**
-I have attempted to provide as much functionality in this app' as I can in the time available. Despite this there are features I 
+I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate:
 |   Feature     |     Description      |
 |---------------|----------------------|
 | Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's|
-| Image Validation |                      |
-
+| Image Validation |                  |
 ______
 
 ## **Technologies Used** <a name="technologies"></a>  
@@ -547,7 +589,7 @@ Much of the structure of this site follows what was taught during the Backend De
  |:-------:|-------------|:------:|
  |Animated Arrows| Animated arrows in the Landing Page call to action | https://freefrontend.com/css-arrows/#animated-arrows|
  |Remove blank lines and spaces from text inputs | Ensure that if users entered blank lines into the ingredients and methods they could be removed to maintain a neat list | https://www.kite.com/python/answers/how-to-remove-empty-lines-from-a-string-in-python |
- |  |  |  |
+ | Country Flag CDN | Code snippet required to programatically embed flags into the website | https://flagpedia.net/download/api |
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
