@@ -480,18 +480,21 @@ def edit_recipe(recipe_id):
         flash('Recipe Successfully Edited!')
         return redirect(url_for('manage_recipes'))
 
-    return render_template('edit_recipe.html', recipe=recipe,
-                            countries=countries, uploaded_by=uploaded_by,
-                            categories=categories)
-
     # ---------- Check if user "is_admin" ----------
 
     if admin is True:
         flash('')
         # ----- Chech if session user uploaded the recipe -----
+        return render_template('edit_recipe.html', recipe=recipe,
+                                countries=countries, uploaded_by=uploaded_by,
+                                categories=categories)
     elif uploaded_by != session['user']:
         flash("You don't have the authority to edit this recipe!")
         return redirect(url_for('manage_recipes'))
+    else:
+        return render_template('edit_recipe.html', recipe=recipe,
+                                countries=countries, uploaded_by=uploaded_by,
+                                categories=categories)
 
 
 # ---------- Delete a Recipe ----------
