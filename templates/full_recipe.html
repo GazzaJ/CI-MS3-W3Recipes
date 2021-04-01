@@ -17,9 +17,21 @@
                         <p id="full-prep"><i class="fas fa-stopwatch" aria-hidden="true"></i><em> Prep time: </em>{{ recipe.prep_time }}</p>
                         <p id="full-cook"><i class="fas fa-hourglass-half" aria-hidden="true"></i><em> Cooking Time: </em>{{ recipe.cooking_time }}</p>
                     </div>
-                    <div class="col s12 m6 recipe-text">
+                    <div class="col s12 m6 recipe-text center-align">
                         <p class="recipe-text"><i class="fas fa-globe-americas" aria-hidden="true"></i><em>Contry of Origin: </em>{{ recipe.country_name }}</p>
                         <img id="full-flag" src="https://flagcdn.com/64x48/{{flag}}.png" alt="{{ recipe.country }}'s Flag'">
+                        <div id="vegi" class="row">
+                            <div class="col s6 center-align">
+                                {% if recipe.vegan %}
+                                    <span class="veg"><i class="fas fa-leaf" aria-label="Vegan Recipe"> Vegan</i></span>
+                                {% endif %}
+                            </div>
+                            <div class="col s6 center-align">
+                                {% if recipe.vegetarian %}
+                                    <span class="veg"><i class="fas fa-seedling" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
+                                {% endif %}
+                            </div>
+                        </div> 
                         <p><i class="fas fa-upload" aria-hidden="true"></i><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>                        
                     </div>
                 </div>  

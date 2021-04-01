@@ -324,8 +324,16 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     padding-top: 1.2rem;
 }
 
-#full-flag {
-    padding-left: 4rem;
+#vegi {
+    padding-top: 1rem;
+}
+
+.veg {
+    color: #e1e6e2;
+    background-color: #336520;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    font-family: 'Happy Monkey', sans-serif;
 }
 
 #ingredients li {
