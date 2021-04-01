@@ -44,12 +44,8 @@
                                     <i class="fas fa-leaf prefix leaf"></i>                                    
                                     <label for="vegan">
                                         No
-                                        {% if vegan == "on" %}
-                                            <input type="checkbox" id="vegan" name="vegan" checked>
-                                        {% else %}
-                                            <input type="checkbox" id="vegan" name="vegan">
-                                        {% endif %}
-                                            <span class="lever"></span>
+                                        <input type="checkbox" id="vegan" name="vegan">                                        
+                                        <span class="lever"></span>
                                         Yes
                                     </label>
                                 </div>
@@ -57,14 +53,10 @@
                                 <div class="col s12 m6 switch">                                    
                                     <i class="fas fa-seedling prefix leaf"></i>
                                     <label for="vegetarian">
-                                        No
-                                        {% if vegetarian == "on" %}
-                                            <input type="checkbox" id="vegetarian" name="vegetarian" checked>
-                                        {% else %}
-                                            <input type="checkbox" id="vegetarian" name="vegetarian">
-                                        {% endif %}
-                                            <span class="lever"></span>
-                                        Yes
+                                        No 
+                                        <input type="checkbox" id="vegetarian" name="vegetarian">                                        
+                                        <span class="lever"></span>
+                                        Yes                                        
                                     </label>    
                                 </div>
                             </div>                    
