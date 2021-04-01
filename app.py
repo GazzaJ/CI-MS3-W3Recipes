@@ -316,6 +316,8 @@ def filter():
 def add_recipe():
     rec_img = 'https://pixy.org/src/13/thumbs350/135044.jpg'
     if request.method == 'POST':
+        vegan = "on" if request.form.get("vegan") else "off"
+        vegetarian = "on" if request.form.get("vegetarian") else "off"
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
@@ -350,8 +352,8 @@ def add_recipe():
             'origin': origin,
             'title': clean_title,
             'recipe_type': request.form.get('recipe_category'),
-            'vegan': request.form.get('vegan'),
-            'vegetarian': request.form.get('vegetarian'),
+            'vegan': vegan,
+            'vegetarian': vegetarian,
             'image': request.form.get('image_url'),
             'prep_time': clean_prep,
             'cooking_time': clean_cook,
@@ -440,6 +442,8 @@ def edit_recipe(recipe_id):
     admin = user['is_admin']
     # ---------- POST the Edits to the DB ----------
     if request.method == 'POST':
+        vegan = "on" if request.form.get("vegan") else "off"
+        vegetarian = "on" if request.form.get("vegetarian") else "off"
 
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
@@ -475,8 +479,8 @@ def edit_recipe(recipe_id):
             'title': clean_title,
             'origin': origin,
             'recipe_type': request.form.get('recipe_category'),
-            'vegan': request.form.get('vegan'),
-            'vegetarian': request.form.get('vegetarian'),
+            'vegan': vegan,
+            'vegetarian': vegetarian,
             'image': request.form.get('image_url'),
             'prep_time': clean_prep,
             'cooking_time': clean_cook,

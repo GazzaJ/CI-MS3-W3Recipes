@@ -52,7 +52,7 @@
                                     <i class="fas fa-leaf prefix leaf"></i>                                    
                                     <label for="vegan">
                                         No
-                                        {% if vegan == "on" %}
+                                        {% if recipe.vegan == "on" %}
                                             <input type="checkbox" id="vegan" name="vegan" checked>
                                         {% else %}
                                             <input type="checkbox" id="vegan" name="vegan">
@@ -66,7 +66,7 @@
                                     <i class="fas fa-seedling prefix leaf"></i>
                                     <label for="vegetarian">
                                         No
-                                        {% if vegetarian == "on" %}
+                                        {% if recipe.vegetarian == "on" %}
                                             <input type="checkbox" id="vegetarian" name="vegetarian" checked>
                                         {% else %}
                                             <input type="checkbox" id="vegetarian" name="vegetarian">
