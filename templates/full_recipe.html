@@ -7,32 +7,55 @@
     <div class="row container">
         <div id="recipe" class="row card-panel grey lighten-5">
             <div class="col s12 m12 l6 center-align">
+                <!-- Recipe Image -->
                 <img id="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                <!-- Recipe Description -->
                 <h5 class="left-align">Description</h5>
                 <p class="left-align recipe-text">{{ recipe.description }}</p>
                 <div class="row left-align">
                     <div class="col s12 m6 recipe-text">
-                        <p class="recipe-text"><i class="fas fa-drumstick-bite" aria-hidden="true"></i><em> Category: </em>{{ recipe.recipe_type }}</p>
-                        <p class="recipe-text"><i class="fas fa-users" aria-hidden="true"></i><em> Servings: </em>{{ recipe.servings }}</p>
-                        <p id="full-prep"><i class="fas fa-stopwatch" aria-hidden="true"></i><em> Prep time: </em>{{ recipe.prep_time }}</p>
-                        <p id="full-cook"><i class="fas fa-hourglass-half" aria-hidden="true"></i><em> Cooking Time: </em>{{ recipe.cooking_time }}</p>
+                        <!-- Recipe Category -->
+                        <p class="recipe-text"><i class="fas fa-drumstick-bite" aria-hidden="true"></i>
+                            Category: <span class="data">{{ recipe.recipe_type }}</span>  
+                        </p>
+                        <!-- Recipe Servings -->
+                        <p class="recipe-text"><i class="fas fa-users" aria-hidden="true"></i>
+                            Servings: <span class="data">{{ recipe.servings }}</span>
+                        </p>
+                        <!-- Recipe Prep' Time -->
+                        <p id="full-prep"><i class="fas fa-stopwatch" aria-hidden="true"></i>
+                            Prep time: <span class="data">{{ recipe.prep_time }}</span>
+                         </p>
+                         <!-- Recipe Cook Time -->
+                        <p id="full-cook"><i class="fas fa-hourglass-half" aria-hidden="true"></i>
+                            Cooking Time: <span class="data">{{ recipe.cooking_time }}</span>
+                        </p>
                     </div>
+                    <!-- Recipe Country of Origin -->
                     <div class="col s12 m6 recipe-text center-align">
-                        <p class="recipe-text"><i class="fas fa-globe-americas" aria-hidden="true"></i><em>Contry of Origin: </em>{{ recipe.country_name }}</p>
+                        <p class="recipe-text"><i class="fas fa-globe-americas" aria-hidden="true"></i>
+                            Contry of Origin: <span class="data">{{ recipe.country_name }}</span>
+                        </p>
+                        <!-- Country Flag -->
                         <img id="full-flag" src="https://flagcdn.com/64x48/{{flag}}.png" alt="{{ recipe.country }}'s Flag'">
+                        <!-- Vegan -->
                         <div id="vegi" class="row">
                             <div class="col s6 center-align">
                                 {% if recipe.vegan %}
                                     <span class="veg"><i class="fas fa-leaf" aria-label="Vegan Recipe"> Vegan</i></span>
                                 {% endif %}
                             </div>
+                            <!-- Vegetarian -->
                             <div class="col s6 center-align">
                                 {% if recipe.vegetarian %}
                                     <span class="veg"><i class="fas fa-seedling" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
                                 {% endif %}
                             </div>
-                        </div> 
-                        <p><i class="fas fa-upload" aria-hidden="true"></i><em>Uploaded by: {{ recipe.uploaded_by }}</em></p>                        
+                        </div>
+                        <!-- Uploaded by --> 
+                        <p><i class="fas fa-upload" aria-hidden="true"></i>
+                            Uploaded by: <span class="data">{{ recipe.uploaded_by }}</span>
+                        </p>                        
                     </div>
                 </div>  
             </div>    
@@ -48,7 +71,7 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Preparation Method -->
+                <!-- Preparation Steps -->
                 <div class="row">
                     <div class="col s12">
                         <h5>Preparation</h5>

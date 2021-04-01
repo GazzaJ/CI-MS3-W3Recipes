@@ -336,6 +336,15 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     font-family: 'Happy Monkey', sans-serif;
 }
 
+.data {
+    color: #4e342e;
+    font-weight: bold;
+    background-color: #f8b735;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    margin-left: 1rem;   
+}
+
 #ingredients li {
     list-style-type: disc;
     margin-left: 3rem;
