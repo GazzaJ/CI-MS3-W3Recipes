@@ -475,6 +475,8 @@ def edit_recipe(recipe_id):
             'title': clean_title,
             'origin': origin,
             'recipe_type': request.form.get('recipe_category'),
+            'vegan': request.form.get('vegan'),
+            'vegetarian': request.form.get('vegetarian'),
             'image': request.form.get('image_url'),
             'prep_time': clean_prep,
             'cooking_time': clean_cook,

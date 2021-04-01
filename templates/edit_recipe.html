@@ -45,7 +45,37 @@
                                     {% endfor %}
                                 </select>
                                 <label for="recipe_category">Recipe Category</label>
-                            </div>                    
+                            </div>
+                            <div class="row form-field">
+                                <!-- Vegan Switch -->
+                                <div class="col s12 m6 switch">
+                                    <i class="fas fa-leaf prefix leaf"></i>                                    
+                                    <label for="vegan">
+                                        No
+                                        {% if vegan == "on" %}
+                                            <input type="checkbox" id="vegan" name="vegan" checked>
+                                        {% else %}
+                                            <input type="checkbox" id="vegan" name="vegan">
+                                        {% endif %}
+                                            <span class="lever"></span>
+                                        Yes
+                                    </label>
+                                </div>
+                                <!-- Vegetarian Switch -->
+                                <div class="col s12 m6 switch">                                    
+                                    <i class="fas fa-seedling prefix leaf"></i>
+                                    <label for="vegetarian">
+                                        No
+                                        {% if vegetarian == "on" %}
+                                            <input type="checkbox" id="vegetarian" name="vegetarian" checked>
+                                        {% else %}
+                                            <input type="checkbox" id="vegetarian" name="vegetarian">
+                                        {% endif %}
+                                            <span class="lever"></span>
+                                        Yes
+                                    </label>    
+                                </div>
+                            </div>                          
                             <div class="input-field">
                                 <!-- Servings Input Field -->
                                 <i class="fas fa-users prefix" aria-hidden="true"></i>
