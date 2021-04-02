@@ -282,7 +282,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 }
 
 #recipe-fab {
-    bottom: 14rem;
+    bottom: 16rem;
 }
 
 .recipe-title {
@@ -419,10 +419,6 @@ label {
     text-decoration: none;
 }
 
-#cancel-add {
-    margin-right: 1rem;
-}
-
 /*---------- Manage Recipes ----------*/
 
 .edit-pic {
@@ -540,4 +536,29 @@ h2, h3 {
         padding-top: 0.2rem;
         padding-bottom: 0.17rem;
     }
+    /*-- Recipe Card --*/
+    .uploaded-by {
+        margin-top: 1rem;
+    }
+
+    /*-- Recipes Page Add Recipe link --*/
+    .recipe-link {
+        font-size: 1.2rem;
+    }
+
+    /*-- Add Recipe --*/
+    .add-edit {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    
+    label {
+    font-size: 1rem ;    
+    font-weight: bold;
+    }
+
+    i {
+        font-size: 1.2rem !important;
+    }
+
 }
