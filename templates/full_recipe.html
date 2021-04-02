@@ -34,7 +34,7 @@
                     <!-- Recipe Country of Origin -->
                     <div class="col s12 m6 recipe-text center-align">
                         <p class="recipe-text"><i class="fas fa-globe-americas" aria-hidden="true"></i>
-                            Contry of Origin: <span class="data">{{ recipe.country_name }}</span>
+                            Contry of Origin: <br><span class="data">{{ recipe.country_name }}</span>
                         </p>
                         <!-- Country Flag -->
                         <img id="full-flag" src="https://flagcdn.com/64x48/{{flag}}.png" alt="{{ recipe.country }}'s Flag'">
@@ -43,12 +43,16 @@
                             <div class="col s6 center-align">
                                 {% if recipe.vegan %}
                                     <span class="veg"><i class="fas fa-leaf" aria-label="Vegan Recipe"> Vegan</i></span>
+                                {% else %}
+                                    <span class="not-veg"><i class="fas fa-leaf strikeout" aria-label="Vegan Recipe"> Vegan</i></span>
                                 {% endif %}
                             </div>
                             <!-- Vegetarian -->
                             <div class="col s6 center-align">
                                 {% if recipe.vegetarian %}
                                     <span class="veg"><i class="fas fa-seedling" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
+                                {% else %}
+                                    <span class="not-veg"><i class="fas fa-seedling strikeout" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
                                 {% endif %}
                             </div>
                         </div>

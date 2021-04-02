@@ -268,7 +268,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 /*---------- Recipe Cards ----------*/
 
 .card {
-    height: 30rem;
+    height: 32rem;
 }
 
 .recipe-image{
@@ -287,18 +287,27 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 .recipe-title {
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .card-content {
     padding-top: 1rem;    
 }
 
-.recipe-title {
-    margin-top: 1rem;
+.top {
+    margin-bottom: 0;
+}
+
+#veg-span {
+    margin-left: 1rem;
 }
 
 .recipe-cards {
     padding: 0.1rem;
+}
+
+.uploaded-by {
+    margin-top: 2rem;
 }
 
 /*---------- Search Card ----------*/
@@ -329,19 +338,28 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 }
 
 .veg {
-    color: #e1e6e2;
+    color: #f3f3f3;
     background-color: #336520;
     padding: 0.2rem;
     border-radius: 0.5rem;
     font-family: 'Happy Monkey', sans-serif;
 }
 
-.data {
-    color: #4e342e;
-    font-weight: bold;
-    background-color: #f8b735;
-    padding: 0.4rem;
+.not-veg {
+    color: #e1e6e2;    
+    background-color: #c2c2c2;
+    padding: 0.2rem;
     border-radius: 0.5rem;
+    font-family: 'Happy Monkey', sans-serif;
+}
+
+.strikeout {
+    text-decoration: line-through 3px;    
+}
+
+.data {
+    color: #a8293c;
+    font-weight: bold;    
     margin-left: 1rem;   
 }
 
