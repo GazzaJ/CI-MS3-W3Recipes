@@ -530,8 +530,28 @@ h2, h3 {
 
     .sign-up {
         padding-top: 0.2rem;
-        padding-bottom: 0.17rem;
+        padding-bottom: 0.17rem;       
     }
+
+    /*-- Log-in --*/
+    .register,
+    .signup-2 {
+        font-size: 1rem;
+    }
+
+    .s-up {
+        margin-top: 1rem;
+    }
+
+    #signup-box {
+        padding: 0;
+        margin-top: 2.75rem;
+    }
+
+    .signup-2 {
+        margin: 0;
+    }
+    
     /*-- Recipe Card --*/
     .uploaded-by {
         margin-top: 1rem;
@@ -553,7 +573,7 @@ h2, h3 {
     font-weight: bold;
     }
 
-    i {
+    form i {
         font-size: 1.2rem !important;
     }
 
