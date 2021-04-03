@@ -163,7 +163,6 @@ def edit_profile():
         # ----- Update specific DB fields only -----
 
         subscribed = request.form.get('subscribed')
-        print(subscribed)
         if subscribed is None:
             clean_email = ''
         mongo.db.users.update_one({'username': session['user']},
@@ -315,9 +314,7 @@ def filter():
 @app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
     rec_img = 'https://pixy.org/src/13/thumbs350/135044.jpg'
-    if request.method == 'POST':
-        vegan = "on" if request.form.get("vegan") else "off"
-        vegetarian = "on" if request.form.get("vegetarian") else "off"
+    if request.method == 'POST':        
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
@@ -352,8 +349,8 @@ def add_recipe():
             'origin': origin,
             'title': clean_title,
             'recipe_type': request.form.get('recipe_category'),
-            'vegan': vegan,
-            'vegetarian': vegetarian,
+            'vegan': request.form.get("vegan"),
+            'vegetarian': request.form.get("vegetarian"),
             'image': request.form.get('image_url'),
             'prep_time': clean_prep,
             'cooking_time': clean_cook,
