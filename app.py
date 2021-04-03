@@ -163,9 +163,9 @@ def edit_profile():
         # ----- Update specific DB fields only -----
 
         subscribed = request.form.get('subscribed')
-        email = request.form.get('email')
-        if subscribed != 'on':
-            email = ''
+        print(subscribed)
+        if subscribed is None:
+            clean_email = ''
         mongo.db.users.update_one({'username': session['user']},
                                   {'$set': {
                                           'user_image': request.form.get(
