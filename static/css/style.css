@@ -113,7 +113,8 @@ main {
 }
 
 body {
-    background-image: url('/static/img/main-background_1900.jpg');             
+    background-image: url('/static/img/main-background_1900.jpg');
+    object-fit: cover;             
 }
 
 /*----- Footer -----*/
@@ -632,8 +633,13 @@ h2, h3 {
         margin: 0;
     }
 
+    /*-- Profile Page --*/
     .user-img {
         max-width: 100%;
         object-fit: cover;
+    }
+
+    #signup-box {
+        margin-top: 1rem;
     }
 }
