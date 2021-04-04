@@ -4,7 +4,7 @@
 
     <div class="row container">
         <!-- Recipe Filter -->
-        <form class="col s12 l5 card-panel z-depth-4" action="{{ url_for('filter') }}" method="post">
+        <form class="col s12 m5 l5 card-panel z-depth-4" action="{{ url_for('filter') }}" method="post">
             <!-- Filter Recipes by Country -->            
             <div class="input-field col s12">                                     
             <i class="fas fa-globe-americas prefix" aria-hidden="true"></i>
@@ -27,7 +27,7 @@
             </div>            
         </form>
         <!-- Recipe Search -->    
-        <form class="col s12 l5 offset-l2 card-panel z-depth-4" action="{{ url_for('search') }}" method="post">
+        <form class="col s12 m5 offset-m2 l5 offset-l2 card-panel z-depth-4" action="{{ url_for('search') }}" method="post">
             <div class="input-field col s12">
                 <i class="fas fa-search prefix" aria-hidden="true"></i>
                 <input type="text" name="text_search" id="text_search" placeholder="Enter search text" class="validate" minlength="3" required>

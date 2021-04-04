@@ -567,6 +567,16 @@ h2, h3 {
         margin-top: 1rem;
     }
 
+    .card-image {
+        border: 1px solid black;
+        overflow: hidden;
+    }
+
+    .recipe-image {
+        height: 100%;        
+        object-fit: cover;
+    }
+
     /*-- Recipes Page Add Recipe link --*/
     .recipe-link {
         font-size: 1.2rem;
@@ -606,5 +616,19 @@ h2, h3 {
     .page-link {
         margin-left: 2rem;
         margin-right: 2rem;
+    }
+}
+
+@media (max-width: 64rem) {
+    /*-- Footer --*/
+    .social-links {
+        margin-top: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #email-me,
+    #copyright {
+        margin: 0;
     }
 }
