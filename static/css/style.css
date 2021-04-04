@@ -271,14 +271,14 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     height: 32rem;
 }
 
-.recipe-image{
-    max-width: 100%;
-    max-height: 100%;    
-}
-                   
 .card-image {
     max-height: 15rem;
     overflow: hidden;          
+}
+
+.recipe-image{
+    max-width: 100%;
+    max-height: 100%;    
 }
 
 #recipe-fab {
@@ -421,6 +421,11 @@ label {
 
 /*---------- Manage Recipes ----------*/
 
+.manage-card {
+    height: 32rem;
+    margin-bottom: 1rem;
+}
+
 .edit-pic {
     max-height: 15rem;
 }
@@ -436,10 +441,15 @@ label {
     right: 0.25rem
 }
 
+.manage-title {
+    margin-left: 1.9rem;    
+    position: absolute;
+}
+
 .edit-content {
     position: relative;
     padding-top: 0 !important;
-    top: 0;
+    top: 2rem;
 }
 
 /*---------- Edit Recipes ----------*/
@@ -575,6 +585,11 @@ h2, h3 {
 
     form i {
         font-size: 1.2rem !important;
+    }
+
+    #veg-switch {
+        margin-left: 0.2rem;
+        margin-top: 1rem;
     }
 
     /*-- Profile Page --*/
