@@ -603,9 +603,9 @@ h2, h3 {
     }
 
     /*-- Profile Page --*/
-    .user-img {
-        max-height: 14rem;
+    .user-img {        
         max-width: 100%;
+        object-fit: cover;
     }    
     
     #manage-link {
@@ -630,5 +630,10 @@ h2, h3 {
     #email-me,
     #copyright {
         margin: 0;
+    }
+
+    .user-img {
+        max-width: 100%;
+        object-fit: cover;
     }
 }
