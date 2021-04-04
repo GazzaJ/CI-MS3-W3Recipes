@@ -1,60 +1,89 @@
 {% extends "base.html" %}
 {% block content %}
     <h1 class="center-align">Manage Your Recipes</h1>
-    <p class="center-align">You have uploaded {{ uploaded }} recipes</p>
+    <h2 class="center-align">You have uploaded <span class="data">{{ uploaded }}</span> recipes</h2>
 
     <div class="row container recipe-container">
         {% for recipe in recipes %}            
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img class="recipe-image edit-pic responsive-img" src="{{ recipe.image }}" alt="{{ recipe.title }}">
-                        </div>
-                        <div class="card-action">
-                            <div class="fixed-action-btn horizontal">
-                                <a class="btn-floating btn-large blue">
-                                    <i class="fas fa-user-edit" aria-hidden="true"></i>
-                                </a>
-                                <ul>
-                                    <!-- Edit Recipe Link -->
-                                    <li><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-floating orange tooltipped"
-                                        data-position="top" data-tooltip="Edit Recipe"><i class="fas fa-edit"></i></a></li>
-                                    <!-- Delete Recipe Link -->
-                                    <li><a href="#{{ recipe._id }}" class="btn-floating red modal-trigger tooltipped"
-                                        data-position="bottom" data-tooltip="Delete Recipe"><i class="fas fa-trash-alt"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-content edit-content">
-                            <h4 class="card-title recipe-title">{{ recipe.title }}</h4>
-                            <div class="row">
-                                <div class="col s8">
-                                    <p class="recipe-cards"><i class="fas fa-users" aria-hidden="true"></i> Servings: {{ recipe.servings }}</p>
-                                    <p class="recipe-cards"><i class="fas fa-stopwatch" aria-hidden="true"></i> Prep time: {{ recipe.prep_time }}</p>
-                                    <p class="recipe-cards"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Cooking time: {{ recipe.cooking_time }}</p>
-                                    <p class="recipe-cards"><i class="fas fa-upload" aria-hidden="true"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>                                
-                                </div>
-                                <div class="col s4 center-align">                                                            
-                                    <p>{{ recipe.country_name }}</p>                                                            
-                                    <img src="https://flagcdn.com/48x36/{{ recipe.origin }}.png" alt="">                                                                                                                               
-                                </div>
-                            </div>
+            <div class="col s12 m6 xl4 manage-card">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img class="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                    </div>
+                    <!-- Edit and Delete action Button -->
+                    <div class="card-action">
+                        <div class="fixed-action-btn horizontal">
+                            <a class="btn-floating btn-large blue">
+                                <i class="fas fa-user-edit" aria-hidden="true"></i>
+                            </a>
+                            <ul>
+                                <!-- Edit Recipe Link -->
+                                <li><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-floating orange tooltipped"
+                                    data-position="top" data-tooltip="Edit Recipe"><i class="fas fa-edit"></i></a></li>
+                                <!-- Delete Recipe Link -->
+                                <li><a href="#{{ recipe._id }}" class="btn-floating red modal-trigger tooltipped"
+                                    data-position="bottom" data-tooltip="Delete Recipe"><i class="fas fa-trash-alt"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                </div>                
-                <!-- Delete Recipe - Check Message -->
-                <div id="{{ recipe._id }}" class="modal">
-                    <div class="modal-content">
-                        <h4>You have chosen to delete the {{ recipe.title }} recipe</h4>
-                        <p id="delete-check">Are you absolutely sure you would like to delete this recipe?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="{{ url_for('manage_recipes') }}" class="modal-close waves-effect green btn">Go Back</a>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                        class="modal-close waves-effect btn red">DELETE!</a>
+                    <!-- Card Text Content -->
+                    <h4 class="card-title recipe-title manage-title">{{ recipe.title }}</h4>
+                    <div class="card-content edit-content">
+                        <div class="row top">
+                            <div class="col s8">
+                                <p class="recipe-cards"><i class="fas fa-drumstick-bite" aria-hidden="true"></i> 
+                                    Category:<span class="data">{{ recipe.recipe_type}}</span>
+                                </p>                                
+                                <p class="recipe-cards"><i class="fas fa-users" aria-hidden="true"></i>
+                                    Servings:<span class="data">{{ recipe.servings }}</span>
+                                </p>
+                                <div id="vegi" class="row">
+                                    <div class="col s5 center-align">
+                                        {% if recipe.vegan == 'on' %}
+                                        <span class="veg"><i class="fas fa-leaf" aria-label="Vegan Recipe"> Vegan</i></span>
+                                        {% else %}
+                                        <span class="not-veg"><i class="fas fa-leaf strikeout" aria-label="Vegan Recipe"> Vegan</i></span>
+                                        {% endif %}
+                                    </div>
+                                    <!-- Vegetarian -->
+                                    <div class="col s7 center-align">
+                                        {% if recipe.vegetarian == 'on' %}
+                                        <span class="veg"><i class="fas fa-seedling" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
+                                        {% else %}
+                                        <span class="not-veg"><i class="fas fa-seedling strikeout" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s4 center-align">                                                            
+                                <p>{{ recipe.country_name }}</p>                                                            
+                                <img src="https://flagcdn.com/56x42/{{ recipe.origin }}.png" alt="{{recipe.country_name}}'s Flag'">                                                                                                                               
+                            </div>
+                        </div>
+                        <div class="row uploaded-by">
+                            <div class="col s8 offset-s2 center-align">
+                                <p class="recipe-cards"><i class="fas fa-upload" aria-hidden="true"></i>
+                                    Uploaded by: <span class="data">{{ recipe.uploaded_by }}</span>
+                                </p> 
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                {% endfor %}
+            </div>                
+            <!-- Delete Recipe - Check Message -->
+            <div id="{{ recipe._id }}" class="modal">
+                <div class="modal-content">
+                    <h4>You have chosen to delete the {{ recipe.title }} recipe</h4>
+                    <p id="delete-check">Are you absolutely sure you would like to delete this recipe?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url_for('manage_recipes') }}" class="modal-close waves-effect green btn">Go Back</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                    class="modal-close waves-effect btn red">DELETE!</a>
+                </div>
+            </div>
+        {% endfor %}
             </div>
             <!-- Link to Add a Recipe page -->
             <div class="row page-link">
