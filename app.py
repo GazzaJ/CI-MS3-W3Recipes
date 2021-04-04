@@ -264,6 +264,9 @@ def search():
 
     text_search = request.form.get('text_search')
     recipes = recipe_coll.find({'$text': {'$search': text_search}})
+
+    # ----- Pagination -----
+
     current_page = request.args.get('current_page', type=int, default=1)
     total = recipe_coll.count()
     pages = range(1, int(round(total / per_page + 1)))
@@ -288,9 +291,12 @@ def search():
 def filter():
 
     # ----- Country Dropdown Filter -----
+
     countries = country_coll.find().sort('name', 1)
     country_filter = request.form.get('country_filter')
     recipes = recipe_coll.find({'$text': {'$search': country_filter}})
+
+    # ----- Pagination -----
     current_page = request.args.get('current_page', type=int, default=1)
     total = recipe_coll.count()
     pages = range(1, int(round(total / per_page + 1)))
@@ -315,7 +321,7 @@ def filter():
 @app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
     rec_img = 'https://pixy.org/src/13/thumbs350/135044.jpg'
-    if request.method == 'POST':        
+    if request.method == 'POST':
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
