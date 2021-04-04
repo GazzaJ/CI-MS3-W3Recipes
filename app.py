@@ -288,7 +288,7 @@ def search():
 def filter():
 
     # ----- Country Dropdown Filter -----
-
+    countries = country_coll.find().sort('name', 1)
     country_filter = request.form.get('country_filter')
     recipes = recipe_coll.find({'$text': {'$search': country_filter}})
     current_page = request.args.get('current_page', type=int, default=1)
@@ -300,6 +300,7 @@ def filter():
     return render_template(
         'recipes.html',
         recipes=recipes,
+        countries=countries,
         current_page=current_page,
         per_page=per_page,
         total=total,
