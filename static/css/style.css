@@ -235,7 +235,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     margin-bottom: 0;
 }
 
-#signup-box {
+#index-signup-box {
     padding-top: 1.5rem;
 }
 
@@ -256,6 +256,12 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 .toggle3 {
     background-color: #e1e6e2;
     color: #4e342e;
+}
+
+/*---------- login page ------------*/
+
+#signup-box {
+    padding-top: 1.5rem;
 }
     
 /*---------- Pagination ----------*/
