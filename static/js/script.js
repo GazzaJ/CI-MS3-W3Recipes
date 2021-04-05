@@ -57,7 +57,7 @@ $(document).ready(function(){
 
 /*----- Change signup link colour on Hover -----*/
 $(document).ready(function(){
-    $(".sign-up").hover(function(){
+    $(".cta-signup").hover(function(){
         $(this).toggleClass("toggle2")
     })
 })
