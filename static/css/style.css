@@ -117,7 +117,7 @@ body {
     object-fit: cover;             
 }
 
-/*----- Footer -----*/
+/*-- Footer --*/
 
 footer .container {
     margin-top: 0;
@@ -216,6 +216,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 }
 
 /*-- CTA sign-up link --*/
+
 .register {
     font-family: "Happy Monkey", sans-serif;
     font-size: 1.5rem;
@@ -233,6 +234,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 }
 
 /*-- Lower Sign-up Link --*/
+
 #final-row {
     margin-bottom: 0;
 }
@@ -256,10 +258,10 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     color: #4e342e;
 }
 
-/*---------- login page ------------*/
+/*---------- Log-in page ------------*/
 
-#signup-box {
-    padding-top: 1.5rem;
+#login-signup {
+    padding: 0.5rem;
 }
     
 /*---------- Pagination ----------*/
@@ -542,10 +544,7 @@ h2, h3 {
         width: 100%;
         margin-bottom: 1rem !important;
     }
-    #bot-signup {
-        padding-bottom: 1.5rem;
-    }
-
+    
     .cta-signup {
         padding-top: 0.2rem;
         padding-bottom: 0.17rem;       
@@ -585,11 +584,6 @@ h2, h3 {
     .register {
         font-size: 1rem;
     }    
-
-    #signup-box {
-        padding: 0;
-        margin-top: 2.75rem;
-    }
 
     .signup-2 {
         margin: 0;
@@ -673,9 +667,5 @@ h2, h3 {
     .user-img {
         max-width: 100%;
         object-fit: cover;
-    }
-
-    #signup-box {
-        margin-top: 1rem;
-    }
+    }    
 }
