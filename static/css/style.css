@@ -150,7 +150,7 @@ footer .container {
 .social-links {
     background-color: #336520;
     border-radius: 1rem;
-    margin: 2rem;
+    margin: 1rem;
     border: solid 0.2rem #e1e6e2;    
 }
 
@@ -233,10 +233,6 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 #final-row {
     margin-bottom: 0;
-}
-
-#index-signup-box {
-    padding-top: 1.5rem;
 }
 
 #bot-signup {
@@ -522,7 +518,7 @@ h2, h3 {
 
 /*---------- Media Queries ----------*/
 
-@media (max-width: 43rem) {
+@media (max-width: 688px) {
     .brand-logo {
         height: 3.5rem;
         width: auto;
@@ -551,11 +547,35 @@ h2, h3 {
     .sign-up {
         padding-top: 0.2rem;
         padding-bottom: 0.17rem;       
+    }     
+
+    .signup-2 {
+        font-size: 1.2rem;
+    }
+
+    /*-- Footer --*/
+    .footer-text {        
+        font-size: 1rem;        
+        letter-spacing: 2px;
+        padding-top: 0.5rem;    
+    }
+
+    #box-1 {
+        padding-top: 0;
+    }
+       
+    #email-me {    
+        padding: 0.75rem;
+        border-radius: 0.75rem;                
+    }
+    
+    .social-links {
+        font-size: 1.5rem;
+        padding: 0.25rem 0.5rem 0.3rem 0.5rem;    
     }
 
     /*-- Log-in --*/
-    .register,
-    .signup-2 {
+    .register {
         font-size: 1rem;
     }
 
@@ -603,8 +623,8 @@ h2, h3 {
     }
     
     label {
-    font-size: 1rem ;    
-    font-weight: bold;
+        font-size: 1rem ;    
+        font-weight: bold;
     }
 
     form i {
@@ -633,7 +653,7 @@ h2, h3 {
     }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 1024px) {
     /*-- Footer --*/
     .social-links {
         margin-top: 2rem;
