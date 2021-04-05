@@ -1,4 +1,4 @@
-/*----- Materialize CSS Jquery Helpers -----*/
+/*----- Materialize CSS JQuery Helpers -----*/
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.tooltipped').tooltip(); 
@@ -80,5 +80,12 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".img-link").hover(function(){
         $(this).toggleClass("toggle4")
+    })
+})
+
+/*----- Toggle img-url link on Hover -----*/
+$(document).ready(function(){
+    $(".recipe-link").hover(function(){
+        $(this).toggleClass("toggle3")
     })
 })
