@@ -587,8 +587,12 @@ h2, h3 {
 
     /*-- Sign-up --*/
 
+    .reg {
+        font-size: 0.9rem;
+    }
+
     .combi {
-        font-size: 0.9rem !important;
+        font-size: 0.8rem !important;
     }
 
     /*-- Log-in --*/
