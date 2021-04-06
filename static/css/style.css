@@ -683,8 +683,10 @@ h2, h3 {
     }    
 
     /*-- Edit Recipe --*/
+    
     .edit-img {
         margin-left: 0 !important;
+        max-width: 100%;
     }
 
 
@@ -723,8 +725,8 @@ h2, h3 {
     .edit-content {
         position: relative;    
         top: 2rem;
-        }
-
+        }    
+        
     .flag {
         position: absolute;
         top: 0;
