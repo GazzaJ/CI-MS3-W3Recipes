@@ -617,8 +617,7 @@ h2, h3 {
     
     /*-- Recipe Card --*/
     .card,
-    .manage-card {
-        height: 33rem;
+    .manage-card {        
         margin-bottom: 1rem;
     }
     
@@ -642,7 +641,7 @@ h2, h3 {
     .veg,
     .not-veg,
     #country-name {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
     
     /*-- Recipes Page Add Recipe link --*/
@@ -683,6 +682,12 @@ h2, h3 {
         right: 0.5rem !important;
     }    
 
+    /*-- Edit Recipe --*/
+    .edit-img {
+        margin-left: 0 !important;
+    }
+
+
     /*-- Profile Page --*/
     .user-img {        
         max-width: 100%;
@@ -713,18 +718,30 @@ h2, h3 {
         margin: 0;
     }
 
+    /*-- Manage Recipes --*/
+
+    .edit-content {
+        position: relative;    
+        top: 2rem;
+        }
+
+    .flag {
+        position: absolute;
+        top: 0;
+        right: 0.5rem !important;
+    }
+
+    .uploaded-by {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
     /*-- Profile Page --*/
     .user-img {
         max-width: 100%;
         object-fit: cover;
     }
 
-    .flag {
-        position: relative;
-        top: 0;
-    }
+       
     
-    .uploaded-by {
-        margin-top: 1rem;
-    }
 }
