@@ -497,8 +497,11 @@ label {
 /*---------- Profile Page ----------*/
 
 .user-img {
-    height: 17.5rem;
-    width: auto;
+    max-height: 17.5rem;
+    max-width: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #profile-card {
