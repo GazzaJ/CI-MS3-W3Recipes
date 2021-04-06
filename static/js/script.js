@@ -83,7 +83,7 @@ $(document).ready(function(){
     })
 })
 
-/*----- Toggle img-url link on Hover -----*/
+/*----- Toggle recipes link on Hover -----*/
 $(document).ready(function(){
     $(".recipe-link").hover(function(){
         $(this).toggleClass("toggle3")
