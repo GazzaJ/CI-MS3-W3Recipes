@@ -536,6 +536,14 @@ h2, h3 {
         width: auto;
     }
 
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+    }
+
     #main-title{
     font-family: "Shrikhand", sans-serif !important;
     font-weight: bold;
@@ -618,8 +626,7 @@ h2, h3 {
         margin-top: 0.5rem;        
     }
 
-    .card-image {
-        border: 1px solid black;
+    .card-image {        
         overflow: hidden;
     }
 
@@ -632,6 +639,12 @@ h2, h3 {
         font-size: 1.4rem !important;
     }
 
+    .veg,
+    .not-veg,
+    #country-name {
+        font-size: 0.75rem;
+    }
+    
     /*-- Recipes Page Add Recipe link --*/
     .recipe-link {
         font-size: 1.2rem;
@@ -656,6 +669,19 @@ h2, h3 {
         margin-left: 0.2rem;
         margin-top: 1rem;
     }
+
+    /*-- Manage Recipes --*/
+
+    .edit-content {
+    position: relative;    
+    top: 0.5rem;
+    }
+
+    .flag {
+        position: absolute;
+        top: 0rem;
+        right: 0.5rem !important;
+    }    
 
     /*-- Profile Page --*/
     .user-img {        

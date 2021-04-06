@@ -30,9 +30,9 @@
                     <h4 class="card-title recipe-title manage-title">{{ recipe.title }}</h4>
                     <div class="card-content edit-content">
                         <div class="row top">
-                            <div class="col s8">
+                            <div class="col s8 recipe-data">
                                 <p class="recipe-cards"><i class="fas fa-drumstick-bite" aria-hidden="true"></i> 
-                                    Category:<span class="data">{{ recipe.recipe_type}}</span>
+                                    Type:<span class="data">{{ recipe.recipe_type}}</span>
                                 </p>                                
                                 <p class="recipe-cards"><i class="fas fa-users" aria-hidden="true"></i>
                                     Servings:<span class="data">{{ recipe.servings }}</span>
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="col s4 center-align flag">                                                            
-                                <p>{{ recipe.country_name }}</p>                                                            
+                                <p id="country-name">{{ recipe.country_name }}</p>                                                            
                                 <img src="https://flagcdn.com/56x42/{{ recipe.origin }}.png" alt="{{recipe.country_name}}'s Flag'">                                                                                                                               
                             </div>
                         </div>
