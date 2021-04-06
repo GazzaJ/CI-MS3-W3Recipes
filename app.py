@@ -545,7 +545,6 @@ def logout():
 
     flash('You have been logged out')
     session.pop('user')
-    session.clear()
     return redirect(url_for('home'))
 
 
@@ -581,5 +580,5 @@ if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=False)
+        debug=True)
     profanity.load_censor_words()

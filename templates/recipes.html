@@ -117,7 +117,7 @@
             {% if current_page == page %}                    
                 <li class="active"><a href="#">{{ page }}</a></li>
             {% else %}
-                <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=current_page) }}">{{ page }}</a></li>
+                <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=page) }}">{{ page }}</a></li>
             {% endif %}
         {% endfor %}
         <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right" aria-label="Next Page"></i></a></li>
