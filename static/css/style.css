@@ -271,9 +271,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 /*---------- Recipes Page ----------*/
 
-
-
-/*---------- Recipe Cards ----------*/
+/*-- Recipe Cards --*/
 
 .card {
     height: 32rem;
@@ -463,6 +461,12 @@ label {
     top: 2rem;
 }
 
+.flag {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem !important;
+}
+
 /*---------- Edit Recipes ----------*/
 
 .edit-card {
@@ -591,8 +595,10 @@ h2, h3 {
     }
     
     /*-- Recipe Card --*/
-    .card {
+    .card,
+    .manage-card {
         height: 33rem;
+        margin-bottom: 1rem;
     }
     
     .uploaded-by {
@@ -607,6 +613,10 @@ h2, h3 {
     .recipe-image {
         height: 100%;        
         object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 1.4rem !important;
     }
 
     /*-- Recipes Page Add Recipe link --*/
@@ -668,5 +678,14 @@ h2, h3 {
     .user-img {
         max-width: 100%;
         object-fit: cover;
-    }    
+    }
+
+    .flag {
+        position: relative;
+        top: 0;
+    }
+    
+    .uploaded-by {
+        margin-top: 1rem;
+    }
 }
