@@ -31,7 +31,7 @@ response.headers['Cache-Control'] = 'no-cache, no-store, public, max-age=0'
 
 @app.route('/')
 @app.route('/home')
-def home():    
+def home():
     recipe = \
         mongo.db.recipes.find_one(
             {'_id': ObjectId('603799093d30368acbfdfdd0')})
@@ -424,6 +424,7 @@ def manage_recipes():
         return render_template(
             'manage.html',
             recipes=recipes,
+            admin=admin,
             current_page=current_page,
             per_page=per_page,
             total=total,
