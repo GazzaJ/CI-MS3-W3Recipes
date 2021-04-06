@@ -1,43 +1,87 @@
+# [**W3 Recipes Testing & Bug Fixes**](https://ci-ms3-w3recipes.herokuapp.com/)
+This document records all of the manual testing conducted on the W3Recipes app', and also lists the bugs and fixes recorded during the development of the app'.
+______
+## Table of contents
+1. [User Story Teesting](#user-story-testing)
+2. [Functionality Testing](#funtionality)
+   - [Navigation Testing](#navigation)
+   - [Create](#)
+   - [Read](#)
+   - [Update](#)
+   - [Delete](#)  
+3. [Security Testing](#security)
+4. [Usability Testing](#usability)
+5. [Responsiveness Testing](#responsiveness)
+6. [Performance Testing](#performance)
+7. [Code Quality & Validation](#code-validation)
+8. [Bugs & Issues](#bugs-issues)  
+
+______
+
 ### **User Story Testing** <a name="user-story-testing"></a>
 The following testing has been carried out to validate how the website addresses each of the user stories:
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-|1|As a , I need to , in order to . ||
-
-![Landing Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/landing-page.jpg "Landing Page View")
-![Map Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/map-page.jpg "Map Page View")
+| 1 |_As a_ **first time visitor**, _I need to_ **understand the purpose of the site**, _in order to_ **consider exploring the site further**|The landing pageexplains the purpose of the site in both text and imagery. instances of a recipe card and the world map from the dashboard have also been included |  
+![User Story 1](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-1.jpg)
 
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-|2|As a , I need to , in order to .||
-
-![Weather Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/weather-info.jpg "Weather Info View")
-![Beach Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/poi-info.jpg "Beach Info View")
-![User Feedback](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/ecuser-comment.jpg "Weather User Feedback")
+| 2 |_As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**| There are three links on the Landing page from which any first time user can access the registration page. The registration process is very simple and only requires a username and password |  
+![User Story 2](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-2.jpg)
 
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-|3|As a user, , in order to ||
+| 3 |_As a_ ** first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**| Once signed-up a new user is immediately redirected to the main recipes page where they have the ability to browse, filter and search the recipes and choose which recipe they would like to see in more detail |  
+![User Story 3](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-3.jpg)
 
-![Town Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/town-info.jpg "Town Info View")
-![User Feedback](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/ftuser-comment.png "POI User Feedback")
-
-|User Story|Desctiption|Testing|
-|:--------:|-----------|-------|
-|4|As a , I need to , in order to ||
-
-![Activity Info](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/activity-info.jpg "Activity Info View")
-![User Feedback](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/kmuser-comment.jpg "Activity user feedback")
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-|5|As a , , in order to ||
+| 4 |_As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**| An **"Add Recipe"** page has been provided and is clearly indicated on the navbar. This redirects the user to an intuitive form where they can input pre-defined recipe criteria like ingredients and preparation steps |
+![User Story 4](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-4.jpg)  
 
-![Contact Page](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-form.jpg "Contact Page view")
 
-### **Functionality Testing** <a name="functionality-testing"></a>
+|User Story|Desctiption|Testing|
+|:--------:|-----------|-------|
+| 5 |_As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**||
+![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5a.jpg)  
+![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5b.jpg)
+![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5c.jpg)
+
+|User Story|Desctiption|Testing|
+|:--------:|-----------|-------|
+| 6 |_As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a url from a Full Recipe view to an Edit Recipe view|
+![User Story 6](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-6a.jpg)  
+![User Story 6](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-6b.jpg)  
+
+
+|User Story|Desctiption|Testing|
+|:--------:|-----------|-------|
+| 7 |_As a _ **site owner**, _I need to_ **have a unique feature which generates some competition, _in order to_ **encourage users to post new recipes**.| One of the key drivers with W3Recipes is to to try and fill in the map of the world by uploading recipes from as many countries as posible. THe maps are displayed on the Landing page and in a Dashboard Page|  
+![User Story 7](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-7.jpg)
+  
+______
+
+### **Functionality Testing** <a name="navigation"></a>
+The following table captures the functional testing performed on the website to ensure it works as desired. I have tested on the listed browsers only using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.
+
+|   Test       |Purpose          | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 83.0 (64-bit) |
+|:------------:|-----------------|----------------|---------------|:------:|:-------:|
+|   001        | Test Navigation | |  |  |  |
+|   002        | Test Navigation | |  |  |  |
+|   003        | Test Navigation | |  |  |  |
+|   004        | Test Navigation | |  |  |  |
+|   005        | Test Navigation | |  |  |  |
+|   006        |   | |  |  |  |
+|   007        |   | |  |  |  |
+|   008        |   | |  |  |  |
+|   009        |   | |  |  |  |
+|   010        |   | |  |  |  |
+
+#### **Navigation Testing** <a name="navigation"></a>
 The following table captures the functional testing performed on the website to ensure it works as desired. I have tested on the listed browsers only using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.
 
 |   Test       |Purpose          | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 83.0 (64-bit) |
@@ -59,14 +103,18 @@ The following table captures the functional testing performed on the website to 
 |   015        |   | |  |  |  |
 |   016        |   | |  |  |  |
 |   017        |   | |  |  |  |
-| 018          |   | |  |  |  |
-| 019          |   | |  |  |  |
-|020           |   | |  |  |  |
-| 021          |   | |  |  |  |
-| 022          |   | |  |  |  |
-|023           |   | |  |  |  |
+|   018        |   | |  |  |  |
+|   019        |   | |  |  |  |
+|   020        |   | |  |  |  |
+
 
 The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
+### **Log-In Testing** <a name="log-in"></a>
+
+
+###
+
+______
 
 ### **Code Quality and Validation** <a name="code-validation"></a> 
 |Test|Process|Result| Comment |
@@ -98,14 +146,24 @@ I requested fellow CI students and former colleagues to test the website to gath
 
 
 ### **Responsiveness Testing** <a name="responsiveness-testing"></a>
-I have conducted continuous responsiveness testing, right up to the final submission, to ensure the website functions on different devices and in both portrait and landscape orientation, using:
- - Google Devtools
-![Responsiveness](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/poi-info.jpg "Website Responsiveness") 
-![Responsiveness](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/contact-form.jpg "Website Responsiveness")
- - Am I Responsive
-![Am I responsive images](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/am-i-responsive.png "Am I Responsive")
- - Responsinator.com
- ![Responsinator image](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/responsinator.png "Responsinator image")
+I have conducted continuous responsiveness testing, right up to the final submission, to ensure the website functions on different devices and in both portrait and landscape orientation, using Google Devtools and Responsinator.com.
+The table below contains links to the Responsinator results where applicable.
+> None of the Responsiveness Tools provided results for pages where user authentication is important, such as Manage Recipes, Edit Recipe, Profile and Edit Profile. I have thus included screenshots of these from Google Devtools.  
+
+|  Test  | Page | Responsinator Link | Result |
+|--------|------|--------------------|--------|
+|  001   | Landing | [Landing Page](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2F) | Page functions across multiple devices in both portrait and landscape |
+|  002   | Sign-up | [Sign-up](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fregister) | Page functions across multiple devices in both portrait and landscape |
+|  003   | Log-in | [Log-in](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Flogin) | Page functions across multiple devices in both portrait and landscape |
+|  004   | Recipes Page | [Recipes Page](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fget_recipes) | Page functions across multiple devices in both portrait and landscape |
+|  005   | Full Recipe | [Full Recipe](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Ffull_recipe%2F604103a37084e9c04df5e2e5) | Page functions across multiple devices in both portrait and landscape |
+|  006   | Add Recipe | [Add Recipe](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fadd_recipe) | Page functions across multiple devices in both portrait and landscape |
+|  007   | Manage Recipes | - | Unable to text using online tools |
+|  008   | Edit Recipe | - | Unable to text using online tools |
+|  009   | Profile | - | Unable to text using online tools |
+|  010   | Edit Profile | - | Unable to text using online tools |
+|  011   | Dashboard | [Dashboard](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fdashboard) | Page functions across multiple devices in both portrait and landscape |
+|  012   | Error Pages | [Error Page](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fprofile%2Fadminuser) | Page functions across multiple devices in both portrait and landscape |
 
 ### **Performance Testing** <a name="performance-testing"></a>
 The website has been performance testing using the following tools:
