@@ -94,8 +94,8 @@
                             <div class="input-field">
                                 <!-- Image URL Input -->
                                 <i class="fas fa-camera prefix" aria-hidden="true"></i>
-                                <input value="{{ recipe.image }}" id="image_url" name="image_url" 
-                                    type="url" pattern="https://.*" class="validate">
+                                <input value="{{ recipe.image }}" id="image_url" name="image_url" type="url"
+                                    onchange="addImage();" pattern="https://.*" class="validate">
                                 <label for="image_url">Recipe Image</label>
                             </div>
                             <div id="image-container" class="center-align">
@@ -163,7 +163,7 @@
                             </a>
                         </div>
                         <div class="col s6 left-align">
-                            <button id="recipe-edit" type="submit" href="" class="btn waves-effect waves-light green accent-4 center-align">
+                            <button id="recipe-edit" type="submit" href="" class="btn waves-effect waves-light light-green darken-4 center-align">
                                 Save <i class="fas fa-check-circle right" aria-hidden="true"></i>
                             </button>
                         </div>

@@ -78,9 +78,10 @@
                     <p id="delete-check">Are you absolutely sure you would like to delete this recipe?</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ url_for('manage_recipes') }}" class="modal-close waves-effect green btn">Go Back</a>
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                    class="modal-close waves-effect btn red">DELETE!</a>
+                    <a href="{{ url_for('manage_recipes') }}" 
+                        class="modal-close waves-effect light-green darken-4 btn">Go Back</a>
+                    <a id="delete" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                        class="modal-close waves-effect btn red">DELETE!</a>
                 </div>
             </div>
         {% endfor %}

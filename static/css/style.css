@@ -494,6 +494,12 @@ label {
     font-weight: bold;
 }
 
+/*---------- Delete Recipe ----------*/
+
+#delete {
+    margin-left: 1rem;
+}
+
 /*---------- Profile Page ----------*/
 
 .user-img {
