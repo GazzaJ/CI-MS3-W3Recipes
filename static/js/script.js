@@ -41,7 +41,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".switch :checkbox").change(function(){        
         if ($(this).is(":checked")) {
-            $('#subs-email').show();            
+            $("#subs-email").show();            
         } else {
             $("#subs-email").hide();            
         }
