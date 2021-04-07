@@ -5,12 +5,12 @@ ______
 ## Table of contents
 1. [User Story Teesting](#user-story-testing)
 2. [Functionality Testing](#functionality)
-   - [Navigation Testing](#first navigation)
+   - [Navigation Testing](#first-navigation)
    - [Registration / Log-in](#registration)
-   - [Recipe Search & View](#read)
-   - [Adding a Recipe](#create)
-   - [Edit a Recipe](#update)
-   - [Delete a Recipe](#delete)  
+   - [Recipe Search & View](#recipes)
+   - [Adding a Recipe](#add-recipe)
+   - [Edit a Recipe](#edit-recipe)
+   - [Delete a Recipe](#delete-recipe)  
 3. [Security Testing](#security)
 4. [Usability Testing](#usability)
 5. [Responsiveness Testing](#responsiveness)
@@ -38,7 +38,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-| 3 |_As a_ ** first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**| Once signed-up a new user is immediately redirected to the main recipes page where they have the ability to browse, filter and search the recipes and choose which recipe they would like to see in more detail |  
+| 3 |_As a_ **first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**| Once signed-up a new user is immediately redirected to the main recipes page where they have the ability to browse, filter and search the recipes and choose which recipe they would like to see in more detail |  
 
 ![User Story 3](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-3.jpg)
 
@@ -77,8 +77,8 @@ ______
 ### **Functionality Testing** <a name="functionality"></a>
 The following tables capture the functional testing performed on the web-app to ensure it works as desired. I have tested on the listed browsers only, using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.  
 
-#### **First Time Navigation Testing** <a name="first navigation"></a>
-Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and anchor links provided on the to assist users navigating between pages.
+#### **First Time Navigation Testing** <a name="first-navigation"></a>
+Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and various anchor links provided to assist users navigating between pages.
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
@@ -99,7 +99,7 @@ Testing the registration process required to Sign-in and create a new account; a
 |:--------:|-----------------|----------------|---------------|:------:|:-------:|
 |   001    |Username - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   002    |Password - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
-|   003    |Minimum Character limit (15) | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
+|   003    |Minimum Character limit (5) | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   004    | Max character limit (15) | Indicate requirements not met | User input is limited to 15 characters | **PASS** | **PASS** |
 |   005    |  Username already taken | Let user know username is taken | User Redirected to Sign-up page with a Flashed message | **PASS** | **PASS** |
 |   006    | Username or password too short | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
@@ -110,24 +110,56 @@ Testing the registration process required to Sign-in and create a new account; a
 
 
 #### **Recipe Search & View (READ)** <a name="recipes"></a>
+This section documents the testing performed to validate the ability of the user to view the recipe collection, Filter by country and performa text search. Clicking the action button on each recipe should reveal the full recipe details.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   |  Latest First  | Display recipes in reverse chronological order | Recipes are sorted, newest to oldest | **PASS** | **PASS** |
+|  001   |  Recipe Filter  | Returns results based on user selected country | Correctly filters recipes and only returns matching recipes | **PASS** | **PASS** |
+|  002   |  Recipe Filter  | Filter options available after initial search | The Filter function can be used again and again based on different coutries | **PASS** | **PASS** |
+|  003   | Recipe Search   | Returns results based on user text input | Recipes displayed based on matching text | **PASS** | **PASS** |
+|  004   | Recipe Display   | Correctly display the selected recipe in full | Full recipe displayed for respective recipe cards | **PASS** | **PASS** |
+|  005   | Pagination | Limits display to 6 recipes | Six recipes displayed per page (where applicable) | **PASS** | **PASS** |
+|  006   | Pagination | Next and Previous Page arrows assit navigaction through pages | Next and PRevious page arrows work as desired | **PASS** | **PASS** |
+|  007   | Pagination | Page numbers link to respective reciupe page | Recipes displayed based on matching text | **PASS** | **PASS** |
+|  008   | Return to main Recipes Page   | No requirement to use the back button | Users can navigate away from the full recipe page using navbar or "Back to Recipes" button at the bottom of the page | **PASS** | **PASS** |
+
+#### **Add Recipe (CREATE)** <a name="add-recipes"></a> 
+Tests to check the users ability to upload a new recipe to the collection, and validate process robustness.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | Navbar link   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  002   | Manage Recipe link   | Link provided on Manage Recipes page results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  003   | Country Select   | Displays the list of countries in alphabetic order | List is displayed in the correct order. Users can scroll, or type the first letter of the country to navigate the list | **PASS** | **PASS** |
+|  004   | Recipe Name   | Textbox functions as desired | Users can input a name. Feedback is provided if the name is <5 characters | **PASS** | **PASS** |
+|  005   | Category Select  | Displays the list of recipe categories | List displays and users can select the category appropriate for their recipe | **PASS** | **PASS** |
+|  006   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. User feedback provided | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
+|  007   | Servings  | Displays a list of numbers from 1 - 30 | correctly displays the list and is selectable | **PASS** | **PASS** |
+|  008   | Navbar link   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  009   | Navbar link   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
 
 
-###
+#### **Recipe Edit (UPDATE)** <a name="edit-recipes"></a> 
+
+
+#### **Recipe Edit (UPDATE)** <a name="delete-recipes"></a>  
+
 
 ______
 
 ### **Code Quality and Validation** <a name="code-validation"></a> 
+Online tools have been used to validate the HTML, CSS, Python and JavaScript files to ensure they are free from errors, and comply with the latest standards. The results of these tests are documented below. 
+
 |Test|Process|Result| Comment |
 |----|-------|:----:|---------|
 |HTML Validation| Copy Index.html code into W3C validator|PASS||
 |HTML Validation| Copy Map.html code into W3C validator|PASS||
 |HTML Validation| Copy Contact.html code into W3C validator|WARNING|The "type" is unnecessary for Javascript results from 3rd party Script tags|
 |HTML Validation| Copy 404.html code into W3C validator|PASS||
-|Javascript Validation| Copy index.js code into JSHint|CHECKED||
-|Javascript Validation| Copy map.js code into JSHint|CHECKED||
-|Javascript Validation| Copy cndex.js code into JSHint|CHECKED||
-|CSS Validation| Copy CSS code into WC3 validator| ERROR |Errors raised for webkit compatibility. Chosen to ignore| 
-|Python Validation|Copy Python code into |||
+|CSS Validation| Copy CSS code into WC3 validator| **CHECKED** || 
+|Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors detected|
+|Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors detected|
+|Javascript Validation| Copy script.js code into JSHint | **CHECKED** ||
+|Javascript Validation| Copy script.js code into JSLint | **CHECKED** ||
 
 - This project has been deployed using Heroku and the website has been reviewed on several real devices:
   - Samsung Galaxy S9
@@ -182,11 +214,11 @@ The website has been performance testing using the following tools:
 
 ______
 
-## **Bugs and Issues** <a name="bugs"></a>
+## **Bugs, Issues and Fixes** <a name="bugs"></a>
 The following table explains the bugs and issues encountered while building this website.
 |  Issue #   |  Bug or Issue  |  Description  |  Solution  |
 |:----------:|:--------------:|---------------|------------|
 | 001 |Page width exceeding viewport width|While conducting continuous testing I noticed the website was experienceing a sporadic issue with the page width increasing beyond the viewport width. Initially thought to affect all pages and caused by the moibile responsive navbar | While troubleshooting the issue I realised the problem was confined to my Recipes.html page, and thus couldn't be caused by the navber which is a consistent element on all pages. The only other interactive element on this page was an unused Materialize CSS "FeatureDiscovery" element. After deletion the Page width issue didn't reoccur
 | 002 |Delete Confirmation in a modal|When a user selects delete on the "Manage Recipes" page I wanted a confirmation email to display before the recipe could be removed from the website and database. Initial attemps resulted in recipes being deleted one by one in a sequence since the modal was not linked to the specific recipe. This was verified using the {{ recipe title }} and by taking the chance and deleting one of the records | 
-| 003 |Displaying Flash messages in a modal|  |  |
+| 003 |Displaying Flash messages in a modal| Unable to display Flashed messages in a modal | Resorted to displaying them on the top of the relevant pages. |
 | 004 | Favicon 404 on some pages | My chosen Fav icon was not displaying on all pages which inherit from the base,html. The error code was "GET /full_recipe/static/img/favicon.ico HTTP/1.1" 404".| Adding a forward slash to the beginning of the directory address fixed the issue.
