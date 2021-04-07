@@ -91,6 +91,7 @@ Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and various an
 |   007  | Home Link on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
 |   008  | Brand Logo on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
 
+___
 
 #### **Registration/Log-in Testing** <a name="registration"></a>
 Testing the registration process required to Sign-in and create a new account; as well as for returning users to Log-in to their existing account. The app should provide feedback to the user in cases where incorrect inputs are provided. 
@@ -101,12 +102,25 @@ Testing the registration process required to Sign-in and create a new account; a
 |   002    |Password - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   003    |Minimum Character limit (5) | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   004    | Max character limit (15) | Indicate requirements not met | User input is limited to 15 characters | **PASS** | **PASS** |
-|   005    |  Username already taken | Let user know username is taken | User Redirected to Sign-up page with a Flashed message | **PASS** | **PASS** |
+|   005    |  Username already taken | Let user know username is taken | User Redirected to Sign-up page with a Flashed message | **PASS** | **PASS** | 
+
+![Username taken](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/username-taken.jpg)
+
+|   Test   | Purpose         | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 84.0 (64-bit) |
+|:--------:|-----------------|----------------|---------------|:------:|:-------:|
 |   006    | Username or password too short | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   007    | Incorrect Username  | Inform user of issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
 |   008    | Incorrect Password  | Inform user of Issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
+
+![Incorrect Log-in](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/username-taken.jpg)
+
+|   Test   | Purpose         | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 84.0 (64-bit) |
+|:--------:|-----------------|----------------|---------------|:------:|:-------:|
 |   009    | Successful Sign-up  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |
 |   010    | Successful Log-in  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |
+![Sign-up Success](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/success-login.jpg)
+
+___
 
 
 #### **Recipe Search & View (READ)** <a name="recipes"></a>
@@ -116,13 +130,23 @@ This section documents the testing performed to validate the ability of the user
 |  001   |  Latest First  | Display recipes in reverse chronological order | Recipes are sorted, newest to oldest | **PASS** | **PASS** |
 |  001   |  Recipe Filter  | Returns results based on user selected country | Correctly filters recipes and only returns matching recipes | **PASS** | **PASS** |
 |  002   |  Recipe Filter  | Filter options available after initial search | The Filter function can be used again and again based on different coutries | **PASS** | **PASS** |
+![Country Filter](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-filter.jpg)  
+![Filter Results](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/filtered-results.jpg)
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 |  003   | Recipe Search   | Returns results based on user text input | Recipes displayed based on matching text | **PASS** | **PASS** |
+![Recipe Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/search-results.jpg)
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 |  004   | Recipe Display   | Correctly display the selected recipe in full | Full recipe displayed for respective recipe cards | **PASS** | **PASS** |
 |  005   | Pagination | Limits display to 6 recipes | Six recipes displayed per page (where applicable) | **PASS** | **PASS** |
 |  006   | Pagination | Next and Previous Page arrows assit navigaction through pages | Next and PRevious page arrows work as desired | **PASS** | **PASS** |
 |  007   | Pagination | Page numbers link to respective reciupe page | Recipes displayed based on matching text | **PASS** | **PASS** |
 |  008   | Return to main Recipes Page   | No requirement to use the back button | Users can navigate away from the full recipe page using navbar or "Back to Recipes" button at the bottom of the page | **PASS** | **PASS** |
-
+___
+   
 #### **Add Recipe (CREATE)** <a name="add-recipes"></a> 
 Tests to check the users ability to upload a new recipe to the collection, and validate process robustness.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
@@ -134,12 +158,17 @@ Tests to check the users ability to upload a new recipe to the collection, and v
 |  005   | Category Select  | Displays the list of recipe categories | List displays and users can select the category appropriate for their recipe | **PASS** | **PASS** |
 |  006   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. User feedback provided | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
 |  007   | Servings  | Displays a list of numbers from 1 - 30 | correctly displays the list and is selectable | **PASS** | **PASS** |
-|  008   | Navbar link   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  009   | Navbar link   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-
+|  008   | Recipe Image   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  009   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  010   | Recipe Description   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  011   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  012   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  013   | Data Written to MongoDB   | Confirm new recipe data is written to MongoDB | New recipes appear as a new Recipes document within Mongo DB. All fields are populated if completed | **PASS** | **PASS** |
+|  014   | Profanity Check  | Replace profanities in user input with ***  | Profanities are correcxtly replaced with *** | **PASS** | **PASS** |
 
 #### **Recipe Edit (UPDATE)** <a name="edit-recipes"></a> 
 
+___
 
 #### **Delete Recipe (DELETE)** <a name="delete-recipes"></a>  
 Testing to confirm correct functionality of the Delete function. Aspects of this testing are critical as we don't want to delete the incorrect recipes.
