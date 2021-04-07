@@ -141,8 +141,16 @@ Tests to check the users ability to upload a new recipe to the collection, and v
 #### **Recipe Edit (UPDATE)** <a name="edit-recipes"></a> 
 
 
-#### **Recipe Edit (UPDATE)** <a name="delete-recipes"></a>  
-
+#### **Delete Recipe (DELETE)** <a name="delete-recipes"></a>  
+Testing to confirm correct functionality of the Delete function. Aspects of this testing are critical as we don't want to delete the incorrect recipes.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+| 001    | Navigate to Delete option | Delete button initiates recipe deletion | Clicking Delet correctl;y initiates the deletion process | **PASS** | **PASS** |
+| 002    | Prevent unauthorised Deleteion | Delete function should only be available to ADMIN and the uploading user | The only recipes shown for users are those they have uploaded themselves | **PASS** | **PASS** |
+| 003    | Check with user before deleting recipe | Deletion modal should appear, to confirm deletion | Modal appears with confirmation message and Recipe name displayed | **PASS** | **PASS** |
+| 004    | Provide escape route | Buton provides way back tgo Manage Recipes | A "Go Back" button has been provided as an alternative to the Confirm Deletion option. redirects user to Manage recipes | **PASS** | **PASS** |
+| 005    | Delete Correct Recipe | Ensure the correct recipe is deleted |Each recipe is linked by it's unique id, which is used when selecting or deleting recipes. Confirmation message includes the recipe name. Checked in MongoDB | **PASS** | **PASS** |
+| 006    | Provide Confirmation of Deletion | Flash message should appear when user is redirected to Manage Recipes page | User is redirected and message is diaplayed | **PASS** | **PASS** |
 
 ______
 
