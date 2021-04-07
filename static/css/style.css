@@ -731,7 +731,12 @@ h2, h3 {
     .edit-content {
         position: relative;    
         top: 2rem;
-        }    
+        }
+
+    .veg,
+    .not-veg {
+        font-size: 0.8rem;
+    }    
         
     .flag {
         position: absolute;
@@ -748,5 +753,12 @@ h2, h3 {
     .user-img {
         max-width: 100%;
         object-fit: cover;
+    }
+}
+
+@media (max-width: 1366px) {
+    .veg,
+    .not-veg {
+        font-size: 1rem;
     }
 }
