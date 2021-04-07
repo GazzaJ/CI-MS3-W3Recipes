@@ -1,14 +1,16 @@
 # [**W3 Recipes Testing & Bug Fixes**](https://ci-ms3-w3recipes.herokuapp.com/)
 This document records all of the manual testing conducted on the W3Recipes app', and also lists the bugs and fixes recorded during the development of the app'.
+The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
 ______
 ## Table of contents
 1. [User Story Teesting](#user-story-testing)
-2. [Functionality Testing](#funtionality)
-   - [Navigation Testing](#navigation)
-   - [Create](#)
-   - [Read](#)
-   - [Update](#)
-   - [Delete](#)  
+2. [Functionality Testing](#functionality)
+   - [Navigation Testing](#first navigation)
+   - [Registration / Log-in](#registration)
+   - [Recipe Search & View](#read)
+   - [Adding a Recipe](#create)
+   - [Edit a Recipe](#update)
+   - [Delete a Recipe](#delete)  
 3. [Security Testing](#security)
 4. [Usability Testing](#usability)
 5. [Responsiveness Testing](#responsiveness)
@@ -23,30 +25,35 @@ The following testing has been carried out to validate how the website addresses
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
 | 1 |_As a_ **first time visitor**, _I need to_ **understand the purpose of the site**, _in order to_ **consider exploring the site further**|The landing pageexplains the purpose of the site in both text and imagery. instances of a recipe card and the world map from the dashboard have also been included |  
+
 ![User Story 1](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-1.jpg)
 
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
 | 2 |_As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**| There are three links on the Landing page from which any first time user can access the registration page. The registration process is very simple and only requires a username and password |  
+
 ![User Story 2](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-2.jpg)
 
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
 | 3 |_As a_ ** first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**| Once signed-up a new user is immediately redirected to the main recipes page where they have the ability to browse, filter and search the recipes and choose which recipe they would like to see in more detail |  
+
 ![User Story 3](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-3.jpg)
 
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-| 4 |_As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**| An **"Add Recipe"** page has been provided and is clearly indicated on the navbar. This redirects the user to an intuitive form where they can input pre-defined recipe criteria like ingredients and preparation steps |
+| 4 |_As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**| An **"Add Recipe"** page has been provided and is clearly indicated on the navbar. This redirects the user to an intuitive form where they can input pre-defined recipe criteria like ingredients and preparation steps |  
+
 ![User Story 4](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-4.jpg)  
 
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
 | 5 |_As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**||
+
 ![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5a.jpg)  
 ![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5b.jpg)
 ![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5c.jpg)
@@ -54,62 +61,55 @@ The following testing has been carried out to validate how the website addresses
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
 | 6 |_As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**|Users are only able to view their own recipes on the Manage Recipes page. Users will be redirected to the Manage Recipes Page if they try to manipulate a url from a Full Recipe view to an Edit Recipe view|
+
 ![User Story 6](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-6a.jpg)  
 ![User Story 6](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-6b.jpg)  
 
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-| 7 |_As a _ **site owner**, _I need to_ **have a unique feature which generates some competition, _in order to_ **encourage users to post new recipes**.| One of the key drivers with W3Recipes is to to try and fill in the map of the world by uploading recipes from as many countries as posible. THe maps are displayed on the Landing page and in a Dashboard Page|  
+| 7 |_As a _ **site owner**, _I need to_ **have a unique feature which generates some competition, _in order to_ **encourage users to post new recipes**.| One of the key drivers with W3Recipes is to to try and fill in the map of the world by uploading recipes from as many countries as posible. THe maps are displayed on the Landing page and in a Dashboard Page| 
+
 ![User Story 7](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-7.jpg)
   
 ______
 
-### **Functionality Testing** <a name="navigation"></a>
-The following table captures the functional testing performed on the website to ensure it works as desired. I have tested on the listed browsers only using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.
+### **Functionality Testing** <a name="functionality"></a>
+The following tables capture the functional testing performed on the web-app to ensure it works as desired. I have tested on the listed browsers only, using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.  
 
-|   Test       |Purpose          | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 83.0 (64-bit) |
-|:------------:|-----------------|----------------|---------------|:------:|:-------:|
-|   001        | Test Navigation | |  |  |  |
-|   002        | Test Navigation | |  |  |  |
-|   003        | Test Navigation | |  |  |  |
-|   004        | Test Navigation | |  |  |  |
-|   005        | Test Navigation | |  |  |  |
-|   006        |   | |  |  |  |
-|   007        |   | |  |  |  |
-|   008        |   | |  |  |  |
-|   009        |   | |  |  |  |
-|   010        |   | |  |  |  |
+#### **First Time Navigation Testing** <a name="first navigation"></a>
+Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and anchor links provided on the to assist users navigating between pages.
 
-#### **Navigation Testing** <a name="navigation"></a>
-The following table captures the functional testing performed on the website to ensure it works as desired. I have tested on the listed browsers only using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.
-
-|   Test       |Purpose          | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 83.0 (64-bit) |
-|:------------:|-----------------|----------------|---------------|:------:|:-------:|
-|   001        | Test Navigation | |  |  |  |
-|   002        | Test Navigation | |  |  |  |
-|   003        | Test Navigation | |  |  |  |
-|   004        | Test Navigation | |  |  |  |
-|   005        | Test Navigation | |  |  |  |
-|   006        |   | |  |  |  |
-|   007        |   | |  |  |  |
-|   008        |   | |  |  |  |
-|   009        |   | |  |  |  |
-|   010        |   | |  |  |  |
-|   011        |   | |  |  |  |
-|   012        |   | |  |  |  |
-|   013        |   | |  |  |  |
-|   014        |   | |  |  |  |
-|   015        |   | |  |  |  |
-|   016        |   | |  |  |  |
-|   017        |   | |  |  |  |
-|   018        |   | |  |  |  |
-|   019        |   | |  |  |  |
-|   020        |   | |  |  |  |
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|   001  | Sign-up Link on Navbar |Correctly navigate to sign-up page | Opens Sign up/registration age | **PASS** | **PASS** |
+|   002  | Sign-up Link on Log-in Page |Correctly navigate to sign-up page| Opens Sign up/registration Page  | **PASS**  | **PASS** |
+|   003  | Sign-up Link on Landing Page |Correctly navigate to sign-up page| Opens up the Sign-up Page | **PASS** | **PASS** |
+|   004  | Sign-up Link on the base of the landing page |Correctly navigate to sign-up page| Opens the Sign-up Page | **PASS** | **PASS** |
+|   005  | Log-in Link on Navbar |Correctly navigate to Log-in Page | Redirects user to Log-in Page | **PASS** | **PASS** |
+|   006  | Log-in Link on Sign-up Page |Correctly navigates to Sign-up Page | Redirects user to Sign-up/registration page | **PASS**  | **PASS** |
+|   007  | Home Link on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
+|   008  | Brand Logo on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
 
 
-The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
-### **Log-In Testing** <a name="log-in"></a>
+#### **Registration/Log-in Testing** <a name="registration"></a>
+Testing the registration process required to Sign-in and create a new account; as well as for returning users to Log-in to their existing account. The app should provide feedback to the user in cases where incorrect inputs are provided. 
+
+|   Test   | Purpose         | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 84.0 (64-bit) |
+|:--------:|-----------------|----------------|---------------|:------:|:-------:|
+|   001    |Username - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
+|   002    |Password - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
+|   003    |Minimum Character limit (15) | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
+|   004    | Max character limit (15) | Indicate requirements not met | User input is limited to 15 characters | **PASS** | **PASS** |
+|   005    |  Username already taken | Let user know username is taken | User Redirected to Sign-up page with a Flashed message | **PASS** | **PASS** |
+|   006    | Username or password too short | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
+|   007    | Incorrect Username  | Inform user of issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
+|   008    | Incorrect Password  | Inform user of Issue | User Redirected to Log-in page with a Flashed message | **PASS** | **PASS** |
+|   009    | Successful Sign-up  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |
+|   010    | Successful Log-in  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |
+
+
+#### **Recipe Search & View (READ)** <a name="recipes"></a>
 
 
 ###
