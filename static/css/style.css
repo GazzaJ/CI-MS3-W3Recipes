@@ -396,6 +396,12 @@ label {
     font-size: 2rem;
 }
 
+.veg-text {
+    font-weight: bold;
+    color: #9e9e9e;
+    padding-left: 0.5rem;    
+}
+
 #image-container img {
     max-height: 15rem;
     width: auto;
@@ -759,6 +765,8 @@ h2, h3 {
 @media (max-width: 1366px) {
     .veg,
     .not-veg {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
+
+    
 }
