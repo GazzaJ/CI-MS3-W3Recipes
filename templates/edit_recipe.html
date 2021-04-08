@@ -48,31 +48,31 @@
                             </div>
                             <div class="row form-field">
                                 <!-- Vegan Switch -->
-                                <div class="col s12 m6 switch">
-                                    <i class="fas fa-leaf prefix leaf"></i>                                    
+                                <div class="col s12 switch">
+                                    <i class="fas fa-leaf prefix leaf"></i><span id="vegan-label" class="veg-text"> Vegan</span>                                    
                                     <label for="vegan">
-                                        No
+                                        <span class="switch-text">No</span>
                                         {% if recipe.vegan == "on" %}
                                             <input type="checkbox" id="vegan" name="vegan" checked>
                                         {% else %}
                                             <input type="checkbox" id="vegan" name="vegan">
                                         {% endif %}
                                             <span class="lever"></span>
-                                        Yes
+                                            <span class="switch-text">Yes</span>
                                     </label>
                                 </div>
                                 <!-- Vegetarian Switch -->
-                                <div id="veg-switch" class="col s12 m6 switch">                                    
-                                    <i class="fas fa-seedling prefix leaf"> </i>
+                                <div id="veg-switch" class="col s12 switch">                                    
+                                    <i class="fas fa-seedling prefix leaf"></i><span class="veg-text"> Vegetarian</span>
                                     <label for="vegetarian">
-                                        No
+                                        <span class="switch-text">No</span>
                                         {% if recipe.vegetarian == "on" %}
                                             <input type="checkbox" id="vegetarian" name="vegetarian" checked>
                                         {% else %}
                                             <input type="checkbox" id="vegetarian" name="vegetarian">
                                         {% endif %}
                                             <span class="lever"></span>
-                                        Yes
+                                        <span class="switch-text">Yes</span>
                                     </label>    
                                 </div>
                             </div>                          
