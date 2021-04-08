@@ -21,7 +21,7 @@ The objective is to achieved the above with a visually appealing, interactive ye
 ![Am I responsive images](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/am_i_responsive.jpg "Am I Responsive")
 
 ## Table of contents
-You can also acces an automatically generated table of content by clicking [TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png) at the start of the README section
+You can also acces an automatically generated table of content by clicking ![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png) at the start of the README section
 1. [User Experience](#user-experience)
    - [User Stories](#stories)
    - [The 5 Planes](#planes)
@@ -265,7 +265,9 @@ ___
 The aesthetics of W3Recipes was just as important to me as the functionality. Despite not using a lot of imagery for the app, what I have selected needs to be impactful, yet relaxed and fun to match the overall objective.
 
 ##### **Colour Scheme**
-I typically find great inspiration for colour schemes on pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image. 
+I typically find great inspiration for colour schemes on pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image.  
+
+
 ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
 
 ##### **Typography**  
@@ -314,7 +316,7 @@ ______
 ## **Database Schema** <a name="dbschema"></a>  
 W3Recipes uses Mongo DB Atlas a non-relational database to store and retrieve all of the user input data.
 The schema for W3 Recipes is relatively simple and is illustrated below:
-![DB Schema](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/db-schema.png "DB Schema")
+![DB Schema](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/db-schema.jpg "DB Schema")
 
 The schema contains four collections, with each collection containing multiple documents 
  - **Users**
