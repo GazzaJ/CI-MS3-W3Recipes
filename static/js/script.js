@@ -9,13 +9,15 @@ $(document).ready(function(){
 });
 
 /*----- Display image when URL provided ----- 
------ on Add and Edit Recipe Pages----------*/
+----------- on AddRecipe Pages----------*/
 function addImage()
 {
   var url = document.getElementById("image_url").value;
   var image = new Image();
   image.src = url;
   document.getElementById("image-container").appendChild(image);
+  
+  
   document.getElementById("new-img").innerHTML = "New Image";
 }
 
@@ -26,6 +28,17 @@ var instances = M.FloatingActionButton.init(elems, {
     direction: "left"
 });
 });
+
+/*----- Display New image when URL provided ----- 
+---------- on Edit Recipe Pages----------*/
+function editImage()
+{
+  var url = document.getElementById("image_url").value;
+  var image = new Image();
+  image.src = url;
+  document.getElementById("edit-img-container").appendChild(image);  
+  document.getElementById("new-img").innerHTML = "New Image";
+}
 
 /*----- Check Status of "Subscribed" checkbox ----- 
 ---------- on the Edit Profile Page -----*/

@@ -95,12 +95,12 @@
                                 <!-- Image URL Input -->
                                 <i class="fas fa-camera prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.image }}" id="image_url" name="image_url" type="url"
-                                    onchange="addImage();" pattern="https://.*" class="validate">
+                                    onchange="editImage();" pattern="https://.*" class="validate">
                                 <label for="image_url">Recipe Image</label>
                             </div>
                             <div id="edit-img-container" class="center-align">
-                                <p class="edit-img-text">Current Image</p>
                                 <!-- Image Display/Checking field -->
+                                <p class="edit-img-text">Current Image</p>
                                 <img src="{{ recipe.image }}" class="edit-img" alt="{{ recipe.title }}">
                                 <p id="new-img" class="edit-img-text"></p>
                             </div>
