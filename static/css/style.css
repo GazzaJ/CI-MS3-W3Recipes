@@ -110,11 +110,13 @@ main {
 
 .navlinks {
     font-family: "Galada", sans-serif;
+    top: 0;
+    left: 0;
     letter-spacing: 2px;    
 }
 
 body {
-    background-image: url('/static/img/main-background_1900.jpg');
+    background-image: url('/static/img/main-background_2150.jpg');
     object-fit: cover;             
 }
 
