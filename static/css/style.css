@@ -329,8 +329,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 #recipe-image {
     max-width: 100%;
-    max-height: 25rem;
-    
+    max-height: 25rem;    
 }
 
 #full-prep,
@@ -416,8 +415,12 @@ label {
 }
 
 #url-msg {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
+}
+
+#url-links {
+    margin-bottom: 0;
 }
 
 .img-link {
@@ -428,6 +431,19 @@ label {
     border-radius: 1rem;
     padding: 0.4rem;    
     color: #f88e28;    
+}
+
+.img-copy {
+    font-weight: bold;
+}
+
+#how-to {
+    margin-left: 1.5rem;
+}
+
+#how-to li {
+    list-style-type: circle;
+    font-family: "Happy Monkey", sans-serif;
 }
 
 .toggle4 {
