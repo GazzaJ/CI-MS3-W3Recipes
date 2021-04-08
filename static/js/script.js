@@ -16,6 +16,7 @@ function addImage()
   var image = new Image();
   image.src = url;
   document.getElementById("image-container").appendChild(image);
+  document.getElementById("new-img").innerHTML = "New Image";
 }
 
 /*---------- FAB for Recipe Edit & Delete ----------*/

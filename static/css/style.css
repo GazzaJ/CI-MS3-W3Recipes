@@ -408,8 +408,7 @@ label {
 
 #image-container img {
     max-height: 15rem;
-    width: auto;
-    border: 0.25rem solid #000;
+    width: auto;    
     margin-left: 3rem;
 }
 
@@ -485,13 +484,17 @@ label {
 
 .edit-img {
     max-height: 15rem;
-    width: 80%;
-    border: 0.25rem solid #000;
-    margin-left: 3rem;
+    width: auto;
+    margin-left: 0;       
 }
 
 #recipe-edit {
     margin-left: 1rem;
+}
+
+.edit-img-text {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .modal-footer {
