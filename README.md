@@ -21,7 +21,7 @@ The objective is to achieved the above with a visually appealing, interactive ye
 ![Am I responsive images](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/am_i_responsive.jpg "Am I Responsive")
 
 ## Table of contents
-You can also acces an automatically generated table of content by clicking ![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png) at the start of the README section
+An automatically generated Table of Contents can be accessed by clicking the README.md menu icon at the start of the README section. ![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png) at the start of the README section
 1. [User Experience](#user-experience)
    - [User Stories](#stories)
    - [The 5 Planes](#planes)
@@ -351,7 +351,7 @@ The following table lists the primary features provided by the W3Recipes app.
 | 006   | A Full Recipe Page provides complete recipe details | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
 | 007   | A form which enables users to upload their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
 | 008   | Manage Recipes Page, from where users have the ability to Edit or Delete their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
-| 009   | Edit Recipe Form, enables users to modify all of the firlds for any of the recipes they themsleves have uploaded |  | [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
+| 009   | Edit Recipe Form, enables users to modify all of the firlds for any of the recipes they themsleves have uploaded |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
 | 010   | A Profile page contains user details and subscription preference | [Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile.jpg) |
 | 011   | An Edit Profile page to allow users the ability to Edit profile details and change subscription status | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
 | 012   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
@@ -362,21 +362,23 @@ The following table lists the primary features provided by the W3Recipes app.
 > **_I have chosen not to provide a contact form for this web app. I believe that being able to contact the developer by email is sufficient for this initial release._**
 
 ### **Security Features**
-Despite not being explicitly required for this build I have chosen to implement certain security features to provide some 
-|  Feature  |  Description  |    |
-|----|----|----|
-| 001 | User Login | User supplied username and password. Password gets hashed and salted using Password Hash from the Werkzeug Library |  |
-| 002 | Session Cookie | Once a user signs up or log's in a unique session cookie is created   |    |
-| 003 | Restricted access | App logic checks the session cookie and displays only the recipes created by that user |
-| 004 | Restricted  |The user can only edit or delete recipes where the recipe.uploaded_by field matches their session cookie data. This prevents unauthorised deletion of another users recipes
-| 005 | Profanity Filter | Analyses user input and replaces any matching profanities with "****"|
+Despite not being explicitly required for this build I have chosen to implement certain security features to provide some protection against unauthorised access to other users data.
+|  Feature  |  Title |  Description  | Image URL |
+|:----:|----|----|:---:|
+| 001 | User Login | User registers on the site with a simple username and password. Password gets hashed and salted using Password Hash from the Werkzeug Library |  |
+| 002 | Session Cookie | Once a user signs up or log's in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username  |  |
+| 003 | Restricted access | The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes. |  |
+| 004 | Restricted access | I have also attempted to prevent backdoor access to editting recipes from the Recipes or Full Recipe pages |  |
+| 005 | Deletion Check | When a user selects the Delete Recipe button, the app renders a modal with a message to confirm the user wishes to delete thiat particular recipe. |
+| 006 | Profanity Filter | Analyses user input and replaces any matching profanities with "****"|  |
 
 ### **Features Left to implement**
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate:
 |   Feature     |     Description      |
 |---------------|----------------------|
-| Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's|
-| Image Validation |                  |
+| Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's |
+| Image Validation | Validate image properties (size, aspect ratio etc) prior to uploading                 |
+|Inappropriate image filter| Filter innappropriate images from being uploaded or worse, displayed |
 ______
 
 ## **Technologies Used** <a name="technologies"></a>  
@@ -548,12 +550,9 @@ I have attempted to work independently as much as possible while building this w
 - Google DevTools - for trouble shooting and first pass testing
 - Google Lighthouse - Website performance testing
 - [StackOverFlow](https://stackoverflow.com/) – Web based coding tips
-- [CSS Tricks](https://css-tricks.com/) – Styling tips like https://css-tricks.com/styling-underlines-web/
 - [W3Schools](https://www.w3schools.com/) – General coding resource
-- [MDN]("https://developer.mozilla.org/en-US/docs/Web/JavaScript") - Useful Javascript resource
 - [Pexels](https://www.pexels.com/) – Licence free image repository
 - [BeFunky](https://www.befunky.com/create/resize-image/) – Online image resizer
-- [Color Picker](https://htmlcolorcodes.com/color-picker/) – HTML and CSS colour codes
 - [W3C Validator](https://validator.w3.org/) - HTML and CSS Validation tool
 - [JSHint](https://jshint.com/) - Javascript code analysis tool
 - [JSLint](https://jslint.com/) - Javascript code quality analysis tool
@@ -561,14 +560,15 @@ I have attempted to work independently as much as possible while building this w
 - []() - Python PEP8 validation
 - [SEO Site Checkup](https://seositecheckup.com/tools/custom-404-error-page-test) - Checks to see if you have a custom 404 page
 - [Online Javascript Beautifier](https://codebeautify.org/jsviewer) - Useful tool for indenting JS code
-- [Am I responsive?](http://ami.responsivedesign.is/) - provides a simple view of a websites responsiveness.
+- [Am I responsive?](http://ami.responsivedesign.is/) - Provides a simple view of a websites responsiveness.
+- [Responsinator](https://www.responsinator.com/) - Fairly comprehensive responsiveness testing
 
 ______
 
 ## **Credits** <a name="credits"></a>
 
 ### **Content**
-The content of this website was created by Gareth John. Snippets of code have been taken from official documentation and sources creditted below and in the respective code files. All text was written 
+The content of this website was created by Gareth John. Snippets of code have been copied from official documentation and other sources creditted below and in the respective code files. All pre-loaded recipes were written by the developer.
 
 ### **Media**
 
@@ -601,12 +601,14 @@ Much of the structure of this site follows what was taught during the Backend De
  |Animated Arrows| Animated arrows in the Landing Page call to action | https://freefrontend.com/css-arrows/#animated-arrows|
  |Remove blank lines and spaces from text inputs | Ensure that if users entered blank lines into the ingredients and methods they could be removed to maintain a neat list | https://www.kite.com/python/answers/how-to-remove-empty-lines-from-a-string-in-python |
  | Country Flag CDN | Code snippet required to programatically embed flags into the website | https://flagpedia.net/download/api |
+ | Image url display | Display the image when the url is provided in a textbox | https://stackoverflow.com/questions/31398473/load-image-in-div-from-url-obtained-from-a-text-box/31398762|
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
 - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
+- Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
  - Thanks to Ed Bradley for hosting a very helpfull MS3 Planning Call and for providing some much needed support along the way.
- - Thanks also to Can Sucullu for opening my eyes to potential vunerabilitis and potential back doors 
+ - Thanks also to Can Sucullu for opening my eyes to potential vunerabilitis and potential back doors in my web app. 
 ______
 ### **Technical Support** <a name="technical"></a>
 If you encounter any issues with this website, or require any support please email the developer [johnge71@gmail.com](mailto:johnge71@gmail.com)
