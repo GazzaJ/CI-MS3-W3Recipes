@@ -21,7 +21,7 @@ The objective is to achieved the above with a visually appealing, interactive ye
 ![Am I responsive images](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/am_i_responsive.jpg "Am I Responsive")
 
 ## Table of contents
-An automatically generated Table of Contents can be accessed by clicking the README.md menu icon at the start of the README section. ![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png) at the start of the README section
+An automatically generated Table of Contents can be accessed by clicking the README.md menu icon at the start of the README section. ![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png) 
 1. [User Experience](#user-experience)
    - [User Stories](#stories)
    - [The 5 Planes](#planes)
@@ -363,14 +363,37 @@ The following table lists the primary features provided by the W3Recipes app.
 
 ### **Security Features**
 Despite not being explicitly required for this build I have chosen to implement certain security features to provide some protection against unauthorised access to other users data.
-|  Feature  |  Title |  Description  | Image URL |
-|:----:|----|----|:---:|
-| 001 | User Login | User registers on the site with a simple username and password. Password gets hashed and salted using Password Hash from the Werkzeug Library |  |
-| 002 | Session Cookie | Once a user signs up or log's in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username  |  |
-| 003 | Restricted access | The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes. |  |
-| 004 | Restricted access | I have also attempted to prevent backdoor access to editting recipes from the Recipes or Full Recipe pages |  |
-| 005 | Deletion Check | When a user selects the Delete Recipe button, the app renders a modal with a message to confirm the user wishes to delete thiat particular recipe. |
-| 006 | Profanity Filter | Analyses user input and replaces any matching profanities with "****"|  |
+
+
+ 1. User Login
+ User registers on the site with a simple username and password. Password gets hashed and salted using Password Hash from the Werkzeug Library.
+
+![Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg)
+
+ 2. Session Cookie
+ Once a user signs up or log's in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username.  
+
+
+
+ 3.  Restricted access
+ The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes.  
+
+![Restricted Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restrict-1.jpg)
+
+ 4.  Restricted access
+ I have also attempted to prevent backdoor access to editting recipes from the Recipes or Full Recipe pages.  
+
+![Unauthorised Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restrict-2.jpg)
+
+ 5.  Deletion Check
+ When a user selects the Delete Recipe button, the app renders a modal with a message to confirm the user wishes to delete thiat particular recipe.  
+
+![Deletion Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg)
+
+ 6. Profanity Filter
+ Analyses user input and replaces any matching profanities with "****"
+
+![Profanity Filter](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profane.jpg)
 
 ### **Features Left to implement**
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate:
@@ -421,7 +444,7 @@ This website has been built using the following core technologies:
 ______
 
 ## **Testing** <a name="testing"></a>
-All of the testing conducted on this app', and the bugs identified are documented in the following document:-
+All of the testing conducted on this app', as well as any bugs encountered and explanations of solutions are documented in the following file:-
 # [TESTING.md](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING.md) 
 
 ______
