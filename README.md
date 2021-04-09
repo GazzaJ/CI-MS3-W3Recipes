@@ -314,56 +314,62 @@ Last but certainly not the least was my desire to have a subtle food related bac
 ______
 
 ## **Database Schema** <a name="dbschema"></a>  
-W3Recipes uses Mongo DB Atlas a non-relational database to store and retrieve all of the user input data.
+W3Recipes uses Mongo DB Atlas, a non-relational database to store and retrieve all of the user input data.
 The schema for W3 Recipes is relatively simple and is illustrated below:
 ![DB Schema](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/db-schema.jpg "DB Schema")
 
-The schema contains four collections, with each collection containing multiple documents 
+The schema contains four collections, with each collection containing multiple documents. 
  - **Users**
- Stores user data. Initialy populated with username and password and a default profile image. Once logged in users can upload their own image url, specify their town or city. If the user elects to subscribe to the site, they are then able to provide their email address.
-> **_I chose to do it this way so users are only required to provide some basic information and can decide how much more they want to input at any subsequent point. I believe this simplifies the registration process_**
+ Stores user data. Initialy populated with username and password and a default profile image when users register on the app. Once logged in users can upload their own image url, specify their town or city. If the user elects to subscribe to the site, they are then able to provide their email address.
+> **_I chose to do it this way so users are only required to provide some basic information and can register very easily. Once registered they can decide how much more they want to input at any subsequent point. I believe this simplifies the registration process_**
 
  - **Countries**
- This collection was populated from JSON file of 254 countries using the MongoDB Compass app, which simplified the transfer of the data into individual documents within the collection. The JSON data was copied from (https://flagpedia.net/download/api) and used the CDN link provided to display the flags on the recipe cards and pages. The individual UK countries were subsequently added into the collection as they did not appear in the original JSON file.
+ This collection was populated from JSON file of 254 countries using the MongoDB Compass app, which simplified the transfer of the data into individual documents within the collection. The JSON data was copied from (https://flagpedia.net/download/api) and uses the CDN link provided on the website to display the flags on the recipe cards and pages. The individual UK countries were subsequently added into the collection by myself, as they did not appear in the original JSON file.
  Each document contains two id fields; the Atlas provided id and that provided in the JSOn data. It also contains the country name, an alpha2 field which is the ISO two letter country code and an alpha3 field which is the ISO three letter country code.  
- The alpha2 code is used to provide the appropriate countey flag.  
+ The alpha2 code is used to render the appropriate countey flag.  
 
  - **Recipe Category**
- The recipe_category collection contains short documents each describing the type of meal category each recipe might be identified by; such as Breakfast, Brunch, Lunch, Dinner, Desserts, Snacks, Appetisers and Sides
+ The recipe_category collection contains short documents each defining the type of meal category each recipe might be identified by; such as Breakfast, Brunch, Lunch, Dinner, Desserts, Snacks, Appetisers and Sides. The recipe type documents were populated by myself and can be queried whena recipe is created or edited.
 > **_There are many different ways to categorise recipes, but the one selected seems the most appropriate for my application_**
  
  - **Recipes**
- The recipes collection is the largest in the database as it combines all of the user supplied input with fields from the other collections. I have selected what I view as essential fields for a basic recipe app, though clearly many more can be added.  
+ The recipes collection is the largest in the database as it combines user text input with data retrieved from the other collections; all of the user supplied input with fields from the other collections. I have selected what I view as essential fields for a basic recipe app, though clearly many more could be added.
+Recipe Ingredients and preparation step data is formatted into an Array by splitting the data using each new line. When queried the data is formatted into a list for display.
 
 ___
 ## **Features** <a name="features"></a>
-The following table liste the primary features provided by the W3Recipes app.
+The following table lists the primary features provided by the W3Recipes app.
 
 ### **Existing Features**
-|Feature|Description|
-|:-----:|-----|
-| 001   | Simple registration form for user creation |
-| 002   | Log-in screen for registered users |
-| 003   | Paginated "Recipes Page" where all recipes are displayed |
-| 004   | Recipe Filter function, filters recipes by country of origin |
-| 005   | Recipes text search function enables text based search on Title, country, description, ingredients |
-| 006   | Full Recipe Page provides full recipe details |
-| 007   | Add Recipe Form |
-| 008   | Manage Recipes Page, from where users have the ability to Edit or Delete their recipes |
-| 009   | Edit Recipe Form, where any detail of the recipe can be modified |
-| 010   | Profile page contains user details and subscription preference |
-| 011   | Ability to Edit profile details and change subscription status |
-| 012   | Dashboard page displaying number of recipes by country, by user, meal type |
+|Feature|Description| Image URL |
+|:-----:|-----|:----:|
+| 001   | Simple registration Process with dedicated sign-up page | [Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg) |
+| 002   | Dedicated Log-in screen for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/log-in.jpg) |
+| 003   | Paginated "Recipes Page" where all recipes are displayed | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes.jpg) |
+| 004   | Recipe Filter function, filters recipes by country of origin. The image provided shows a search by the country "Wales". | [Recipe Filter ](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/filter.jpg) |
+| 005   | Recipes text search function enables text based search on Title, recipe type, country, description and ingredients. The image provided illustrates a text search for all recipe Type "Sides" | [Recipe Text Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/search.jpg) |
+| 006   | A Full Recipe Page provides complete recipe details | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
+| 007   | A form which enables users to upload their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
+| 008   | Manage Recipes Page, from where users have the ability to Edit or Delete their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
+| 009   | Edit Recipe Form, enables users to modify all of the firlds for any of the recipes they themsleves have uploaded |  | [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
+| 010   | A Profile page contains user details and subscription preference | [Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile.jpg) |
+| 011   | An Edit Profile page to allow users the ability to Edit profile details and change subscription status | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
+| 012   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
+| 013 | Footer | The footer for this web app contains links to the developers GitHub site and LinkedIn Account. The footer also contains a link to contact the developer via email. |  |
 
-> **_The UK map is provided because the standard Atlas Charts world map only recognises the UK as a country and not the individual countries. Showing the individual countries is only possible by selecting the UK Countries map_**
+> **_The UK map is provided because the standard Atlas Charts world map only recognises the UK as a country and not the individual countries. Showing the individual countries is only possible by selecting the UK Countries map._**
+
+> **_I have chosen not to provide a contact form for this web app. I believe that being able to contact the developer by email is sufficient for this initial release._**
 
 ### **Security Features**
-Despite not being explicitly required for this build I have chosen to implement certain security features to 
+Despite not being explicitly required for this build I have chosen to implement certain security features to provide some 
 |  Feature  |  Description  |    |
 |----|----|----|
-| 001 | User Login |  |  |
-| 002 | Session Cookie |    |    |
-| 003 |
+| 001 | User Login | User supplied username and password. Password gets hashed and salted using Password Hash from the Werkzeug Library |  |
+| 002 | Session Cookie | Once a user signs up or log's in a unique session cookie is created   |    |
+| 003 | Restricted access | App logic checks the session cookie and displays only the recipes created by that user |
+| 004 | Restricted  |The user can only edit or delete recipes where the recipe.uploaded_by field matches their session cookie data. This prevents unauthorised deletion of another users recipes
+| 005 | Profanity Filter | Analyses user input and replaces any matching profanities with "****"|
 
 ### **Features Left to implement**
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate:
