@@ -9,16 +9,15 @@ $(document).ready(function(){
 });
 
 /*----- Display image when URL provided ----- 
------------ on AddRecipe Pages----------*/
+----------- on AddRecipe Pages----------
+Adapted from https://stackoverflow.com/questions/31398473/
+load-image-in-div-from-url-obtained-from-a-text-box/31398762*/
 function addImage()
 {
   var url = document.getElementById("image_url").value;
   var image = new Image();
   image.src = url;
   document.getElementById("image-container").appendChild(image);
-  
-  
-  document.getElementById("new-img").innerHTML = "New Image";
 }
 
 /*---------- FAB for Recipe Edit & Delete ----------*/
@@ -30,7 +29,9 @@ var instances = M.FloatingActionButton.init(elems, {
 });
 
 /*----- Display New image when URL provided ----- 
----------- on Edit Recipe Pages----------*/
+---------- on Edit Recipe Pages----------
+Adapted from https://stackoverflow.com/questions/31398473/
+load-image-in-div-from-url-obtained-from-a-text-box/31398762*/
 function editImage()
 {
   var url = document.getElementById("image_url").value;
