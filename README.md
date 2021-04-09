@@ -104,7 +104,7 @@ Once through this initial authentication stage users are presented with the a fu
 ![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
 A further three subdomains enable the user to Add, Edit or Delete recipes.  
 
-##### Interaction Design
+##### **Interaction Design**
 User interactions on the W3Recipes app can be subdivided into three categories:
  - **Navigation**  
  I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.  
@@ -131,7 +131,6 @@ These buttons provide user feedback by either changing or reversing colours when
 
    - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
  Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.  
-
 
  - **Data Input**
 The primary User inputs are achieved 
@@ -164,13 +163,49 @@ Navigation between pages is provided by a standard and intuitive navbar.
 
 ##### **Interface Design**
 The intention was to maintain a clean and consistent interface design, re-using elements and page styles wherever possible.
- - The Recipes page and Manage Recipes page are virtually identical aside from the search and filter elements being removed for managing recipes.
+ - The Recipes page and Manage Recipes page are virtually identical aside from the search and filter elements being removed for managing recipes.  
+
+![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-1.jpg) 
+
  - Recipe cards have a consistent layout between the Recipes and Manage recipes pages. Each has a Floating Action Button which when clicked takes the user to the next level.
+
+![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-2.jpg)
+
  - The Add Recipes and Edit recipes pages are also identical in their appearance and structure.
+
+![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-3.jpg)
 
 Flashed messages are displayed at the top of the screen below the navbar
 
 Buttons colours are chosen to reflect their purpose, and anchor links have some interactive response when hovered.
+
+##### **Interaction Design**
+User interactions on the W3Recipes app can be subdivided into three categories:
+ - **Navigation**  
+ I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.  
+  ![Navbar](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/navbar.jpg)  
+
+Navigating through the Recipes is achieved through familiar pagination controls.  
+![Pagination](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/pagination.jpg)
+
+I have provided links on several pages to also assist user navigation; these are quick links to :
+ - Sign-in
+ - Add a Recipe
+ - Manage Recipes
+   
+
+These buttons provide user feedback by either changing or reversing colours when hovered.
+
+ - **Manipulation**  
+ Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
+   - Green ![Green Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/green-button.jpg)  
+ Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
+
+   - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-button.png)  
+ Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.
+
+   - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
+ Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.
 
 ##### **Navigation Design**
 I have used a standard Materialize, mobile responsive navbar for W3Recipes.
@@ -261,15 +296,15 @@ Thus it made sense to me to add this to a profile page
 
 ##### Dashboard Page  
 The dashboard page enables the users to track how many countries the site has recipes for and also see how they compare to other users in terms of total recipes uploaded.
-![Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipe-dashboard.png)
+![Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipe-dashboard.png)  
+
 ___
 #### **Surface**
 The aesthetics of W3Recipes was just as important to me as the functionality. Despite not using a lot of imagery for the app, what I have selected needs to be impactful, yet relaxed and fun to match the overall objective.
 
 ##### **Colour Scheme**
 I typically find great inspiration for colour schemes on pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image.  
-
-
+  
 ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour-palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
 
 ##### **Typography**  
@@ -308,8 +343,9 @@ Given the recipe notebook style I was trying to achieve I wanted a font which lo
 
 ##### **Imagery** 
 I was originally planning on using world map as the primary landing page image but decided against as this would have been confusing. I opted to go with a food montage which was an image I purchased from iStock
+>**_I chose this image for the range of food types and the vibrant colour combining some of the greens browns and oranges I was looking to incorporate into the app.
 
-The second image was sourced on the internet
+The second image was sourced on the internet while searching for images for a Kebab recipe. It's just a great image which I liked and was keen to incorporate into the app.
 
 Last but certainly not the least was my desire to have a subtle food related background behind the interactive elements. I found a really cool version designed and distributed by freepik. The original version would have been too distracting so I opted to adjust the contrast and colours to fade the image. I also added my logo into the circular gap in the center.
 >**_I selected this particular image because it had a range of food types; each one is a decent size and they are not too densely packed._**
