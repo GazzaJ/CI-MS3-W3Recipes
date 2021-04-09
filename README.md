@@ -21,7 +21,9 @@ The objective is to achieved the above with a visually appealing, interactive ye
 ![Am I responsive images](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/am_i_responsive.jpg "Am I Responsive")
 
 ## Table of contents
-An automatically generated Table of Contents can be accessed by clicking the README.md menu icon at the start of the README section. ![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png) 
+An automatically generated Table of Contents can be accessed by clicking the README.md menu icon at the start of the README section.  
+![TOC](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/toc-alt.png)  
+
 1. [User Experience](#user-experience)
    - [User Stories](#stories)
    - [The 5 Planes](#planes)
@@ -307,7 +309,7 @@ Given the recipe notebook style I was trying to achieve I wanted a font which lo
 ##### **Imagery** 
 I was originally planning on using world map as the primary landing page image but decided against as this would have been confusing. I opted to go with a food montage which was an image I purchased from iStock
 
-The second image 
+The second image was sourced on the internet
 
 Last but certainly not the least was my desire to have a subtle food related background behind the interactive elements. I found a really cool version designed and distributed by freepik. The original version would have been too distracting so I opted to adjust the contrast and colours to fade the image. I also added my logo into the circular gap in the center.
 >**_I selected this particular image because it had a range of food types; each one is a decent size and they are not too densely packed._**
@@ -378,7 +380,7 @@ Despite not being explicitly required for this build I have chosen to implement 
  3.  Restricted access
  The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes.  
 
-![Restricted Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restrict-1.jpg)
+![Restricted Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restricted-1.jpg)
 
  4.  Restricted access
  I have also attempted to prevent backdoor access to editting recipes from the Recipes or Full Recipe pages.  
@@ -595,26 +597,26 @@ The content of this website was created by Gareth John. Snippets of code have be
 
 ### **Media**
 
-The photos used in this site were obtained from the folloing sources:
+The photos used in this site, or in pre-populated recipes by the developer were obtained from the folloing sources:
 | Photo | Description | Source | Attribution |
 |-------|-------------|--------|-------------|
-| 001   |Hero image on landing page| iStock |  |
-| 002   | Lower hero image |   |  |
-| 003   | Background images| freepik |  |
-| 004   | Recipe Image     |         |  |
-| 005   | Recipe Image     |         |  |
-| 006   | Recipe Image     |         |  |
-| 007   | Recipe Image     |         |  |
-| 008   | Recipe Image     |         |  |
-| 009   | Recipe Image     |         |  |
-| 010   | Recipe Image     |         |  |
-| 011   | Recipe Image     |         |  |
+| 001   | [App Logo](https://www.freelogodesign.org/manager) | Free Logo Design | Designed by the developer |
+| 002   |Hero image on landing page| iStock | nitrub Purchased from iStock |
+| 003   | [Shish Kebab](https://www.pexels.com/photo/food-plate-restaurant-dinner-5175623/) | Pexels | Shameel Mukkath |
+| 004   | [Background images](https://www.freepik.com/free-vector/hand-drawn-delicious-food-background_5107183.htm#page=1&query=food%20background&position=0)| freepik | Pikisuperstar |
+| 005   | [Kofta Kebab](https://cdn.pixabay.com/photo/2015/08/20/15/15/grill-897553_960_720.jpg) | Pixabay | No Attribution Required |
+| 006   | [Welsh Cakes](https://cdn.pixabay.com/photo/2018/10/05/14/55/cake-3726058_960_720.jpg) | Pixabay | No Attribution Required |
+| 007   | [Lamingtons](https://upload.wikimedia.org/wikipedia/commons/c/c5/Mocha_Flake_amingtons.jpg) | Wikimedia Commons | Andy Cavell |
+| 008   | [Falafel](https://pixabay.com/photos/falafel-middle-east-chickpeas-2073685/) | Pixabay | No Attribution Required |
+| 009   | [Guacamole](https://pixabay.com/photos/avocados-guacamole-drink-food-386795/) | Pixabay | No Attribution Required |
+| 010   | [Yorkshire Pudding](https://pixabay.com/photos/food-refreshment-yorkshire-puddings-3264773/)    | Pixabay | No Attribution Required |
+| 011   | [Baked Lemon Potatoes](https://i.imgur.com/ajVnWhr.jpg) | Imgur | No Attribution Required |
 | 012   | Recipe Image     |         |  |
 | 013   | Recipe Image     |         |  |
 | 014   | Recipe Image     |         |  |
 | 015   | Recipe Image     |         |  |
+| 016   | Recipe Image     |         |  |
 
-- All other images came from my own personal image library
 
 ### **Code Snippets**
 Much of the structure of this site follows what was taught during the Backend Development - Task Manager walkthrough project provided by Code Institute, but has been heavily modified to suit a recipe database site with additional functionality not provided in the walkthrough.
@@ -628,8 +630,8 @@ Much of the structure of this site follows what was taught during the Backend De
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
-- Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
-- Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
+ - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
+ - Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
  - Thanks to Ed Bradley for hosting a very helpfull MS3 Planning Call and for providing some much needed support along the way.
  - Thanks also to Can Sucullu for opening my eyes to potential vunerabilitis and potential back doors in my web app. 
 ______
