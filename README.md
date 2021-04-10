@@ -102,35 +102,24 @@ ___
 W3Recipes is constructed from 11 distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only three oprions: Home | Sign-up | Log-in
 Once through this initial authentication stage users are presented with the a further six options, from which they are able to interact fully with the site: Recipes | Add Recipes | Manage Recipes | Profile | Dashboard | Sign-out
 ![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
-A further three subdomains enable the user to Add, Edit or Delete recipes.  
+A further two subdomains enable the user to Edit a profile or recipe document. 
 
 ##### **Interaction Design**
-User interactions on the W3Recipes app can be subdivided into three categories:
- - **Navigation**  
- I have reverted to a conventional, mobile responsive navbar for this project, and this is one of the key elements which anchors each distinct page together.  
-  ![Navbar](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/navbar.jpg)  
-
-Navigating through the Recipes is achieved through familiar pagination controls.  
-![Pagination](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/pagination.jpg)
-
-I have provided links on several pages to also assist user navigation; these are quick links to :
- - Sign-in
- - Add a Recipe
- - Manage Recipes
-   
-
-These buttons provide user feedback by either changing or reversing colours when hovered.
-
- - **Manipulation**  
- Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
-   - Green ![Green Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/green-button.jpg)  
- Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
-
-   - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-button.png)  
- Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.
-
-   - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
- Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.  
+Interaction with each page is achieved through the main navbar, or anchor links wehere available.
+Aside from this each page is self contained:
+ - **Recipes**
+ Displays the recipes in the database and allows users to interact with the database through country filter and text search functions, which alter what is displayed dependent on search criteria.
+   - There is an anchor link on the bottom of the page to take users directly to the "Add Recipe" page.
+ - **Add Recipes**
+ This is a self contained apge allowing users to input all of the recipe details. Once uploaded users are taken back to the Recipes Page.
+ - **Manage Recipes**
+ This is one of the few pages which has a subdomain linked to it. Visually similar to the Recipes page the Manage Recipes page ONLY displays the recipes uploaded by the session user.
+ Rather than opening the recipe, each recipe card Floating Action Button on this page offers the user a choice of Editting or Deleting the recipes.
+   - Chosing edit will redirect the user to the Edit Recipes page, laid out in an identical format to the Add recipes page, except pre-populated with data from the database. Whether confirming edit or cancelling the changes, the user is redirected back to the Manage recipes page
+   - Selecting Delete simply initiates the delete process. There is no redirect; a delete confirmation modal opens from where the user can complete the deletion. Users return to the Manage Recipes page once deletion is complete.
+ - **User Profile**
+ The user Profile page initially displays the basic information from the registration process. Users can access the Edit Profile subdomain by selecting the Edit Profile button at the bottom of the page. This will enable them to add more detail if they so choose. Completing the Edit rpofile process will return the user back to the Profile page to view their changes.  - **Dashboard**
+ This is a self contained page where users can track the sites progress to filling in the map, and see which users have uploaded the most recipes.
 
  - **Data Input**
 The primary User inputs are achieved 
@@ -145,24 +134,25 @@ Despite rendering slightly different information the structure of the Recipe and
 ___
 
 #### **Skeleton** 
-The W3 Recipes website comprises three main pages:
+The W3 Recipes website initially comprises three main pages:
  - Landing Page
  - Registration Page for first time visitors to gain access to the content
  - Log-in Page for returning visitors
 
-Assuming the user elects to register they are provided access to the remaining pages
- - Recipes page displays 9 recipe cards on each page
+Assuming the user choses to register they are provided access to the remaining pages
+ - Recipes page displays 6 recipe cards per page
    - Filter and search options provided to reduce the number of recipes displayed
  - Individual Recipe pages providing the full recipe detail
- - A Page to add a new recipe
+ - An "Add Recipe" page enables users to upload their own recipe information
  - A page for the users to manage (Update or Delete) their recipes
    - Echoes the functionality provided by the Recipes and Add Recipe pages
+ - A Profile page, leads onto an Edit Profile page where users can add a profile picture and subscribe by providing their email address.
  - A dashboard to track where recipes are uploaded for
 
-Navigation between pages is provided by a standard and intuitive navbar. 
+Navigation between these pages is provided by a standard intuitive navbar, additional anchor links are provided on strategic pages to assist navigation. 
 
 ##### **Interface Design**
-The intention was to maintain a clean and consistent interface design, re-using elements and page styles wherever possible.
+The intention was to provide a relatively simple app which maintains a clean and consistent interface design, re-using elements and page styles wherever possible to benefit from the users learned behaviour. Button colours provide visual cues to their role.
  - The Recipes page and Manage Recipes page are virtually identical aside from the search and filter elements being removed for managing recipes.  
 
 ![Interface Design](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/interface-1.jpg) 
@@ -192,9 +182,9 @@ I have provided links on several pages to also assist user navigation; these are
  - Sign-in
  - Add a Recipe
  - Manage Recipes
-   
 
-These buttons provide user feedback by either changing or reversing colours when hovered.
+These anchor links provide user feedback by either changing or reversing colours when hovered.
+![Strategic anchor links](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/anchors.jpg)
 
  - **Manipulation**  
  Button colours have been chosen to match the site colours while also providing visual cues to their purpose:
@@ -202,10 +192,10 @@ These buttons provide user feedback by either changing or reversing colours when
  Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
 
    - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-button.png)  
- Used as a wanrning, or to indicate an action which will result in data being changed. The image above illustrates the difference between EDIT and DELETE functions.
+ Used as a wanrning, or to indicate an action which will eventually result in data being changed.
 
    - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
- Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed.
+ Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed or changed.
 
 ##### **Navigation Design**
 I have used a standard Materialize, mobile responsive navbar for W3Recipes.
