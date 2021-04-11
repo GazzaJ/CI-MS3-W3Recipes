@@ -1,11 +1,9 @@
 import os
-import magic
 from flask import Flask, flash, render_template, redirect, \
     request, session, url_for, Response
 from flask_pymongo import PyMongo
 from better_profanity import profanity
 from flask_sslify import SSLify
-from PIL import Image
 from urllib.request import urlopen
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, \
@@ -265,7 +263,8 @@ def search():
     text_search = request.form.get('text_search')
     recipes = recipe_coll.find({'$text': {'$search': text_search}})
 
-    # ----- Pagination -----
+    # ----- Pagination adapted from -----
+    # https://www.hacksparrow.com/databases/mongodb/pagination.html
 
     current_page = request.args.get('current_page', type=int, default=1)
     total = recipe_coll.count()
@@ -296,7 +295,8 @@ def filter():
     country_filter = request.form.get('country_filter')
     recipes = recipe_coll.find({'$text': {'$search': country_filter}})
 
-    # ----- Pagination -----
+    # ----- Pagination adapted from -----
+    # https://www.hacksparrow.com/databases/mongodb/pagination.html
     current_page = request.args.get('current_page', type=int, default=1)
     total = recipe_coll.count()
     pages = range(1, int(round(total / per_page + 1)))
