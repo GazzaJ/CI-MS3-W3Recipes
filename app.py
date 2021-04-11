@@ -4,7 +4,6 @@ from flask import Flask, flash, render_template, redirect, \
 from flask_pymongo import PyMongo
 from better_profanity import profanity
 from flask_sslify import SSLify
-from urllib.request import urlopen
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, \
     check_password_hash
@@ -196,21 +195,6 @@ def edit_profile():
             image=image,
             subscribed=subscribed,
             )
-
-
-# ---------- Check URL ----------
-@app.route('/check_url/')
-def check_url():
-    # ----- Check Image URL Type -----
-    image_formats = ("image/jpg", "image/jpeg", "image/png", "image/gif")
-    url = request.form.get("user_image")
-    site = urlopen(url)
-    meta = site.info()
-    print(meta)
-    if meta["content-type"] in image_formats:
-        flash("this is a valid image")
-    else:
-        flash('This is not a valid image')
 
 
 # ---------- MongoDB Collections ----------
@@ -582,4 +566,6 @@ if __name__ == '__main__':
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=True)
+    custom_badwords = ['arses', 'wankers']
+    profanity.add_censor_words(custom_badwords)
     profanity.load_censor_words()
