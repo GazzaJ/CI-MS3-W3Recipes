@@ -25,6 +25,8 @@ response.headers['Strict-Transport-Security'] = \
 response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
 response.headers['Cache-Control'] = 'no-cache, no-store, public, max-age=0'
 
+# ----- Add custom profanities to the list
+
 custom_badwords = ['arses', 'wankers']
 profanity.add_censor_words(custom_badwords)
 
