@@ -570,7 +570,5 @@ if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=True)
-    custom_badwords = ['arses', 'wankers']
-    profanity.add_censor_words(custom_badwords)
+        debug=False)
     profanity.load_censor_words()
