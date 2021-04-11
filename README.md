@@ -5,14 +5,14 @@
 # [**W3 Recipes**](https://ci-ms3-w3recipes.herokuapp.com/)
 
 
-As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus I thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better way to do this than to get the site users to post their tried and tested favourite recipes.
+As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus, I thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better way to do this than to get the site users to post their tried and tested favourite recipes.
 
-Thus the primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enble those users to upload their own recipes to share with other site users.
+Thus the primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enable those users to upload their own recipes to share with other site users.
 
 The objective is to achieved the above with a visually appealing, interactive yet intuitive UX, which provides simple consistent navigation and interaction irrespective of the device. Ultimately, I would like this site to be fun, and encourage users to:
  - upload their favourite recipes
  - share the site and encourage their friends to also upload recipes
- - keep track of where they stand in terms of number of recipes uploaded, compared to ther users
+ - keep track of where they stand in terms of number of recipes uploaded, compared to other users
  - keep track of our progress "filling the map"
 
 
@@ -41,7 +41,7 @@ An automatically generated Table of Contents can be accessed by clicking the REA
 ______
 
 ## **User Experience (UX)** <a name="user-experience"></a>
-In W3 Recipes I have attempted to produce a simple clean and intuitive site which is easy to navigate and simple to use. Despite being spread over many pages, each page has a single purpose related to C.R.U.D functionality. Navigation is achieved with a typical navbar with mobile responsive behaviour. The imageray and typography are also key to 
+In W3 Recipes I have attempted to produce a simple clean and intuitive site which is easy to navigate and simple to use. Despite being spread over many pages, each page has a single purpose related to C.R.U.D functionality. Navigation is achieved with a typical navbar with mobile responsive behaviour. The imagery and typography are also key to 
 
 
 ### **User Stories** <a name="stories"></a>
@@ -65,42 +65,42 @@ ___
 The five planes provide a framework to discuss the design and development of this app.
 
 #### **Strategy**  
-The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching and sharing (uploading and editting) their favourite recipes. The aim is to try and add a fun spin on the typical recipe website by encoraging the users to upload their favourite recipes from as many different countries from around the World as possible to provide a wide array of recipes, and as a bit of fun to enable them to track progress in this respect using the dashboard.
- - As the site owner and a keen cook I get to share a recipe database with like minded users, and in exchange for the development get some new recipes to try.
- - Users get access to all of those recipes and get to upload and share their recipes with a community of like minded keen cooks.
+The purpose of W3 Recipes website is to provide users with a convenient and easy means of searching and sharing (uploading and editing) their favourite recipes. The aim is to try and add a fun spin on the typical recipe website by encouraging the users to upload their favourite recipes from as many different countries from around the World as possible to provide a wide array of recipes, and as a bit of fun to enable them to track progress in this respect using the dashboard.
+ - As the site owner and a keen cook, I get to share a recipe database with like-minded users, and in exchange for the development get some new recipes to try.
+ - Users get access to all of those recipes and get to upload and share their recipes with a community of like-minded keen cooks.
 
 #### **Scope**  
-The key features required for this app to function as designed are centered around CRUD interactions with a MongoDB Atlas cloud database management system.:
+The key features required for this app to function as designed are centred around CRUD interactions with a MongoDB Atlas cloud database management system.:
  - **Create** or upload a recipe into the database which can then be viewed by all other registered users
  - **Read**, or view all of the recipes stored in the database.
     - The list of recipes can be filtered by country of origin
     - Search functionality enables the user to search the title and ingredient fields for keywords of their choice.
  - **Update** any of their own recipes, to change any of the previously stored content, or add additional information (within the limits of the input form)
- - **Delete** recipes they themselves have uploaded. This functionality is NOT extended to other users recipes.
+ - **Delete** recipes they themselves have uploaded. This functionality is NOT extended to other user's recipes.
 
-In order to prevent unwanted editting or deletions of users recipes, the website has been designed with a basic level of security. Thus, to access the full functionality users are required to Sign-up to the App, which provides access to the CRUD functionality.
+In order to prevent unwanted editing or deletions of user's recipes, the website has been designed with a basic level of security. Thus, to access the full functionality users are required to Sign-up to the App, which provides access to the CRUD functionality.
  - User interactions are tracked and managed through the use of a *"Session Cookie"*
  - Uploads are unlimited, however users can only edit and delete their own previously uploaded recipes
- - Users can elect to provide additional basic informataion about themselves and to subscribe or not
+ - Users can elect to provide additional basic information about themselves and to subscribe or not
 
 ##### Functional Requirements
-App functionality is provided through a simple and intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing pootential functionality.
-Additional interactive anchor linkls are provided to assist users in navigating to strategic pages.
+App functionality is provided through a simple and intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing potential functionality.
+Additional interactive anchor links are provided to assist users in navigating to strategic pages.
 
 ##### Content Requirements
 Much of the content on this site will be provided by users.
 Outside of this I have tried to use images of food or food related themes.
-I am a keen cook, and having an image of a recipe is just as important as the ingredient list and preparation steps, as it provides an enticing view of the endpoint and helps to whet the users appetite. Thus including images with each recipe is a key component.
+I am a keen cook, and having an image of a recipe is just as important as the ingredient list and preparation steps, as it provides an enticing view of the endpoint and helps to whet the user's appetite. Thus, including images with each recipe is a key component.
 The typography selected for this site was also important, and needed to be fun yet functional. I have selected more cursive fonts to try and emulate a recipe notebook style.
 I deliberately stuck with a clean and simple, structured layout to make it easy to view  and also edit the content.
 
 A consistent design is provided through Flask/Jinja template inheritance.
-Recipe pages have a similat design, and the individual Recipe cards are consistent between the Recipes page and Manage Resipes page.
+Recipe pages have a similar design, and the individual Recipe cards are consistent between the Recipes page and Manage Recipes page.
 ___
 
 #### **Structure**  
-W3Recipes is constructed from 11 distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only three oprions: Home | Sign-up | Log-in
-Once through this initial authentication stage users are presented with the a further six options, from which they are able to interact fully with the site: Recipes | Add Recipes | Manage Recipes | Profile | Dashboard | Sign-out
+W3Recipes is constructed from 11 distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only three options: Home | Sign-up | Log-in
+Once through this initial authentication stage users are presented with a further six options, from which they are able to interact fully with the site: Recipes | Add Recipes | Manage Recipes | Profile | Dashboard | Sign-out
 ![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
 A further two subdomains enable the user to Edit a profile or recipe document. 
 
@@ -124,7 +124,7 @@ Aside from this each page is self contained:
  - **Data Input**
 The primary User inputs are achieved 
 Users are able to add and change their data (Recipes or User Profile) using a series of forms
->A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus the goal; has been to make it as easy as possible for the user to input this data.**
+> A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However, this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus, the goal; has been to make it as easy as possible for the user to input this data.**
 
 
 ##### **Information Design**
@@ -140,7 +140,7 @@ The W3 Recipes website initially comprises three main pages:
  - Log-in Page for returning visitors
 
 Assuming the user choses to register they are provided access to the remaining pages
- - Recipes page displays 6 recipe cards per page
+ - Recipe's page displays 6 recipe cards per page
    - Filter and search options provided to reduce the number of recipes displayed
  - Individual Recipe pages providing the full recipe detail
  - An "Add Recipe" page enables users to upload their own recipe information
@@ -192,20 +192,20 @@ These anchor links provide user feedback by either changing or reversing colours
  Highlights functions to proceed with changes such as submitting a recipe or confirming changes  
 
    - Orange ![Orange and Red Buttons](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/orange-button.png)  
- Used as a wanrning, or to indicate an action which will eventually result in data being changed.
+ Used as a warning, or to indicate an action which will eventually result in data being changed.
 
    - Red ![Red Button](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/red-button.jpg)  
  Highlights a Stop or Cancel function for changes, but more importantly highlight actions which could result in data being permanently removed or changed.
 
 ##### **Navigation Design**
 I have used a standard Materialize, mobile responsive navbar for W3Recipes.
-The menu items change depending on the users status.
+The menu items change depending on the user's status.
  - New users only see: Home, Sign-up and Log-in
- - Once signed-up users are able to see the full menu list which enables thenm to interact with the whole app.
+ - Once signed-up users are able to see the full menu list which enables them to interact with the whole app.
 
 Additional anchor links have been provided in strategic locations to assist user navigation and provide easy access to certain pages. These are consistently located at the bottom of the content above the footer.
  - Landing Page
- Contains two anchor links prompting the user to sign-up. One located within text of a call to action section in the middle of the page. The second is located at the bottom of the page above the footer
+ Contains two anchor links prompting the user to sign-up. One located within text of a call-to-action section in the middle of the page. The second is located at the bottom of the page above the footer
 
  - Recipes page and Manage Recipes page
  Both have a link to the Add Recipes page, where the user is able to upload a new recipe
@@ -218,13 +218,13 @@ There should be no requirement for the user to ever have to resort to the Browse
 Each error page uses the template inheritance to provide the users the navbar seen throughout the site. should a user  encounter an unexpected error they are able to easily navigate back to the site without having to use the back button.
 
 ##### **Information Design**
-The basic concept fopr the information design for W3Recipes is laid out in the following wireframes.
+The basic concept for the information design for W3Recipes is laid out in the following wireframes.
 
 #### Wireframes <a name="wireframes"></a>
 Wireframes for the original design concepts were created using Balsamiq.
 ##### Home Page
-The landing page explains the purpose of the site to new and returning users. Functionalioty is limited from this page. Users are only able to Sign-up with a new account or Log-In to an existing account.
-A Mini version of the Dachboard is shown to hopefully encourage users to find an empty country and to sign-up in order to provide a recipe for it.
+The landing page explains the purpose of the site to new and returning users. Functionality is limited from this page. Users are only able to Sign-up with a new account or Log-In to an existing account.
+A Mini version of the Dashboard is shown to hopefully encourage users to find an empty country and to sign-up in order to provide a recipe for it.
 ![Landing Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/home-page.png "Landing Page Wireframe")
 
 ##### Sign-Up Page
@@ -244,7 +244,7 @@ Users can select any recipe and see the full details of that recipe in order to 
 
 
 ##### Individual Recipe Page
-Provides users with the full recipe detail so thay can check the ingredients and follow the steps to make it.
+Provides users with the full recipe detail so they can check the ingredients and follow the steps to make it.
 ![Full Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full-recipe.png "Full Recipe Wireframe")
 
 ##### Add Recipe Page
@@ -263,17 +263,17 @@ Once complete the recipe is uploaded to the MongoDB Atlas Recipes collection.
 
 ###### Manage Recipes Page
 This page is a copy of the Recipes Page, however rather than providing search functionality it displays only the recipes the user has uploaded, and enables the user to **UPDATE** or **DELETE** those recipes.
-Edit redirects the user to a page similar to the Full Recipe page but with editting functionality.
+Edit redirects the user to a page similar to the Full Recipe page but with editing functionality.
 Selecting Delete will produce a check modal to double check the deleting request before removing the recipe.  
 ![Manage](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Manage Recipes Wireframe")  
 
 ##### Edit Recipe Page
-If the user selects EDIT on the Manage Recipes page they are redirected to a page displaying the full recipe with their previous inputs pre-filling the various input fields. The user can change as few or as many field s as necessary or if they change their mind there is a option to Cancel the edit.  
+If the user selects EDIT on the Manage Recipes page, they are redirected to a page displaying the full recipe with their previous inputs pre-filling the various input fields. The user can change as few or as many field s as necessary or if they change their mind there is an option to Cancel the edit.  
 ![Recipe Edit](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Edit Recipe Wireframe")
 
 
 ##### Profile Page
-The profile page initially renders the basic profile information added on Sign-up. There is a button at the bottom of the profile card to enable the users to access the 'Edit Profile' page where they can customise their profile image and select whether or not to subscribe and provide an email adresss.  
+The profile page initially renders the basic profile information added on Sign-up. There is a button at the bottom of the profile card to enable the users to access the 'Edit Profile' page where they can customise their profile image and select whether or not to subscribe and provide an email address.  
 ![Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile-page.png)  
 
 
@@ -293,7 +293,7 @@ ___
 The aesthetics of W3Recipes was just as important to me as the functionality. Despite not using a lot of imagery for the app, what I have selected needs to be impactful, yet relaxed and fun to match the overall objective.
 
 ##### **Colour Scheme**
-I typically find great inspiration for colour schemes on pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image.  
+I typically find great inspiration for colour schemes on Pinterest. For W3Recipes I sought inspiration from the following website (https://mariahalthoff.com/blog/food-themed-color-palettes). Rather than stick to a single palette I have selected some of the colours from three of the palettes which match the browns, greens, oranges and reds in the hero image.  
   
 ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_1.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour-palette_2.jpg "Colour Palette") ![Colour Scheme](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/colour_palette_3.jpg "Colour Palette")
 
@@ -307,12 +307,12 @@ I had researched different styles which could be used for food related content:
  - https://www.creativebloq.com/inspiration/10-mouth-watering-restaurant-menu-fonts
  - https://line25.com/fonts/best-fonts-for-food-industry-design  
 
-With these criteria and ideas in mind, I started loading various fonts into my CSS file and experimented with different combinations to find the ones which complemented each other and provided an asthetically pleasing look to the site.
+With these criteria and ideas in mind, I started loading various fonts into my CSS file and experimented with different combinations to find the ones which complemented each other and provided an aesthetically pleasing look to the site.
 I have used Google fonts for each of my builds to date as it has an extensive library of fonts and is simple and reliable to use.  
 ![Google Fonts]https://fonts.google.com/?preview.text=Hello%20World!&preview.text_type=custom "Google Fonts"
  After some experimentation I settled on the following font styles:
  - Main Website Title and occasional text (Shrikhand)  
-It was important to have a font which was clear and readable. I was also looking for bolder/thicker fornt for impact.  
+It was important to have a font which was clear and readable. I was also looking for bolder/thicker font for impact.  
 
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/shrikhand.jpg)  
 
@@ -327,7 +327,7 @@ I just had to use this font style! Something about it elicited a positive reacti
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/molle.jpg)  
 
  - Recipe Detail (Happy Monkey)  
-Given the recipe notebook style I was trying to achieve I wanted a font which lokked more natural and 'written' than the typical online typography.  
+Given the recipe notebook style I was trying to achieve I wanted a font which looked more natural and 'written' than the typical online typography.  
 
 ![Font](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/happy-monkey.jpg) 
 
@@ -337,7 +337,7 @@ I was originally planning on using world map as the primary landing page image b
 
 The second image was sourced on the internet while searching for images for a Kebab recipe. It's just a great image which I liked and was keen to incorporate into the app.
 
-Last but certainly not the least was my desire to have a subtle food related background behind the interactive elements. I found a really cool version designed and distributed by freepik. The original version would have been too distracting so I opted to adjust the contrast and colours to fade the image. I also added my logo into the circular gap in the center.
+Last but certainly not the least was my desire to have a subtle food related background behind the interactive elements. I found a really cool version designed and distributed by Freepik. The original version would have been too distracting so I opted to adjust the contrast and colours to fade the image. I also added my logo into the circular gap in the centre.
 >**_I selected this particular image because it had a range of food types; each one is a decent size and they are not too densely packed._**
 ______
 
@@ -348,16 +348,16 @@ The schema for W3 Recipes is relatively simple and is illustrated below:
 
 The schema contains four collections, with each collection containing multiple documents. 
  - **Users**
- Stores user data. Initialy populated with username and password and a default profile image when users register on the app. Once logged in users can upload their own image url, specify their town or city. If the user elects to subscribe to the site, they are then able to provide their email address.
+ Stores user data. Initially populated with username and password and a default profile image when users register on the app. Once logged in users can upload their own image URL, specify their town or city. If the user elects to subscribe to the site, they are then able to provide their email address.
 > **_I chose to do it this way so users are only required to provide some basic information and can register very easily. Once registered they can decide how much more they want to input at any subsequent point. I believe this simplifies the registration process_**
 
  - **Countries**
  This collection was populated from JSON file of 254 countries using the MongoDB Compass app, which simplified the transfer of the data into individual documents within the collection. The JSON data was copied from (https://flagpedia.net/download/api) and uses the CDN link provided on the website to display the flags on the recipe cards and pages. The individual UK countries were subsequently added into the collection by myself, as they did not appear in the original JSON file.
- Each document contains two id fields; the Atlas provided id and that provided in the JSOn data. It also contains the country name, an alpha2 field which is the ISO two letter country code and an alpha3 field which is the ISO three letter country code.  
- The alpha2 code is used to render the appropriate countey flag.  
+ Each document contains two id fields; the Atlas provided id and that provided in the JSON data. It also contains the country name, an alpha2 field which is the ISO two letter country code and an alpha3 field which is the ISO three letter country code.  
+ The alpha2 code is used to render the appropriate country flag.  
 
  - **Recipe Category**
- The recipe_category collection contains short documents each defining the type of meal category each recipe might be identified by; such as Breakfast, Brunch, Lunch, Dinner, Desserts, Snacks, Appetisers and Sides. The recipe type documents were populated by myself and can be queried whena recipe is created or edited.
+ The recipe_category collection contains short documents each defining the type of meal category each recipe might be identified by; such as Breakfast, Brunch, Lunch, Dinner, Desserts, Snacks, Appetisers and Sides. The recipe type documents were populated by myself and can be queried when a recipe is created or edited.
 > **_There are many different ways to categorise recipes, but the one selected seems the most appropriate for my application_**
  
  - **Recipes**
@@ -379,7 +379,7 @@ The following table lists the primary features provided by the W3Recipes app.
 | 006   | A Full Recipe Page provides complete recipe details | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
 | 007   | A form which enables users to upload their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
 | 008   | Manage Recipes Page, from where users have the ability to Edit or Delete their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
-| 009   | Edit Recipe Form, enables users to modify all of the firlds for any of the recipes they themsleves have uploaded |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
+| 009   | Edit Recipe Form, enables users to modify all of the fields for any of the recipes they themseleves have uploaded |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
 | 010   | A Profile page contains user details and subscription preference | [Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile.jpg) |
 | 011   | An Edit Profile page to allow users the ability to Edit profile details and change subscription status | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
 | 012   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
@@ -399,7 +399,7 @@ Despite not being explicitly required for this build I have chosen to implement 
 ![Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg)
 
  2. Session Cookie
- Once a user signs up or log's in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username.  
+ Once a user signs up or logs-in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username.  
 
 
 
@@ -409,17 +409,17 @@ Despite not being explicitly required for this build I have chosen to implement 
 ![Restricted Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restricted-1.jpg)
 
  4.  Restricted access
- I have also attempted to prevent backdoor access to editting recipes from the Recipes or Full Recipe pages.  
+ I have also attempted to prevent backdoor access to editing recipes from the Recipes or Full Recipe pages.  
 
 ![Unauthorised Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restrict-2.jpg)
 
  5.  Deletion Check
- When a user selects the Delete Recipe button, the app renders a modal with a message to confirm the user wishes to delete thiat particular recipe.  
+ When a user selects the Delete Recipe button, the app renders a modal with a message to confirm the user wishes to delete that particular recipe.  
 
 ![Deletion Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg)
 
- 6. Profanity Filter
- Analyses user input and replaces any matching profanities with "****"
+ 6. Profanity Filter  
+  Basic profanity filter, analyses user input and replaces any matching profanities with "****"
 
 ![Profanity Filter](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profane.jpg)
 
@@ -429,7 +429,7 @@ I have attempted to provide as much initial functionality in this app' as I can 
 |---------------|----------------------|
 | Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's |
 | Image Validation | Validate image properties (size, aspect ratio etc) prior to uploading                 |
-|Inappropriate image filter| Filter innappropriate images from being uploaded or worse, displayed |
+|Inappropriate image filter| Filter inappropriate images from being uploaded or worse, displayed |
 ______
 
 ## **Technologies Used** <a name="technologies"></a>  
@@ -452,10 +452,10 @@ This website has been built using the following core technologies:
 - ![Font Awesome](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/fontawesome-logo.png "Font Awesome") - Font Awesome was the source of all icons.
 - ![Google Fonts](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/googlefonts-logo.png "Google Fonts") - Fonts used on the website courtesy of Google Fonts
 - ![JQuery](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/jquery.png "JQuery") - The project uses JQuery to simplify DOM manipulation.
-- PyMongo
+
 
 #### Database Management System
-- ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Altas  
+- ![MongoDB Atlas](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Atlas") - MongoDB Atlas  
 - ![MongoDB Compass](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Compass") - MondgoDB Compass was used to upload the JSON data to the W3Recipes Cluster  
 - ![MongoDB Charts](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/mongodb.png "MongoDB Charts") - MongoDB Charts was used to create the website's dashboard
 
@@ -561,7 +561,7 @@ The above steps will automatically bring you to the "Deploy" tab of your new app
  3. Search for, and select the Repo corresponding to the Heroku app
  4. Click "Connect"
 
-This app uses connec and Heroku requires these in order for the website to function as desired. To do this you need to set the Config Vars
+This app uses configuration settings and secret keys for MongoDB and Session cookies respectively, which Heroku requires in order for the website to function as desired. To do this you need to set the Config Vars within Heroku:
  - Under the "Settings" tab, in the Config Vars section select the "Reveal Config Vars" button.  
 
 ![Config Vars](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/heroku-config-vars.jpg)  
@@ -605,12 +605,12 @@ I have attempted to work independently as much as possible while building this w
 - [Pexels](https://www.pexels.com/) – Licence free image repository
 - [BeFunky](https://www.befunky.com/create/resize-image/) – Online image resizer
 - [W3C Validator](https://validator.w3.org/) - HTML and CSS Validation tool
-- [JSHint](https://jshint.com/) - Javascript code analysis tool
-- [JSLint](https://jslint.com/) - Javascript code quality analysis tool
+- [JSHint](https://jshint.com/) - JavaScript code analysis tool
+- [JSLint](https://jslint.com/) - JavaScript code quality analysis tool
 - [](https://www.tutorialspoint.com/online_python_formatter.htm) - Python code beautifier
 - []() - Python PEP8 validation
 - [SEO Site Checkup](https://seositecheckup.com/tools/custom-404-error-page-test) - Checks to see if you have a custom 404 page
-- [Online Javascript Beautifier](https://codebeautify.org/jsviewer) - Useful tool for indenting JS code
+- [Online JavaScript Beautifier](https://codebeautify.org/jsviewer) - Useful tool for indenting JS code
 - [Am I responsive?](http://ami.responsivedesign.is/) - Provides a simple view of a websites responsiveness.
 - [Responsinator](https://www.responsinator.com/) - Fairly comprehensive responsiveness testing
 
@@ -619,11 +619,11 @@ ______
 ## **Credits** <a name="credits"></a>
 
 ### **Content**
-The content of this website was created by Gareth John. Snippets of code have been copied from official documentation and other sources creditted below and in the respective code files. All pre-loaded recipes were written by the developer.
+The content of this website was created by Gareth John. Snippets of code have been copied from official documentation and other sources credited below and in the respective code files. All pre-loaded recipes were written by the developer.
 
 ### **Media**
 
-The photos used in this site, or in pre-populated recipes by the developer were obtained from the folloing sources:
+The photos used in this site, or in pre-populated recipes by the developer were obtained from the following sources:
 | Photo | Description | Source | Attribution |
 |-------|-------------|--------|-------------|
 | 001   | [App Logo](https://www.freelogodesign.org/manager) | Free Logo Design | Designed by the developer |
@@ -651,15 +651,16 @@ Much of the structure of this site follows what was taught during the Backend De
  |:-------:|-------------|:------:|
  |Animated Arrows| Animated arrows in the Landing Page call to action | https://freefrontend.com/css-arrows/#animated-arrows|
  |Remove blank lines and spaces from text inputs | Ensure that if users entered blank lines into the ingredients and methods they could be removed to maintain a neat list | https://www.kite.com/python/answers/how-to-remove-empty-lines-from-a-string-in-python |
- | Country Flag CDN | Code snippet required to programatically embed flags into the website | https://flagpedia.net/download/api |
- | Image url display | Display the image when the url is provided in a textbox | https://stackoverflow.com/questions/31398473/load-image-in-div-from-url-obtained-from-a-text-box/31398762|
+ | Country Flag CDN | Code snippet required to programmatically embed flags into the website | https://flagpedia.net/download/api |
+ | Image URL display | Display the image when the URL is provided in a textbox | https://stackoverflow.com/questions/31398473/load-image-in-div-from-url-obtained-from-a-text-box/31398762|
+ |Pagination| Splits the recipes collection and displays a maximum of 6 recipes/page|https://www.hacksparrow.com/databases/mongodb/pagination.html|
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
  - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
  - Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
- - Thanks to Ed Bradley for hosting a very helpfull MS3 Planning Call and for providing some much needed support along the way.
- - Thanks also to Can Sucullu for opening my eyes to potential vunerabilitis and potential back doors in my web app. 
+ - Thanks to Ed Bradley for hosting a very helpful MS3 Planning Call and for providing some much needed support along the way.
+ - Thanks also to Can Sucullu for opening my eyes to potential vulnerabilities and potential back doors in my web app. 
 ______
 ### **Technical Support** <a name="technical"></a>
 If you encounter any issues with this website, or require any support please email the developer [johnge71@gmail.com](mailto:johnge71@gmail.com)
