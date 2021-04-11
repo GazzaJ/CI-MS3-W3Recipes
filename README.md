@@ -7,13 +7,13 @@
 
 As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus, I thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better way to do this than to get the site users to post their tried and tested favourite recipes.
 
-Thus the primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enable those users to upload their own recipes to share with other site users.
+So the primary intention for this website is to provide user with a database of recipes they can search on route to attempting a new recipe, and to also enable those users to upload their own favourite recipes to share with other site users.
 
-The objective is to achieved the above with a visually appealing, interactive yet intuitive UX, which provides simple consistent navigation and interaction irrespective of the device. Ultimately, I would like this site to be fun, and encourage users to:
+My aim is to achieved the above with a visually appealing, interactive yet intuitive UX, which provides simple consistent navigation and interaction irrespective of the device. Ultimately, I would like this site to be fun, and encourage users to:
  - upload their favourite recipes
  - share the site and encourage their friends to also upload recipes
  - keep track of where they stand in terms of number of recipes uploaded, compared to other users
- - keep track of our progress "filling the map"
+ - keep track of our progress towards "filling the map"
 
 
 [The live website can be viewed here!](https://ci-ms3-w3recipes.herokuapp.com/)
@@ -41,16 +41,16 @@ An automatically generated Table of Contents can be accessed by clicking the REA
 ______
 
 ## **User Experience (UX)** <a name="user-experience"></a>
-In W3 Recipes I have attempted to produce a simple clean and intuitive site which is easy to navigate and simple to use. Despite being spread over many pages, each page has a single purpose related to C.R.U.D functionality. Navigation is achieved with a typical navbar with mobile responsive behaviour. The imagery and typography are also key to 
+In W3 Recipes I have attempted to produce a simple clean and intuitive site which is easy to navigate and simple to use. Despite being spread over many pages, each page has a single purpose related to an element of C.R.U.D functionality. Navigation is achieved with a typical navbar with mobile responsive behaviour. The imagery and typography are also key to creating a positive user experience.
 
 
 ### **User Stories** <a name="stories"></a>
 The following user stories were developed during the planning stages for this site.
 1. _As a_ **first time visitor**, _I need to_ **understand the purpose of the site**, _in order to_ **consider exploring the site further**.
 
-2. _As a_ ** first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**.
-
-3. _As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**.
+2. _As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**.
+   
+3. _As a_ ** first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**.
 
 4. _As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**.
 
@@ -58,7 +58,7 @@ The following user stories were developed during the planning stages for this si
 
 6. _As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**.
 
-7.  _As a _ **site owner**, _I need to_ **promote a product, _in order to_ **promote a preferred product on the site**.
+7.  _As a _ **site owner**, _I need to_ **have a unique feature which generates some competition between users, _in order to_ **encourage users to post new recipes**
 ___
 
 ### **The 5 Planes of UX** <a name="planes"></a>
@@ -81,7 +81,7 @@ The key features required for this app to function as designed are centred aroun
 In order to prevent unwanted editing or deletions of user's recipes, the website has been designed with a basic level of security. Thus, to access the full functionality users are required to Sign-up to the App, which provides access to the CRUD functionality.
  - User interactions are tracked and managed through the use of a *"Session Cookie"*
  - Uploads are unlimited, however users can only edit and delete their own previously uploaded recipes
- - Users can elect to provide additional basic information about themselves and to subscribe or not
+ - Users can elect to provide additional basic information about themselves and to choose whether to subscribe or not
 
 ##### Functional Requirements
 App functionality is provided through a simple and intuitive, mobile responsive navbar. The navbar menu options increases once a user registers or logs into the website, increasing potential functionality.
@@ -90,7 +90,7 @@ Additional interactive anchor links are provided to assist users in navigating t
 ##### Content Requirements
 Much of the content on this site will be provided by users.
 Outside of this I have tried to use images of food or food related themes.
-I am a keen cook, and having an image of a recipe is just as important as the ingredient list and preparation steps, as it provides an enticing view of the endpoint and helps to whet the user's appetite. Thus, including images with each recipe is a key component.
+I am a keen cook, and having an image of a recipe is just as important as the ingredient list and preparation steps, as it provides an enticing view of the endpoint and helps to whet the user's appetite. **Thus, including images with each recipe is a key component.**
 The typography selected for this site was also important, and needed to be fun yet functional. I have selected more cursive fonts to try and emulate a recipe notebook style.
 I deliberately stuck with a clean and simple, structured layout to make it easy to view  and also edit the content.
 
@@ -99,7 +99,8 @@ Recipe pages have a similar design, and the individual Recipe cards are consiste
 ___
 
 #### **Structure**  
-W3Recipes is constructed from 11 distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only three options: Home | Sign-up | Log-in
+W3Recipes is constructed from 11 distinct pages which are accessed through the main and mobile navbars. Prior to log-in there are only three options: Home | Sign-up | Log-in.
+
 Once through this initial authentication stage users are presented with a further six options, from which they are able to interact fully with the site: Recipes | Add Recipes | Manage Recipes | Profile | Dashboard | Sign-out
 ![Workflow](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/workflow.png "Website workflow")
 A further two subdomains enable the user to Edit a profile or recipe document. 
@@ -122,8 +123,7 @@ Aside from this each page is self contained:
  This is a self contained page where users can track the sites progress to filling in the map, and see which users have uploaded the most recipes.
 
  - **Data Input**
-The primary User inputs are achieved 
-Users are able to add and change their data (Recipes or User Profile) using a series of forms
+The primary User inputs are achieved using a series of forms through which, users are able to add and change their data (Recipes or User Profile). 
 > A key consideration in the early planning stages was the method for inputting the recipe ingredients and preparation steps. I had initially thought about getting the user to input the number of ingredients and then looping through this number to enter each ingredient, one at a time. However, this would be problematic, if the user inputs an incorrect number. In this case they might have to restart the process, which would be undesirable. **Thus, the goal; has been to make it as easy as possible for the user to input this data.**
 
 
@@ -142,7 +142,7 @@ The W3 Recipes website initially comprises three main pages:
 Assuming the user choses to register they are provided access to the remaining pages
  - Recipe's page displays 6 recipe cards per page
    - Filter and search options provided to reduce the number of recipes displayed
- - Individual Recipe pages providing the full recipe detail
+ - Individual Recipe pages provide the full recipe detail
  - An "Add Recipe" page enables users to upload their own recipe information
  - A page for the users to manage (Update or Delete) their recipes
    - Echoes the functionality provided by the Recipes and Add Recipe pages
@@ -199,7 +199,7 @@ These anchor links provide user feedback by either changing or reversing colours
 
 ##### **Navigation Design**
 I have used a standard Materialize, mobile responsive navbar for W3Recipes.
-The menu items change depending on the user's status.
+The menu items change depending on the user's status (logged-in or not).
  - New users only see: Home, Sign-up and Log-in
  - Once signed-up users are able to see the full menu list which enables them to interact with the whole app.
 
@@ -237,10 +237,8 @@ For returning users there is a separate Log-In page to enable access to the full
 
 ##### Main Recipe Page
 The Recipe page could be considered one of the key pages on the site. Uses READ functionality to display Recipes and provides the ability to filter Recipes by country or search by keywords. This page has pagination controls which are set to display a specific number of recipes to limit scrolling.
-Users can select any recipe and see the full details of that recipe in order to make it.
+Users can select any recipe to view the full details of that recipe in order to make it.
 ![Recipes Display](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes-page.png "Recipes Page Wireframe")
-
->**_The main change here was to incorporate what could have comprised separate pages (About, Map and Gallery) into a single page._**
 
 
 ##### Individual Recipe Page
@@ -248,12 +246,14 @@ Provides users with the full recipe detail so they can check the ingredients and
 ![Full Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full-recipe.png "Full Recipe Wireframe")
 
 ##### Add Recipe Page
-If the logged in user chooses to upload a recipe they can select "ADD RECIPE" from the navbar, which redirect the user to a page with various input fields where they can populate:
+If the logged in user chooses to upload a recipe they can select "ADD RECIPE" from the navbar, which redirects the user to a page with various input fields where they can populate:
  - Recipe Name
  - An image representative of the recipe
  - Recipe Country
+ - Recipe Category
  - Recipe Description
  - Servings
+ - Vegetarian and Vegan selectors
  - Preparation and Cooking Time
  - Ingredients
  - Method
@@ -264,7 +264,7 @@ Once complete the recipe is uploaded to the MongoDB Atlas Recipes collection.
 ###### Manage Recipes Page
 This page is a copy of the Recipes Page, however rather than providing search functionality it displays only the recipes the user has uploaded, and enables the user to **UPDATE** or **DELETE** those recipes.
 Edit redirects the user to a page similar to the Full Recipe page but with editing functionality.
-Selecting Delete will produce a check modal to double check the deleting request before removing the recipe.  
+Selecting Delete will render a check modal to double check the deletion request before removing the recipe.  
 ![Manage](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-recipe.png "Manage Recipes Wireframe")  
 
 ##### Edit Recipe Page
@@ -371,7 +371,8 @@ The following table lists the primary features provided by the W3Recipes app.
 ### **Existing Features**
 |Feature|Description| Image URL |
 |:-----:|-----|:----:|
-| 001   | Simple registration Process with dedicated sign-up page | [Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg) |
+| 001   | Landing page to convey the purpose of the website to new and returning users | [Landing](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/landing.jpg) |
+| 002   | Simple registration Process with dedicated sign-up page | [Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg) |
 | 002   | Dedicated Log-in screen for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/log-in.jpg) |
 | 003   | Paginated "Recipes Page" where all recipes are displayed | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes.jpg) |
 | 004   | Recipe Filter function, filters recipes by country of origin. The image provided shows a search by the country "Wales". | [Recipe Filter ](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/filter.jpg) |
@@ -382,8 +383,11 @@ The following table lists the primary features provided by the W3Recipes app.
 | 009   | Edit Recipe Form, enables users to modify all of the fields for any of the recipes they themseleves have uploaded |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
 | 010   | A Profile page contains user details and subscription preference | [Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile.jpg) |
 | 011   | An Edit Profile page to allow users the ability to Edit profile details and change subscription status | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
-| 012   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
-| 013 | Footer | The footer for this web app contains links to the developers GitHub site and LinkedIn Account. The footer also contains a link to contact the developer via email. |  |
+| 012   | Delete function allows logged in users to delete any of their own recipes | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg) | 
+| 013   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
+| 014 | Footer | The footer for this web app contains links to the developers GitHub site and LinkedIn Account. The footer also contains a link to contact the developer via email. |  |
+
+. **_I chose not to add a recipe category filter in this release as I thought it would make the top of the recipes page too clutters and would be an inelegant solution. Ideally I would like to incorporate an conditional dropdown menu where users can select between recipe category or countries._**
 
 > **_The UK map is provided because the standard Atlas Charts world map only recognises the UK as a country and not the individual countries. Showing the individual countries is only possible by selecting the UK Countries map._**
 
@@ -394,42 +398,49 @@ Despite not being explicitly required for this build I have chosen to implement 
 
 
  1. User Login
+
  User registers on the site with a simple username and password. Password gets hashed and salted using Password Hash from the Werkzeug Library.
 
 ![Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg)
 
  2. Session Cookie
+
  Once a user signs up or logs-in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username.  
 
 
 
- 3.  Restricted access
+ 3.  Restricted Access
+
  The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes.  
 
 ![Restricted Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restricted-1.jpg)
 
- 4.  Restricted access
+ 4.  Restricted Access
+
  I have also attempted to prevent backdoor access to editing recipes from the Recipes or Full Recipe pages.  
 
 ![Unauthorised Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restrict-2.jpg)
 
  5.  Deletion Check
+
  When a user selects the Delete Recipe button, the app renders a modal with a message to confirm the user wishes to delete that particular recipe.  
 
 ![Deletion Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg)
 
  6. Profanity Filter  
+
   Basic profanity filter, analyses user input and replaces any matching profanities with "****"
 
 ![Profanity Filter](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profane.jpg)
 
 ### **Features Left to implement**
-I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate:
+I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate in the future:
 |   Feature     |     Description      |
 |---------------|----------------------|
 | Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's |
 | Image Validation | Validate image properties (size, aspect ratio etc) prior to uploading                 |
 |Inappropriate image filter| Filter inappropriate images from being uploaded or worse, displayed |
+| Conditional dropdown and seach | To reduce the number of search boxes on the Recipes page. Render either countries or recipe categories in the dropdown based on what the users selects|
 ______
 
 ## **Technologies Used** <a name="technologies"></a>  
