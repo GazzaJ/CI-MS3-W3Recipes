@@ -218,15 +218,23 @@ Online tools have been used to validate the HTML, CSS, Python and JavaScript fil
 
 |Test|Process|Result| Comment |
 |----|-------|:----:|---------|
-|HTML Validation| Copy Index.html code into W3C validator|PASS||
-|HTML Validation| Copy Map.html code into W3C validator|PASS||
-|HTML Validation| Copy Contact.html code into W3C validator|WARNING|The "type" is unnecessary for Javascript results from 3rd party Script tags|
-|HTML Validation| Copy 404.html code into W3C validator|PASS||
+|HTML Validation| Copy page URI into W3C validator|Warnings & Errors| See table below |
 |CSS Validation| Copy CSS code into WC3 validator| **CHECKED** || 
 |Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors detected|
 |Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors detected|
 |Javascript Validation| Copy script.js code into JSHint | **CHECKED** ||
 |Javascript Validation| Copy script.js code into JSLint | **CHECKED** ||
+
+#### **HTML Validation**
+| Page | Error / Warning | Comment |
+|:----:|-----------------|---------|
+| Multiple Pages | Possible misuse of Aria-Label| I have looked this up on [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and balieve that since there is nothing to explicitly explain the purpose of these buttons/links, using the aria label is justified. |
+| Multiple Pages | Lack of a heading | The page has a heading. This is not a conventional website page layout of multiple headed sections. |
+| Recipes Page | Duplicate id's (recipe-fab) | Results from re-use of the single recipe card design to render each recipe. Required to achieve positioning. |
+| Multiple Pages | Bad value through use of { variable } | Required use with Flask  - justified |
+| Edit Profile | Duplicate id="subscribed" | Results from conditional logic - justified use |
+| Edit Profile | The label element may contain at most one descendent | Results from conditional logic in code - justified use |
+
 
 - This project has been deployed using Heroku and the website has been reviewed on several real devices:
   - Samsung Galaxy S9
@@ -237,7 +245,7 @@ This helped me make some changes to maintain responsiveness.
 - Spelling Checked using [Typosaurus](https://typosaur.us/)
 - [CSS Auto Prefixer](https://autoprefixer.github.io/) - CSS file checked 
 - Mobile Friendly Test - [PASS](https://search.google.com/test/mobile-friendly?id=8jZoJWUliCuw3Bdmly-IwA)
-- README.md file spelling checked by copying and pasting the text into word.
+- README.md file spelling checked by copying and pasting the text into MS Word.
 
 
 ### **Usability Testing** <a name="usability-testing"></a>"
