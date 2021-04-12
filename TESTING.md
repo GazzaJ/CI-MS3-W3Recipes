@@ -211,6 +211,9 @@ Testing to confirm correct functionality of the Delete function. Aspects of this
 | 006    | Provide Confirmation of Deletion | Flash message should appear when user is redirected to Manage Recipes page | User is redirected and message is diaplayed | **PASS** | **PASS** |
 
 ![Start Deletion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/del-confirmation.jpg)
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+| 007 | Only delete the selected recipe document when performing deletions | Confirm only recipe data is removed from the database on deletion. Ensure no other collectiona are affected by the Delete function. | Only selected document is deleted. No downstream effect; no other collections or documents affected|  |  |
 ______
 
 ### **Code Quality and Validation** <a name="code-validation"></a> 
@@ -245,7 +248,8 @@ This helped me make some changes to maintain responsiveness.
 - Spelling Checked using [Typosaurus](https://typosaur.us/)
 - [CSS Auto Prefixer](https://autoprefixer.github.io/) - CSS file checked 
 - Mobile Friendly Test - [PASS](https://search.google.com/test/mobile-friendly?id=8jZoJWUliCuw3Bdmly-IwA)
-- README.md file spelling checked by copying and pasting the text into MS Word.
+> Where appropriate. Pages specific to user session cookie cannot be checked by external online resources. See below.
+- README file spelling checked by copying and pasting the text into MS Word.
 
 
 ### **Usability Testing** <a name="usability-testing"></a>"
@@ -275,16 +279,32 @@ The table below contains links to the Responsinator results where applicable.
 ### **Performance Testing** <a name="performance-testing"></a>
 The website has been performance testing using the following tools:
  - Google Lighthouse (Desktop)
-  
- 
-![Google Lighthouse](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/google-lighthouse.png "Google Lighthouse Testing")
 
+|    Page    | Performance | Accessibility | Best Practices | SEO  | Comments |
+|:----------:|:-----------:|:-------------:|:--------------:|:----:|----------|
+|Landing Page|    97%      |      100%     |       93%      | 100% |          |
+|Recipes Page|    80%      |       85%     |       93%      | 100% |          |
+|Full Recipe |    98%      |       95%     |       93%      | 100% |          |
+| Add Recipes|    82%      |       89%     |       93%      |  90% |          |
+|Manage Recipes|  93%      |       91%     |       93%      |  90% |          |
+| Edit Recipe  |  79%      |       89%     |       93%      | 100% |          |
+| Profile Page |  97%      |       95%     |      100%      | 100% |          |
+| Edit Profile |  97%      |      100%     |      100%      | 100% |          |
+| Dashboard    |  90%      |      100%     |       87%      | 100% |          |
 
+ - Google Lighthouse (Mobile)  
 
- - Google Lighthouse (Mobile)
-  
- 
-![Google Lighthouse](https://github.com/GazzaJ/CI-MS2-Discover-Kefalonia/blob/master/readme-img/google-lighthouse-mobile.png "Google Lighthouse Testing")
+|    Page    | Performance | Accessibility | Best Practices | SEO  | Comments |
+|:----------:|:-----------:|:-------------:|:--------------:|:----:|----------|
+|Landing Page|      42%    |       97%     |      87%       | 100% |          |
+|Recipes Page|      58%    |       85%     |      93%       | 100% |          |
+|Full Recipe |      61%    |       95%     |      93%       | 100% |          |
+| Add Recipes|      59%    |       89%     |      93%       |  90% |          |
+|Manage Recipes|    69%    |       91%     |      87%       |  92% |          |
+| Edit Recipe  |    67%    |       89%     |      93%       | 100% |          |
+| Profile Page |    86%    |       95%     |      100%      | 100% |          |
+| Edit Profile |    90%    |      100%     |      100%      | 100% |          |
+| Dashboard    |    58%    |      100%     |       87%      | 100% |          |
 
 
 ______
@@ -294,6 +314,8 @@ The following table explains the bugs and issues encountered while building this
 |  Issue #   |  Bug or Issue  |  Description  |  Solution  |
 |:----------:|:--------------:|---------------|------------|
 | 001 |Page width exceeding viewport width|While conducting continuous testing I noticed the website was experienceing a sporadic issue with the page width increasing beyond the viewport width. Initially thought to affect all pages and caused by the moibile responsive navbar | While troubleshooting the issue I realised the problem was confined to my Recipes.html page, and thus couldn't be caused by the navber which is a consistent element on all pages. The only other interactive element on this page was an unused Materialize CSS "FeatureDiscovery" element. After deletion the Page width issue didn't reoccur
-| 002 |Delete Confirmation in a modal|When a user selects delete on the "Manage Recipes" page I wanted a confirmation email to display before the recipe could be removed from the website and database. Initial attemps resulted in recipes being deleted one by one in a sequence since the modal was not linked to the specific recipe. This was verified using the {{ recipe title }} and by taking the chance and deleting one of the records | 
-| 003 |Displaying Flash messages in a modal| Unable to display Flashed messages in a modal | Resorted to displaying them on the top of the relevant pages. |
-| 004 | Favicon 404 on some pages | My chosen Fav icon was not displaying on all pages which inherit from the base,html. The error code was "GET /full_recipe/static/img/favicon.ico HTTP/1.1" 404".| Adding a forward slash to the beginning of the directory address fixed the issue.
+| 002 |Delete Confirmation in a modal|When a user selects delete on the "Manage Recipes" page I wanted a confirmation email to display before the recipe could be removed from the website and database. Initial attempts resulted in recipes being deleted one by one in a sequence since the modal was not linked to the specific recipe. This was verified using the {{ recipe title }} and by taking the chance and deleting one of the records | Not a huge problem as the flashed messages work adequately. I just thought a modal might be a more elegant solution.
+| 003 |Displaying Flash messages in a modal| Unable to display Flashed messages in a modal. Unable to combine Flask/Jinja syntax with Materialize Modal when using a loop. | Resorted to displaying them on the top of the relevant pages. Not a significant issue as Flashed messages work well. |
+| 004 | Favicon 404 on some pages | My chosen Fav icon was not displaying on all pages which inherit from the base,html. The error code was "GET /full_recipe/static/img/favicon.ico HTTP/1.1" 404".| Adding a forward slash to the beginning of the directory address fixed the issue.|
+| 005 | 500 Server Error | The web app responds with a 500 internal server error if you try to use the back button after logging out of the app. This is because the session cookie is cleared on loggout and the main pages require a session cookie. | The solution would be to simply display the home page, but I was unable to figure out how to achieve this in this particular case. |
+| 006 | Console Warnings | Console warnings related to the MongoDB Charts iframes | |
