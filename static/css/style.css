@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /*---------- Fonts ----------*/
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Galada&family=Molle:ital@1&family=Shrikhand&display=swap');
 
@@ -117,7 +124,8 @@ main {
 
 body {
     background-image: url('/static/img/main-background_2150.jpg');
-    object-fit: cover;             
+    -o-object-fit: cover;
+       object-fit: cover;             
 }
 
 /*-- Footer --*/
@@ -196,25 +204,45 @@ footer .container {
 /*-- Arrow Animation adapted from 
 https://codepen.io/alianmorales/pen/GyrgjO --*/
 .arrows {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
 }
 
 .cta-arrow {
     font-size: 3rem;
     color: #a8293c;
-    animation: slide1 1s ease-in-out infinite;
+    -webkit-animation: slide1 1s ease-in-out infinite;
+            animation: slide1 1s ease-in-out infinite;
     display: inline-block;    
+}
+
+@-webkit-keyframes slide1 {
+  0%,
+  100% {
+    -webkit-transform: translate(10px, 0);
+            transform: translate(10px, 0);
+  }
+
+  50% {
+    -webkit-transform: translate(10px, 10px);
+            transform: translate(10px, 10px);
+  }
 }
 
 @keyframes slide1 {
   0%,
   100% {
-    transform: translate(10px, 0);
+    -webkit-transform: translate(10px, 0);
+            transform: translate(10px, 0);
   }
 
   50% {
-    transform: translate(10px, 10px);
+    -webkit-transform: translate(10px, 10px);
+            transform: translate(10px, 10px);
   }
 }
 
@@ -575,7 +603,8 @@ iframe {
     height: 30rem;
     background: #fff;
     border: none;
-    box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);
+    -webkit-box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);
+            box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);
 }
 
 /*---------- Error Pages ----------*/
@@ -687,7 +716,8 @@ h2, h3 {
 
     .recipe-image {
         height: 100%;        
-        object-fit: cover;
+        -o-object-fit: cover;        
+           object-fit: cover;
     }
 
     .card-title {
@@ -753,7 +783,8 @@ h2, h3 {
     /*-- Profile Page --*/
     .user-img {        
         max-width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }    
     
     #manage-link {
@@ -806,6 +837,7 @@ h2, h3 {
     /*-- Profile Page --*/
     .user-img {
         max-width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
 }
