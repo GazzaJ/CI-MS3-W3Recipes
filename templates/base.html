@@ -26,7 +26,7 @@
         <nav class="nav-extended light-green darken-4">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo"><img src="/static/img/w3r-logo.png" alt="Website logo"></a>
-                <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"  aria-label="Mobile Navbar trigger"></i></a>
+                <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars" aria-label="Mobile Navbar trigger"></i></a>
                 <ul id="navlinks" class="right hide-on-med-and-down navlinks">
                     <li><a class="navlink" href="{{ url_for('home') }}">Home</a></li>                    
                     {% if session.user %}
