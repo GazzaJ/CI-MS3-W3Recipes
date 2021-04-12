@@ -568,6 +568,14 @@ label {
     margin-right: 1rem;
 }
 
+/*---------- Dashboard ----------*/
+
+iframe {
+    width: 100%;
+    height: 30rem;
+    background: #fff;
+}
+
 /*---------- Error Pages ----------*/
 
 h2, h3 {
