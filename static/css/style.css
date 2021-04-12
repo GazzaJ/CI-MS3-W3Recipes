@@ -422,6 +422,11 @@ label {
     font-weight: bold;
 }
 
+.text-field label {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+}
+
 .leaf {
     font-size: 2rem;
 }
@@ -742,8 +747,11 @@ h2, h3 {
     }
     
     label {
-        font-size: 1rem ;    
-        font-weight: bold;
+        font-size: 1rem;        
+    }
+
+    .text-field label {
+        font-size: 1.2rem;
     }
 
     form i {
