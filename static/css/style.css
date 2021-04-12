@@ -356,6 +356,8 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     margin-right: 1rem;
 }
 
+
+
 /*---------- Full Recipe Page ----------*/
 
 .recipe-text {
@@ -420,11 +422,13 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 label {
     font-size: 1.2rem !important;    
     font-weight: bold;
+    color: #4e342e !important;
 }
 
 .text-field label {
     font-size: 1.5rem !important;
     font-weight: bold;
+    color: #4e342e;
 }
 
 .leaf {
