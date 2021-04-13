@@ -213,7 +213,39 @@ Testing to confirm correct functionality of the Delete function. Aspects of this
 ![Start Deletion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/del-confirmation.jpg)
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-| 007 | Only delete the selected recipe document when performing deletions | Confirm only recipe data is removed from the database on deletion. Ensure no other collectiona are affected by the Delete function. | Only selected document is deleted. No downstream effect; no other collections or documents affected|  |  |
+| 007 | Only delete the selected recipe document when performing deletions | Confirm only recipe data is removed from the database on deletion. Ensure no other collectiona are affected by the Delete function. | Only selected document is deleted. No downstream effect; no other collections or documents affected| **PASS** |  |
+
+To confirm the integrity of the deletion process I chose to deleted a recipe created to validate the profanity filter
+The recipe exists in the MongoDB Atlas database prior to deletion.
+
+![Recipe in Database](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-collection.jpg)
+
+1. Delete the "**** Soup" from the Manage Recipes page
+   - This recipe used document fields from other collections
+     - User = Adminuser
+     - Country = Canada
+     - Recipe Category = Appetisers  
+
+ If the deletion process works as desired each of these fields should remain post deletion.
+2. Delete confirmation modal appears to check Deletion - **PASS**
+
+![Delete Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/confirm-delete.jpg)
+
+3. Once confirmed the user is redirected to the Manage Recipes page - PASS
+4. A Flash message appears at the top of the Manage Recipes page confirming deletion - **PASS**
+
+![Delete Flash](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-coll.jpg)
+
+5. The Recipe has been deleted from the database - **PASS**
+
+![](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/deleted.jpg)
+
+6. The integrity of the other collections has not been affected. - **PASS**
+
+![User Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-collection.jpg)
+![Country Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-coll.jpg)
+![Recipe Category Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-category.jpg)
+
 ______
 
 ### **Code Quality and Validation** <a name="code-validation"></a> 
