@@ -393,9 +393,10 @@ The following table lists the primary features provided by the W3Recipes app.
 
 > **_I have chosen not to provide a contact form for this web app. I believe that being able to contact the developer by email is sufficient for this initial release._**
 
+____
+
 ### **Security Features**
 Despite not being explicitly required for this build I have chosen to implement certain security features to provide some protection against unauthorised access to other users data.
-
 
  1. User Login
 
@@ -407,11 +408,10 @@ Despite not being explicitly required for this build I have chosen to implement 
 
  Once a user signs up or logs-in a unique session cookie is generated for the duration of their session. Recipe uploads are saved in the database against the session cookie username.  
 
-
-
  3.  Restricted Access
 
- The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes.  
+ The app logic checks the session cookie and only enables users to Manage (edit/delete) their own uploaded recipes. I have also attempted to prevent backdoor access to the delete function through retyping another url and inserting delete_recipe/Object_id.
+ > **Thanks to Kotaro (Toto) Tanaka for highlighting this one while reviewing the app.**
 
 ![Restricted Access](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/restricted-1.jpg)
 
@@ -676,7 +676,11 @@ Much of the structure of this site follows what was taught during the Backend De
  - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
  - Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
  - Thanks to Ed Bradley for hosting a very helpful MS3 Planning Call and for providing some much needed support along the way.
- - Thanks also to Can Sucullu for opening my eyes to potential vulnerabilities and potential back doors in my web app. 
+ - Thanks also to Can Sucullu for opening my eyes to potential vulnerabilities and potential back doors in my web app.
+ - My appreciation to all the users who took time to test the web app:
+   - Eamonn Carroll
+   - Kane Moore
+   - Kotaro (Toto) Tanaka
 ______
 ### **Technical Support** <a name="technical"></a>
 If you encounter any issues with this website, or require any support please email the developer [johnge71@gmail.com](mailto:johnge71@gmail.com)
