@@ -795,6 +795,14 @@ h2, h3 {
         max-width: 100%;
     }
 
+    #cancel-edit {
+        padding-left: 0;
+    }    
+
+    #edit-save {
+        padding-right: 0;
+    }
+
 
     /*-- Profile Page --*/
     .user-img {        
