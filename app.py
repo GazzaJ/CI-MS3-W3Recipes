@@ -519,17 +519,15 @@ def delete_recipe(recipe_id):
     user = mongo.db.users.find_one({'username': session['user']})
     admin = user['is_admin']
 
-    # ---------- Check if user "is_admin" ----------
+    # ----- Check if session user uploaded the recipe -----
 
-    if uploaded_by != session['user']:
-        flash("You don't have the authority to delete this recipe!")
-        return redirect(url_for('manage_recipes'))
-
-        # ----- Check if session user uploaded the recipe -----
-
-    else :
+    if admin is True or uploaded_by == session['user']:
         recipe_coll.remove({'_id': ObjectId(recipe_id)})
         flash('Recipe Deleted Succesfully!')
+        return redirect(url_for('manage_recipes'))
+
+    else:
+        flash("You don't have the authority to delete this recipe!")
         return redirect(url_for('manage_recipes'))
 
 
