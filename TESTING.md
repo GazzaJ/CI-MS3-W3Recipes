@@ -176,6 +176,20 @@ ___
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | Edit Recipe Form | Edit Recipe form displays correctly | The form displays and is almost identical to the Add Recipe form | **PASS** | **PASS** |
+|  002   | Existing Data renders| Display existing recipe data from the database on the form | All of the existing data is rendered from the database into the form fields | **PASS** | **PASS** |
+|  003   | Country of Origin | Country of Origin is populated and selectable | Country of origin dropdown functions and is selectable | **PASS** | **PASS** |
+|  004   | Recipe Categories | Recipe Categories are populated and selectable | Category dropdown functions and is selectable | **PASS** | **PASS** |
+|  005   | Recipe title is editable | User can change the recipe title | The user can edit and delete the recipe title  | **PASS** | **PASS** |
+|  006   | Servings| Servings is populated and selectabple  | Servings dropdown functions and is selectable | **PASS** | **PASS** |
+|  007   | Vegan & Vegetarian switches | Function and become highlighted on Recipe card is selected | Switches function and currectly highlight whensaved | **PASS** | **PASS** |
+|  008   | Recipe Image | Dsiplays from the start | The recipe image is visible | **PASS** | **PASS** |
+|  009   | New Recipe Image | Renders if a valid URL is supplied | The new image displays below the old image | **PASS** | **PASS** |
+|  010   | Recipe Description | Description is editable and saves correctly |  | **PASS** | **PASS** |
+|  011   | Recipe Ingredients | Ingredients are editable and save correctly |  | **PASS** | **PASS** |
+|  012   | Recipe Image | Preparation steps are editable and save correctly |  | **PASS** | **PASS** |
+|  013   | Confirmation of Upload | Provide confirmation of upload and redirect the user away from the Edit Recipe form | User is redirected to the manage Recipes page and a confirmatio message  is flashed to the screen | **PASS** | **PASS** |
+
 ___
 
 #### **User Profile (READ)** <a name="user-profile"></a>
@@ -208,6 +222,7 @@ ___
 |  001   | Edit Profile image | Profile image updates correctly when new URL supplied |  | **** | **** |
 |  002   | City update | Users city is uploaded to database when supplied and new data rendered into profile| Information saves and renders correctly | **PASS** | **PASS** |
 |  003   | Subscribed switch functionality | Switch status changes when selecting on and opens email entry input field | Switch functions correctly and email input field appears | **PASS** | **PASS** |
+
 ![Subscribed Off](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-off.jpg)
 ![Subscribed On](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-on.jpg)
 ___
@@ -278,11 +293,16 @@ Online tools have been used to validate the HTML, CSS, Python and JavaScript fil
 |Test|Process|Result| Comment |
 |----|-------|:----:|---------|
 |HTML Validation| Copy page URI into W3C validator|Warnings & Errors| See table below |
-|CSS Validation| Copy CSS code into WC3 validator| **CHECKED** | No Errors Detected | 
+|CSS Validation| Copy CSS code into WC3 validator| **CHECKED** | No Errors Detected |
+|CSS Beautifier| [CSS Auto Prefixer](https://autoprefixer.github.io/) | **CHECKED** | Output Used |
 |Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors Detected|
 |Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors Detected|
 |Javascript Validation| Copy script.js code into JSHint | **CHECKED** ||
 |Javascript Validation| Copy script.js code into JSLint | **CHECKED** ||
+|Website Spelling | URL input [Typosaurus](https://typosaur.us/) | **CHECKED** | Difficulty on pages requiring authentication so MS Word used |
+| README file Spelling | Text copied into word | **CHECKED** |  |
+
+> Where appropriate. Pages specific to user session cookie cannot be checked by external online resources. See below.
 
 #### **HTML Validation**
 | Page | Error / Warning | Comment |
@@ -294,26 +314,21 @@ Online tools have been used to validate the HTML, CSS, Python and JavaScript fil
 | Edit Profile | Duplicate id="subscribed" | Results from conditional logic - justified use |
 | Edit Profile | The label element may contain at most one descendent | Results from conditional logic in code - justified use |
 
-
-- This project has been deployed using Heroku and the website has been reviewed on several real devices:
-  - Samsung Galaxy S9
-  - Samsung Tab A
-  - HP Laptop with attached monitor
-This helped me make some changes to maintain responsiveness. 
-
-- Spelling Checked using [Typosaurus](https://typosaur.us/)
-- [CSS Auto Prefixer](https://autoprefixer.github.io/) - CSS file checked 
-- Mobile Friendly Test - [PASS](https://search.google.com/test/mobile-friendly?id=8jZoJWUliCuw3Bdmly-IwA)
-> Where appropriate. Pages specific to user session cookie cannot be checked by external online resources. See below.
-- README file spelling checked by copying and pasting the text into MS Word.
-
+____
 
 ### **Usability Testing** <a name="usability-testing"></a>
 I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
 
+____
 
 ### **Responsiveness Testing** <a name="responsiveness-testing"></a>
 I have conducted continuous responsiveness testing, right up to the final submission, to ensure the website functions on different devices and in both portrait and landscape orientation, using Google Devtools and Responsinator.com.
+This project has been deployed using Heroku and the website has been continuously reviewed on several real devices:
+  - Samsung Galaxy S9
+  - Samsung Tab A
+  - HP Laptop with attached monitor
+This helped me make some changes to maintain responsiveness.
+
 The table below contains links to the Responsinator results where applicable.
 > None of the Responsiveness Tools provided results for pages where user authentication is important, such as Manage Recipes, Edit Recipe, Profile and Edit Profile. I have thus included screenshots of these from Google Devtools.  
 
@@ -331,6 +346,8 @@ The table below contains links to the Responsinator results where applicable.
 |  010   | Edit Profile | - | Unable to text using online tools |
 |  011   | Dashboard | [Dashboard](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fdashboard) | Page functions across multiple devices in both portrait and landscape |
 |  012   | Error Pages | [Error Page](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fprofile%2Fadminuser) | Page functions across multiple devices in both portrait and landscape |
+
+____
 
 ### **Performance Testing** <a name="performance-testing"></a>
 The website has been performance testing using the following tools:
@@ -364,6 +381,22 @@ The website has been performance testing using the following tools:
 | Edit Profile |    90%    |      100%     |      100%      | 100% |
 | Dashboard    |    58%    |      100%     |       87%      | 100% |
 
+____
+
+### **Security Testing** <a name="security-testing"></a>
+The following tests have been performed on the limited security features implemented on this site, and are documented in the table below:
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | Username Reuse  | No username duplication allowed | Sign-up does not allow duplicate usernames. A warning message is flashed onscreen and the user redirected to Sign-in again | **PASS** | **PASS** |
+|  002   | Password Security  | Passwords are hashed and salted  | Each user passwords is converted into a unique string of characters | **PASS** | **PASS** |
+|  003   | Users can only edit and delete their recipes | Users can only view their own uploads when selecting the Manage Recipes page | The Manage Recipes view is limited to those recipes the user has uploaded |  **PASS** | **PASS** |
+|  003   | Prevent unauthorised recipe edits | Prevent users from editting a Full_Recipe URL such as ("https://ci-ms3-w3recipes.herokuapp.com/full_recipe/604105c97084e9c04df5e2e7") and changing full recipe to  edit_recipe. | Users are redirected back to the Manage Recipes page. Warning message flashed to screen. | **PASS** | **PASS** |
+|  004   | Prevent unauthorised recipe deletion | Prevent users from editting a Full_Recipe URL such as ("https://ci-ms3-w3recipes.herokuapp.com/full_recipe/604105c97084e9c04df5e2e7") and changing full recipe to delete_recipe.| Users are redirected back to the Manage Recipes page. Warning message flashed to screen. | **PASS** | **PASS** |
+|  005   | Profanity Filter | Profanity filter changes all **recognised** profanities to "****" | Checked various words and have added a couple of additional variations which were missing | **PASS** | **PASS** |
+|  006   | SSLify | All page requests should be redirected to https | All pages are https | **PASS** | **PASS** |
+
+> **Although the profanity filter aims to recognise as many words as it can it is always vulnerable to creative users who are determined to find weaknesses**
 ______
 
 ## **Bugs, Issues and Fixes** <a name="bugs"></a>
@@ -375,3 +408,5 @@ The following table explains the bugs and issues encountered while building this
 | 003 |Displaying Flash messages in a modal| Unable to display Flashed messages in a modal. Unable to combine Flask/Jinja syntax with Materialize Modal when using a loop. | Resorted to displaying them on the top of the relevant pages. Not a significant issue as Flashed messages work well. |
 | 004 | Favicon 404 on some pages | My chosen Fav icon was not displaying on all pages which inherit from the base,html. The error code was "GET /full_recipe/static/img/favicon.ico HTTP/1.1" 404".| Adding a forward slash to the beginning of the directory address fixed the issue.|
 | 005 | 500 Server Error | The web app responds with a 500 internal server error if you try to use the back button after logging out of the app. This is because the session cookie is cleared on loggout and the main pages require a session cookie. | The solution would be to simply display the home page, but I was unable to figure out how to achieve this in this particular case. |
+
+**[Back to Github Repo](https//:github.com/GazzaJ/CI-MS3-W3Recipes/)**
