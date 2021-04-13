@@ -205,6 +205,11 @@ ___
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | Edit Profile image | Profile image updates correctly when new URL supplied |  | **** | **** |
+|  002   | City update | Users city is uploaded to database when supplied and new data rendered into profile| Information saves and renders correctly | **PASS** | **PASS** |
+|  003   | Subscribed switch functionality | Switch status changes when selecting on and opens email entry input field | Switch functions correctly and email input field appears | **PASS** | **PASS** |
+![Subscribed Off](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-off.jpg)
+![Subscribed On](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-on.jpg)
 ___
 
 #### **Delete Recipe (DELETE)** <a name="delete-recipes"></a>  
@@ -273,9 +278,9 @@ Online tools have been used to validate the HTML, CSS, Python and JavaScript fil
 |Test|Process|Result| Comment |
 |----|-------|:----:|---------|
 |HTML Validation| Copy page URI into W3C validator|Warnings & Errors| See table below |
-|CSS Validation| Copy CSS code into WC3 validator| **CHECKED** || 
-|Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors detected|
-|Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors detected|
+|CSS Validation| Copy CSS code into WC3 validator| **CHECKED** | No Errors Detected | 
+|Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors Detected|
+|Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors Detected|
 |Javascript Validation| Copy script.js code into JSHint | **CHECKED** ||
 |Javascript Validation| Copy script.js code into JSLint | **CHECKED** ||
 
@@ -303,7 +308,7 @@ This helped me make some changes to maintain responsiveness.
 - README file spelling checked by copying and pasting the text into MS Word.
 
 
-### **Usability Testing** <a name="usability-testing"></a>"
+### **Usability Testing** <a name="usability-testing"></a>
 I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
 
 
@@ -329,35 +334,35 @@ The table below contains links to the Responsinator results where applicable.
 
 ### **Performance Testing** <a name="performance-testing"></a>
 The website has been performance testing using the following tools:
- - Google Lighthouse (Desktop)
+ - Google Lighthouse (Desktop)  
+
 ![Landing Page Lighthouse](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/landing-lighthouse.jpg)
 
-|    Page    | Performance | Accessibility | Best Practices | SEO  | Comments |
-|:----------:|:-----------:|:-------------:|:--------------:|:----:|----------|
-|Landing Page|    97%      |      100%     |       93%      | 100% |          |
-|Recipes Page|    80%      |       85%     |       93%      | 100% |          |
-|Full Recipe |    98%      |       95%     |       93%      | 100% |          |
-| Add Recipes|    82%      |       89%     |       93%      |  90% |          |
-|Manage Recipes|  93%      |       91%     |       93%      |  90% |          |
-| Edit Recipe  |  79%      |       89%     |       93%      | 100% |          |
-| Profile Page |  97%      |       95%     |      100%      | 100% |          |
-| Edit Profile |  97%      |      100%     |      100%      | 100% |          |
-| Dashboard    |  90%      |      100%     |       87%      | 100% |          |
+|    Page    | Performance | Accessibility | Best Practices | SEO  |
+|:----------:|:-----------:|:-------------:|:--------------:|:----:|
+|Landing Page|    97%      |      100%     |       93%      | 100% |
+|Recipes Page|    80%      |       85%     |       93%      | 100% |
+|Full Recipe |    98%      |       95%     |       93%      | 100% |
+| Add Recipes|    82%      |       89%     |       93%      |  90% |
+|Manage Recipes|  93%      |       91%     |       93%      |  90% |
+| Edit Recipe  |  79%      |       89%     |       93%      | 100% |
+| Profile Page |  97%      |       95%     |      100%      | 100% |
+| Edit Profile |  97%      |      100%     |      100%      | 100% |
+| Dashboard    |  90%      |      100%     |       87%      | 100% |
 
  - Google Lighthouse (Mobile)  
 
-|    Page    | Performance | Accessibility | Best Practices | SEO  | Comments |
-|:----------:|:-----------:|:-------------:|:--------------:|:----:|----------|
-|Landing Page|      42%    |       97%     |      87%       | 100% |          |
-|Recipes Page|      58%    |       85%     |      93%       | 100% |          |
-|Full Recipe |      61%    |       95%     |      93%       | 100% |          |
-| Add Recipes|      59%    |       89%     |      93%       |  90% |          |
-|Manage Recipes|    69%    |       91%     |      87%       |  92% |          |
-| Edit Recipe  |    67%    |       89%     |      93%       | 100% |          |
-| Profile Page |    86%    |       95%     |      100%      | 100% |          |
-| Edit Profile |    90%    |      100%     |      100%      | 100% |          |
-| Dashboard    |    58%    |      100%     |       87%      | 100% |          |
-
+|    Page    | Performance | Accessibility | Best Practices | SEO  |
+|:----------:|:-----------:|:-------------:|:--------------:|:----:|
+|Landing Page|      42%    |       97%     |      87%       | 100% |
+|Recipes Page|      58%    |       85%     |      93%       | 100% |
+|Full Recipe |      61%    |       95%     |      93%       | 100% |
+| Add Recipes|      59%    |       89%     |      93%       |  90% |
+|Manage Recipes|    69%    |       91%     |      87%       |  92% |
+| Edit Recipe  |    67%    |       89%     |      93%       | 100% |
+| Profile Page |    86%    |       95%     |      100%      | 100% |
+| Edit Profile |    90%    |      100%     |      100%      | 100% |
+| Dashboard    |    58%    |      100%     |       87%      | 100% |
 
 ______
 
