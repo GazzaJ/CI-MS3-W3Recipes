@@ -771,6 +771,10 @@ h2, h3 {
         font-size: 0.8rem;
     }
 
+    #cancel-button {
+        padding: 0;
+    }
+
     /*-- Manage Recipes --*/
 
     .edit-content {
