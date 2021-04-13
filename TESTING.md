@@ -1,4 +1,5 @@
-# [**W3 Recipes Testing & Bug Fixes**](https://ci-ms3-w3recipes.herokuapp.com/)
+![W3 Recipes](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/readme-header_1.jpg "W3Recipes")
+# [**Testing & Bug Fixes**](https://ci-ms3-w3recipes.herokuapp.com/)
 This document records all of the manual testing conducted on the W3Recipes app', and also lists the bugs and fixes recorded during the development of the app'.
 The philosophy I have used throughout this build is to code, review and test each part of the website as I progressed, relying heavily on Google Dev tools throughout, for first pass testing.
 ______
@@ -181,6 +182,23 @@ ___
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | Render Information correctly | Display the information for the user stored in the DB | Basic information displayed for usaers who haven't edit their profile.  | **PASS** | **PASS** |
+
+![Basic Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/basic-profile.jpg)
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  002   | Display email | Correctly displays email address if user chooses to subscribe | Email address is rendered below Town / City  | **PASS** | **PASS** |
+|  003   | Display city | City name displays correctly if user chosses to supply it | City displays below profile image | **PASS** | **PASS** |
+|  004   | Display image | Display updated image if one supplied. Display in Center of form | Image displays correctly in the center of the Profile form | **PASS** | **PASS** |
+
+![Full Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/full-profile.jpg)
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  005   | Remove Email | Remove email if user unsubscribes | The email is no longer rendered on the Profile page | **PASS** | **PASS** |
+
+![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/unsubscribed.jpg)
 ___
 
 #### **Edit Profile** <a name="edit-profile"></a>
@@ -213,7 +231,7 @@ Testing to confirm correct functionality of the Delete function. Aspects of this
 ![Start Deletion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/del-confirmation.jpg)
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-| 007 | Only delete the selected recipe document when performing deletions | Confirm only recipe data is removed from the database on deletion. Ensure no other collectiona are affected by the Delete function. | Only selected document is deleted. No downstream effect; no other collections or documents affected| **PASS** |  |
+| 007 | Only delete the selected recipe document when performing deletions | Confirm only recipe data is removed from the database on deletion. Ensure no other collectiona are affected by the Delete function. | Only selected document is deleted. No downstream effect; no other collections or documents affected| **PASS** | **PASS** |
 
 To confirm the integrity of the deletion process I chose to deleted a recipe created to validate the profanity filter
 The recipe exists in the MongoDB Atlas database prior to deletion.
@@ -231,16 +249,17 @@ The recipe exists in the MongoDB Atlas database prior to deletion.
 
 ![Delete Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/confirm-delete.jpg)
 
-3. Once confirmed the user is redirected to the Manage Recipes page - PASS
+3. Once confirmed the user is redirected to the Manage Recipes page - **PASS**
 4. A Flash message appears at the top of the Manage Recipes page confirming deletion - **PASS**
-
-![Delete Flash](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-coll.jpg)
-
-5. The Recipe has been deleted from the database - **PASS**
+5. The recipe no longer appears on the Manage Recipes page - **PASS**
 
 ![](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/deleted.jpg)
 
-6. The integrity of the other collections has not been affected. - **PASS**
+6. The Recipe has been deleted from the database - **PASS**
+
+![](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-removed.jpg)
+
+7. The integrity of the other collections has not been affected. - **PASS**
 
 ![User Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-collection.jpg)
 ![Country Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-coll.jpg)
@@ -311,6 +330,7 @@ The table below contains links to the Responsinator results where applicable.
 ### **Performance Testing** <a name="performance-testing"></a>
 The website has been performance testing using the following tools:
  - Google Lighthouse (Desktop)
+![Landing Page Lighthouse](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/landing-lighthouse.jpg)
 
 |    Page    | Performance | Accessibility | Best Practices | SEO  | Comments |
 |:----------:|:-----------:|:-------------:|:--------------:|:----:|----------|
@@ -350,4 +370,3 @@ The following table explains the bugs and issues encountered while building this
 | 003 |Displaying Flash messages in a modal| Unable to display Flashed messages in a modal. Unable to combine Flask/Jinja syntax with Materialize Modal when using a loop. | Resorted to displaying them on the top of the relevant pages. Not a significant issue as Flashed messages work well. |
 | 004 | Favicon 404 on some pages | My chosen Fav icon was not displaying on all pages which inherit from the base,html. The error code was "GET /full_recipe/static/img/favicon.ico HTTP/1.1" 404".| Adding a forward slash to the beginning of the directory address fixed the issue.|
 | 005 | 500 Server Error | The web app responds with a 500 internal server error if you try to use the back button after logging out of the app. This is because the session cookie is cleared on loggout and the main pages require a session cookie. | The solution would be to simply display the home page, but I was unable to figure out how to achieve this in this particular case. |
-| 006 | Console Warnings | Console warnings related to the MongoDB Charts iframes | |
