@@ -514,9 +514,23 @@ def edit_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    recipe_coll.remove({'_id': ObjectId(recipe_id)})
-    flash('Recipe Deleted Succesfully!')
-    return redirect(url_for('manage_recipes'))
+    recipe = recipe_coll.find_one({'_id': ObjectId(recipe_id)})
+    uploaded_by = recipe['uploaded_by']
+    user = mongo.db.users.find_one({'username': session['user']})
+    admin = user['is_admin']
+
+    # ---------- Check if user "is_admin" ----------
+
+    if uploaded_by != session['user']:
+        flash("You don't have the authority to delete this recipe!")
+        return redirect(url_for('manage_recipes'))
+
+        # ----- Check if session user uploaded the recipe -----
+
+    else :
+        recipe_coll.remove({'_id': ObjectId(recipe_id)})
+        flash('Recipe Deleted Succesfully!')
+        return redirect(url_for('manage_recipes'))
 
 
 # ---------- Recipe Dashboard Page ----------
