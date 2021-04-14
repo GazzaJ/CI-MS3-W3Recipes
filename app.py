@@ -382,7 +382,7 @@ def add_recipe():
     categories = category_coll.find()
     return render_template('add_recipe.html', countries=countries,
                            categories=categories,
-                           rec_img=rec_img)
+                           )
 
 
 # ---------- Display Full Recipe ----------
