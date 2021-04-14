@@ -202,6 +202,23 @@ def edit_profile():
             )
 
 
+# ---------- Delet Profile ----------
+
+@app.route('/delete_profile')
+def delete_profile():
+    # ----- Check if there is a session cookie and Delete-----
+
+    if session['user']:
+        mongo.db.users.remove({'username': session['user']})
+        flash('Your profile was deleted succesfully!')
+        session.pop('user')
+        return redirect(url_for('home'))
+
+    else:
+        flash("You don't have the authority to delete this profile!")
+        return redirect(url_for('home'))
+
+
 # ---------- MongoDB Collections ----------
 
 recipe_coll = mongo.db.recipes

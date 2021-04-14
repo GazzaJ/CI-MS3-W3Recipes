@@ -25,14 +25,36 @@
                         <p>Subscription Status: <span class="data">Not Subscribed</span></p>
                     {% endif %}
                 </div>
-            </div>            
-            <!-- Edit Profile -->
-            <div id="profile-btn" class="col s12 m6 offset-m3 center-align">
-                <a href="{{url_for('edit_profile')}}" class="waves-effect waves-light btn orange darken-2">Edit Profile</a>
+            </div>
+            <div class="row">
+                <!-- Edit Profile -->
+                <div id="profile-btn" class="col s6 center-align">
+                    <a id="edit-prof" href="{{url_for('edit_profile')}}" class="waves-effect waves-light btn orange darken-2">Edit Profile</a>
+                </div>
+                <!-- Delete Profile -->
+                <div class="col s6 center-align">
+                    <a href="#del-prof" class="red btn darken-4 modal-trigger tooltipped"
+                        data-position="bottom" data-tooltip="Delete Profile">DELETE!</a>
+                </div>
             </div>
         </div>
     </div>    
 </div>
+
+<!-- Delete Profile Modal - Check Message -->
+<div id="del-prof" class="modal">
+    <div class="modal-content">
+        <h4>You have chosen to delete your profile, {{ username }}</h4>
+        <p id="delete-check">Are you absolutely sure you would like to delete your profile?</p>
+    </div>
+    <div class="modal-footer">
+        <a href="{{ url_for('profile', username=session['user']) }}" 
+            class="modal-close waves-effect light-green darken-4 btn">Go Back</a>
+        <a id="delete" href="{{ url_for('delete_profile') }}"
+            class="modal-close waves-effect btn red darken-4">DELETE!</a>
+    </div>
+</div>
+
 <!-- Link to Manage Recipes page -->
 <div class="row page-link">
     <div class="col s12 center-align">

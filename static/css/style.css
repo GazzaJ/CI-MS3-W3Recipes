@@ -820,6 +820,11 @@ h2, h3 {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
     }
+
+    #edit-prof {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
 }
 
 @media (max-width: 1024px) {
