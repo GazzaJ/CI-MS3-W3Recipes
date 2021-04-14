@@ -377,12 +377,14 @@ def add_recipe():
         recipe_coll.insert_one(recipe)
         flash('Recipe Successfully Added!')
         return redirect(url_for('get_recipes'))
-
-    countries = country_coll.find().sort('name', 1)
-    categories = category_coll.find()
-    return render_template('add_recipe.html', countries=countries,
-                           categories=categories,
-                           )
+    if session['user']:
+        countries = country_coll.find().sort('name', 1)
+        categories = category_coll.find()
+        return render_template('add_recipe.html', countries=countries,
+                            categories=categories,
+                            )
+    else:
+        return redirect(url_for('home'))
 
 
 # ---------- Display Full Recipe ----------
