@@ -36,9 +36,22 @@ function editImage()
 {
   var url = document.getElementById("image_url").value;
   var image = new Image();
-  image.src = url;
-  document.getElementById("edit-img-container").appendChild(image);  
+  image.src = url;  
+  document.getElementById("profile-url-container").appendChild(image);  
   document.getElementById("new-img").innerHTML = "New Image";
+}
+
+/*----- Display New image when URL provided ----- 
+---------- on Edit Profile Pages----------
+Adapted from https://stackoverflow.com/questions/31398473/
+load-image-in-div-from-url-obtained-from-a-text-box/31398762*/
+function userImage()
+{
+  var url = document.getElementById("user_image").value;
+  var image = new Image();
+  image.src = url;  
+  document.getElementById("profile-url-container").appendChild(image);  
+  document.getElementById("prof-img").innerHTML = "New Image";
 }
 
 /*----- Check Status of "Subscribed" checkbox ----- 

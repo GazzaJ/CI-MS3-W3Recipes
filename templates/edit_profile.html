@@ -8,13 +8,15 @@
             Edit {{ username }}'s Profile
         </h3>
         <!-- User Profile Image -->
-        <div class="col s12 m6 offset-m3 center-align">
-            <img class="user-img circle" src="{{ image }}" alt="{{ username }}'s' profile photo">
+        <div id="profile-url-container" class="col s12 m6 offset-m3 center-align">
+            <p class="edit-img-text">Current Image</p>
+                <img class="user-img circle" src="{{ image }}" alt="{{ username }}'s' profile photo">
+            <p id="prof-img" class="edit-img-text"></p>
         </div>
         <div class="input-field col s12 m6 offset-m3 center-align">
             <i class="far fa-image prefix" aria-hidden="true"></i>
             <input value="{{ image }}" placeholder="Image URL" id="user_image" name="user_image" 
-                type="url" pattern="https://.*" class="validate">
+                type="url" onchange="userImage();" pattern="https://.*" class="validate">
             <label for="user_image">Profile Image or Avatar</label>            
         </div>
         <!-- User Profile Details -->            
