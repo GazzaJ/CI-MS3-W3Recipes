@@ -394,7 +394,10 @@ def full_recipe(recipe_id):
     recipe = recipe_coll.find_one({'_id': ObjectId(recipe_id)})
     origin = country_coll.find_one({'name': recipe['country_name']})
     flag = origin['alpha2']
-    return render_template('full_recipe.html', recipe=recipe, flag=flag)
+    if session['user']:
+        return render_template('full_recipe.html', recipe=recipe, flag=flag)
+    else:
+        return redirect(url_for('home'))
 
 
 # ---------- Manage Recipes ----------
