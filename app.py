@@ -225,7 +225,9 @@ def get_recipes():
     recipes = recipe_coll.find().sort('_id', -1).skip(
         per_page * (current_page - 1)).limit(per_page)
     total = recipe_coll.count()
-    pages = range(1, int(round(total / per_page + 1)))
+    pages = range(1, int(round(total / per_page) + 1))
+    last_page = max(range(1, int(round(total / per_page) + 1)))
+    first_page = min(range(1, int(round(total / per_page) + 1)))
     prev_page = current_page - 1
     next_page = current_page + 1
     return render_template(
@@ -239,6 +241,8 @@ def get_recipes():
         pages=pages,
         prev_page=prev_page,
         next_page=next_page,
+        last_page=last_page,
+        first_page=first_page
         )
 
 
