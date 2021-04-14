@@ -658,7 +658,9 @@ The photos used in this site, or in pre-populated recipes by the developer were 
 | 014   | Recipe Image     |         |  |
 | 015   | Recipe Image     |         |  |
 | 016   | Recipe Image     |         |  |
-
+| 017   | [Blank Profile image](https://cdn.pixabay.com/photo/2015/10/05/22/37/) | Pixabay | No Attribution Required |
+| 018   | [Blank Recipe image](https://pixy.org/src/13/thumbs350/135044.jpg)| pixy.org | No Attribution Required |
+____
 
 ### **Code Snippets**
 Much of the structure of this site follows what was taught during the Backend Development - Task Manager walkthrough project provided by Code Institute, but has been heavily modified to suit a recipe database site with additional functionality not provided in the walkthrough.
@@ -676,7 +678,8 @@ Much of the structure of this site follows what was taught during the Backend De
  - Thanks as always to everyone at the Code Institute for the excellent video tutorials and fantastic introduction to Python, Flask and some of the different databases structures. Tim Nelson's Walkthrough projects were particularly enjoyable.
  - Grateful thanks to Tutor support who were on hand when most needed to provide assistance.
  - Thanks to Ed Bradley for hosting a very helpful MS3 Planning Call and for providing some much needed support along the way.
- - Thanks also to Can Sucullu for opening my eyes to potential vulnerabilities and potential back doors in my web app.
+ - Thanks also to Can Sucullu and Precious Ijege for opening my eyes to potential vulnerabilities and potential back doors in my web app.
+ - My grateful appreciation goes out to Precious Ijege for running through the project with a fine tooth comb and helpinmg me ensure it was fit for submission.
  - My appreciation to all the users who took time to test the web app:
    - Eamonn Carroll
    - Kane Moore
