@@ -246,7 +246,7 @@ def get_recipes():
             first_page=first_page
             )
     else:
-        return redirect(url_for('index'))
+        return redirect(url_for('home'))
 
 
 # ---------- Recipe Text Search ----------
