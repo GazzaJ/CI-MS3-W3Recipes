@@ -583,7 +583,7 @@ def unauthorised(e):
 
 
 @app.errorhandler(403)
-def unauthorised(e):
+def forbidden(e):
     return (render_template('403.html'), 403)
 
 
