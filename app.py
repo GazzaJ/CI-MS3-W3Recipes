@@ -560,7 +560,10 @@ def delete_recipe(recipe_id):
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    if session['user']:
+        return render_template('dashboard.html')
+    else:
+        return redirect(url_for('home'))
 
 
 # ---------- Logout Page ----------
