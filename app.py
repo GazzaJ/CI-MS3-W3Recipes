@@ -324,7 +324,6 @@ def filter():
 
 @app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
-    rec_img = 'https://pixy.org/src/13/thumbs350/135044.jpg'
     if request.method == 'POST':
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
@@ -371,8 +370,10 @@ def add_recipe():
             'method': method,
             'uploaded_by': session['user'],
             }
+
         if recipe['image'] == '':
-            recipe['image'] == rec_img
+            recipe['image'] == 'https://pixy.org/src/13/thumbs350/135044.jpg'
+
         recipe_coll.insert_one(recipe)
         flash('Recipe Successfully Added!')
         return redirect(url_for('get_recipes'))
