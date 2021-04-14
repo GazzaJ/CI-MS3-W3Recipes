@@ -114,7 +114,8 @@
     <!-- Pagination Controls -->        
     <ul class="pagination center-align">
         {% if current_page != first_page  %}
-            <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=prev_page) }}"><i class="fas fa-caret-square-left" aria-label="Previous Page"></i></a></li>
+            <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=prev_page) }}">
+                <i class="fas fa-caret-square-left" aria-label="Previous Page"></i></a></li>
         {% endif %}
             {% for page in pages %}
                 {% if current_page == page %}                    
@@ -124,7 +125,8 @@
                 {% endif %}
             {% endfor %}
         {% if current_page != last_page %}
-            <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=next_page) }}"><i class="fas fa-caret-square-right" aria-label="Next Page"></i></a></li>
+            <li class="waves-effect"><a href="{{ url_for('get_recipes', current_page=next_page) }}">
+                <i class="fas fa-caret-square-right" aria-label="Next Page"></i></a></li>
         {% endif %}
     </ul>
         

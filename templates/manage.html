@@ -96,19 +96,23 @@
             </div>            
             <!-- Pagination -->
             {% if admin == True %}
-            <ul class="pagination center-align">
-                <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}">
-                    <i class="fas fa-caret-square-left" aria-hidden="true"></i></a></li>
-                {% for page in pages %}
-                    {% if current_page == page %}
-                        <li class="active"><a href="#">{{ page }}</a></li>
-                        {% else %}
-                        <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=page) }}">{{ page }}</a></li>
+                <ul class="pagination center-align">
+                    {% if current_page != first_page %}
+                        <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=prev_page) }}">
+                            <i class="fas fa-caret-square-left" aria-hidden="true"></i></a></li>
                     {% endif %}
-                {% endfor %}
-                <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=next_page) }}">
-                    <i class="fas fa-caret-square-right" aria-hidden="true"></i></a></li>
-            </ul>
+                        {% for page in pages %}
+                            {% if current_page == page %}
+                                <li class="active"><a href="#">{{ page }}</a></li>
+                                {% else %}
+                                <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=page) }}">{{ page }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    {% if current_page != last_page %}
+                    <li class="waves-effect"><a href="{{ url_for('manage_recipes', current_page=next_page) }}">
+                        <i class="fas fa-caret-square-right" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                </ul>
             {% endif %}            
 
             {% endblock %}
