@@ -354,6 +354,10 @@ def add_recipe():
         meth = text.rstrip()
         method = meth.split('\n')
 
+        image_url = request.form.get('image_url')
+        if image_url == "":
+            image_url = 'https://pixy.org/src/13/thumbs350/135044.jpg'
+
         recipe = {
             'country_name': country,
             'origin': origin,
@@ -361,7 +365,7 @@ def add_recipe():
             'recipe_type': request.form.get('recipe_category'),
             'vegan': request.form.get("vegan"),
             'vegetarian': request.form.get("vegetarian"),
-            'image': request.form.get('image_url'),
+            'image': image_url,
             'prep_time': clean_prep,
             'cooking_time': clean_cook,
             'description': clean_desc,
@@ -371,12 +375,10 @@ def add_recipe():
             'uploaded_by': session['user'],
             }
 
-        if recipe['image'] == '':
-            recipe['image'] == 'https://pixy.org/src/13/thumbs350/135044.jpg'
-
         recipe_coll.insert_one(recipe)
         flash('Recipe Successfully Added!')
         return redirect(url_for('get_recipes'))
+
     if session['user']:
         countries = country_coll.find().sort('name', 1)
         categories = category_coll.find()
