@@ -381,8 +381,8 @@ def add_recipe():
         countries = country_coll.find().sort('name', 1)
         categories = category_coll.find()
         return render_template('add_recipe.html', countries=countries,
-                            categories=categories,
-                            )
+                               categories=categories,
+                               )
     else:
         return redirect(url_for('home'))
 
