@@ -230,20 +230,23 @@ def get_recipes():
     first_page = min(range(1, int(round(total / per_page) + 1)))
     prev_page = current_page - 1
     next_page = current_page + 1
-    return render_template(
-        'recipes.html',
-        countries=countries,
-        categories=categories,
-        recipes=recipes,
-        current_page=current_page,
-        per_page=per_page,
-        total=total,
-        pages=pages,
-        prev_page=prev_page,
-        next_page=next_page,
-        last_page=last_page,
-        first_page=first_page
-        )
+    if session['user']:
+        return render_template(
+            'recipes.html',
+            countries=countries,
+            categories=categories,
+            recipes=recipes,
+            current_page=current_page,
+            per_page=per_page,
+            total=total,
+            pages=pages,
+            prev_page=prev_page,
+            next_page=next_page,
+            last_page=last_page,
+            first_page=first_page
+            )
+    else:
+        return redirect(url_for('index'))
 
 
 # ---------- Recipe Text Search ----------
