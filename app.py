@@ -354,6 +354,8 @@ def add_recipe():
         meth = text.rstrip()
         method = meth.split('\n')
 
+        # ----- Check for an image url -----
+        # ----- If none use default -----
         image_url = request.form.get('image_url')
         if image_url == "":
             image_url = 'https://pixy.org/src/13/thumbs350/135044.jpg'
@@ -495,6 +497,12 @@ def edit_recipe(recipe_id):
         meth = text.rstrip()
         method = meth.split('\n')
 
+        # ----- Check for an image url -----
+        # ----- If none use default -----
+        image_url = request.form.get('image_url')
+        if image_url == "":
+            image_url = 'https://pixy.org/src/13/thumbs350/135044.jpg'
+
         update = {
             'country_name': request.form.get('country_name'),
             'title': clean_title,
@@ -502,7 +510,7 @@ def edit_recipe(recipe_id):
             'recipe_type': request.form.get('recipe_category'),
             'vegan': vegan,
             'vegetarian': vegetarian,
-            'image': request.form.get('image_url'),
+            'image': image_url,
             'prep_time': clean_prep,
             'cooking_time': clean_cook,
             'description': clean_desc,
