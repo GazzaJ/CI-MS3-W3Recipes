@@ -5,12 +5,14 @@
         <div class="card-panel center-align">
             <h1>500 - Internal server error</h1>            
             <h3>Please use the navbar to navigate back to the site</h3>
+            <p id="pageInfo"></p>
         </div>
     </div> 
 
 {% endblock %}
 
 {% block scripts %}
+<!-- Copied from https://www.geeksforgeeks.org/python-404-error-handling-in-flask/ -->
     <script>
         var seconds = 6;
         // countdown timer. took 6 because page takes approx 1 sec to load
