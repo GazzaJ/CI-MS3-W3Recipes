@@ -32,10 +32,18 @@
                     </div>            
                     <div class="card-content">
                         <h4 class="card-title recipe-title">{{ recipe.title }}</h4>                    
-                        <p class="recipe-cards"><i class="fas fa-users" aria-hidden="true"></i> Servings: {{ recipe.servings }}</p>
-                        <p class="recipe-cards"><i class="fas fa-stopwatch" aria-hidden="true"></i> Prep time: {{ recipe.prep_time }}</p>
-                        <p class="recipe-cards"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Cooking time: {{ recipe.cooking_time }}</p>
-                        <p class="recipe-cards"><i class="fas fa-upload" aria-hidden="true"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em></p>
+                        <p class="recipe-cards"><i class="fas fa-users" 
+                            aria-hidden="true"></i> Servings: {{ recipe.servings }}
+                        </p>
+                        <p class="recipe-cards"><i class="fas fa-stopwatch" 
+                            aria-hidden="true"></i> Prep time: {{ recipe.prep_time }}
+                        </p>
+                        <p class="recipe-cards"><i class="fas fa-hourglass-half" 
+                            aria-hidden="true"></i> Cooking time: {{ recipe.cooking_time }}
+                        </p>
+                        <p class="recipe-cards"><i class="fas fa-upload" 
+                            aria-hidden="true"></i><em> Uploaded by: {{ recipe.uploaded_by }}</em>
+                        </p>
                     </div>
                 </div>                
             </div>    
@@ -46,7 +54,10 @@
             <div class="col s12">
                 <div class="col s12 center-align">
                     <h3 class="cta-3">Don't see a country represented here?</h3>
-                    <p class="cta-3"><a class="cta-signup light-grey" href="{{url_for('register')}}">Sign Up here</a> and add a recipe to fill in that country</p>
+                    <p class="cta-3"><a class="cta-signup light-grey" 
+                        href="{{url_for('register')}}">Sign Up here</a> 
+                        and add a recipe to fill in that country
+                    </p>
                 </div>
                 <!-- Animated Arrows -->  
                 <div class="row center-aling">
