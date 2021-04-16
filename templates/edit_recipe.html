@@ -49,7 +49,8 @@
                             <div class="row form-field">
                                 <!-- Vegan Switch -->
                                 <div class="col s12 switch">
-                                    <i class="fas fa-leaf prefix leaf"></i><span id="vegan-label" class="veg-text"> Vegan</span>                                    
+                                    <i class="fas fa-leaf prefix leaf"></i>
+                                    <span id="vegan-label" class="veg-text"> Vegan</span>                                    
                                     <label for="vegan">
                                         <span class="switch-text">No</span>
                                         {% if recipe.vegan == "on" %}
@@ -63,7 +64,8 @@
                                 </div>
                                 <!-- Vegetarian Switch -->
                                 <div id="veg-switch" class="col s12 switch">                                    
-                                    <i class="fas fa-seedling prefix leaf"></i><span class="veg-text"> Vegetarian</span>
+                                    <i class="fas fa-seedling prefix leaf"></i>
+                                    <span class="veg-text"> Vegetarian</span>
                                     <label for="vegetarian">
                                         <span class="switch-text">No</span>
                                         {% if recipe.vegetarian == "on" %}
@@ -111,7 +113,8 @@
                             <div class="input-field">
                                 <i class="fas fa-stopwatch prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.prep_time }}" id="prep_time" 
-                                    name="prep_time" type="text" class="validate tooltipped" pattern="^([0-9]{4})+ mins$" 
+                                    name="prep_time" type="text" class="validate tooltipped" 
+                                    pattern="^([0-9]{4})+ mins$" 
                                     data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
                                 <label for="prep_time">Preparation Time (mins)</label>
                             </div>
@@ -119,8 +122,9 @@
                             <div class="input-field">
                                 <i class="fas fa-hourglass-half prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.cooking_time }}" id="cooking_time" 
-                                    name="cooking_time" type="text" class="validate tooltipped" pattern="^([0-9]{4})+ mins$" 
-                                    data-position="bottom" data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
+                                    name="cooking_time" type="text" class="validate tooltipped" 
+                                    pattern="^([0-9]{4})+ mins$" data-position="bottom" 
+                                    data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
                                 <label for="cooking_time">Cooking Time (mins)</label>
                             </div>
                             <!-- Recipe Description Field -->                    
@@ -173,7 +177,8 @@
                             </a>
                         </div>
                         <div id="edit-save" class="col s6 left-align">
-                            <button id="recipe-edit" type="submit" href="" class="btn waves-effect waves-light light-green darken-4 center-align">
+                            <button id="recipe-edit" type="submit" href="" 
+                                class="btn waves-effect waves-light light-green darken-4 center-align">
                                 Save <i class="fas fa-check-circle" aria-hidden="true"></i>
                             </button>
                         </div>
