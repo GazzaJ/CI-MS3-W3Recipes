@@ -24,7 +24,7 @@
         <div class="input-field col s12 m6 offset-m3 center-align">
             <i class="fas fa-map-marker-alt prefix" aria-hidden="true"></i>
             <input value="{{ city }}" placeholder="Town/City where you live" id="city" 
-                name="city" type="text" class="validate" required>
+                name="city" type="text" class="validate" pattern="^[A-Za-z]$" required>
             <label for="city">Town/City</label>
         </div>                
         <!-- Subscription Status Switch -->
@@ -45,7 +45,7 @@
         <div id="subs-email" class="input-field col s12 m6 offset-m3 center-align">
             <i class="fas fa-envelope prefix" aria-hidden="true"></i>            
             <input value="{{ email }}" placeholder="john.smith@email.com" id="email" name="email"            
-                type="text" class="validate" required>            
+                type="email" class="validate" required>            
             <label for="email">Email Address</label>
         </div>
         <!-- Submit Button -->
