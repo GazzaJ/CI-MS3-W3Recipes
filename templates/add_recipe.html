@@ -95,6 +95,7 @@
                                         <a class="img-link" href="https://www.pexels.com/" target="_blank">Pexels</a>
                                     </div>
                                 </div>
+                                <!-- URL Instructions -->
                                 <div class="row">
                                     <div class="col s12">                                      
                                         <ul id="how-to">
@@ -128,16 +129,20 @@
                             <!-- Recipe Description Field -->                    
                             <div class="input-field form-field text-field">
                                 <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
-                                <textarea id="description" name="description" class="materialize-textarea validate" placeholder="Recipe Description"
-                                    minlength="10" maxlength="200" pattern="(?:\s*[a-zA-Z]+.)" required></textarea>
+                                <textarea id="description" name="description" class="materialize-textarea validate" 
+                                    placeholder="Recipe Description" minlength="10" maxlength="200" 
+                                    pattern="(?:\s*[a-zA-Z]+.)" required>
+                                </textarea>
                                 <label for="description">Recipe Description</label>
                             </div>
                             <!-- Recipe Ingredients Input -->
                             <div class="input-field text-field">
                                 <i class="fas fa-list-ul prefix" aria-hidden="true"></i>
                                 <textarea id="ingredients" name="ingredients" class="materialize-textarea validate tooltipped"
-                                    data-position="bottom" data-tooltip="Format e.g. 500 ml Chicken stock" placeholder="Add each ingredient on new line."
-                                    minlength ="4" pattern="[0-9]+\s([a-zA-Z]+( [a-zA-Z]+)+)" required></textarea>
+                                    data-position="bottom" data-tooltip="Format e.g. 500 ml Chicken stock" 
+                                    placeholder="Add each ingredient on new line." minlength ="4" 
+                                    pattern="[0-9]+\s([a-zA-Z]+( [a-zA-Z]+)+)" required>
+                                </textarea>
                                 <label for="ingredients">Recipe Ingredients</label>
                                 <a class="" ></a>
                             </div>
@@ -147,8 +152,8 @@
                             <div class="input-field text-field">
                                 <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" class="materialize-textarea validate tooltipped"
-                                    data-position="bottom" data-tooltip="Add each preparation step on a new line!" placeholder="Preparation Steps"
-                                    minlength="10" pattern="(?:\s*[0-9a-zA-Z]+.)" required>
+                                    data-position="bottom" data-tooltip="Add each preparation step on a new line!" 
+                                    placeholder="Preparation Steps" minlength="10" pattern="(?:\s*[0-9a-zA-Z]+.)" required>
                                 </textarea>
                                 <label for="method">Recipe Method</label>
                             </div>
@@ -157,7 +162,8 @@
                     <!-- Recipe Submit Button -->
                     <div class="row">
                         <div id="cancel-button" class="col s6 right-align">
-                            <a id="cancel-add" href="{{ url_for('get_recipes') }}" class="btn red darken-4 tooltipped" data-position="bottom" data-tooltip="This will take you back to the recipes page">
+                            <a id="cancel-add" href="{{ url_for('get_recipes') }}" class="btn red darken-4 tooltipped" 
+                                data-position="bottom" data-tooltip="This will take you back to the recipes page">
                                 Cancel <i class="fas fa-times-circle" aria-hidden="true"></i>
                             </a>
                         </div>
