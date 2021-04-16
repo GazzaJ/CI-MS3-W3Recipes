@@ -45,6 +45,7 @@ def home():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
@@ -156,6 +157,7 @@ def profile(username):
 @app.route('/edit_profile', methods=['GET', 'POST'])
 def edit_profile():
     if request.method == 'POST':
+
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
@@ -206,6 +208,7 @@ def edit_profile():
 
 @app.route('/delete_profile')
 def delete_profile():
+
     # ----- Check if there is a session cookie and Delete-----
 
     if session['user']:
@@ -234,8 +237,10 @@ per_page = 6
 
 @app.route('/get_recipes')
 def get_recipes():
+
     # ----- Pagination adapted from -----
     # https://www.hacksparrow.com/databases/mongodb/pagination.html
+
     countries = country_coll.find().sort('name', 1)
     categories = category_coll.find()
     current_page = request.args.get('current_page', type=int, default=1)
@@ -314,6 +319,7 @@ def filter():
 
     # ----- Pagination adapted from -----
     # https://www.hacksparrow.com/databases/mongodb/pagination.html
+
     current_page = request.args.get('current_page', type=int, default=1)
     total = recipe_coll.count()
     pages = range(1, int(round(total / per_page) + 1))
@@ -342,6 +348,7 @@ def filter():
 @app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
     if request.method == 'POST':
+
         # ----- Profanity Check -----
         # ----- Provided by better-profanity 0.7.0
 
@@ -360,12 +367,14 @@ def add_recipe():
         # Format Recipe ingredients
         # https://stackoverflow.com/questions/1140958/
         # whats-a-quick-one-liner-to-remove-empty-lines-from-a-python-string
+
         text = "".join([s for s in clean_ingred.splitlines(
             True) if s.strip("\r\n")])
         ingred = text.rstrip()
         ingredients = ingred.split('\n')
 
         # Format Recipe steps
+
         text = "".join([s for s in clean_method.splitlines(
             True) if s.strip("\r\n")])
         meth = text.rstrip()
@@ -373,6 +382,7 @@ def add_recipe():
 
         # ----- Check for an image url -----
         # ----- If none use default -----
+
         image_url = request.form.get('image_url')
         if image_url == "":
             image_url = 'https://pixy.org/src/13/thumbs350/135044.jpg'
@@ -480,7 +490,9 @@ def edit_recipe(recipe_id):
     uploaded_by = recipe['uploaded_by']
     user = mongo.db.users.find_one({'username': session['user']})
     admin = user['is_admin']
+
     # ---------- POST the Edits to the DB ----------
+
     if request.method == 'POST':
         vegan = "on" if request.form.get("vegan") else "off"
         vegetarian = "on" if request.form.get("vegetarian") else "off"
@@ -503,12 +515,14 @@ def edit_recipe(recipe_id):
         # Format Recipe ingredients
         # https://stackoverflow.com/questions/1140958/
         # whats-a-quick-one-liner-to-remove-empty-lines-from-a-python-string
+
         text = "".join([s for s in clean_ingred.splitlines(
             True) if s.strip("\r\n")])
         ingred = text.rstrip()
         ingredients = ingred.split('\n')
 
         # Format Recipe steps
+
         text = "".join([s for s in clean_method.splitlines(
             True) if s.strip("\r\n")])
         meth = text.rstrip()
@@ -516,6 +530,7 @@ def edit_recipe(recipe_id):
 
         # ----- Check for an image url -----
         # ----- If none use default -----
+
         image_url = request.form.get('image_url')
         if image_url == "":
             image_url = 'https://pixy.org/src/13/thumbs350/135044.jpg'
