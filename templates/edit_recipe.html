@@ -143,8 +143,8 @@
                                 <textarea id="ingredients" name="ingredients" 
                                     class="materialize-textarea validate tooltipped" minlength="4" 
                                     pattern="[0-9]+\s([a-zA-Z]+( [a-zA-Z]+)+)" data-position="bottom" 
-                                    data-tooltip="'Add each ingredient on a new line.'
-                                    'Format e.g. 500 ml Chicken stock'" required>
+                                    data-tooltip="Add each ingredient on a new line.
+                                    Format e.g. 500 ml Chicken stock" required>
                                     {%- for item in recipe.ingredients -%}
                                         {{- item -}}{{ '\n' }}                                   
                                     {%- endfor -%}
