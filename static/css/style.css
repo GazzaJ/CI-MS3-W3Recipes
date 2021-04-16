@@ -91,6 +91,12 @@ h2 {
     color: #e1e6e2;
 }
 
+/*---------- Tooltips ----------*/
+
+.material-tooltip { 
+    white-space: pre-line;
+} 
+
 /*---------- General Layout ----------*/
 
 .container {

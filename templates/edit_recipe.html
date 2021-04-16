@@ -120,7 +120,7 @@
                                 <i class="fas fa-hourglass-half prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.cooking_time }}" id="cooking_time" 
                                     name="cooking_time" type="text" class="validate tooltipped" pattern="^([0-9]{4})+ mins$" 
-                                    data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
+                                    data-position="bottom" data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
                                 <label for="cooking_time">Cooking Time (mins)</label>
                             </div>
                             <!-- Recipe Description Field -->                    
@@ -138,8 +138,9 @@
                                 <i class="fas fa-list-ul prefix" aria-hidden="true"></i>
                                 <textarea id="ingredients" name="ingredients" 
                                     class="materialize-textarea validate tooltipped" minlength="4" 
-                                    pattern="[0-9]+\s([a-zA-Z]+( [a-zA-Z]+)+)" 
-                                    data-tooltip="Format e.g. 500 ml Chicken stock" required>
+                                    pattern="[0-9]+\s([a-zA-Z]+( [a-zA-Z]+)+)" data-position="bottom" 
+                                    data-tooltip="'Add each ingredient on a new line.'
+                                    'Format e.g. 500 ml Chicken stock'" required>
                                     {%- for item in recipe.ingredients -%}
                                         {{- item -}}{{ '\n' }}                                   
                                     {%- endfor -%}
@@ -152,7 +153,8 @@
                             <div class="input-field">
                                 <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" 
-                                    class="materialize-textarea validate" minlength="10" 
+                                    class="materialize-textarea validate tooltipped" minlength="10" 
+                                    data-position="bottom" data-tooltip="Add each preparation step on a new line!" 
                                     pattern="(?:\s*[0-9a-zA-Z]+.)" required>
                                     {%- for step in recipe.method -%}
                                         {{- step -}}{{ '\n' }}
