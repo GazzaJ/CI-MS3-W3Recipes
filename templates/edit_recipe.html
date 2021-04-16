@@ -28,7 +28,7 @@
                                 <!-- Recipe Name Input -->
                                 <i class="fas fa-pen prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.title }}" id="title" name="title" type="text" class="validate"
-                                    minlength="10" maxlength="50" required>
+                                    minlength="10" maxlength="50" pattern="(?:\s*[a-zA-Z]+){1,6}" required>
                                 <label for="title">Recipe Name</label>
                             </div>
                             <div class="input-field">
@@ -111,21 +111,23 @@
                             <div class="input-field">
                                 <i class="fas fa-stopwatch prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.prep_time }}" id="prep_time" 
-                                    name="prep_time" type="text" class="validate" required>
-                                <label for="prep_time">Preparation Time</label>
+                                    name="prep_time" type="text" class="validate tooltipped" pattern="^([0-9]{4})+ mins$" 
+                                    data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
+                                <label for="prep_time">Preparation Time (mins)</label>
                             </div>
                             <!-- Cooking Time Input Field -->
                             <div class="input-field">
                                 <i class="fas fa-hourglass-half prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.cooking_time }}" id="cooking_time" 
-                                    name="cooking_time" type="text" class="validate" required>
-                                <label for="cooking_time">Cooking Time</label>
+                                    name="cooking_time" type="text" class="validate tooltipped" pattern="^([0-9]{4})+ mins$" 
+                                    data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
+                                <label for="cooking_time">Cooking Time (mins)</label>
                             </div>
                             <!-- Recipe Description Field -->                    
                             <div class="input-field">
                                 <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
                                 <textarea id="description" name="description" 
-                                    class="materialize-textarea validate" minlength="10" maxlength="200" required>
+                                    class="materialize-textarea validate" minlength="10" maxlength="200" pattern="(?:\s*[a-zA-Z]+.)" required>
                                     {{- recipe.description -}}
                                 </textarea>
                                 <label for="description">Recipe Description</label>
