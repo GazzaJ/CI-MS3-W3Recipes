@@ -6,6 +6,13 @@
 */
 
 /*---------- Fonts ----------*/
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Galada&family=Molle:ital@1&family=Shrikhand&display=swap');
 
 #main-title{
