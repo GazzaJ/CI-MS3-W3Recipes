@@ -623,12 +623,14 @@ I have attempted to work independently as much as possible while building this w
 - [W3C Validator](https://validator.w3.org/) - HTML and CSS Validation tool
 - [JSHint](https://jshint.com/) - JavaScript code analysis tool
 - [JSLint](https://jslint.com/) - JavaScript code quality analysis tool
-- [](https://www.tutorialspoint.com/online_python_formatter.htm) - Python code beautifier
-- []() - Python PEP8 validation
+- [Python Beautifier](https://www.tutorialspoint.com/online_python_formatter.htm) - Python code beautifier
+- [PEP8 Error Check](http://pep8online.com/) - Python PEP8 validation
 - [SEO Site Checkup](https://seositecheckup.com/tools/custom-404-error-page-test) - Checks to see if you have a custom 404 page
 - [Online JavaScript Beautifier](https://codebeautify.org/jsviewer) - Useful tool for indenting JS code
 - [Am I responsive?](http://ami.responsivedesign.is/) - Provides a simple view of a websites responsiveness.
 - [Responsinator](https://www.responsinator.com/) - Fairly comprehensive responsiveness testing
+- [Regex Generator](https://regex-generator.olafneumann.org/)
+- [Regex 101](https://regex101.com/)
 
 ______
 
