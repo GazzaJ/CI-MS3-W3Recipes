@@ -127,7 +127,8 @@
                             <div class="input-field">
                                 <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
                                 <textarea id="description" name="description" 
-                                    class="materialize-textarea validate" minlength="10" maxlength="200" pattern="(?:\s*[a-zA-Z]+.)" required>
+                                    class="materialize-textarea validate" minlength="10" 
+                                    maxlength="200" pattern="(?:\s*[a-zA-Z]+.)" required>
                                     {{- recipe.description -}}
                                 </textarea>
                                 <label for="description">Recipe Description</label>
@@ -136,7 +137,9 @@
                             <div class="input-field">
                                 <i class="fas fa-list-ul prefix" aria-hidden="true"></i>
                                 <textarea id="ingredients" name="ingredients" 
-                                    class="materialize-textarea validate" minlength="4" required>
+                                    class="materialize-textarea validate tooltipped" minlength="4" 
+                                    pattern="[0-9]+\s([a-zA-Z]+( [a-zA-Z]+)+)" 
+                                    data-tooltip="Format e.g. 500 ml Chicken stock" required>
                                     {%- for item in recipe.ingredients -%}
                                         {{- item -}}{{ '\n' }}                                   
                                     {%- endfor -%}
@@ -149,7 +152,8 @@
                             <div class="input-field">
                                 <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" 
-                                    class="materialize-textarea validate" minlength="10" required>
+                                    class="materialize-textarea validate" minlength="10" 
+                                    pattern="(?:\s*[0-9a-zA-Z]+.)" required>
                                     {%- for step in recipe.method -%}
                                         {{- step -}}{{ '\n' }}
                                     {%- endfor -%}
