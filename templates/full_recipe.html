@@ -42,17 +42,25 @@
                         <div id="vegi" class="row">
                             <div class="col s6 center-align">
                                 {% if recipe.vegan %}
-                                    <span class="veg"><i class="fas fa-leaf" aria-label="Vegan Recipe"> Vegan</i></span>
+                                    <span class="veg"><i class="fas fa-leaf" 
+                                        aria-label="Vegan Recipe"> Vegan</i>
+                                    </span>
                                 {% else %}
-                                    <span class="not-veg"><i class="fas fa-leaf strikeout" aria-label="Vegan Recipe"> Vegan</i></span>
+                                    <span class="not-veg"><i class="fas fa-leaf strikeout" 
+                                        aria-label="Vegan Recipe"> Vegan</i>
+                                    </span>
                                 {% endif %}
                             </div>
                             <!-- Vegetarian -->
                             <div class="col s6 center-align">
                                 {% if recipe.vegetarian %}
-                                    <span class="veg"><i class="fas fa-seedling" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
+                                    <span class="veg"><i class="fas fa-seedling" 
+                                        aria-label="Vegetarian Recipe"> Vegetarian</i>
+                                    </span>
                                 {% else %}
-                                    <span class="not-veg"><i class="fas fa-seedling strikeout" aria-label="Vegetarian Recipe"> Vegetarian</i></span>
+                                    <span class="not-veg"><i class="fas fa-seedling strikeout" 
+                                        aria-label="Vegetarian Recipe"> Vegetarian</i>
+                                    </span>
                                 {% endif %}
                             </div>
                         </div>
@@ -92,7 +100,8 @@
     <!-- Button to return to Recipes -->
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn light-green darken-4"><i class="fas fa-back" aria-hidden="true"></i>Back to Recipes</a>
+            <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn light-green darken-4">
+                <i class="fas fa-back" aria-hidden="true"></i>Back to Recipes</a>
         </div>
     </div>
 
