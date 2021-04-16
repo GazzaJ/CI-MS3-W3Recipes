@@ -714,6 +714,21 @@ h2, h3 {
     .signup-2 {
         margin: 0;
     }
+
+    ::-webkit-input-placeholder {
+        font-size: 0.8rem;
+        color: grey;
+    }
+
+    ::-moz-input-placeholder {
+        font-size: 0.8rem;
+        color: grey;
+    }
+
+    ::-ms-input-placeholder {
+        font-size: 0.8rem;
+        color: grey;
+    }    
     
     /*-- Recipe Card --*/
     .card,
