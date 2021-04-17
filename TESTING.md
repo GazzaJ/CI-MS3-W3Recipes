@@ -28,6 +28,7 @@ The following testing has been carried out to validate how the website addresses
 | 1 |_As a_ **first time visitor**, _I need to_ **understand the purpose of the site**, _in order to_ **consider exploring the site further**|The landing pageexplains the purpose of the site in both text and imagery. instances of a recipe card and the world map from the dashboard have also been included |  
 
 ![User Story 1](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-1.jpg)
+![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-2.jpg)
 
 
 |User Story|Desctiption|Testing|
@@ -35,6 +36,7 @@ The following testing has been carried out to validate how the website addresses
 | 2 |_As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**| There are three links on the Landing page from which any first time user can access the registration page. The registration process is very simple and only requires a username and password |  
 
 ![User Story 2](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-2.jpg)
+![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-1.jpg)
 
 
 |User Story|Desctiption|Testing|
@@ -72,11 +74,12 @@ The following testing has been carried out to validate how the website addresses
 | 7 |_As a _ **site owner**, _I need to_ **have a unique feature which generates some competition, _in order to_ **encourage users to post new recipes**.| One of the key drivers with W3Recipes is to to try and fill in the map of the world by uploading recipes from as many countries as posible. THe maps are displayed on the Landing page and in a Dashboard Page| 
 
 ![User Story 7](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-7.jpg)
+![Dashboard feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/toto-feedback.jpg)
   
 ______
 
 ### **Functionality Testing** <a name="functionality"></a>
-The following tables capture the functional testing performed on the web-app to ensure it works as desired. I have tested on the listed browsers only, using Windows version 1909 (OS Build 18363.1256), and have not conducted any backward compatibility testing in older browser versions.  
+The following tables capture the functional testing performed on the web-app to ensure it works as desired. I have tested on the listed browsers only, using Windows version 1909 (OS Build 18363.1500), and have not conducted any backward compatibility testing in older browser versions.  
 
 #### **First Time Navigation Testing** <a name="first-navigation"></a>
 Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and various anchor links provided to assist users navigating between pages.
@@ -86,7 +89,7 @@ Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and various an
 |   001  | Sign-up Link on Navbar |Correctly navigate to sign-up page | Opens Sign up/registration age | **PASS** | **PASS** |
 |   002  | Sign-up Link on Log-in Page |Correctly navigate to sign-up page| Opens Sign up/registration Page  | **PASS**  | **PASS** |
 |   003  | Sign-up Link on Landing Page |Correctly navigate to sign-up page| Opens up the Sign-up Page | **PASS** | **PASS** |
-|   004  | Sign-up Link on the base of the landing page |Correctly navigate to sign-up page| Opens the Sign-up Page | **PASS** | **PASS** |
+|   004  | Sign-up anchor link on the base of the landing page |Correctly navigate to sign-up page| Opens the Sign-up Page | **PASS** | **PASS** |
 |   005  | Log-in Link on Navbar |Correctly navigate to Log-in Page | Redirects user to Log-in Page | **PASS** | **PASS** |
 |   006  | Log-in Link on Sign-up Page |Correctly navigates to Sign-up Page | Redirects user to Sign-up/registration page | **PASS**  | **PASS** |
 |   007  | Home Link on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
@@ -103,7 +106,7 @@ Testing the registration process required to Sign-in and create a new account; a
 |   002    |Password - special Characters not allowed | Indicate requirements not met  | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   003    |Minimum Character limit (5) | Indicate requirements not met | Input box turns red and tooltip provides feedback | **PASS** | **PASS** |
 |   004    | Max character limit (15) | Indicate requirements not met | User input is limited to 15 characters | **PASS** | **PASS** |
-|   005    |  Username already taken | Let user know username is taken | User Redirected to Sign-up page with a Flashed message | **PASS** | **PASS** | 
+|   005    |  Username already taken | Let user know username it's taken | User Redirected to Sign-up page with a Flashed message | **PASS** | **PASS** | 
 
 ![Username taken](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/username-taken.jpg)
 
@@ -117,7 +120,7 @@ Testing the registration process required to Sign-in and create a new account; a
 
 |   Test   | Purpose         | Desired Result | Actual Result | Chrome v 87.0.4280.88 | Firefox v 84.0 (64-bit) |
 |:--------:|-----------------|----------------|---------------|:------:|:-------:|
-|   009    | Successful Sign-up  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |
+|   009    | Successful Sign-up  | User redirected into web-app with Success message displayed | User is taken to Profile page with Welcome message displayed | **PASS** | **PASS** |
 |   010    | Successful Log-in  | User redirected into web-app with Success message displayed | User is taken to Recipes page with Welcome message displayed | **PASS** | **PASS** |  
 
 ![Sign-up Success](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/success-login.jpg)
@@ -126,7 +129,7 @@ ___
 
 
 #### **Recipe Search & View (READ)** <a name="recipes"></a>
-This section documents the testing performed to validate the ability of the user to view the recipe collection, Filter by country and performa text search. Clicking the action button on each recipe should reveal the full recipe details.
+This section documents the testing performed to validate the ability of the user to view the recipe collection, filter by country and perform a text search. Clicking the Floating Action Button on each recipe should reveal the full recipe details.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 |  001   |  Latest First  | Display recipes in reverse chronological order | Recipes are sorted, newest to oldest | **PASS** | **PASS** |
@@ -141,6 +144,7 @@ This section documents the testing performed to validate the ability of the user
 |  004   | Recipe Search   | Returns results based on user text input | Recipes displayed based on matching text | **PASS** | **PASS** |
 
 ![Recipe Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/search-results.jpg)
+> **The recipe country filter and text search are not able to be used together in this first release of the app.**
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
@@ -159,16 +163,17 @@ Tests to check the users ability to upload a new recipe to the collection, and v
 |  002   | Manage Recipe link   | Link provided on Manage Recipes page results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
 |  003   | Country Select   | Displays the list of countries in alphabetic order | List is displayed in the correct order. Users can scroll, or type the first letter of the country to navigate the list | **PASS** | **PASS** |
 |  004   | Recipe Name   | Textbox functions as desired | Users can input a name. Feedback is provided if the name is <5 characters | **PASS** | **PASS** |
-|  005   | Category Select  | Displays the list of recipe categories | List displays and users can select the category appropriate for their recipe | **PASS** | **PASS** |
-|  006   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. User feedback provided | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
-|  007   | Servings  | Displays a list of numbers from 1 - 30 | correctly displays the list and is selectable | **PASS** | **PASS** |
-|  008   | Recipe Image   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  009   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  010   | Recipe Description   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  011   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  005   | Regex pattern matching | No special characters or continuous spaces| Field highlights red and message displays on hover [BAD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/search-results.jpg) [GOOD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/search-results.jpg) | **PASS** | **PASS** |
+|  006   | Category Select  | Displays the list of recipe categories | List displays and users can select the category appropriate for their recipe | **PASS** | **PASS** |
+|  007   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. User feedback provided | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
+|  008   | Servings  | Displays a list of numbers from 1 - 30 | correctly displays the list and is selectable | **PASS** | **PASS** |
+|  009   | Recipe Image   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  010   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  011   | Recipe Description   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
 |  012   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  013   | Data Written to MongoDB   | Confirm new recipe data is written to MongoDB | New recipes appear as a new Recipes document within Mongo DB. All fields are populated if completed | **PASS** | **PASS** |
-|  014   | Profanity Check  | Replace profanities in user input with ***  | Profanities are correcxtly replaced with *** | **PASS** | **PASS** |
+|  013   | Prep & Cooking Time   | "Add Recipe" on navbar results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  014   | Data Written to MongoDB   | Confirm new recipe data is written to MongoDB | New recipes appear as a new Recipes document within Mongo DB. All fields are populated if completed | **PASS** | **PASS** |
+|  015   | Profanity Check  | Replace profanities in user input with ***  | Profanities are correcxtly replaced with *** | **PASS** | **PASS** |
 
 ___
 
@@ -213,6 +218,11 @@ ___
 |  005   | Remove Email | Remove email if user unsubscribes | The email is no longer rendered on the Profile page | **PASS** | **PASS** |
 
 ![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/unsubscribed.jpg)
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  006   | Edit Profile Button| Redirect the user to the Edit profile page | Users are coirrectly redirected to the Edit Profile page|  |  |
+|  007   | Delete Profile Button | Opens up a Confirmation Modal - no deletion yet | Modal appears, Delete function not yet triggered |  |  |
 ___
 
 #### **Edit Profile** <a name="edit-profile"></a>
