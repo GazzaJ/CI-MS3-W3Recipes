@@ -114,7 +114,7 @@
                                 <i class="fas fa-stopwatch prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.prep_time }}" id="prep_time" 
                                     name="prep_time" type="text" class="validate tooltipped" 
-                                    pattern="^([0-9]{4})+ mins$" 
+                                    pattern="^([0-9]{1,4})+ mins$" 
                                     data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
                                 <label for="prep_time">Preparation Time (mins)</label>
                             </div>
@@ -123,7 +123,7 @@
                                 <i class="fas fa-hourglass-half prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.cooking_time }}" id="cooking_time" 
                                     name="cooking_time" type="text" class="validate tooltipped" 
-                                    pattern="^([0-9]{4})+ mins$" data-position="bottom" 
+                                    pattern="^([0-9]{1,4})+ mins$" data-position="bottom" 
                                     data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
                                 <label for="cooking_time">Cooking Time (mins)</label>
                             </div>
