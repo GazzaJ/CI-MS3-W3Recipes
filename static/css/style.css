@@ -6,13 +6,6 @@
 */
 
 /*---------- Fonts ----------*/
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Galada&family=Molle:ital@1&family=Shrikhand&display=swap');
 
 #main-title{
@@ -392,19 +385,21 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 }
 
 .veg {
+    font-family: "Happy Monkey", sans-serif;
+    font-size: 0.8rem !important;
     color: #f3f3f3;
     background-color: #336520;
-    padding: 0.2rem;
-    border-radius: 0.5rem;
-    font-family: 'Happy Monkey', sans-serif;
+    padding: 0.4rem;
+    border-radius: 0.5rem;       
 }
 
 .not-veg {
+    font-family: "Happy Monkey", sans-serif;
+    font-size: 0.8rem !important;
     color: #e1e6e2;    
     background-color: #c2c2c2;
-    padding: 0.2rem;
-    border-radius: 0.5rem;
-    font-family: 'Happy Monkey', sans-serif;
+    padding: 0.4rem;
+    border-radius: 0.5rem;    
 }
 
 .strikeout {
@@ -770,7 +765,7 @@ h2, h3 {
     .veg,
     .not-veg,
     #country-name {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     
     /*-- Recipes Page Add Recipe link --*/
@@ -883,7 +878,7 @@ h2, h3 {
 
     .veg,
     .not-veg {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }    
         
     .flag {
