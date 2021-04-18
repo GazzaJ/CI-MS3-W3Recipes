@@ -114,7 +114,7 @@
                                 <i class="fas fa-stopwatch prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.prep_time }}" id="prep_time" 
                                     name="prep_time" type="text" class="validate tooltipped" 
-                                    pattern="^[0-9]{1,4}+ mins$" 
+                                    pattern="^[0-9]{1,4} mins$" 
                                     data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
                                 <label for="prep_time">Preparation Time (mins)</label>
                             </div>
@@ -123,7 +123,7 @@
                                 <i class="fas fa-hourglass-half prefix" aria-hidden="true"></i>
                                 <input value="{{ recipe.cooking_time }}" id="cooking_time" 
                                     name="cooking_time" type="text" class="validate tooltipped" 
-                                    pattern="^[0-9]{1,4}+ mins$" data-position="bottom" 
+                                    pattern="^[0-9]{1,4} mins$" data-position="bottom" 
                                     data-tooltip="Up to 4 digits followed by 'mins' e.g 120 mins" required>
                                 <label for="cooking_time">Cooking Time (mins)</label>
                             </div>
@@ -133,8 +133,7 @@
                                 <textarea id="description" name="description" 
                                     class="materialize-textarea validate" minlength="10" 
                                     maxlength="200" pattern="(?:\s*[a-zA-Z]+.)" required>
-                                    {{- recipe.description -}}
-                                </textarea>
+                                    {{- recipe.description -}}</textarea>
                                 <label for="description">Recipe Description</label>
                             </div>
                             <!-- Recipe Ingredients Input -->
@@ -147,8 +146,7 @@
                                     Format e.g. 500 ml Chicken stock" required>
                                     {%- for item in recipe.ingredients -%}
                                         {{- item -}}{{ '\n' }}                                   
-                                    {%- endfor -%}
-                                </textarea>
+                                    {%- endfor -%}</textarea>
                                 <label for="ingredients">Recipe Ingredients</label>
                             </div>
                         </div>
@@ -162,8 +160,7 @@
                                     pattern="(?:\s*[0-9a-zA-Z]+.)" required>
                                     {%- for step in recipe.method -%}
                                         {{- step -}}{{ '\n' }}
-                                    {%- endfor -%}
-                                </textarea>
+                                    {%- endfor -%}</textarea>
                                 <label for="method">Recipe Method</label>
                             </div>
                         </div>
