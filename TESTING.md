@@ -350,14 +350,14 @@ The table below contains links to the Responsinator results where applicable.
 |  001   | Landing | [Landing Page](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2F) | Page functions across multiple devices in both portrait and landscape |
 |  002   | Sign-up | [Sign-up](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fregister) | Page functions across multiple devices in both portrait and landscape |
 |  003   | Log-in | [Log-in](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Flogin) | Page functions across multiple devices in both portrait and landscape |
-|  004   | Recipes Page | [Recipes Page](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fget_recipes) | Page functions across multiple devices in both portrait and landscape |
-|  005   | Full Recipe | [Full Recipe](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Ffull_recipe%2F604103a37084e9c04df5e2e5) | Page functions across multiple devices in both portrait and landscape |
-|  006   | Add Recipe | [Add Recipe](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fadd_recipe) | Page functions across multiple devices in both portrait and landscape |
-|  007   | Manage Recipes | - | Unable to text using online tools |
-|  008   | Edit Recipe | - | Unable to text using online tools |
-|  009   | Profile | - | Unable to text using online tools |
-|  010   | Edit Profile | - | Unable to text using online tools |
-|  011   | Dashboard | [Dashboard](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fdashboard) | Page functions across multiple devices in both portrait and landscape |
+|  004   | Recipes Page | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipes-responsiveness.jpg) | Page functions across multiple devices in both portrait and landscape |
+|  005   | Full Recipe | [Full Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/full-responsiveness.jpg) | Page functions across multiple devices in both portrait and landscape |
+|  006   | Add Recipe | [Add Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/add-responsiveness.jpg) | Page functions across multiple devices in both portrait and landscape |
+|  007   | Manage Recipes | [Manage Recipes Devtools](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/manage-recepies-responsive.jpg) | Page functions across multiple devices in both portrait and landscape |
+|  008   | Edit Recipe | [Edit Recipe Devtools](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/edit-recipes-responsiveness.jpg) | Page functions across multiple devices in both portrait and landscape |
+|  009   | Profile | [Profile Devtools](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/profile-responsiveness.jpg) | Page functions across multiple devices in both portrait and landscape |
+|  010   | Edit Profile | [Edit Profile Devtools](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/edit-p-responsiveness.jpg) | Page functions across multiple devices in both portrait and landscape |
+|  011   | Dashboard | [Dashboard](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/dash-responsivness.jpg) | Page functions across multiple devices in both portrait and landscape |
 |  012   | Error Pages | [Error Page](https://www.responsinator.com/?url=https%3A%2F%2Fci-ms3-w3recipes.herokuapp.com%2Fprofile%2Fadminuser) | Page functions across multiple devices in both portrait and landscape |
 
 ____
