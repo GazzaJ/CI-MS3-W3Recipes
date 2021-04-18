@@ -130,7 +130,7 @@
                                 <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
                                 <textarea id="description" name="description" class="materialize-textarea validate" 
                                     placeholder="Recipe Description" minlength="10" maxlength="200" 
-                                    pattern="^(\d|\w)*$" required></textarea>
+                                    pattern="^[a-zA-Z0-9 ]+( [a-zA-Z0-9 ]+)*$" required></textarea>
                                 <label for="description">Recipe Description</label>
                             </div>
                             <!-- Recipe Ingredients Input -->
@@ -139,8 +139,8 @@
                                 <textarea id="ingredients" name="ingredients" class="materialize-textarea tooltipped validate"
                                     data-position="bottom" data-tooltip="Add each ingredient on a new line.
                                     Format e.g. 500 ml Chicken stock" placeholder="Add each ingredient on new line." 
-                                    minlength ="4" maxlength="70" pattern="^(\d|\w)*$" required></textarea>
-                                <label for="ingredients">Recipe Ingredients</label>                                
+                                    minlength ="4" pattern="^[a-zA-Z0-9 ]+( [a-zA-Z0-9 ]+)*$" required></textarea>
+                                <label for="ingredients">Recipe Ingredients</label>
                             </div>
                         </div>                        
                         <div class="col s12 m12 l4">
@@ -149,7 +149,7 @@
                                 <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" class="materialize-textarea validate tooltipped" 
                                 data-position="bottom" data-tooltip="Add each preparation step on a new line!" 
-                                placeholder="Preparation Steps" minlength="10" pattern="(?:\s*[0-9a-zA-Z]+.)" required></textarea>
+                                placeholder="Preparation Steps" minlength="10" pattern="^[a-zA-Z0-9 ]+( [a-zA-Z0-9 ]+)*$" required></textarea>
                                 <label for="method">Recipe Method</label>
                             </div>
                         </div>
