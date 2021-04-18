@@ -136,10 +136,10 @@
                             <!-- Recipe Ingredients Input -->
                             <div class="input-field text-field">
                                 <i class="fas fa-list-ul prefix" aria-hidden="true"></i>
-                                <textarea id="ingredients" name="ingredients" class="materialize-textarea validate tooltipped"
+                                <textarea id="ingredients" name="ingredients" class="materialize-textarea tooltipped validate"
                                     data-position="bottom" data-tooltip="Add each ingredient on a new line.
                                     Format e.g. 500 ml Chicken stock" placeholder="Add each ingredient on new line." 
-                                    minlength ="4" maxlength="70" required></textarea>
+                                    minlength ="4" maxlength="70" pattern="^[a-zA-Z0-9_]*$" required></textarea>
                                 <label for="ingredients">Recipe Ingredients</label>                                
                             </div>
                         </div>                        
@@ -149,7 +149,7 @@
                                 <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" class="materialize-textarea validate tooltipped" 
                                 data-position="bottom" data-tooltip="Add each preparation step on a new line!" 
-                                placeholder="Preparation Steps" minlength="10" required></textarea>
+                                placeholder="Preparation Steps" minlength="10" pattern="(?:\s*[0-9a-zA-Z]+.)" required></textarea>
                                 <label for="method">Recipe Method</label>
                             </div>
                         </div>
