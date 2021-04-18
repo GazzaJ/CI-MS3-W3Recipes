@@ -331,7 +331,13 @@ ____
 
 ### **Usability Testing** <a name="usability-testing"></a>
 I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
+|   User   | Feedback |
+|:--------:|----------|
+| K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-1.jpg) |
+| K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-2.jpg) |
+|K. Tanaka | ![Toto Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/toto-feedback.jpg) |
 
+> **The vulnerability pointed out by Toto has been addressed and users are no longer able to delete a recipe by manipulating the web app url.**
 ____
 
 ### **Responsiveness Testing** <a name="responsiveness-testing"></a>
@@ -406,8 +412,9 @@ The following tests have been performed on the limited security features impleme
 |  003   | Users can only edit and delete their recipes | Users can only view their own uploads when selecting the Manage Recipes page | The Manage Recipes view is limited to those recipes the user has uploaded |  **PASS** | **PASS** |
 |  003   | Prevent unauthorised recipe edits | Prevent users from editting a Full_Recipe URL such as ("https://ci-ms3-w3recipes.herokuapp.com/full_recipe/604105c97084e9c04df5e2e7") and changing full recipe to  edit_recipe. | Users are redirected back to the Manage Recipes page. Warning message flashed to screen. | **PASS** | **PASS** |
 |  004   | Prevent unauthorised recipe deletion | Prevent users from editting a Full_Recipe URL such as ("https://ci-ms3-w3recipes.herokuapp.com/full_recipe/604105c97084e9c04df5e2e7") and changing full recipe to delete_recipe.| Users are redirected back to the Manage Recipes page. Warning message flashed to screen. | **PASS** | **PASS** |
-|  005   | Profanity Filter | Profanity filter changes all **recognised** profanities to "****" | Checked various words and have added a couple of additional variations which were missing | **PASS** | **PASS** |
-|  006   | SSLify | All page requests should be redirected to https | All pages are https | **PASS** | **PASS** |
+|  005   | Prevent web app url copy and paste | Error page if a user copies a logged-in page url into a new browser, without logging in | Results in a 500 Internal server error as there is no session cookie with the required username| **PASS** | **PASS** |
+|  006   | Profanity Filter | Profanity filter changes all **recognised** profanities to "****" | Checked various words and have added a couple of additional variations which were missing | **PASS** | **PASS** |
+|  007   | SSLify | All page requests should be redirected to https | All pages are https | **PASS** | **PASS** |
 
 > **Although the profanity filter aims to recognise as many words as it can it is always vulnerable to creative users who are determined to find weaknesses**
 ______
