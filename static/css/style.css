@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 /*---------- Fonts ----------*/
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Galada&family=Molle:ital@1&family=Shrikhand&display=swap');
 
@@ -362,8 +355,6 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
     margin-right: 1rem;
 }
 
-
-
 /*---------- Full Recipe Page ----------*/
 
 .recipe-text {
@@ -653,10 +644,10 @@ h2, h3 {
     }
 
     #main-title{
-    font-family: "Shrikhand", sans-serif !important;
-    font-weight: bold;
-    font-size: 2.5rem;
-    letter-spacing: 4px;
+        font-family: "Shrikhand", sans-serif !important;
+        font-weight: bold;
+        font-size: 2.5rem;
+        letter-spacing: 4px;
     }
 
     #landing-text {
@@ -736,7 +727,7 @@ h2, h3 {
     ::-ms-input-placeholder {
         font-size: 0.8rem;
         color: grey;
-    }    
+    }   
     
     /*-- Recipe Card --*/
     .card,
@@ -807,8 +798,8 @@ h2, h3 {
     /*-- Manage Recipes --*/
 
     .edit-content {
-    position: relative;    
-    top: 0.5rem;
+        position: relative;    
+        top: 0.5rem;
     }
 
     .flag {
