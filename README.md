@@ -444,7 +444,7 @@ Configures the app to redirect all incoming requests to https//
 I have attempted to provide as much initial functionality in this app' as I can in the time available. Despite this there are features I would still like to incorporate in the future:
 |   Feature     |     Description      |
 |---------------|----------------------|
-| Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's |
+| Image File Upload  | Ability to upload images from users personal image library as opposed to only using URL's. This would be useful as it's a social media norm rather than using URL's |
 | Image Validation | Validate image properties (size, aspect ratio etc) prior to uploading                 |
 |Inappropriate image filter| Filter inappropriate images from being uploaded or worse, displayed |
 | Conditional dropdown and seach | To reduce the number of search boxes on the Recipes page. Render either countries or recipe categories in the dropdown based on what the users selects|
