@@ -10,13 +10,16 @@ ______
    - [Registration / Log-in](#registration)
    - [Recipe Search & View](#recipes)
    - [Adding a Recipe](#add-recipe)
+   - [Manage Recipes](#manage)
    - [Edit a Recipe](#edit-recipe)
-   - [Delete a Recipe](#delete-recipe)  
-3. [Security Testing](#security)
+   - [User Profile](#user-profile)
+   - [Edit Profile](#edit-profile)
+   - [Delete a Recipe](#delete-recipe)
+3. [Code Quality & Validation](#code-validation)
 4. [Usability Testing](#usability)
 5. [Responsiveness Testing](#responsiveness)
 6. [Performance Testing](#performance)
-7. [Code Quality & Validation](#code-validation)
+7. [Security Testing](#security)
 8. [Bugs & Issues](#bugs-issues)  
 
 ______
@@ -156,7 +159,7 @@ This section documents the testing performed to validate the ability of the user
 |  010   | Return to main Recipes Page   | No requirement to use the back button | Users can navigate away from the full recipe page using navbar or "Back to Recipes" button at the bottom of the page | **PASS** | **PASS** |
 ____
    
-#### **Add Recipe (CREATE)** <a name="add-recipes"></a> 
+#### **Add Recipe (CREATE)** <a name="add-recipe"></a> 
 Tests to check the users ability to upload a new recipe to the collection, and validate process robustness.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
@@ -390,10 +393,11 @@ This project has been deployed using Heroku and the website has been continuousl
   - Samsung Galaxy S9
   - Samsung Tab A
   - HP Laptop with attached monitor
-This helped me make some changes to maintain responsiveness.
 
-The table below contains links to the Responsinator results where applicable.
-> None of the Responsiveness Tools provided results for pages where user authentication is important, such as Manage Recipes, Edit Recipe, Profile and Edit Profile. I have thus included screenshots of these from Google Devtools.  
+This helped me make changes and apply appropriate media queries to maintain responsiveness.
+
+The table below contains lists the results of the Responsiveness testing and links to images compiled from Google Devtools. The Responsinator.com app was also used to test the web app.
+ 
 
 |  Test  | Page | Responsinator Link | Result |
 |--------|------|--------------------|--------|
