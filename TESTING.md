@@ -20,7 +20,7 @@ ______
 5. [Responsiveness Testing](#responsiveness)
 6. [Performance Testing](#performance)
 7. [Security Testing](#security)
-8. [Bugs & Issues](#bugs-issues)  
+8. [Bugs & Issues](#bugs)  
 
 ______
 
@@ -250,7 +250,7 @@ ___
 |  007   | Edit Profile Button| Redirect the user to the Edit profile page | Users are correctly redirected to the Edit Profile page| **PASS** | **PASS** |
 |  008   | Delete Profile Button | Opens up a Confirmation Modal - no deletion yet | Modal appears, Delete function not yet triggered | **PASS** | **PASS** |
 
-![Profile Delete Modal](![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/delete-profile.jpg))
+![Profile Delete Modal](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/delete-profile.jpg)
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
@@ -279,7 +279,7 @@ ___
 
 ___
 
-#### **Delete Recipe (DELETE)** <a name="delete-recipes"></a>  
+#### **Delete Recipe (DELETE)** <a name="delete-recipe"></a>  
 Testing to confirm correct functionality of the Delete function. Aspects of this testing are critical as I don't want to delete the incorrect recipes.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
@@ -376,7 +376,7 @@ This section contains details of Warning and errors highlighted by WC3 validator
 
 ____
 
-### **Usability Testing** <a name="usability-testing"></a>
+### **Usability Testing** <a name="usability"></a>
 I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
 |   User   | Feedback |
 |:--------:|----------|
@@ -387,7 +387,7 @@ I requested fellow CI students and former colleagues to test the website to gath
 > **The vulnerability pointed out by Toto has been addressed and users are no longer able to delete a recipe by manipulating the web app URL.**
 ____
 
-### **Responsiveness Testing** <a name="responsiveness-testing"></a>
+### **Responsiveness Testing** <a name="responsiveness"></a>
 I have conducted continuous responsiveness testing, right up to the final submission, to ensure the website functions on different devices and in both portrait and landscape orientation, using Google Devtools and Responsinator.com.
 This project has been deployed using Heroku and the website has been continuously reviewed on several real devices:
   - Samsung Galaxy S9
@@ -416,7 +416,7 @@ The table below contains lists the results of the Responsiveness testing and lin
 
 ____
 
-### **Performance Testing** <a name="performance-testing"></a>
+### **Performance Testing** <a name="performance"></a>
 The website has been performance testing using the following tools:
  - Google Lighthouse (Desktop)  
 
@@ -450,7 +450,7 @@ The website has been performance testing using the following tools:
 
 ____
 
-### **Security Testing** <a name="security-testing"></a>
+### **Security Testing** <a name="security"></a>
 The following tests have been performed on the limited security features implemented on this site, and are documented in the table below:
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
