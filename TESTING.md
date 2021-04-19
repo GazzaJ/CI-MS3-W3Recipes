@@ -41,7 +41,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-| 3 |_As a_ **first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**| Once signed-up a new user is immediately redirected to the main recipes page where they have the ability to browse, filter and search the recipes and choose which recipe they would like to see in more detail |  
+| 3 |_As a_ **first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**| Once signed-up a new user can easily navigate to the main recipes page, using the navba, where they have the ability to browse, filter and search the recipes and choose which recipe they would like to see in more detail.|  
 
 ![User Story 3](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-3.jpg)
 
@@ -55,7 +55,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-| 5 |_As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**||
+| 5 |_As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**| Returning users can use the Manage Recipes page to either edit or delete previously uploaded recipes. Access is restricted to their own recipes |
 
 ![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5a.jpg)  
 ![User Story 5](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-5b.jpg)
@@ -71,7 +71,7 @@ The following testing has been carried out to validate how the website addresses
 
 |User Story|Desctiption|Testing|
 |:--------:|-----------|-------|
-| 7 |_As a _ **site owner**, _I need to_ **have a unique feature which generates some competition, _in order to_ **encourage users to post new recipes**.| One of the key drivers with W3Recipes is to to try and fill in the map of the world by uploading recipes from as many countries as posible. THe maps are displayed on the Landing page and in a Dashboard Page| 
+| 7 |_As a _ **site owner**, _I need to_ **have a unique feature which generates some competition, _in order to_ **encourage users to post new recipes**.| One of the key drivers with W3Recipes is to to try and fill in the map of the world by uploading recipes from as many countries as posible. The maps are displayed on the Landing page and in a Dashboard Page| 
 
 ![User Story 7](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-story-7.jpg)
 ![Dashboard feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/toto-feedback.jpg)
@@ -86,12 +86,12 @@ Tests the initial navbar selections _( Home | Sign-up | Log-in )_ and various an
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|   001  | Sign-up Link on Navbar |Correctly navigate to sign-up page | Opens Sign up/registration age | **PASS** | **PASS** |
+|   001  | Sign-up Link on Navbar |Correctly navigate to sign-up page | Opens Sign up/registration page | **PASS** | **PASS** |
 |   002  | Sign-up Link on Log-in Page |Correctly navigate to sign-up page| Opens Sign up/registration Page  | **PASS**  | **PASS** |
 |   003  | Sign-up Link on Landing Page |Correctly navigate to sign-up page| Opens up the Sign-up Page | **PASS** | **PASS** |
 |   004  | Sign-up anchor link on the base of the landing page |Correctly navigate to sign-up page| Opens the Sign-up Page | **PASS** | **PASS** |
 |   005  | Log-in Link on Navbar |Correctly navigate to Log-in Page | Redirects user to Log-in Page | **PASS** | **PASS** |
-|   006  | Log-in Link on Sign-up Page |Correctly navigates to Sign-up Page | Redirects user to Sign-up/registration page | **PASS**  | **PASS** |
+|   006  | Log-in Link on Sign-up Page |Correctly navigates to Log-in Page | Redirects user to Log-in page | **PASS**  | **PASS** |
 |   007  | Home Link on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
 |   008  | Brand Logo on navbar |Correctly redirects users to the Home Page | Redirects to Home Page | **PASS** | **PASS** |
 
@@ -125,35 +125,36 @@ Testing the registration process required to Sign-in and create a new account; a
 
 ![Sign-up Success](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/success-login.jpg)
 
-___
+____
 
 
 #### **Recipe Search & View (READ)** <a name="recipes"></a>
-This section documents the testing performed to validate the ability of the user to view the recipe collection, filter by country and perform a text search. Clicking the Floating Action Button on each recipe should reveal the full recipe details.
+This section documents the testing performed to validate the ability of the user to view the recipe collection, filter by country and perform a text search. Clicking the Floating Action Button on each recipe should also reveal the full recipe details.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  001   |  Latest First  | Display recipes in reverse chronological order | Recipes are sorted, newest to oldest | **PASS** | **PASS** |
-|  002   |  Recipe Filter  | Returns results based on user selected country | Correctly filters recipes and only returns matching recipes | **PASS** | **PASS** |
-|  003   |  Recipe Filter  | Filter options available after initial search | The Filter function can be used again and again based on different coutries | **PASS** | **PASS** |  
+|  001   | Navigate to Recipe Page| Recipes ;ink on Navbar correctly redirects users to Recipes Page| Navbar link functions correctly and redirects users to the Recipes Page| **PASS** | **PASS**|
+|  002   |  Latest First  | Display recipes in reverse chronological order | Recipes are sorted, newest to oldest | **PASS** | **PASS** |
+|  003   |  Recipe Filter  | Returns results based on user selected country | Correctly filters recipes and only returns matching recipes | **PASS** | **PASS** |
+|  004   |  Recipe Filter  | Filter options available after initial search | The Filter function can be used again and again based on different coutries | **PASS** | **PASS** |  
 
 ![Country Filter](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-filter.jpg)  
 ![Filter Results](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/filtered-results.jpg)
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  004   | Recipe Search   | Returns results based on user text input | Recipes displayed based on matching text | **PASS** | **PASS** |
+|  005   | Recipe Search   | Returns results based on user text input | Recipes displayed based on matching text | **PASS** | **PASS** |
 
 ![Recipe Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/search-results.jpg)
 > **The recipe country filter and text search are not able to be used together in this first release of the app.**
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  005   | Recipe Display   | Correctly display the selected recipe in full | Full recipe displayed for respective recipe cards | **PASS** | **PASS** |
-|  006   | Pagination | Limits display to 6 recipes | Six recipes displayed per page (where applicable) | **PASS** | **PASS** |
-|  007   | Pagination | Next and Previous Page arrows assit navigaction through pages | Next and PRevious page arrows work as desired | **PASS** | **PASS** |
-|  008   | Pagination | Page numbers link to respective reciupe page | Recipes displayed based on matching text | **PASS** | **PASS** |
-|  009   | Return to main Recipes Page   | No requirement to use the back button | Users can navigate away from the full recipe page using navbar or "Back to Recipes" button at the bottom of the page | **PASS** | **PASS** |
-___
+|  006   | Recipe Display   | Correctly display the selected recipe in full | Full recipe displayed for respective recipe cards | **PASS** | **PASS** |
+|  007   | Pagination | Limits display to 6 recipes | Six recipes displayed per page (where applicable) | **PASS** | **PASS** |
+|  008   | Pagination | Next and Previous Page arrows assit navigaction through pages | Next and Previous page arrows work as desired | **PASS** | **PASS** |
+|  009   | Pagination | Page numbers link to respective reciupe page | Pagination page links correctly redirect users to the appropriate page of results | **PASS** | **PASS** |
+|  010   | Return to main Recipes Page   | No requirement to use the back button | Users can navigate away from the full recipe page using navbar or "Back to Recipes" button at the bottom of the page | **PASS** | **PASS** |
+____
    
 #### **Add Recipe (CREATE)** <a name="add-recipes"></a> 
 Tests to check the users ability to upload a new recipe to the collection, and validate process robustness.
@@ -163,22 +164,39 @@ Tests to check the users ability to upload a new recipe to the collection, and v
 |  002   | Manage Recipe link   | Link provided on Manage Recipes page results in correct page displaying | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
 |  003   | Country Select   | Displays the list of countries in alphabetic order | List is displayed in the correct order. Users can scroll, or type the first letter of the country to navigate the list | **PASS** | **PASS** |
 |  004   | Recipe Name   | Textbox functions as desired | Users can input a name. Feedback is provided if the name is <5 characters | **PASS** | **PASS** |
-|  005   | Regex pattern matching on Recipe Name | No special characters or continuous spaces| Field highlights red and message displays on hover [BAD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/add-name-bad.jpg) [GOOD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/add-name-good.jpg) | **PASS** | **PASS** |
+|  005   | Regex pattern matching on Recipe Name | No special characters or continuous spaces| Field highlights red and message displays on hover [BAD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/add-name-bad.jpg) / [GOOD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/add-name-good.jpg) | **PASS** | **PASS** |
 |  006   | Recipe Category Select  | Displays the list of recipe categories | List displays and users can select the category appropriate for their recipe | **PASS** | **PASS** |
-|  007   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. User feedback provided | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
+|  007   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
 |  008   | Recipe Servings  | Displays a list of numbers from 1 - 30 | Correctly displays the list and is selectable | **PASS** | **PASS** |
 |  009   | Recipe Image   | Adding a valid image URL results in image displaying below input field| Image displays if a valid URL [Good URL](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/good-recipe-url.jpg) | **PASS** | **PASS** |
 |  010   | URL Regex pattern matching | Image url must start with https//: | Input field turns red and message displayed on hover [Good URL](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
-|  011   | Prep & Cooking Time   | Tooltip displays format | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
-|  012   | Prep & Cooking Time Regex pattern matching | Does the input field highlight when the the input is incorrect| input field changes to red & message displays on hover [BAD]() | **PASS** | **PASS** | MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
+|  011   | Prep & Cooking Time   | Tooltip displays format | Tooltip provides suggested format to use |  **PASS** | **PASS** |
+|  012   | Prep & Cooking Time Regex pattern matching | Does the input field highlight when the the input is incorrect| Input field changes to red & message displays on hover. [BAD MATCH]() | **PASS** | **PASS** | MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
 |  013   | Recipe Description   | Users are able to add a description, but the input cannot be whitespace or special characters. | Description renders correctly, and does not allow special characters | **PASS** | **PASS** |
-|  014   | Recipe Ingredient Input   | Users are able to add ingredients on new lines | Users are correctly redirected to the Add Recipe page | **PASS** | **PASS** |
+|  014   | Recipe Ingredient Input   | Users are able to add ingredients on new lines | Users are able to add as many ingredients as necessary. Toolyip advises users to eneter each ingredient on a new lins | **PASS** | **PASS** |
 |  015   | Recipe Method Input   | Users are able to add each new preparation step on a new line | Method input works as desired | **PASS** | **PASS** |
 |  016   | Data Written to MongoDB   | Confirm new recipe data is written to MongoDB | New recipes appear as a new Recipes document within Mongo DB. All fields are populated if completed | **PASS** | **PASS** |
 |  017   | Profanity Check  | Replace profanities in user input with ***  | Profanities are correcxtly replaced with *** | **PASS** | **PASS** |
 |  018   | The information renders correctly on the Full recipe Page | The selected fields render as intended on the Full Recipe page | **PASS** | **PASS** |
 
-___
+_____
+
+#### **Manage Recipes** <a name="manage"></a>
+This sections defines the testing performed on the Manage RFecipes page, from which users can edit and delete their recipes. If the user has Admin rights they are ablke to view and interact with all recipes.
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   | Navigation to Manage Recipes | Navbar should redirect users to the Manage Recipes page | The Navbar link functions correctly and redirects users to the Manage Recipes Page. | **PASS** | **PASS** |
+|  002   | Profile Page Link | If user has uploaded recipes a link redirects users to the Manage Recipes Page | Link correc tly rdirects users to the Manage Recipes page IF they have previously uploaded at least one recipe | **PASS** | **PASS** |
+|  003   | Recipe Quantity |Correct number of recipes displayed by user profile | The web app displays 6 recipes per page where appropriate | **PASS** | **PASS** |
+|  004   | Pagination | Pagination limits to 6 recipes/page | This is probably more appropriate to the Admin view as I don't anticipate many users having more than 6 recipes initially. Functions correctly | **PASS** | **PASS** |
+|  005   | Pagination | Previous and Next Pagination links work as desired | These buttons function as desired | **PASS** | **PASS** |
+|  006   | Pagination | Page number links redirect users to the appropriate page | The page numbers correctly link to the appropriate page and redirect the user as desired | **PASS** | **PASS** |
+|  007   | Recipe Cards | Recipe cards display correct information and are properly formatted | The recipe cards render the information as desired and are consistent with the main Recipe page for consistency | **PASS** | **PASS** |
+|  008   | Recipe Edit Button | Recipe Edit Button redirects user to Edit Recipe Page | The Recipe edit button reveals when the FAB is hovered. It redirects users to the Edit Recipe page | **PASS** | **PASS** |
+|  009   | Recipe Delete Button | Recipe Delete Button initiates the Deletion Process (see below for more detail) | The recipe Delete button reveals with the Edit Button when the FAB is hovered. It correctly initiates the delete process but does not directly delete the recipe | **PASS** | **PASS** |
+|  010   | Add Recipe Link | Add Recipe link takes users to the Add Recipe Page | The link does take the user to the Add Recipe page | **PASS** | **PASS** |
+
+_____
 
 #### **Edit Redipe (UPDATE)** <a name="edit-recipe"></a>
 
