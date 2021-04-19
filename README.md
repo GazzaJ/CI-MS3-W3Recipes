@@ -36,6 +36,8 @@ An automatically generated Table of Contents can be accessed by clicking the REA
 7. [Deployment](#deployment)
 8. [Resources](#resources)
 9. [Credits](#credits)
+    - [Media](#media)
+    - [Code Snippets](#code)
     - [Acknowledgements](#acknowledgements)
 10. [Technical Support](#technical)
 ______
@@ -639,7 +641,7 @@ ______
 ### **Content**
 The content of this website was created by Gareth John. Snippets of code have been copied from official documentation and other sources credited below and in the respective code files. All pre-loaded recipes were written by the developer.
 
-### **Media**
+### **Media** <a name="media"></a>
 
 The photos used in this site, or in pre-populated recipes by the developer were obtained from the following sources:
 | Photo | Description | Source | Attribution |
@@ -664,7 +666,7 @@ The photos used in this site, or in pre-populated recipes by the developer were 
 | 018   | [Blank Recipe image](https://pixy.org/src/13/thumbs350/135044.jpg)| pixy.org | No Attribution Required |
 ____
 
-### **Code Snippets**
+### **Code Snippets** <a name="code"></a>
 Much of the structure of this site follows what was taught during the Backend Development - Task Manager walkthrough project provided by Code Institute, but has been heavily modified to suit a recipe database site with additional functionality not provided in the walkthrough.
 
  | Code Snippet | Description | Source |
