@@ -379,11 +379,14 @@ ____
 ### **Usability Testing** <a name="usability"></a>
 I requested fellow CI students and former colleagues to test the website to gather their feedback on the User Experience and Interactivity. What follows are the comments I received in return:
 |   User   | Feedback |
-|:--------:|----------|
-| K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-1.jpg) |
-| K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-2.jpg) |
-|K. Tanaka | ![Toto Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/toto-feedback.jpg) |
-
+|:---------:|----------|
+|  K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-1.jpg) |
+|  K. Moore | ![KM Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/km-feedback-2.jpg) |
+| K. Tanaka | ![Toto Feedback](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/toto-feedback.jpg) |
+| E.Carroll | Verbal feedback - Nice concept, like the idea of sharing the recipes.
+| E.Carroll | Verbal feedback - I think the map is a great feature, would be great to click on the map and see recipes for that country |
+| E.Carroll | Verbal feedback - It was easy to upload a recipe. It would be better if you could upload you own recipe photo. I think most people are used to this |
+  
 > **The vulnerability pointed out by Toto has been addressed and users are no longer able to delete a recipe by manipulating the web app URL.**
 ____
 
