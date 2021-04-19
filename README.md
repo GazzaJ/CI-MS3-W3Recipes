@@ -30,14 +30,14 @@ An automatically generated Table of Contents can be accessed by clicking the REA
    - [Wireframes](#wireframes)
 2. [Database Schema](#dbschema)
 3. [Features](#features)
-3. [Technologies Used](#technologies)
-4. [Testing](#testing)
-5. [Bugs & Issues](#bugs)
-6. [Deployment](#deployment)
-7. [Resources](#resources)
-8. [Credits](#credits)
+4. [Technologies Used](#technologies)
+5. [Testing](#testing)
+6. [Database Creation](#database)
+7. [Deployment](#deployment)
+8. [Resources](#resources)
+9. [Credits](#credits)
     - [Acknowledgements](#acknowledgements)
-9. [Technical Support](#technical)
+10. [Technical Support](#technical)
 ______
 
 ## **User Experience (UX)** <a name="user-experience"></a>
@@ -373,19 +373,19 @@ The following table lists the primary features provided by the W3Recipes app.
 |:-----:|-----|:----:|
 | 001   | Landing page to convey the purpose of the website to new and returning users | [Landing](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/landing.jpg) |
 | 002   | Simple registration Process with dedicated sign-up page | [Sign-up Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/register.jpg) |
-| 002   | Dedicated Log-in screen for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/log-in.jpg) |
-| 003   | Paginated "Recipes Page" where all recipes are displayed | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes.jpg) |
-| 004   | Recipe Filter function, filters recipes by country of origin. The image provided shows a search by the country "Wales". | [Recipe Filter ](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/filter.jpg) |
-| 005   | Recipes text search function enables text based search on Title, recipe type, country, description and ingredients. The image provided illustrates a text search for all recipe Type "Sides" | [Recipe Text Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/search.jpg) |
-| 006   | A Full Recipe Page provides complete recipe details | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
-| 007   | A form which enables users to upload their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
-| 008   | Manage Recipes Page, from where users have the ability to Edit or Delete their own recipes | [Manage Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
-| 009   | Edit Recipe Form, enables users to modify all of the fields for any of the recipes they themseleves have uploaded. Original image is uploaded from the database, and the new image will be displayed below if the user decides to change the image file. |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
-| 010   | A Profile page contains user details and subscription preference | [Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile.jpg) |
-| 011   | An Edit Profile page to allow users the ability to Edit profile details and change subscription status | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
-| 012   | Delete function allows logged in users to delete any of their own recipes | [Delete Funtion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg) | 
-| 013   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
-| 014 | Footer | The footer for this web app contains links to the developers GitHub site and LinkedIn Account. The footer also contains a link to contact the developer via email. |  |
+| 003   | Dedicated Log-in screen for returning registered users | [Log-in Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/log-in.jpg) |
+| 004   | Paginated "Recipes Page" where all recipes are displayed | [Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/recipes.jpg) |
+| 005   | Recipe Filter function, filters recipes by country of origin. The image provided shows a search by the country "Wales". | [Recipe Filter ](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/filter.jpg) |
+| 006   | Recipes text search function enables text based search on Title, recipe type, country, description and ingredients. The image provided illustrates a text search for all recipe Type "Sides" | [Recipe Text Search](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/search.jpg) |
+| 007   | A Full Recipe Page provides complete recipe details | [Full Recipe Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/full.jpg) |
+| 008   | A form which enables users to upload their own recipes | [Add Recipe Form Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/add.jpg) |
+| 009   | Manage Recipes Page, from where users have the ability to Edit or Delete their own recipes | [Manage Recipes Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/manage-recipes.jpg) |
+| 010   | Edit Recipe Form, enables users to modify all of the fields for any of the recipes they themseleves have uploaded. Original image is uploaded from the database, and the new image will be displayed below if the user decides to change the image file. |  [Edit Recipe](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit.jpg) |
+| 011   | A Profile page contains user details and subscription preference | [Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/profile.jpg) |
+| 012   | An Edit Profile page to allow users the ability to Edit profile details and change subscription status | [Edit Profile Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/edit-prof.jpg) |
+| 013   | Delete function allows logged in users to delete any of their own recipes | [Delete Funtion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/delete.jpg) | 
+| 014   | Dashboard page displaying number of recipes by country, by user, meal type | [Dashboard Page](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/dash.jpg) |
+| 015 | Footer | The footer for this web app contains links to the developers GitHub site and LinkedIn Account. The footer also contains a link to contact the developer via email. |  |
 
 > **_I chose not to add a recipe category filter in this release as I thought it would make the top of the recipes page too clutters and would be an inelegant solution. Ideally I would like to incorporate an conditional dropdown menu where users can select between recipe category or countries._**
 
