@@ -223,29 +223,38 @@ ___
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  001   |
-|  001   | Render Information correctly | Display the information for the user stored in the DB | Basic information displayed for usaers who haven't edit their profile.  | **PASS** | **PASS** |
+|  001   | Navbar Link     | Profile link on navbar takes users to their profile page | The link in the navbar functions as desired the user profile page is rendered correctly with information stored in the DB | **PASS** | **PASS** |
+|  002   | Render Information correctly | Display the information for the user stored in the DB | Basic information displayed for usaers who haven't edit their profile.  | **PASS** | **PASS** |
 
 ![Basic Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/basic-profile.jpg)
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  002   | Display email | Correctly displays email address if user chooses to subscribe | Email address is rendered below Town / City  | **PASS** | **PASS** |
-|  003   | Display city | City name displays correctly if user chosses to supply it | City displays below profile image | **PASS** | **PASS** |
-|  004   | Display image | Display updated image if one supplied. Display in Center of form | Image displays correctly in the center of the Profile form | **PASS** | **PASS** |
+|  003   | Display email | Correctly displays email address if user chooses to subscribe | Email address is rendered below Town / City  | **PASS** | **PASS** |
+|  004   | Display city | City name displays correctly if user chooses to supply it | City displays below profile image | **PASS** | **PASS** |
+|  005   | Display image | Display default image until updated image is supplied. Display in Center of form | Image displays correctly in the center of the Profile form | **PASS** | **PASS** |
 
 ![Full Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/full-profile.jpg)
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  005   | Remove Email | Remove email if user unsubscribes | The email is no longer rendered on the Profile page | **PASS** | **PASS** |
+|  006   | Remove Email | Remove email if user unsubscribes | The email is no longer rendered on the Profile pageand is cleared from database | **PASS** | **PASS** |
 
 ![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/unsubscribed.jpg)
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  006   | Edit Profile Button| Redirect the user to the Edit profile page | Users are coirrectly redirected to the Edit Profile page|  |  |
-|  007   | Delete Profile Button | Opens up a Confirmation Modal - no deletion yet | Modal appears, Delete function not yet triggered |  |  |
+|  007   | Edit Profile Button| Redirect the user to the Edit profile page | Users are correctly redirected to the Edit Profile page| **PASS** | **PASS** |
+|  008   | Delete Profile Button | Opens up a Confirmation Modal - no deletion yet | Modal appears, Delete function not yet triggered | **PASS** | **PASS** |
+
+![Profile Delete Modal](![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/delete-profile.jpg))
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  009   | Escape Route    | "Go Back" button cancels the delete process and returns the user to the Profile page | The button functions as desired, redirecting the user away from the delete process and back to safety on the Profile page | **PASS** | **PASS** |
+|  010   | Confirm Deletion | Delete function executes and deletes the profile from the database. User is provided with confirmation | If the user choses to delete their profile their data is deleted and they are redirected to the home page | **PASS** | **PASS** |
+
+![Profile Deleted](![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/prof-del-good.jpg))
 ___
 
 #### **Edit Profile** <a name="edit-profile"></a>
