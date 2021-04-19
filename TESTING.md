@@ -172,15 +172,15 @@ Tests to check the users ability to upload a new recipe to the collection, and v
 |  007   | Vegetarian / Vegan Switches | Switches are "off" by default and will toggle on when selected. | Switches toggle as desired and change colour to teal when "on" | **PASS** | **PASS** |
 |  008   | Recipe Servings  | Displays a list of numbers from 1 - 30 | Correctly displays the list and is selectable | **PASS** | **PASS** |
 |  009   | Recipe Image   | Adding a valid image URL results in image displaying below input field| Image displays if a valid URL [Good URL](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/good-recipe-url.jpg) | **PASS** | **PASS** |
-|  010   | URL Regex pattern matching | Image URL must start with https//: | Input field turns red and message displayed on hover [Good URL](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
+|  010   | URL Regex pattern matching | Image URL must start with https//: | Input field turns red and message displayed on hover [Bad URL](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
 |  011   | Prep & Cooking Time   | Tooltip displays format | Tooltip provides suggested format to use |  **PASS** | **PASS** |
-|  012   | Prep & Cooking Time Regex pattern matching | Does the input field highlight when the input is incorrect| Input field changes to red & message displays on hover. [BAD MATCH]() | **PASS** | **PASS** | MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
+|  012   | Prep & Cooking Time Regex pattern matching | Does the input field highlight when the input is incorrect| Input field changes to red & message displays on hover. [BAD MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-time-match.jpg) | **PASS** | **PASS** | MATCH](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/bad-recipe-url.jpg) | **PASS** | **PASS** |
 |  013   | Recipe Description   | Users are able to add a description, but the input cannot be whitespace or special characters. | Description renders correctly, and does not allow special characters | **PASS** | **PASS** |
 |  014   | Recipe Ingredient Input   | Users are able to add ingredients on new lines | Users are able to add as many ingredients as necessary. Tooltip advises users to enter each ingredient on a new lines | **PASS** | **PASS** |
 |  015   | Recipe Method Input   | Users are able to add each new preparation step on a new line | Method input works as desired | **PASS** | **PASS** |
 |  016   | Data Written to MongoDB   | Confirm new recipe data is written to MongoDB | New recipes appear as a new Recipes document within Mongo DB. All fields are populated if completed | **PASS** | **PASS** |
 |  017   | Profanity Check  | Replace profanities in user input with ***  | Profanities are correctly replaced with *** | **PASS** | **PASS** |
-|  018   | The information renders correctly on the Full recipe Page | The selected fields render as intended on the Full Recipe page | **PASS** | **PASS** |
+|  018   | Full Recipe Page | The information renders correctly on the Full recipe Page | The selected fields render as intended on the Full Recipe page | **PASS** | **PASS** |
 
 _____
 
@@ -257,7 +257,7 @@ ___
 |  009   | Escape Route    | "Go Back" button cancels the delete process and returns the user to the Profile page | The button functions as desired, redirecting the user away from the delete process and back to safety on the Profile page | **PASS** | **PASS** |
 |  010   | Confirm Deletion | Delete function executes and deletes the profile from the database. User is provided with confirmation | If the user choses to delete their profile their data is deleted and they are redirected to the home page | **PASS** | **PASS** |
 
-![Profile Deleted](![Unsubscribed Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/prof-del-good.jpg))
+![Profile Deleted](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/prof-del-good.jpg)
 ___
 
 #### **Edit Profile** <a name="edit-profile"></a>
