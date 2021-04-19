@@ -261,16 +261,23 @@ ___
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-|  001   | Edit Profile image | Profile image updates correctly when new URL supplied |  | **** | **** |
-|  002   | City update | Users city is uploaded to database when supplied and new data rendered into profile| Information saves and renders correctly | **PASS** | **PASS** |
-|  003   | Subscribed switch functionality | Switch status changes when selecting on and opens email entry input field | Switch functions correctly and email input field appears | **PASS** | **PASS** |
+|  001   | Edit PRofile Button | The Edit profile button on the Profile page directs the user to the edit profile page | The button does redirect the users to the appropriate profile page | **PASS** | **PASS** |
+|  002   | Edit Profile image | Profile image updates correctly when new URL supplied |  | **PASS** | **PASS** |
+|  003   | New Profile Image | New preofile image displays if valid url supplied | The new image displays below the old if a valid url is supplied | **PASS** | **PASS** |
+|  004   | City update | Users city is uploaded to database when supplied and new data rendered into profile| Information saves and renders correctly | **PASS** | **PASS** |
+|  005   | Subscribed switch functionality | Switch status changes when selecting on and opens email entry input field | Switch functions correctly and email input field appears | **PASS** | **PASS** |
 
 ![Subscribed Off](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-off.jpg)
 ![Subscribed On](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/subscribed-on.jpg)
+
+|   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  006   | Write to DB | The updated profile info saves to the DB | New or editted profile information correctly saves to the DB | **PASS** | **PASS** |  
+
 ___
 
 #### **Delete Recipe (DELETE)** <a name="delete-recipes"></a>  
-Testing to confirm correct functionality of the Delete function. Aspects of this testing are critical as we don't want to delete the incorrect recipes.
+Testing to confirm correct functionality of the Delete function. Aspects of this testing are critical as I don't want to delete the incorrect recipes.
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
 | 001    | Navigate to Delete option | Delete button initiates recipe deletion | Clicking Delete correctly initiates the deletion process | **PASS** | **PASS** |
@@ -286,8 +293,8 @@ Testing to confirm correct functionality of the Delete function. Aspects of this
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
-| 004    | Provide escape route | Buton provides way back tgo Manage Recipes | A "Go Back" button has been provided as an alternative to the Confirm Deletion option. redirects user to Manage recipes | **PASS** | **PASS** |
-| 005    | Delete Correct Recipe | Ensure the correct recipe is deleted |Each recipe is linked by it's unique id, which is used when selecting or deleting recipes. Confirmation message includes the recipe name. Checked in MongoDB | **PASS** | **PASS** |
+| 004    | Provide escape route | Buton provides way back to Manage Recipes | A "Go Back" button has been provided as an alternative to the Confirm Deletion option. redirects user to Manage recipes | **PASS** | **PASS** |
+| 005    | Delete Correct Recipe | Ensure the correct recipe is deleted |Each recipe is linked by it's unique id, which is used when selecting or deleting recipes. Confirmation message includes the recipe name. **Checked in MongoDB** | **PASS** | **PASS** |
 | 006    | Provide Confirmation of Deletion | Flash message should appear when user is redirected to Manage Recipes page | User is redirected and message is diaplayed | **PASS** | **PASS** |
 
 ![Start Deletion](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/del-confirmation.jpg)
@@ -306,7 +313,8 @@ The recipe exists in the MongoDB Atlas database prior to deletion.
      - Country = Canada
      - Recipe Category = Appetisers  
 
- If the deletion process works as desired each of these fields should remain post deletion.
+ If the deletion process works as desired each of these fields should remain post deletion.  
+ 
 2. Delete confirmation modal appears to check Deletion - **PASS**
 
 ![Delete Check](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/confirm-delete.jpg)
@@ -323,8 +331,13 @@ The recipe exists in the MongoDB Atlas database prior to deletion.
 
 7. The integrity of the other collections has not been affected. - **PASS**
 
+##### User Collection
 ![User Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/user-collection.jpg)
+
+##### Country Collection
 ![Country Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/country-coll.jpg)
+
+#####Recipe Collection
 ![Recipe Category Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-category.jpg)
 
 ______
@@ -338,18 +351,20 @@ Online tools have been used to validate the HTML, CSS, Python and JavaScript fil
 |CSS Validation| Copy CSS code into WC3 validator| **CHECKED** | No Errors Detected |
 |CSS Beautifier| [CSS Auto Prefixer](https://autoprefixer.github.io/) | **CHECKED** | Output Used |
 |Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors Detected|
-|Python Validation| Copy app.py code into [PEP8 Online](http://pep8online.com/)| **CHECKED** | No Errors Detected|
+|Python Beautifier| Copy app.py code into Python Beautifier](https://www.tutorialspoint.com/online_python_formatter.htm)| **CHECKED** | |
 |Javascript Validation| Copy script.js code into JSHint | **CHECKED** ||
 |Javascript Validation| Copy script.js code into JSLint | **CHECKED** ||
-|Website Spelling | URL input [Typosaurus](https://typosaur.us/) | **CHECKED** | Difficulty on pages requiring authentication so MS Word used |
+|Website Spelling | URL input [Typosaurus](https://typosaur.us/) | **CHECKED** | Difficulty on pages requiring authentication so MS Word used or the Grammarly plugin when adding or editing a recipe |
 | README file Spelling | Text copied into word | **CHECKED** |  |
 
-> Where appropriate. Pages specific to user session cookie cannot be checked by external online resources. See below.
+> Where appropriate. Pages specific to user session cookie cannot be checked by external online resources.
 
 #### **HTML Validation**
+This section contains details of Warning and errors highlighted by WC3 validator. I have added this section as I believe the validator is not able to account for all scenarios and applies a strict protocol.
+
 | Page | Error / Warning | Comment |
 |:----:|-----------------|---------|
-| Multiple Pages | Possible misuse of Aria-Label| I have looked this up on [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and balieve that since there is nothing to explicitly explain the purpose of these buttons/links, using the aria label is justified. |
+| Multiple Pages | Possible misuse of Aria-Label| I have looked this up on [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and believe that since there is nothing to explicitly explain the purpose of the affected buttons/links, using the aria label is justified. |
 | Multiple Pages | Lack of a heading | The page has a heading. This is not a conventional website page layout of multiple headed sections. |
 | Recipes Page | Duplicate id's (recipe-fab) | Results from re-use of the single recipe card design to render each recipe. Required to achieve positioning. |
 | Multiple Pages | Bad value through use of { variable } | Required use with Flask  - justified |
