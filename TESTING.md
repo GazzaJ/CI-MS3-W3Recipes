@@ -199,6 +199,7 @@ This sections defines the testing performed on the Manage RFecipes page, from wh
 _____
 
 #### **Edit Redipe (UPDATE)** <a name="edit-recipe"></a>
+The Edit Recipe page enables users to retrieve a previously uploaded recipe from the database and edit any of the data previously supplied. This section validates the functionality of this page.  
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
@@ -208,12 +209,12 @@ _____
 |  004   | Recipe Categories | Recipe Categories are populated and selectable | Category dropdown functions and is selectable | **PASS** | **PASS** |
 |  005   | Recipe title is editable | User can change the recipe title | The user can edit and delete the recipe title  | **PASS** | **PASS** |
 |  006   | Servings| Servings is populated and selectabple  | Servings dropdown functions and is selectable | **PASS** | **PASS** |
-|  007   | Vegan & Vegetarian switches | Function and become highlighted on Recipe card is selected | Switches function and currectly highlight whensaved | **PASS** | **PASS** |
-|  008   | Recipe Image | Dsiplays from the start | The recipe image is visible | **PASS** | **PASS** |
-|  009   | New Recipe Image | Renders if a valid URL is supplied | The new image displays below the old image | **PASS** | **PASS** |
-|  010   | Recipe Description | Description is editable and saves correctly |  | **PASS** | **PASS** |
-|  011   | Recipe Ingredients | Ingredients are editable and save correctly |  | **PASS** | **PASS** |
-|  012   | Recipe Image | Preparation steps are editable and save correctly |  | **PASS** | **PASS** |
+|  007   | Vegan & Vegetarian switches | Function and become highlighted on Recipe card if selected | Switches function render correctly if changed | **PASS** | **PASS** |
+|  008   | Recipe Image | Current recipe image displays from the start | The recipe image is visible when the page renders | **PASS** | **PASS** |
+|  009   | New Recipe Image | Renders if a valid URL is supplied | The new image displays below the old image. New image saves to DB | **PASS** | **PASS** |
+|  010   | Recipe Description | Description is editable and saves correctly | Users are able to edit part of, or completely delete the description and start again | **PASS** | **PASS** |
+|  011   | Recipe Ingredients | Ingredients are editable and save correctly | Recipe ingredient lines are editable as required and changes save to DB | **PASS** | **PASS** |
+|  012   | Recipe Method | Preparation steps are editable and save correctly | Recipe prep' steps are editable and changes save to DB | **PASS** | **PASS** |
 |  013   | Confirmation of Upload | Provide confirmation of upload and redirect the user away from the Edit Recipe form | User is redirected to the manage Recipes page and a confirmatio message  is flashed to the screen | **PASS** | **PASS** |
 
 ___
@@ -222,6 +223,7 @@ ___
 
 |   Test | Purpose         | Desired Result | Actual Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
 |:------:|-----------------|----------------|---------------|:---------------------:|:-----------------------:|
+|  001   |
 |  001   | Render Information correctly | Display the information for the user stored in the DB | Basic information displayed for usaers who haven't edit their profile.  | **PASS** | **PASS** |
 
 ![Basic Profile](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/basic-profile.jpg)
