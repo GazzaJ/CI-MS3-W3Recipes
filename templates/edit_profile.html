@@ -48,14 +48,19 @@
                 type="email" class="validate" required>            
             <label for="email">Email Address</label>
         </div>
-        <!-- Submit Button -->
-        <div id="profile-edit" class="col s12 m6 offset-m3 center-align">
-            <a id="pro-edit-cancel" href="{{ url_for('profile', username=session['user']) }}" class="btn red darken-4">
-                Cancel <i class="fas fa-times-circle right" aria-hidden="true"></i>
-            </a>
-            <button class="btn waves-effect waves-light light-green darken-4" type="submit" name="action">
-                Save Edits <i class="fas fa-check-circle right" aria-hidden="true"></i>
-            </button>
+        <!-- Cancel Button -->
+        <div class="row center-align">
+            <div id="profile-edit" class="col s6 right-align">
+                <a id="pro-edit-cancel" href="{{ url_for('profile', username=session['user']) }}" class="btn red darken-4">
+                    Cancel <i class="fas fa-times-circle right" aria-hidden="true"></i>
+                </a>
+            </div>
+                <!-- Submit Button -->
+            <div class="col s6 left-align">
+                <button class="btn waves-effect waves-light light-green darken-4" type="submit" name="action">
+                    Save Edits <i class="fas fa-check-circle right" aria-hidden="true"></i>
+                </button>
+            </div>    
         </div>
     </form>    
 </div>
