@@ -126,6 +126,9 @@ def login():
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 def profile(username):
 
+    recipes = recipe_coll.find({'uploaded_by': session['user']})
+    uploaded = recipes.count()
+
     # Retrieve the session user's details from the DB
 
     username = mongo.db.users.find_one(
@@ -147,6 +150,7 @@ def profile(username):
             email=email,
             image=image,
             subscribed=subscribed,
+            uploaded=uploaded
             )
 
     return redirect(url_for('login'))
