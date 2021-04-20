@@ -75,7 +75,7 @@
                                 </p>
                                 <div id="vegi" class="row">
                                     <div class="col s5 center-align">
-                                        {% if recipe.vegan %}
+                                        {% if recipe.vegan == 'on' %}
                                         <span class="veg">
                                             Vegan 
                                         </span>
@@ -87,7 +87,7 @@
                                     </div>
                                     <!-- Vegetarian -->
                                     <div class="col s7 center-align">
-                                        {% if recipe.vegetarian %}                                        
+                                        {% if recipe.vegetarian == 'on' %}                                        
                                         <span class="veg">
                                             Vegetarian
                                         </span>
