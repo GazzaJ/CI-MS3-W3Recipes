@@ -15,12 +15,13 @@ ______
    - [User Profile](#user-profile)
    - [Edit Profile](#edit-profile)
    - [Delete a Recipe](#delete-recipe)
-3. [Code Quality & Validation](#code-validation)
-4. [Usability Testing](#usability)
-5. [Responsiveness Testing](#responsiveness)
-6. [Performance Testing](#performance)
-7. [Security Testing](#security)
-8. [Bugs & Issues](#bugs)  
+3. [Appearance Testing](#appearance)
+4. [Code Quality & Validation](#code-validation)
+5. [Usability Testing](#usability)
+6. [Responsiveness Testing](#responsiveness)
+7. [Performance Testing](#performance)
+8. [Security Testing](#security)
+9. [Bugs & Issues](#bugs)  
 
 ______
 
@@ -343,6 +344,22 @@ The recipe exists in the MongoDB Atlas database prior to deletion.
 #####Recipe Collection
 ![Recipe Category Collection](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/TESTING-img/recipe-category.jpg)
 
+______
+### **Appearance Testing** <a name="appearance"></a>
+This web app was primarily developed on a Google Chrome browser, on a Windows Laptop. The app has been regularly tested on Firefox to check functionality. This section tests for any changes in appearance between the different browsers.  
+
+|     Page     |  Desired Result | Chrome v 89.0.4389.82 | Firefox v 84.0 (64-bit) |
+|:------------:|----------------|-----------------------|-------------------------|
+| Landing Page | Minimal visible difference | No visible difference | No visible difference |
+| Sign-up Page | Minimal visible difference | No visible difference | No visible difference |
+| Log-in Page  | Minimal visible difference | No visible difference | No visible difference |
+| Recipes Page | Minimal visible difference | No visible difference | No visible difference |
+| Add Recipe | Minimal visible difference | Dropdown list items slightly less sharp than Firefox | Some of the bold text does not appear as bold as in Chrome. Placeholder colour is lighter than Chrome |
+| Manage Recipes | Minimal visible difference | No visible difference | No visible difference |
+| Edit Recipe | Minimal visible difference | Dropdown list items slightly less sharp than Firefox | Minimal visible differences |
+| Profile Page | Minimal visible difference | Profile image is less clear and less sharp | Profile image appears to have better contrast and sharpness |
+| Edit Profile | Minimal visible difference | No visible difference | No visible difference |
+| Dashboard Page | Minimal visible difference | No visible difference | No visible difference  |
 ______
 
 ### **Code Quality and Validation** <a name="code-validation"></a> 
