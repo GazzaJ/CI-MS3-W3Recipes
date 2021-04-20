@@ -6,13 +6,13 @@
     <div class="row add-edit">
         <div class="col s12">
             <div class="row card-panel grey lighten-5">
-                <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+                <form id="add-recipe" class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
                     <div class="row">
                         <div class="col s12 l4">
                             <div class="input-field form-field">
                                 <!-- Country Select -->
                                 <i class="fas fa-globe-americas prefix" aria-hidden="true"></i>
-                                <select id="country_name" name="country_name" class="validate" required>                            
+                                <select id="country_name" name="country_name" class="validate">                            
                                     <option value="" disabled selected>Choose Recipe Country</option>
                                     {% for country in countries %}
                                         <option value="{{ country.name }}">{{ country.name }}</option>
@@ -23,14 +23,14 @@
                             <div class="input-field form-field text-field">
                                 <!-- Recipe Name Input -->
                                 <i class="fas fa-pen prefix" aria-hidden="true"></i>
-                                <input placeholder="Recipe Name" id="title" name="title" type="text" class="validate"
-                                    minlength="5" maxlength="50" pattern="(?:\s*[a-zA-Z]+){1,6}" required>
+                                <input placeholder="Between 5 & 60 letters (A-Za-z)" id="title" name="title" type="text"
+                                    minlength="5" maxlength="60" pattern="(?:\s*[a-zA-Z]+){1,7}" class="validate" required>
                                 <label for="title">Recipe Name</label>
                             </div>
                             <div class="input-field form-field">
                                 <!-- Recipe Category Select -->
                                 <i class="fas fa-drumstick-bite prefix" aria-hidden="true"></i>
-                                <select id="recipe_category" name="recipe_category" class="validate" required>                            
+                                <select id="recipe_category" name="recipe_category" class="validate">                            
                                     <option value="" disabled selected>Choose Recipe Category</option>
                                     {% for category in categories %}
                                         <option value="{{ category.recipe_type }}">{{ category.recipe_type }}</option>
@@ -63,7 +63,7 @@
                             <div class="input-field form-field">
                                 <!-- Servings Input Field -->
                                 <i class="fas fa-users prefix" aria-hidden="true"></i>
-                                <select id="servings" name="servings" class="validate" required>
+                                <select id="servings" name="servings" class="validate">
                                     <option value="" disabled selected>Number of servings</option>
                                     {% for i in range(1, 31) %}
                                         <option value="{{ i }}">{{ i }}</option>
@@ -127,11 +127,12 @@
                             </div>
                             <!-- Recipe Description Field -->                    
                             <div class="input-field form-field text-field">
-                                <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
-                                <textarea id="description" name="description" class="materialize-textarea validate" 
+                                <i class="fas fa-file-alt prefix" aria-hidden="true"></i>                                
+                                <input id="description" name="description" type="text" class="validate" 
                                     placeholder="Recipe Description" minlength="10" maxlength="200" 
-                                    pattern="^[a-zA-Z0-9 ]+( [a-zA-Z0-9 ]+)*$" required></textarea>
+                                    pattern="^\w+( \w+.+)*$" required>
                                 <label for="description">Recipe Description</label>
+                                <span class="error"></span>
                             </div>
                             <!-- Recipe Ingredients Input -->
                             <div class="input-field text-field">
@@ -139,7 +140,7 @@
                                 <textarea id="ingredients" name="ingredients" class="materialize-textarea tooltipped validate"
                                     data-position="bottom" data-tooltip="Add each ingredient on a new line.
                                     Format e.g. 500 ml Chicken stock" placeholder="Add each ingredient on new line." 
-                                    minlength ="4" pattern="^[a-zA-Z0-9 ]+( [a-zA-Z0-9 ]+)*$" required></textarea>
+                                    minlength ="4" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9 ]+)*$" required></textarea>
                                 <label for="ingredients">Recipe Ingredients</label>
                             </div>
                         </div>                        
@@ -149,7 +150,7 @@
                                 <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" class="materialize-textarea validate tooltipped" 
                                 data-position="bottom" data-tooltip="Add each preparation step on a new line!" 
-                                placeholder="Preparation Steps" minlength="10" pattern="^[a-zA-Z0-9 ]+( [a-zA-Z0-9 ]+)*$" required></textarea>
+                                placeholder="Preparation Steps" minlength="15" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9 ]+)*$" required></textarea>
                                 <label for="method">Recipe Method</label>
                             </div>
                         </div>
