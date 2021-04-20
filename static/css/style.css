@@ -309,11 +309,13 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 .card-image {    
     max-height: 15rem;
-    overflow: cover;       
+    overflow: hidden;       
 }
 
 .recipe-image{        
-    height: 15rem !important;              
+    height: 15rem !important;
+    width: 100%;
+    object-fit: cover;                 
 }
 
 #recipe-fab {
@@ -345,7 +347,7 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 }
 
 .uploaded-by {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 /*---------- Search Card ----------*/
@@ -857,6 +859,10 @@ h2, h3 {
     #email-me,
     #copyright {
         margin: 0;
+    }
+
+    .card {
+        height: 33rem;
     }
 
     /*-- Manage Recipes --*/
