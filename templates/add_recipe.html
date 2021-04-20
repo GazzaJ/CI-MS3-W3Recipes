@@ -5,20 +5,21 @@
     
     <div class="row add-edit">
         <div class="col s12">
-            <div class="row card-panel grey lighten-5">
+            <div class="row card-panel grey lighten-4">
                 <form id="add-recipe" class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
                     <div class="row">
                         <div class="col s12 l4">
                             <div class="input-field form-field">
                                 <!-- Country Select -->
                                 <i class="fas fa-globe-americas prefix" aria-hidden="true"></i>
-                                <select id="country_name" name="country_name" class="validate">                            
+                                <select id="country_name" name="country_name" class="validate" required>                            
                                     <option value="" disabled selected>Choose Recipe Country</option>
                                     {% for country in countries %}
                                         <option value="{{ country.name }}">{{ country.name }}</option>
                                     {% endfor %}
                                 </select>
                                 <label for="country_name">Recipe Origin</label>
+                                <span class="error"></span>
                             </div>                    
                             <div class="input-field form-field text-field">
                                 <!-- Recipe Name Input -->
@@ -30,7 +31,7 @@
                             <div class="input-field form-field">
                                 <!-- Recipe Category Select -->
                                 <i class="fas fa-drumstick-bite prefix" aria-hidden="true"></i>
-                                <select id="recipe_category" name="recipe_category" class="validate">                            
+                                <select id="recipe_category" name="recipe_category" class="validate" required>                            
                                     <option value="" disabled selected>Choose Recipe Category</option>
                                     {% for category in categories %}
                                         <option value="{{ category.recipe_type }}">{{ category.recipe_type }}</option>
@@ -63,7 +64,7 @@
                             <div class="input-field form-field">
                                 <!-- Servings Input Field -->
                                 <i class="fas fa-users prefix" aria-hidden="true"></i>
-                                <select id="servings" name="servings" class="validate">
+                                <select id="servings" name="servings" class="validate" required>
                                     <option value="" disabled selected>Number of servings</option>
                                     {% for i in range(1, 31) %}
                                         <option value="{{ i }}">{{ i }}</option>
@@ -150,7 +151,7 @@
                                 <i class="fas fa-list-ol prefix" aria-hidden="true"></i>
                                 <textarea id="method" name="method" class="materialize-textarea validate tooltipped" 
                                 data-position="bottom" data-tooltip="Add each preparation step on a new line!" 
-                                placeholder="Preparation Steps" minlength="15" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9 ]+)*$" required></textarea>
+                                placeholder="Preparation Steps" minlength="15" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9 .]+)*$" required></textarea>
                                 <label for="method">Recipe Method</label>
                             </div>
                         </div>
@@ -164,7 +165,7 @@
                             </a>
                         </div>
                         <div class="col s6 left-align">
-                            <button type="submit" data-target="added" class="btn waves-effect center-align light-green darken-4" >Save  
+                            <button id="rec-submit" type="submit" data-target="added" class="btn waves-effect center-align light-green darken-4" >Save  
                                 <i class="fas fa-check-circle" aria-hidden="true"></i>
                             </button>                        
                         </div>

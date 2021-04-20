@@ -4,7 +4,7 @@
 
     <div class="row container">
         <!-- Recipe Filter -->
-        <form class="col s12 m5 l5 card-panel z-depth-4" action="{{ url_for('filter') }}" method="post">
+        <form class="col s12 m5 l5 card-panel z-depth-4 grey lighten-4" action="{{ url_for('filter') }}" method="post">
             <!-- Filter Recipes by Country -->            
             <div class="input-field col s12">                                     
             <i class="fas fa-globe-americas prefix" aria-hidden="true"></i>
@@ -29,7 +29,7 @@
             </div>            
         </form>
         <!-- Recipe Search -->    
-        <form class="col s12 m5 offset-m2 l5 offset-l2 card-panel z-depth-4" 
+        <form class="col s12 m5 offset-m2 l5 offset-l2 card-panel z-depth-4 grey lighten-4" 
             action="{{ url_for('search') }}" method="post">
             <div class="input-field col s12 text-field">
                 <i class="fas fa-search prefix" aria-hidden="true"></i>
@@ -55,7 +55,7 @@
         <!-- Recipe Cards -->
         {% for recipe in recipes %}            
             <div class="col s12 m6 xl4">            
-                <div class="card hoverable">
+                <div class="card hoverable grey lighten-4">
                     <div class="card-image">
                         <img class="recipe-image edit-pic" src="{{ recipe.image }}" alt="{{ recipe.title }}">                
                     </div>                          
