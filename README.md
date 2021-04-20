@@ -548,6 +548,13 @@ By forking the GitHub Repository you can make a copy of the original repository 
 - Open Git Bash
 - Change the current working directory to the location where you want the cloned directory to be made.
 - Type git clone, and then paste the URL you copied in Step 3.
+- It is important that you create an env.py file to save your Environment Variables such as:
+    - IP - (0.0.0.0 Used, but not recommended for production apps)
+    - PORT - (5000 used)
+    - Security Key (for Session Cookie)
+    - MONGODB URI - The URI for your MongoDB Database
+    - MONGODB PASSWORD - The password for your MongoDB Database
+    **The web app will not function without these variables.**
 
 ### **Heroku app creation**
 As this is a full-stack website it has been deployed to Heroku.com using the following procedure:
