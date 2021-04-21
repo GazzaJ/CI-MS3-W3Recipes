@@ -144,7 +144,7 @@ $('#rec-submit').click(function() {
     /*-- Recipe Ingredients variable and tests vs Regex --*/
     var ingredients = document.getElementById("ingredients").value;
     console.log(ingredients);
-    var ingRegex = /[A-Za-z0-9]+\s./gm;
+    var ingRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
     var ingredResult = ingRegex.test(ingredients);
     console.log(ingredResult);
     /*-- Recipe Method variable and test vs Regex --*/
@@ -178,7 +178,7 @@ $('#rec-submit').click(function() {
     }
     
     /*----- Check Recipe Ingredients -----*/
-    if(ingredResult == false) {
+    if(ingredResult != false) {
         alert("Please enter valid Recipe ingredient text!\n"+
         "500ml Chicken stock");
         return false        
