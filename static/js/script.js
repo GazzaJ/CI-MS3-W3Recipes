@@ -117,3 +117,68 @@ $(document).ready(function(){
         $(this).toggleClass("toggle3");
     });
 });
+
+/*----- Check User Input on Add Recipe Form -----*/
+/*-- Adapted from (https://html.form.guide/snippets/
+javascript-form-validation-using-regular-expression/)--*/
+$('#rec-submit').click(function() {
+    /*-- Country Variable --*/
+    var country = document.getElementById("country_name").value;
+    /*-- Recipe title variable and test vs Regex --*/
+    var title = document.getElementById("title").value;
+    var titleRegex = /^(?:\s*[a-zA-Z]+){1,5}$/;    
+    var titleResult = titleRegex.test(title);
+    /*-- Recipe Category Variable --*/
+    var rec_category = document.getElementById("recipe_category").value;
+    /*-- Recipe Servings Variable --*/
+    var servings = document.getElementById("servings").value;
+    /*-- Recipe Ingredients variable and tests vs Regex --*/
+    var ingredients = document.getElementById("ingredients").value;
+    console.log(ingredients);
+    var ingRegex = /[A-Za-z0-9]+\s./gm;
+    var ingredResult = ingRegex.test(ingredients);
+    console.log(ingredResult);
+    /*-- Recipe Method variable and test vs Regex --*/
+    var method = document.getElementById("method").value;
+    console.log(method);
+    var methRegex = /[A-Za-z0-9]+\s./gm;
+    var methodResult = methRegex.test(method);
+    console.log(methodResult);
+    /*----- Check Country Dropdown -----*/
+    if(country == "Choose Recipe Country") {
+        alert("Please Select a Country for your Recipe!");        
+    }
+
+    /*----- Check Recipe Title -----*/
+    if(titleResult == false) {
+        alert("Please correct the Recipe name!\n"+
+        "Required:- A-Za-z, between 5-60 Characters");        
+    }
+        
+    /*----- Check Recipe Category -----*/
+    if(rec_category == "Choose Recipe Category") {
+        alert("Please Select a Category for your Recipe!");        
+    }
+    
+    /*----- Check Recipe Category -----*/
+    if(servings == "Number of serving") {
+        alert("Please Select Number or Servings for your Recipe!");        
+    }
+    
+    /*----- Check Recipe Ingredients -----*/
+    if(ingredResult == false) {
+        alert("Please enter valid Recipe ingredient text!\n"+
+        "500ml Chicken stock");        
+    }
+
+    /*----- Check Recipe Ingredients -----*/
+    if(methodResult == false) {
+        alert("Please enter valid Recipe method text!\n"+
+        "No special characters allowed");
+        return false;
+    } 
+    return true;    
+});
+
+
+
