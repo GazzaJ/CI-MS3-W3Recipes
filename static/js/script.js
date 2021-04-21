@@ -118,6 +118,15 @@ $(document).ready(function(){
     });
 });
 
+/*----- Possible Solution to iOS Select list Error -----*/
+/* https://stackoverflow.com/questions/52850091/materialize-select
+-and-dropdown-touch-event-selecting-wrong-item/52851046#52851046-*/
+$(document).click(function(){
+    $('li[id^="select-options"]').on('touchend', function (e) {
+        e.stopPropagation();
+    });
+});
+
 /*----- Check User Input on Add Recipe Form -----*/
 /*-- Adapted from (https://html.form.guide/snippets/
 javascript-form-validation-using-regular-expression/)--*/
@@ -141,18 +150,20 @@ $('#rec-submit').click(function() {
     /*-- Recipe Method variable and test vs Regex --*/
     var method = document.getElementById("method").value;
     console.log(method);
-    var methRegex = /[A-Za-z0-9]+\s./gm;
+    var methRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
     var methodResult = methRegex.test(method);
     console.log(methodResult);
     /*----- Check Country Dropdown -----*/
     if(country == "Choose Recipe Country") {
-        alert("Please Select a Country for your Recipe!");        
+        alert("Please Select a Country for your Recipe!");
+        return false        
     }
 
     /*----- Check Recipe Title -----*/
     if(titleResult == false) {
         alert("Please correct the Recipe name!\n"+
-        "Required:- A-Za-z, between 5-60 Characters");        
+        "Required:- A-Za-z, between 5-60 Characters");
+        return false        
     }
         
     /*----- Check Recipe Category -----*/
@@ -162,23 +173,22 @@ $('#rec-submit').click(function() {
     
     /*----- Check Recipe Category -----*/
     if(servings == "Number of serving") {
-        alert("Please Select Number or Servings for your Recipe!");        
+        alert("Please Select Number or Servings for your Recipe!");
+        return false        
     }
     
     /*----- Check Recipe Ingredients -----*/
     if(ingredResult == false) {
         alert("Please enter valid Recipe ingredient text!\n"+
-        "500ml Chicken stock");        
+        "500ml Chicken stock");
+        return false        
     }
 
     /*----- Check Recipe Ingredients -----*/
-    if(methodResult == false) {
+    if(methodResult != false) {
         alert("Please enter valid Recipe method text!\n"+
-        "No special characters allowed");
-        return false;
-    } 
-    return true;    
+        "No special characters allowed");      
+        return false     
+    }
+    return true
 });
-
-
-
