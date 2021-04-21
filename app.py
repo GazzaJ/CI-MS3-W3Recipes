@@ -552,8 +552,7 @@ def edit_recipe(recipe_id):
             'description': clean_desc,
             'servings': request.form.get('servings'),
             'ingredients': ingredients,
-            'method': method,
-            'uploaded_by': session['user'],
+            'method': method
             }
         recipe_coll.update({'_id': ObjectId(recipe_id)}, update)
         flash('Recipe Successfully Edited!')
