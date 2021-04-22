@@ -731,6 +731,11 @@ h2, h3 {
     }   
     
     /*-- Recipe Card --*/
+    #search-button {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
     .card,
     .manage-card {        
         margin-bottom: 1rem;
