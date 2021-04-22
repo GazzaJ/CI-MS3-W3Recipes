@@ -37,7 +37,7 @@
                 value="{{ city }}" 
                 placeholder="Town/City where you live" 
                 class="validate" 
-                pattern="^[A-Za-z]$">
+                pattern="(?:\s*[a-zA-Z]+){1,5}">
             <label for="city">Town/City</label>
         </div>                
         <!-- Subscription Status Switch -->
@@ -76,7 +76,7 @@
             </div>
                 <!-- Submit Button -->
             <div class="col s6 left-align">
-                <button class="btn waves-effect waves-light light-green darken-4" type="submit" name="action">
+                <button id="prof-save" class="btn waves-effect waves-light light-green darken-4" type="submit" name="action">
                     Save Edits <i class="fas fa-check-circle right" aria-hidden="true"></i>
                 </button>
             </div>    

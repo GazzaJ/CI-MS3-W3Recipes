@@ -189,18 +189,18 @@ $('#rec-submit').click(function() {
     return true;
 });
 
-/*----- Check User Input on Add Recipe Form -----*/
+/*----- Check User Input on Edit Recipe Form -----*/
 /*-- Adapted from (https://html.form.guide/snippets/
 javascript-form-validation-using-regular-expression/)--*/
 $('#edit-save').click(function() {
 /*-- Recipe Ingredients variable and tests vs Regex --*/
-var ingredients = document.getElementById("ingredients").value;
-var ingRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
-var ingredResult = ingRegex.test(ingredients);
-/*-- Recipe Method variable and test vs Regex --*/
-var method = document.getElementById("method").value;
-var methRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
-var methodResult = methRegex.test(method);
+    var ingredients = document.getElementById("ingredients").value;
+    var ingRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
+    var ingredResult = ingRegex.test(ingredients);
+    /*-- Recipe Method variable and test vs Regex --*/
+    var method = document.getElementById("method").value;
+    var methRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
+    var methodResult = methRegex.test(method);
     /*----- Check Recipe Ingredients -----*/
     if (ingredResult != false) {
         alert("Please enter valid Recipe ingredient text!\n" +
@@ -215,4 +215,4 @@ var methodResult = methRegex.test(method);
         return false;
     }
     return true;
-});  
+});
