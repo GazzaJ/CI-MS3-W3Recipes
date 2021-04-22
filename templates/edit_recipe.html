@@ -180,16 +180,17 @@
                             <!-- Recipe Description Field -->                    
                             <div class="input-field">
                                 <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
-                                <textarea 
+                                <input 
                                     id="description" 
-                                    name="description" 
+                                    name="description"
+                                    type="text" 
                                     class="materialize-textarea validate" 
                                     minlength="10" 
                                     maxlength="200" 
-                                    pattern="(?:\s*[a-zA-Z]+.)"
+                                    pattern="^\w+( \w+.+)*$"
+                                    value="{{- recipe.description -}}"
                                     spellcheck="true" 
                                     required>
-                                    {{- recipe.description -}}</textarea>
                                 <label for="description">Recipe Description</label>
                             </div>
                             <!-- Recipe Ingredients Input -->
@@ -200,7 +201,7 @@
                                     name="ingredients" 
                                     class="materialize-textarea validate tooltipped" 
                                     minlength="4" 
-                                    pattern="[0-9]+\s([a-zA-Z]+( [a-zA-Z]+)+)"
+                                    pattern="\s*\w+."
                                     spellcheck="true" 
                                     data-position="bottom" 
                                     data-tooltip="Add each ingredient on a new line.
@@ -223,7 +224,7 @@
                                     minlength="10" 
                                     data-position="bottom" 
                                     data-tooltip="Add each preparation step on a new line!" 
-                                    pattern="(?:\s*[0-9a-zA-Z]+.)"
+                                    pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9 .]+)*$"
                                     spellcheck="true" 
                                     required>
                                     {%- for step in recipe.method -%}
