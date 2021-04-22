@@ -15,16 +15,29 @@
         </div>
         <div class="input-field col s12 m6 offset-m3 center-align">
             <i class="far fa-image prefix" aria-hidden="true"></i>
-            <input value="{{ image }}" placeholder="Image URL" id="user_image" name="user_image" 
-                type="url" onchange="userImage();" pattern="https://.*" class="validate">
+            <input 
+                id="user_image" 
+                name="user_image" 
+                type="url" 
+                value="{{ image }}" 
+                placeholder="Image URL" 
+                onchange="userImage();" 
+                pattern="https://.*" 
+                class="validate">
             <label for="user_image">Profile Image or Avatar</label>            
         </div>
         <!-- User Profile Details -->            
         <!-- City Input Field -->
         <div class="input-field col s12 m6 offset-m3 center-align">
             <i class="fas fa-map-marker-alt prefix" aria-hidden="true"></i>
-            <input value="{{ city }}" placeholder="Town/City where you live" id="city" 
-                name="city" type="text" class="validate" pattern="^[A-Za-z]$" required>
+            <input 
+                id="city" 
+                name="city" 
+                type="text" 
+                value="{{ city }}" 
+                placeholder="Town/City where you live" 
+                class="validate" 
+                pattern="^[A-Za-z]$">
             <label for="city">Town/City</label>
         </div>                
         <!-- Subscription Status Switch -->
@@ -44,8 +57,14 @@
         <!-- Email Input Field -->
         <div id="subs-email" class="input-field col s12 m6 offset-m3 center-align">
             <i class="fas fa-envelope prefix" aria-hidden="true"></i>            
-            <input value="{{ email }}" placeholder="john.smith@email.com" id="email" name="email"            
-                type="email" class="validate" required>            
+            <input 
+                id="email" 
+                name="email"            
+                type="email" 
+                class="validate" 
+                value="{{ email }}" 
+                placeholder="john.smith@email.com" 
+                required>            
             <label for="email">Email Address</label>
         </div>
         <!-- Cancel Button -->
