@@ -188,3 +188,31 @@ $('#rec-submit').click(function() {
     }
     return true;
 });
+
+/*----- Check User Input on Add Recipe Form -----*/
+/*-- Adapted from (https://html.form.guide/snippets/
+javascript-form-validation-using-regular-expression/)--*/
+$('#edit-save').click(function() {
+/*-- Recipe Ingredients variable and tests vs Regex --*/
+var ingredients = document.getElementById("ingredients").value;
+var ingRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
+var ingredResult = ingRegex.test(ingredients);
+/*-- Recipe Method variable and test vs Regex --*/
+var method = document.getElementById("method").value;
+var methRegex = /[@:.,!£$%^&*()]+[\s]+/gm;
+var methodResult = methRegex.test(method);
+    /*----- Check Recipe Ingredients -----*/
+    if (ingredResult != false) {
+        alert("Please enter valid Recipe ingredient text!\n" +
+            "500ml Chicken stock");
+        return false;
+    }
+
+    /*----- Check Recipe Ingredients -----*/
+    if (methodResult != false) {
+        alert("Please enter valid Recipe method text!\n" +
+            "No special characters allowed");
+        return false;
+    }
+    return true;
+});  
