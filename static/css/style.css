@@ -870,6 +870,13 @@ h2, h3 {
         height: 33rem;
     }
 
+    /*-- Recipes Page --*/
+
+    #search-button {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
     /*-- Manage Recipes --*/
 
     .edit-content {
