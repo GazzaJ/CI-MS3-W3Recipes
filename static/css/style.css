@@ -303,7 +303,9 @@ https://codepen.io/alianmorales/pen/GyrgjO --*/
 
 /*-- Recipe Cards --*/
 
-#search-button {
+#search-button,
+#filter-button,
+.reset {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
