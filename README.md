@@ -638,8 +638,8 @@ I have attempted to work independently as much as possible while building this w
 - [Online JavaScript Beautifier](https://codebeautify.org/jsviewer) - Useful tool for indenting JS code
 - [Am I responsive?](http://ami.responsivedesign.is/) - Provides a simple view of a websites responsiveness.
 - [Responsinator](https://www.responsinator.com/) - Fairly comprehensive responsiveness testing
-- [Regex Generator](https://regex-generator.olafneumann.org/)
-- [Regex 101](https://regex101.com/)
+- [Regex Generator](https://regex-generator.olafneumann.org/) - Helps compile Regular expressions
+- [Regex 101](https://regex101.com/) - Useful Regex tester
 
 ______
 
@@ -664,13 +664,8 @@ The photos used in this site, or in pre-populated recipes by the developer were 
 | 009   | [Guacamole](https://pixabay.com/photos/avocados-guacamole-drink-food-386795/) | Pixabay | No Attribution Required |
 | 010   | [Yorkshire Pudding](https://pixabay.com/photos/food-refreshment-yorkshire-puddings-3264773/)    | Pixabay | No Attribution Required |
 | 011   | [Baked Lemon Potatoes](https://i.imgur.com/ajVnWhr.jpg) | Imgur | No Attribution Required |
-| 012   | Recipe Image     |         |  |
-| 013   | Recipe Image     |         |  |
-| 014   | Recipe Image     |         |  |
-| 015   | Recipe Image     |         |  |
-| 016   | Recipe Image     |         |  |
-| 017   | [Blank Profile image](https://cdn.pixabay.com/photo/2015/10/05/22/37/) | Pixabay | No Attribution Required |
-| 018   | [Blank Recipe image](https://pixy.org/src/13/thumbs350/135044.jpg)| pixy.org | No Attribution Required |
+| 012   | [Blank Profile image](https://cdn.pixabay.com/photo/2015/10/05/22/37/) | Pixabay | No Attribution Required |
+| 013   | [Blank Recipe image](https://pixy.org/src/13/thumbs350/135044.jpg)| pixy.org | No Attribution Required |
 ____
 
 ### **Code Snippets** <a name="code"></a>
@@ -683,6 +678,8 @@ Much of the structure of this site follows what was taught during the Backend De
  | Country Flag CDN | Code snippet required to programmatically embed flags into the website | https://flagpedia.net/download/api |
  | Image URL display | Display the image when the URL is provided in a textbox | https://stackoverflow.com/questions/31398473/load-image-in-div-from-url-obtained-from-a-text-box/31398762|
  |Pagination| Splits the recipes collection and displays a maximum of 6 recipes/page|https://www.hacksparrow.com/databases/mongodb/pagination.html|
+ | Materialize Select on iOS | Solves issues with select elements not displaying correctly on iOS devices | https://stackoverflow.com/questions/52850091/materialize-select-and-dropdown-touch-event-selecting-wrong-item/52851046#52851046 |
+ | Form Validation | Add Recipe Form validation adapted from HTML form guide | https://html.form.guide/snippets/javascript-form-validation-using-regular-expression/ |
 
 ### **Acknowledgements** <a name="acknowledgements"></a>
 
@@ -695,6 +692,7 @@ Much of the structure of this site follows what was taught during the Backend De
    - Eamonn Carroll
    - Kane Moore
    - Kotaro (Toto) Tanaka
+   - Amy Sheward
 ______
 ### **Technical Support** <a name="technical"></a>
 If you encounter any issues with this website, or require any support please email the developer [johnge71@gmail.com](mailto:johnge71@gmail.com)
