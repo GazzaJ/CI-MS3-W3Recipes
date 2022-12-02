@@ -125,7 +125,7 @@ def login():
 def profile(username):
 
     recipes = recipe_coll.find({'uploaded_by': session['user']})
-    uploaded = recipe_coll.find({'uploaded_by': session['user']}).count()
+    uploaded = recipe_coll.count_documents({'uploaded_by': session['user']})
 
     # Retrieve the session user's details from the DB
 
