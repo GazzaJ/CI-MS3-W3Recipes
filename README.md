@@ -2,7 +2,7 @@
 
 ![W3 Recipes](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/readme-header_1.jpg "W3Recipes")
 
-# [**W3 Recipes**](https://ci-ms3-w3recipes.herokuapp.com/)
+# [**W3 Recipes**](https://w3recipes.onrender.com)
 
 
 As a keen cook, I love to try new recipes, but equally as a regular cook it can sometimes be difficult to think of new recipes to try which keep the whole family happy. Thus, I thought it would be interesting to put a bit of a spin on the typical recipe database and attempt to get a recipe for as many countries in the world as possible, and what better way to do this than to get the site users to post their tried and tested favourite recipes.
@@ -16,7 +16,7 @@ My aim is to achieved the above with a visually appealing, interactive yet intui
  - keep track of our progress towards "filling the map"
 
 
-[The live website can be viewed here!](https://ci-ms3-w3recipes.herokuapp.com/)
+[The live website can be viewed here!](https://w3recipes.onrender.com)
 
 ![Am I responsive images](https://github.com/GazzaJ/CI-MS3-W3Recipes/blob/main/README-img/am_i_responsive.jpg "Am I Responsive")
 
