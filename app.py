@@ -448,7 +448,7 @@ def manage_recipes():
         # Check how many recipes the user has uploaded
 
         recipes = recipe_coll.find({'uploaded_by': session['user']})
-        uploaded = recipes.count_documents()
+        uploaded = recipe_coll.count_documents({'uploaded_by': session['user']})
         if uploaded == 0:
             flash('You have not uploaded any recipes yet!')
         if uploaded < per_page:
@@ -457,7 +457,7 @@ def manage_recipes():
     else:
         current_page = request.args.get('current_page', type=int, default=1)
         recs = recipe_coll.find({'uploaded_by': session['user']})
-        uploaded = recs.count_documents()
+        uploaded = recipe_coll.count_documents({'uploaded_by': session['user']})
         recipes = recipe_coll.find().sort('_id', -1).skip(
             per_page * (current_page - 1)).limit(per_page)
         total = recipe_coll.count_documents()
