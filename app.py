@@ -537,23 +537,43 @@ def edit_recipe(recipe_id):
         if image_url == "":
             image_url = 'https://pixy.org/src/13/thumbs350/135044.jpg'
 
-        update = {
-            'country_name': request.form.get('country_name'),
-            'title': clean_title,
-            'origin': origin,
-            'recipe_type': request.form.get('recipe_category'),
-            'vegan': vegan,
-            'vegetarian': vegetarian,
-            'image': image_url,
-            'prep_time': clean_prep,
-            'cooking_time': clean_cook,
-            'description': clean_desc,
-            'servings': request.form.get('servings'),
-            'ingredients': ingredients,
-            'method': method,
-            'uploaded_by': uploaded_by
+        #update = {
+        #    'country_name': request.form.get('country_name'),
+        #    'title': clean_title,
+        #    'origin': origin,
+        #    'recipe_type': request.form.get('recipe_category'),
+        #    'vegan': vegan,
+        #    'vegetarian': vegetarian,
+        #    'image': image_url,
+        #    'prep_time': clean_prep,
+        #    'cooking_time': clean_cook,
+        #    'description': clean_desc,
+        #    'servings': request.form.get('servings'),
+        #    'ingredients': ingredients,
+        #    'method': method,
+        #    'uploaded_by': uploaded_by
+        #    }
+        recipe_coll.update_one(
+            {'_id': ObjectId(recipe_id)}, 
+            {"$set":
+                {
+                   'country_name': request.form.get('country_name'),
+                    'title': clean_title,
+                    'origin': origin,
+                    'recipe_type': request.form.get('recipe_category'),
+                    'vegan': vegan,
+                    'vegetarian': vegetarian,
+                    'image': image_url,
+                    'prep_time': clean_prep,
+                    'cooking_time': clean_cook,
+                    'description': clean_desc,
+                    'servings': request.form.get('servings'),
+                    'ingredients': ingredients,
+                    'method': method,
+                    'uploaded_by': uploaded_by 
+                }
             }
-        recipe_coll.update_one({'_id': ObjectId(recipe_id)}, update, update)
+        )
         flash('Recipe Successfully Edited!')
         return redirect(url_for('manage_recipes'))
 
