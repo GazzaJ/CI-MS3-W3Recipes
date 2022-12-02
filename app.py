@@ -460,7 +460,7 @@ def manage_recipes():
         uploaded = recipe_coll.count_documents({'uploaded_by': session['user']})
         recipes = recipe_coll.find().sort('_id', -1).skip(
             per_page * (current_page - 1)).limit(per_page)
-        total = recipe_coll.count_documents()
+        total = recipe_coll.count_documents({})
         pages = range(1, int(round(total / per_page) + 1))
         last_page = max(range(1, int(round(total / per_page) + 1)))
         first_page = min(range(1, int(round(total / per_page) + 1)))
