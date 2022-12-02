@@ -553,7 +553,7 @@ def edit_recipe(recipe_id):
             'method': method,
             'uploaded_by': uploaded_by
             }
-        recipe_coll.update_one({'_id': ObjectId(recipe_id)}, update)
+        recipe_coll.update_one({'_id': ObjectId(recipe_id)}, update, update)
         flash('Recipe Successfully Edited!')
         return redirect(url_for('manage_recipes'))
 
