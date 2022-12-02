@@ -125,7 +125,7 @@ def login():
 def profile(username):
 
     recipes = recipe_coll.find({'uploaded_by': session['user']})
-    uploaded = recipes.count()
+    uploaded = recipes.count_documents()
 
     # Retrieve the session user's details from the DB
 
@@ -248,7 +248,7 @@ def get_recipes():
     current_page = request.args.get('current_page', type=int, default=1)
     recipes = recipe_coll.find().sort('_id', -1).skip(
         per_page * (current_page - 1)).limit(per_page)
-    total = recipe_coll.count()
+    total = recipe_coll.count_documents({})
     pages = range(1, int(round(total / per_page) + 1))
     last_page = max(range(1, int(round(total / per_page) + 1)))
     first_page = min(range(1, int(round(total / per_page) + 1)))
@@ -287,7 +287,7 @@ def search():
     # https://www.hacksparrow.com/databases/mongodb/pagination.html
 
     current_page = request.args.get('current_page', type=int, default=1)
-    total = recipe_coll.count()
+    total = recipe_coll.count_documents()
     pages = range(1, int(round(total / per_page) + 1))
     last_page = max(range(1, int(round(total / per_page) + 1)))
     first_page = min(range(1, int(round(total / per_page) + 1)))
@@ -323,7 +323,7 @@ def filter():
     # https://www.hacksparrow.com/databases/mongodb/pagination.html
 
     current_page = request.args.get('current_page', type=int, default=1)
-    total = recipe_coll.count()
+    total = recipe_coll.count_documents()
     pages = range(1, int(round(total / per_page) + 1))
     last_page = max(range(1, int(round(total / per_page) + 1)))
     first_page = min(range(1, int(round(total / per_page) + 1)))
@@ -448,7 +448,7 @@ def manage_recipes():
         # Check how many recipes the user has uploaded
 
         recipes = recipe_coll.find({'uploaded_by': session['user']})
-        uploaded = recipes.count()
+        uploaded = recipes.count_documents()
         if uploaded == 0:
             flash('You have not uploaded any recipes yet!')
         if uploaded < per_page:
@@ -457,10 +457,10 @@ def manage_recipes():
     else:
         current_page = request.args.get('current_page', type=int, default=1)
         recs = recipe_coll.find({'uploaded_by': session['user']})
-        uploaded = recs.count()
+        uploaded = recs.count_documents()
         recipes = recipe_coll.find().sort('_id', -1).skip(
             per_page * (current_page - 1)).limit(per_page)
-        total = recipe_coll.count()
+        total = recipe_coll.count_documents()
         pages = range(1, int(round(total / per_page) + 1))
         last_page = max(range(1, int(round(total / per_page) + 1)))
         first_page = min(range(1, int(round(total / per_page) + 1)))
