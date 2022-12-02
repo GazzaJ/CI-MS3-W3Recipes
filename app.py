@@ -214,7 +214,7 @@ def delete_profile():
     # ----- Check if there is a session cookie and Delete-----
 
     if session['user']:
-        mongo.db.users.remove({'username': session['user']})
+        mongo.db.users.delete_one({'username': session['user']})
         flash('Your profile was deleted succesfully!')
         session.pop('user')
         return redirect(url_for('home'))
@@ -591,7 +591,7 @@ def delete_recipe(recipe_id):
     # ----- Check if session user uploaded the recipe -----
 
     if admin is True or uploaded_by == session['user']:
-        recipe_coll.remove({'_id': ObjectId(recipe_id)})
+        recipe_coll.delete_one({'_id': ObjectId(recipe_id)})
         flash('Recipe Deleted Succesfully!')
         return redirect(url_for('manage_recipes'))
 
